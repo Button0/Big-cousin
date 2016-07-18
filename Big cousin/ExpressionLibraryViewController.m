@@ -21,8 +21,6 @@
 @property (nonatomic, strong) SegmentView *segmentView;
 /** libraryCollectionView 表情库的底视图 */
 @property (nonatomic, strong) UICollectionView *libraryCollectionView;
-/**  */
-@property (nonatomic, strong) CollectionViewController *collectionView;
 /** 布局类型 */
 @property (nonatomic, assign) NSInteger layoutType;
 
@@ -46,13 +44,13 @@
     [self.libraryCollectionView registerNib:[UINib nibWithNibName:@"LibraryCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:LibraryCollectionViewCell_Identity];
     [self.libraryCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     
-    self.collectionView = [[CollectionViewController alloc] init];
-    [self addChildViewController:self.collectionView];
+    CollectionViewController *collectionView = [[CollectionViewController alloc] init];
+    [self addChildViewController:collectionView];
     CollectionViewController *cv = [CollectionViewController new];
     [self addChildViewController:cv];
     
-    _collectionView.view.frame = CGRectMake(0, 0, WindowWidth, WindowHeight);
-    [self.segmentView.newestView addSubview:_collectionView.view];
+    collectionView.view.frame = CGRectMake(0, 0, WindowWidth, WindowHeight);
+    [self.segmentView.newestView addSubview:collectionView.view];
     cv.view.frame = CGRectMake(0, 0, WindowWidth, WindowHeight);
     [self.segmentView.hottestView addSubview:cv.view];
 }

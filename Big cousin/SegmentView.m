@@ -8,6 +8,7 @@
 
 #import "SegmentView.h"
 #import "LibraryCollectionViewCell.h"
+#import "CollectionViewController.h"
 
 #define SWidth self.bounds.size.width
 #define SHeight self.bounds.size.height
@@ -60,7 +61,6 @@
     
     self.newestView = [[UIView alloc] initWithFrame:CGRectMake(SWidth, 0, SWidth, SHeight)];
     [self.scrollView addSubview:_newestView];
-    _newestView.backgroundColor = [UIColor cyanColor];
     
     self.hottestView = [[UIView alloc] initWithFrame:CGRectMake(SWidth *2.0f, 0, SWidth, SHeight)];
     [self.scrollView addSubview:_hottestView];
