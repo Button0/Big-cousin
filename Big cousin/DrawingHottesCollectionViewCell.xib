@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DrawingHottesCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-8X-51b">
+                        <rect key="frame" x="1" y="1" width="98" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="Sn7-iV-0AQ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGR-Ss-Q66">
+                        <rect key="frame" x="1" y="111" width="98" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="PvU-SX-CAy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="ixh-8X-51b" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="919-Sa-zuZ"/>
+                <constraint firstItem="tGR-Ss-Q66" firstAttribute="top" secondItem="ixh-8X-51b" secondAttribute="bottom" constant="10" id="CWc-e5-T2p"/>
+                <constraint firstItem="ixh-8X-51b" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="IBa-LE-T2v"/>
+                <constraint firstAttribute="trailing" secondItem="ixh-8X-51b" secondAttribute="trailing" constant="1" id="QeO-mh-FnJ"/>
+                <constraint firstAttribute="trailing" secondItem="tGR-Ss-Q66" secondAttribute="trailing" constant="1" id="Tr2-Fn-x3I"/>
+                <constraint firstItem="tGR-Ss-Q66" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="bOu-Yl-1EY"/>
+            </constraints>
+            <connections>
+                <outlet property="hottesImageV" destination="ixh-8X-51b" id="xvQ-QW-ocS"/>
+                <outlet property="hottesLabel" destination="tGR-Ss-Q66" id="pF4-XB-WIP"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="downloadsuo.do.png" width="405" height="311"/>
+    </resources>
+</document>
