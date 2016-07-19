@@ -319,6 +319,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB13D17B1D3CB035002320DE /* BigCousin */ = {
+			isa = PBXGroup;
+			children = (
+				AB49D8191D3C717B009B049A /* BigCousinTableViewCell.h */,
+				AB49D81A1D3C717B009B049A /* BigCousinTableViewCell.m */,
+				AB49D81B1D3C717B009B049A /* BigCousinTableViewCell.xib */,
+				AB49D80B1D3C712E009B049A /* BigCousinVideoTableViewCell.h */,
+				AB49D80C1D3C712E009B049A /* BigCousinVideoTableViewCell.m */,
+				AB49D80D1D3C712E009B049A /* BigCousinVideoTableViewCell.xib */,
+				AB49D7F01D3C705F009B049A /* PlayerView.h */,
+				AB49D7F11D3C705F009B049A /* PlayerView.m */,
+			);
+			name = BigCousin;
+			sourceTree = "<group>";
+		};
 		AB49D8041D3C70F0009B049A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,11 +547,10 @@
 		D63635D21D35DED700DA8618 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AB49D7F01D3C705F009B049A /* PlayerView.h */,
-				AB49D7F11D3C705F009B049A /* PlayerView.m */,
 				ABEC55F51D372E6F00E9DACD /* NavigationMenu */,
 				ABFBF5731D38E6C300BCDD60 /* ExpressionLibrary */,
 				D6FA4F001D3788CA00B80970 /* DrawingCell */,
+				AB13D17B1D3CB035002320DE /* BigCousin */,
 				D63635EB1D35E72D00DA8618 /* Tabbar */,
 			);
 			name = View;
@@ -624,9 +638,6 @@
 		D6FA4F001D3788CA00B80970 /* DrawingCell */ = {
 			isa = PBXGroup;
 			children = (
-				AB49D8191D3C717B009B049A /* BigCousinTableViewCell.h */,
-				AB49D81A1D3C717B009B049A /* BigCousinTableViewCell.m */,
-				AB49D81B1D3C717B009B049A /* BigCousinTableViewCell.xib */,
 				D67E16001D371FFD00B2A887 /* DrawingCollectionViewCell.h */,
 				D67E16011D371FFD00B2A887 /* DrawingCollectionViewCell.m */,
 				D67E16021D371FFD00B2A887 /* DrawingCollectionViewCell.xib */,

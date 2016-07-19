@@ -8,6 +8,7 @@
 
 #import "CollectionViewController.h"
 #import "DrawingHottesCollectionViewCell.h"
+#import "SegmentView.h"
 
 @interface CollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @end
