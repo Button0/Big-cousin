@@ -17,8 +17,6 @@
 		AB49D7F71D3C7093009B049A /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D7F61D3C7093009B049A /* NetWorkRequest.m */; };
 		AB49D7FA1D3C70B9009B049A /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D7F91D3C70B9009B049A /* DrawingViewController.m */; };
 		AB49D7FD1D3C70C3009B049A /* DrawingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D7FC1D3C70C3009B049A /* DrawingDetailViewController.m */; };
-		AB49D8001D3C70D1009B049A /* DrawingNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D7FF1D3C70D1009B049A /* DrawingNewViewController.m */; };
-		AB49D8031D3C70DE009B049A /* DrawingHottestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8021D3C70DE009B049A /* DrawingHottestViewController.m */; };
 		AB49D8071D3C7106009B049A /* DrawingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8061D3C7106009B049A /* DrawingModel.m */; };
 		AB49D80A1D3C7110009B049A /* DrawingHottesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8091D3C7110009B049A /* DrawingHottesModel.m */; };
 		AB49D8101D3C712E009B049A /* BigCousinVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D80C1D3C712E009B049A /* BigCousinVideoTableViewCell.m */; };
@@ -166,10 +164,6 @@
 		AB49D7F91D3C70B9009B049A /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
 		AB49D7FB1D3C70C3009B049A /* DrawingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingDetailViewController.h; sourceTree = "<group>"; };
 		AB49D7FC1D3C70C3009B049A /* DrawingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingDetailViewController.m; sourceTree = "<group>"; };
-		AB49D7FE1D3C70D1009B049A /* DrawingNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingNewViewController.h; sourceTree = "<group>"; };
-		AB49D7FF1D3C70D1009B049A /* DrawingNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingNewViewController.m; sourceTree = "<group>"; };
-		AB49D8011D3C70DE009B049A /* DrawingHottestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottestViewController.h; sourceTree = "<group>"; };
-		AB49D8021D3C70DE009B049A /* DrawingHottestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottestViewController.m; sourceTree = "<group>"; };
 		AB49D8051D3C7106009B049A /* DrawingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingModel.h; sourceTree = "<group>"; };
 		AB49D8061D3C7106009B049A /* DrawingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingModel.m; sourceTree = "<group>"; };
 		AB49D8081D3C7110009B049A /* DrawingHottesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottesModel.h; sourceTree = "<group>"; };
@@ -684,10 +678,6 @@
 				AB49D7F91D3C70B9009B049A /* DrawingViewController.m */,
 				AB49D7FB1D3C70C3009B049A /* DrawingDetailViewController.h */,
 				AB49D7FC1D3C70C3009B049A /* DrawingDetailViewController.m */,
-				AB49D7FE1D3C70D1009B049A /* DrawingNewViewController.h */,
-				AB49D7FF1D3C70D1009B049A /* DrawingNewViewController.m */,
-				AB49D8011D3C70DE009B049A /* DrawingHottestViewController.h */,
-				AB49D8021D3C70DE009B049A /* DrawingHottestViewController.m */,
 				AB49D7EB1D3C6FDE009B049A /* WordViewController.h */,
 				AB49D7EC1D3C6FDE009B049A /* WordViewController.m */,
 			);
@@ -699,6 +689,9 @@
 			children = (
 				AB49D80E1D3C712E009B049A /* BigCousinViewController.h */,
 				AB49D80F1D3C712E009B049A /* BigCousinViewController.m */,
+				AB49D80B1D3C712E009B049A /* BigCousinVideoTableViewCell.h */,
+				AB49D80C1D3C712E009B049A /* BigCousinVideoTableViewCell.m */,
+				AB49D80D1D3C712E009B049A /* BigCousinVideoTableViewCell.xib */,
 			);
 			name = BIgCousin;
 			sourceTree = "<group>";
@@ -971,7 +964,6 @@
 				ABFBF5C81D39413200BCDD60 /* MASConstraintMaker.m in Sources */,
 				AB13D1841D3CBD88002320DE /* HomeTitleModel.m in Sources */,
 				AB49D8181D3C7149009B049A /* BigCousinVideoModel.m in Sources */,
-				AB49D8001D3C70D1009B049A /* DrawingNewViewController.m in Sources */,
 				D6FA4F0C1D3797CA00B80970 /* DrawingNewCollectionViewCell.m in Sources */,
 				AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */,
 				ABFBF5DD1D39413200BCDD60 /* ViewController+MASAdditions.m in Sources */,
@@ -983,7 +975,6 @@
 				AB85BD4C1D3D518E009A9F27 /* NSString+DecryptString.m in Sources */,
 				ABFBF5D11D39413200BCDD60 /* MASViewConstraint.m in Sources */,
 				AB49D8261D3C71A9009B049A /* BaseRequest.m in Sources */,
-				AB49D8031D3C70DE009B049A /* DrawingHottestViewController.m in Sources */,
 				AB49D8231D3C7195009B049A /* BigCousinGIFModel.m in Sources */,
 				AB49D8201D3C718D009B049A /* BigCousinRequest.m in Sources */,
 				ABEC56191D376DC800E9DACD /* VTCycleScrollView.m in Sources */,

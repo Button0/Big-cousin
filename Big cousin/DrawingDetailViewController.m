@@ -7,20 +7,25 @@
 //
 
 #import "DrawingDetailViewController.h"
-#import "DrawingNewViewController.h"
-#import "DrawingHottestViewController.h"
+//#import "DrawingNewViewController.h"
+//#import "DrawingHottestViewController.h"
+#import "DrawingHottesCollectionViewCell.h"
+#import "DrawingNewCollectionViewCell.h"
 @interface DrawingDetailViewController ()
 <
-    UIScrollViewDelegate
+    UIScrollViewDelegate,
+    UICollectionViewDataSource,
+    UICollectionViewDelegateFlowLayout
+
 >
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 
 @property (strong, nonatomic) UISegmentedControl *segment;
 
-@property (strong, nonatomic) DrawingNewViewController *newestCollectionView;
+@property (strong, nonatomic) UICollectionView *newestCollectionView;
 
-@property (strong, nonatomic) DrawingHottestViewController *hottestCollectionView;
+@property (strong, nonatomic) UICollectionView *hottestCollectionView;
 
 @end
 
@@ -29,39 +34,58 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    //间距
+    //    flowLayout.minimumInteritemSpacing = 1;
+    //行距
+    flowLayout.minimumLineSpacing = 50;
+    //每个分区边缘的ulinix
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    //每行显示个数
+    flowLayout.itemSize = CGSizeMake(100, 100);
+    
+    /** 初始化控制器 */
+    self.newestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
+    self.newestCollectionView.backgroundColor = [UIColor redColor];
+    
+    self.hottestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
+    self.hottestCollectionView.backgroundColor = [UIColor orangeColor];
+//    self.hottestCollectionView.edgesForExtendedLayout = UIRectEdgeNone
+    
     self.segment = [[UISegmentedControl alloc]initWithItems:@[@"最新",@"分类"]];
     
     self.navigationItem.titleView = self.segment;
     
     [self.segment addTarget:self action:@selector(segmentControClicked:) forControlEvents:(UIControlEventValueChanged)];
     
-     self.segment.selectedSegmentIndex = 0;
+     self.segment.selectedSegmentIndex = 0;//默认选中的索引为0
     
      /** 创建scrollView */
-    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64,self.view.bounds.size.width, self.view.bounds.size.height)];
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,69,WindowWidth, WindowHeight)];
+    self.scrollView.backgroundColor = [UIColor magentaColor];
     [self.view addSubview:self.scrollView];
     /** 设置scrollView的内容 */
     self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 2, 0);
     self.scrollView.pagingEnabled = YES;
     self.scrollView.bounces = NO;
-    /** 初始化控制器 */
-    self.newestCollectionView = [[DrawingNewViewController alloc]init];
-    self.hottestCollectionView = [[DrawingHottestViewController alloc]init];
-    /** 添加为self的自控制器 */
-    [self addChildViewController:self.newestCollectionView];
-    [self addChildViewController:self.hottestCollectionView];
-    
-    self.newestCollectionView.view.frame = CGRectMake(0, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-    
-    self.hottestCollectionView.view.frame = CGRectMake(self.scrollView.frame.size.width, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-    /** 将视图添加到scrollView上 */
-    [self.scrollView addSubview:self.newestCollectionView.view];
-    [self.scrollView addSubview:self.hottestCollectionView.view];
-    
     
     /** 设置scrollView的代理 */
     self.scrollView.delegate = self;
+    self.newestCollectionView.dataSource = self;
+    self.newestCollectionView.delegate = self;
+    self.hottestCollectionView.dataSource = self;
+    self.hottestCollectionView.delegate = self;
     
+    
+    [self.scrollView addSubview:self.newestCollectionView];
+    [self.scrollView addSubview:self.hottestCollectionView];
+    
+    
+    //注册两个cell
+    [self.newestCollectionView registerNib:[UINib nibWithNibName:@"DrawingNewCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify];
+    [self.hottestCollectionView registerNib:[UINib nibWithNibName:@"DrawingHottesCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:DrawingHottesCollectionViewCell_Identify];
+
     [self addViews];
     
 }
@@ -69,6 +93,7 @@
 - (void)addViews
 {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"🐈" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftBarButtonItemClick)];
+    
 }
 
 - (void)leftBarButtonItemClick
@@ -87,6 +112,26 @@
 {
     self.segment.selectedSegmentIndex = scrollView.contentOffset.x / scrollView.frame.size.width;
 }
+
+#pragma mark ----------UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 20;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (collectionView == self.newestCollectionView) {
+        DrawingNewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify forIndexPath:indexPath];
+        return cell;
+    }else if (collectionView == self.hottestCollectionView)
+    {
+        DrawingHottesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingHottesCollectionViewCell_Identify forIndexPath:indexPath];
+        return cell;
+    }
+    return nil;
+}
+
 
 
 
