@@ -1,36 +1,29 @@
 //
-//  BaseViewController.m
+//  SingleExpressionViewController.m
 //  Big cousin
 //
-//  Created by HMS on 16/7/13.
+//  Created by Mushroom on 16/7/19.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "SingleExpressionViewController.h"
+#import "ExpressionLibraryModel.h"
 
-@interface BaseViewController ()
+@implementation SingleExpressionViewController
 
-@end
-
-@implementation BaseViewController
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.title = self.expressionModel.eName;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.tabBarController.tabBar.translucent = NO;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-}
-
-- (void)setupProgressHud
-{
-    [GiFHUD setGifWithImageName:@"48.gif"];
-    [GiFHUD show];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

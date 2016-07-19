@@ -10,7 +10,6 @@
 
 @interface DrawingHottesModel : NSObject
 
-
 /** 图片地址 */
 @property (strong, nonatomic) NSString *url;
 

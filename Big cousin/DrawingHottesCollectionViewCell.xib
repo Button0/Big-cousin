@@ -13,7 +13,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-8X-51b">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-8X-51b">
                         <rect key="frame" x="1" y="1" width="98" height="100"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -26,6 +26,8 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="PvU-SX-CAy"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -47,6 +49,7 @@
                 <outlet property="hottesLabel" destination="tGR-Ss-Q66" id="pF4-XB-WIP"/>
             </connections>
             <point key="canvasLocation" x="304.5" y="344.5"/>
+            <point key="canvasLocation" x="31" y="106"/>
         </collectionViewCell>
     </objects>
     <resources>

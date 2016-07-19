@@ -30,8 +30,8 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
  
-    NavigationMenuViewController *na = [NavigationMenuViewController new];
-    [self.navigationController pushViewController:na animated:YES];
+//    NavigationMenuViewController *na = [NavigationMenuViewController new];
+//    [self.navigationController pushViewController:na animated:YES];
     
     self.title = @"大表姐";
 

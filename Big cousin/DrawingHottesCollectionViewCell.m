@@ -7,11 +7,21 @@
 //
 
 #import "DrawingHottesCollectionViewCell.h"
+#import "SingleExpressionViewController.h"
 
+@interface DrawingHottesCollectionViewCell ()
+@end
 @implementation DrawingHottesCollectionViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+}
+
+- (void)setLibraryModel:(ExpressionLibraryModel *)libraryModel
+{
+    _libraryModel = libraryModel;
+    [_hottesImageV setImageWithURL:[NSURL URLWithString:libraryModel.coverUrl]];
+    _hottesLabel.text = libraryModel.eName;
 }
 
 @end

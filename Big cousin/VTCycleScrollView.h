@@ -11,7 +11,7 @@
 @interface VTCycleScrollView : UIView
 
 /** 时间管理器 */
-@property (nonatomic) CGFloat timePerPicture;
+//@property (nonatomic) CGFloat timePerPicture;
 /** 图片数据 */
 @property (nonatomic, retain) NSArray *imageData;
 
