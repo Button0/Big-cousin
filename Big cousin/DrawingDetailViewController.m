@@ -2,15 +2,15 @@
 //  DrawingDetailViewController.m
 //  Big cousin
 //
-//  Created by lanou3g on 16/7/14.
+//  Created by HMS,CK,LYB,SS on 16/7/14.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
 #import "DrawingDetailViewController.h"
-//#import "DrawingNewViewController.h"
-//#import "DrawingHottestViewController.h"
 #import "DrawingHottesCollectionViewCell.h"
 #import "DrawingNewCollectionViewCell.h"
+#import "DrawingModel.h"
+#import "DrawingHottesModel.h"
 @interface DrawingDetailViewController ()
 <
     UIScrollViewDelegate,
@@ -27,6 +27,10 @@
 
 @property (strong, nonatomic) UICollectionView *hottestCollectionView;
 
+@property (strong, nonatomic) NSMutableArray *dataArray;
+
+@property (strong, nonatomic) NSMutableArray *hottesArray;
+
 @end
 
 @implementation DrawingDetailViewController
@@ -34,16 +38,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    _dataArray = [NSMutableArray array];
+    _hottesArray = [NSMutableArray array];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     //间距
     //    flowLayout.minimumInteritemSpacing = 1;
     //行距
-    flowLayout.minimumLineSpacing = 50;
-    //每个分区边缘的ulinix
+    flowLayout.minimumLineSpacing = 20;
+    //每个分区边缘的距离
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     //每行显示个数
-    flowLayout.itemSize = CGSizeMake(100, 100);
+    flowLayout.itemSize = CGSizeMake(100, 135);
     
     /** 初始化控制器 */
     self.newestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
@@ -87,7 +93,59 @@
     [self.hottestCollectionView registerNib:[UINib nibWithNibName:@"DrawingHottesCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:DrawingHottesCollectionViewCell_Identify];
 
     [self addViews];
+    [self getNewData];
+    [self getHottesData];
     
+}
+
+- (void)getNewData
+{
+    NSURL *url = [NSURL URLWithString:@"http://cdn.ibiaoqing.com/ibiaoqing/admin/pic/getNew.do"];
+    
+    //    创建session 对象
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
+        
+        NSArray *array = [arr lastObject];
+        for (NSDictionary *dict in array) {
+            DrawingModel *model = [DrawingModel new];
+            [model setValuesForKeysWithDictionary:dict];
+//            NSLog(@"=======%@",model);
+            [self.dataArray addObject:model];
+//            NSLog(@"%@",self.dataArray);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.newestCollectionView reloadData];
+        });
+    }];
+    [task resume];
+
+}
+
+- (void)getHottesData
+{
+    NSURL *url = [NSURL URLWithString:@"http://123.57.155.230/ibiaoqing/admin/expre/listBy.do?pageNumber=1&status=Y&status1=S&token=yes"];
+    
+    //    创建session 对象
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
+        
+        NSArray *array = [arr lastObject];
+        for (NSDictionary *dict in array) {
+            DrawingHottesModel *model = [DrawingHottesModel new];
+            [model setValuesForKeysWithDictionary:dict];
+//                        NSLog(@"=======%@",model);
+            [_hottesArray addObject:model];
+                        NSLog(@"%@",self.hottesArray);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.hottestCollectionView reloadData];
+        });
+    }];
+    [task resume];
+
 }
 
 - (void)addViews
@@ -117,20 +175,32 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 20;
+    if (collectionView == self.newestCollectionView) {
+        return self.dataArray.count;
+    }else
+    {
+        return self.hottesArray.count;
+    }
+    
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (collectionView == self.newestCollectionView) {
         DrawingNewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify forIndexPath:indexPath];
+        DrawingModel *model = self.dataArray[indexPath.row];
+        [cell.drawingNewImageV setImageWithURL:[NSURL URLWithString:model.url]];
         return cell;
     }else if (collectionView == self.hottestCollectionView)
     {
         DrawingHottesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingHottesCollectionViewCell_Identify forIndexPath:indexPath];
+        DrawingHottesModel *model = self.hottesArray[indexPath.row];
+        [cell.hottesImageV setImageWithURL:[NSURL URLWithString:model.url]];
+        cell.hottesLabel.text = model.eName;
         return cell;
     }
     return nil;
 }
+
 
 
 

@@ -93,6 +93,7 @@
 		ABFBF5F71D3B632700BCDD60 /* downloadsuo.do.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFBF5F61D3B632700BCDD60 /* downloadsuo.do.png */; };
 		ABFBF5F81D3B632700BCDD60 /* downloadsuo.do.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFBF5F61D3B632700BCDD60 /* downloadsuo.do.png */; };
 		ABFBF5F91D3B632700BCDD60 /* downloadsuo.do.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFBF5F61D3B632700BCDD60 /* downloadsuo.do.png */; };
+		D6070C021D3E2F9C00EB761F /* FinshedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6070C011D3E2F9C00EB761F /* FinshedViewController.m */; };
 		D63635D61D35DF8D00DA8618 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635D51D35DF8D00DA8618 /* RootViewController.m */; };
 		D63635D91D35DF9D00DA8618 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635D81D35DF9D00DA8618 /* BaseViewController.m */; };
 		D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635DB1D35E0B200DA8618 /* ExpressionLibraryViewController.m */; };
@@ -246,6 +247,8 @@
 		ABFBF5BD1D39413200BCDD60 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		ABFBF5BE1D39413200BCDD60 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		ABFBF5F61D3B632700BCDD60 /* downloadsuo.do.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downloadsuo.do.png; sourceTree = "<group>"; };
+		D6070C001D3E2F9C00EB761F /* FinshedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinshedViewController.h; sourceTree = "<group>"; };
+		D6070C011D3E2F9C00EB761F /* FinshedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinshedViewController.m; sourceTree = "<group>"; };
 		D63635D41D35DF8D00DA8618 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		D63635D51D35DF8D00DA8618 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		D63635D71D35DF9D00DA8618 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -610,6 +613,8 @@
 				AB49D7FC1D3C70C3009B049A /* DrawingDetailViewController.m */,
 				AB49D7EB1D3C6FDE009B049A /* WordViewController.h */,
 				AB49D7EC1D3C6FDE009B049A /* WordViewController.m */,
+				D6070C001D3E2F9C00EB761F /* FinshedViewController.h */,
+				D6070C011D3E2F9C00EB761F /* FinshedViewController.m */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -619,9 +624,6 @@
 			children = (
 				AB49D80E1D3C712E009B049A /* BigCousinViewController.h */,
 				AB49D80F1D3C712E009B049A /* BigCousinViewController.m */,
-				AB49D80B1D3C712E009B049A /* BigCousinVideoTableViewCell.h */,
-				AB49D80C1D3C712E009B049A /* BigCousinVideoTableViewCell.m */,
-				AB49D80D1D3C712E009B049A /* BigCousinVideoTableViewCell.xib */,
 			);
 			name = BIgCousin;
 			sourceTree = "<group>";
@@ -902,6 +904,7 @@
 				ABFBF5CB1D39413200BCDD60 /* MASLayoutConstraint.m in Sources */,
 				ABEC55E41D36BCD400E9DACD /* CellSelection.m in Sources */,
 				AB49D8151D3C713E009B049A /* BigCousinVideoRequest.m in Sources */,
+				D6070C021D3E2F9C00EB761F /* FinshedViewController.m in Sources */,
 				ABFBF5331D387FEC00BCDD60 /* SegmentView.m in Sources */,
 				AB9C1A231D35D1DE0067B7A8 /* main.m in Sources */,
 				AB49D80A1D3C7110009B049A /* DrawingHottesModel.m in Sources */,

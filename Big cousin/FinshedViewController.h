@@ -1,13 +1,13 @@
 //
-//  WordViewController.h
+//  FinshedViewController.h
 //  Big cousin
 //
-//  Created by HMS,CK,LYB,SS on 16/7/15.
+//  Created by lanou3g on 16/7/19.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
 #import "BaseViewController.h"
 
-@interface WordViewController : BaseViewController
+@interface FinshedViewController : BaseViewController
 
 @end

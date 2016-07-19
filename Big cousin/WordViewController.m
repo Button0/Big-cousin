@@ -2,12 +2,12 @@
 //  WordViewController.m
 //  Big cousin
 //
-//  Created by lanou3g on 16/7/15.
+//  Created by HMS,CK,LYB,SS on 16/7/15.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
 #import "WordViewController.h"
-
+#import "FinshedViewController.h"
 static NSString *aText;
 
 @interface WordViewController ()
@@ -26,7 +26,7 @@ static NSString *aText;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:238/256.0 green:238/256.0 blue:238/256.0 alpha:1];
     
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"👈🏿" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftClicked)];
@@ -58,7 +58,7 @@ static NSString *aText;
     self.navigationItem.rightBarButtonItems = @[finishItem,_scaleItem];
     //添加一个textView
     _changeView = [[UIView alloc]initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 250)];
-    _changeView.backgroundColor = [UIColor orangeColor];
+    _changeView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.changeView];
 
     
@@ -73,13 +73,26 @@ static NSString *aText;
     [self.view addSubview:wordButton];
     _myLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 0, 0)];
     _myLabel.backgroundColor= [UIColor yellowColor];
+    //字体颜色
     _myLabel.textColor = [UIColor blackColor];
+    //字体大小
+    _myLabel.font = [UIFont systemFontOfSize:20.0f];
+    //自动换行
     _myLabel.numberOfLines = 0;
+    //文本居中
     _myLabel.textAlignment = NSTextAlignmentCenter;
+    //添加边框
+    _myLabel.layer.borderColor = [UIColor blackColor].CGColor;
+    _myLabel.layer.borderWidth = 1.0;
+    //label自适应
+    [self.myLabel sizeToFit];
+    self.myLabel.frame = CGRectMake(10, 10, 150, self.myLabel.frame.size.height);
+
 //    _myLabel.text = @"按实际的父亲为家人和银联卡说对方空间的回复近段时间分地方的";
 
     
     [_changeView addSubview:_myLabel];
+
     
     NSLog(@"%@",NSStringFromCGRect(self.myLabel.frame));
     NSLog(@"%@",NSStringFromCGRect(_myLabel.frame));
@@ -92,6 +105,10 @@ static NSString *aText;
 //button点击方法
 - (void)rightBarItemClicked:(UIButton *)btn
 {
+    
+    FinshedViewController *finshed = [FinshedViewController new];
+    [self.navigationController pushViewController:finshed animated:YES];
+    
     
 }
 
@@ -137,11 +154,12 @@ static NSString *aText;
     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"编辑文字" message:@"输入内容" preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         //赋值
-    weakSelf.myLabel.text = tempFeild.text;
-        
+        weakSelf.myLabel.text = tempFeild.text;
+        weakSelf.myLabel.numberOfLines = 0;
         [weakSelf.myLabel sizeToFit];
-        
         weakSelf.myLabel.frame = CGRectMake(10, 10, 150, weakSelf.myLabel.frame.size.height);
+
+        
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
     [alertC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
