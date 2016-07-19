@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		429FD8F242D2F92839FAEF1E /* libPods-Big cousin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1F11C9B7441F2EB1648DA0 /* libPods-Big cousin.a */; };
+		AB13D17E1D3CBCE2002320DE /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB13D17D1D3CBCE2002320DE /* BaseModel.m */; };
+		AB13D1841D3CBD88002320DE /* HomeTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB13D1831D3CBD88002320DE /* HomeTitleModel.m */; };
+		AB13D1871D3CC0B6002320DE /* LibraryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB13D1861D3CC0B6002320DE /* LibraryRequest.m */; };
+		AB13D18A1D3CC9BB002320DE /* ExpressionLibraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB13D1891D3CC9BB002320DE /* ExpressionLibraryModel.m */; };
 		AB49D7ED1D3C6FDE009B049A /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D7EC1D3C6FDE009B049A /* WordViewController.m */; };
 		AB49D7F21D3C705F009B049A /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D7F11D3C705F009B049A /* PlayerView.m */; };
 		AB49D7F71D3C7093009B049A /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D7F61D3C7093009B049A /* NetWorkRequest.m */; };
@@ -29,6 +33,16 @@
 		AB49D8261D3C71A9009B049A /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8251D3C71A9009B049A /* BaseRequest.m */; };
 		AB49D82A1D3C71D7009B049A /* DrawingHottesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8281D3C71D7009B049A /* DrawingHottesCollectionViewCell.m */; };
 		AB49D82B1D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */; };
+		AB85BD401D3CFE89009A9F27 /* ArrNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD3F1D3CFE89009A9F27 /* ArrNetWorkRequest.m */; };
+		AB85BD4C1D3D518E009A9F27 /* NSString+DecryptString.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD4B1D3D518E009A9F27 /* NSString+DecryptString.m */; };
+		AB85BD501D3DBC82009A9F27 /* SingleExpressionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD4E1D3DBC82009A9F27 /* SingleExpressionViewController.m */; };
+		AB85BD511D3DBC82009A9F27 /* SingleExpressionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB85BD4F1D3DBC82009A9F27 /* SingleExpressionViewController.xib */; };
+		AB85BD541D3DC2E7009A9F27 /* SingleHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD531D3DC2E7009A9F27 /* SingleHandle.m */; };
+		AB85BD581D3DF4F7009A9F27 /* MoreExpressionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD571D3DF4F7009A9F27 /* MoreExpressionViewController.m */; };
+		AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD5B1D3E11C9009A9F27 /* GiFHUD.m */; };
+		AB85BD5E1D3E11C9009A9F27 /* pika.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB85BD5C1D3E11C9009A9F27 /* pika.gif */; };
+		AB85BD621D3E1278009A9F27 /* 48.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB85BD611D3E1278009A9F27 /* 48.gif */; };
+		AB85BD641D3E1296009A9F27 /* 85.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB85BD631D3E1296009A9F27 /* 85.gif */; };
 		AB9C1A231D35D1DE0067B7A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9C1A221D35D1DE0067B7A8 /* main.m */; };
 		AB9C1A261D35D1DE0067B7A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9C1A251D35D1DE0067B7A8 /* AppDelegate.m */; };
 		AB9C1A2C1D35D1DE0067B7A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB9C1A2A1D35D1DE0067B7A8 /* Main.storyboard */; };
@@ -61,7 +75,7 @@
 		ABFBF5251D37F5F300BCDD60 /* LibraryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBF5231D37F5F300BCDD60 /* LibraryCollectionViewCell.m */; };
 		ABFBF5261D37F5F300BCDD60 /* LibraryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFBF5241D37F5F300BCDD60 /* LibraryCollectionViewCell.xib */; };
 		ABFBF5331D387FEC00BCDD60 /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBF5321D387FEC00BCDD60 /* SegmentView.m */; };
-		ABFBF57C1D38E9B900BCDD60 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBF57B1D38E9B900BCDD60 /* CollectionViewController.m */; };
+		ABFBF57C1D38E9B900BCDD60 /* PublicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBF57B1D38E9B900BCDD60 /* PublicCollectionViewController.m */; };
 		ABFBF5C21D39413200BCDD60 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBF5A71D39413200BCDD60 /* MASCompositeConstraint.m */; };
 		ABFBF5C31D39413200BCDD60 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBF5A71D39413200BCDD60 /* MASCompositeConstraint.m */; };
 		ABFBF5C41D39413200BCDD60 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBF5A71D39413200BCDD60 /* MASCompositeConstraint.m */; };
@@ -132,6 +146,14 @@
 /* Begin PBXFileReference section */
 		3B57DC203874B5E147E05701 /* Pods-Big cousin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big cousin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Big cousin/Pods-Big cousin.debug.xcconfig"; sourceTree = "<group>"; };
 		7B1F11C9B7441F2EB1648DA0 /* libPods-Big cousin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Big cousin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB13D17C1D3CBCE2002320DE /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		AB13D17D1D3CBCE2002320DE /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		AB13D1821D3CBD88002320DE /* HomeTitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTitleModel.h; sourceTree = "<group>"; };
+		AB13D1831D3CBD88002320DE /* HomeTitleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTitleModel.m; sourceTree = "<group>"; };
+		AB13D1851D3CC0B6002320DE /* LibraryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryRequest.h; sourceTree = "<group>"; };
+		AB13D1861D3CC0B6002320DE /* LibraryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryRequest.m; sourceTree = "<group>"; };
+		AB13D1881D3CC9BB002320DE /* ExpressionLibraryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressionLibraryModel.h; sourceTree = "<group>"; };
+		AB13D1891D3CC9BB002320DE /* ExpressionLibraryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressionLibraryModel.m; sourceTree = "<group>"; };
 		AB49D7EB1D3C6FDE009B049A /* WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
 		AB49D7EC1D3C6FDE009B049A /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
 		AB49D7F01D3C705F009B049A /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
@@ -173,6 +195,22 @@
 		AB49D8271D3C71D7009B049A /* DrawingHottesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottesCollectionViewCell.h; sourceTree = "<group>"; };
 		AB49D8281D3C71D7009B049A /* DrawingHottesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottesCollectionViewCell.m; sourceTree = "<group>"; };
 		AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingHottesCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB85BD3E1D3CFE89009A9F27 /* ArrNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrNetWorkRequest.h; sourceTree = "<group>"; };
+		AB85BD3F1D3CFE89009A9F27 /* ArrNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrNetWorkRequest.m; sourceTree = "<group>"; };
+		AB85BD4A1D3D518E009A9F27 /* NSString+DecryptString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DecryptString.h"; sourceTree = "<group>"; };
+		AB85BD4B1D3D518E009A9F27 /* NSString+DecryptString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DecryptString.m"; sourceTree = "<group>"; };
+		AB85BD4D1D3DBC82009A9F27 /* SingleExpressionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleExpressionViewController.h; sourceTree = "<group>"; };
+		AB85BD4E1D3DBC82009A9F27 /* SingleExpressionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleExpressionViewController.m; sourceTree = "<group>"; };
+		AB85BD4F1D3DBC82009A9F27 /* SingleExpressionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleExpressionViewController.xib; sourceTree = "<group>"; };
+		AB85BD521D3DC2E7009A9F27 /* SingleHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleHandle.h; sourceTree = "<group>"; };
+		AB85BD531D3DC2E7009A9F27 /* SingleHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleHandle.m; sourceTree = "<group>"; };
+		AB85BD561D3DF4F7009A9F27 /* MoreExpressionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreExpressionViewController.h; sourceTree = "<group>"; };
+		AB85BD571D3DF4F7009A9F27 /* MoreExpressionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreExpressionViewController.m; sourceTree = "<group>"; };
+		AB85BD5A1D3E11C9009A9F27 /* GiFHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiFHUD.h; sourceTree = "<group>"; };
+		AB85BD5B1D3E11C9009A9F27 /* GiFHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiFHUD.m; sourceTree = "<group>"; };
+		AB85BD5C1D3E11C9009A9F27 /* pika.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika.gif; sourceTree = "<group>"; };
+		AB85BD611D3E1278009A9F27 /* 48.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 48.gif; sourceTree = "<group>"; };
+		AB85BD631D3E1296009A9F27 /* 85.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 85.gif; sourceTree = "<group>"; };
 		AB9C1A1E1D35D1DD0067B7A8 /* Big cousin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big cousin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9C1A221D35D1DE0067B7A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB9C1A241D35D1DE0067B7A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -224,8 +262,8 @@
 		ABFBF5241D37F5F300BCDD60 /* LibraryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryCollectionViewCell.xib; sourceTree = "<group>"; };
 		ABFBF5311D387FEC00BCDD60 /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
 		ABFBF5321D387FEC00BCDD60 /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
-		ABFBF57A1D38E9B900BCDD60 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
-		ABFBF57B1D38E9B900BCDD60 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		ABFBF57A1D38E9B900BCDD60 /* PublicCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicCollectionViewController.h; sourceTree = "<group>"; };
+		ABFBF57B1D38E9B900BCDD60 /* PublicCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicCollectionViewController.m; sourceTree = "<group>"; };
 		ABFBF5A61D39413200BCDD60 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		ABFBF5A71D39413200BCDD60 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		ABFBF5A81D39413200BCDD60 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -343,6 +381,12 @@
 		AB49D8041D3C70F0009B049A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB13D17C1D3CBCE2002320DE /* BaseModel.h */,
+				AB13D17D1D3CBCE2002320DE /* BaseModel.m */,
+				AB13D1821D3CBD88002320DE /* HomeTitleModel.h */,
+				AB13D1831D3CBD88002320DE /* HomeTitleModel.m */,
+				AB13D1881D3CC9BB002320DE /* ExpressionLibraryModel.h */,
+				AB13D1891D3CC9BB002320DE /* ExpressionLibraryModel.m */,
 				AB49D8051D3C7106009B049A /* DrawingModel.h */,
 				AB49D8061D3C7106009B049A /* DrawingModel.m */,
 				AB49D8081D3C7110009B049A /* DrawingHottesModel.h */,
@@ -353,6 +397,18 @@
 				AB49D8221D3C7195009B049A /* BigCousinGIFModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		AB85BD591D3E11C9009A9F27 /* GifHUD */ = {
+			isa = PBXGroup;
+			children = (
+				AB85BD5A1D3E11C9009A9F27 /* GiFHUD.h */,
+				AB85BD5B1D3E11C9009A9F27 /* GiFHUD.m */,
+				AB85BD5C1D3E11C9009A9F27 /* pika.gif */,
+				AB85BD611D3E1278009A9F27 /* 48.gif */,
+				AB85BD631D3E1296009A9F27 /* 85.gif */,
+			);
+			path = GifHUD;
 			sourceTree = "<group>";
 		};
 		AB9C1A151D35D1DD0067B7A8 = {
@@ -383,6 +439,10 @@
 			children = (
 				AB9C1A241D35D1DE0067B7A8 /* AppDelegate.h */,
 				AB9C1A251D35D1DE0067B7A8 /* AppDelegate.m */,
+				AB85BD4A1D3D518E009A9F27 /* NSString+DecryptString.h */,
+				AB85BD4B1D3D518E009A9F27 /* NSString+DecryptString.m */,
+				AB85BD521D3DC2E7009A9F27 /* SingleHandle.h */,
+				AB85BD531D3DC2E7009A9F27 /* SingleHandle.m */,
 				D63635D31D35DEE300DA8618 /* Controller */,
 				D63635D21D35DED700DA8618 /* View */,
 				AB49D8041D3C70F0009B049A /* Model */,
@@ -445,6 +505,10 @@
 				AB49D8251D3C71A9009B049A /* BaseRequest.m */,
 				AB49D7F51D3C7093009B049A /* NetWorkRequest.h */,
 				AB49D7F61D3C7093009B049A /* NetWorkRequest.m */,
+				AB85BD3E1D3CFE89009A9F27 /* ArrNetWorkRequest.h */,
+				AB85BD3F1D3CFE89009A9F27 /* ArrNetWorkRequest.m */,
+				AB13D1851D3CC0B6002320DE /* LibraryRequest.h */,
+				AB13D1861D3CC0B6002320DE /* LibraryRequest.m */,
 				AB49D8131D3C713E009B049A /* BigCousinVideoRequest.h */,
 				AB49D8141D3C713E009B049A /* BigCousinVideoRequest.m */,
 				AB49D81E1D3C718D009B049A /* BigCousinRequest.h */,
@@ -513,6 +577,7 @@
 		ABFBF5A31D39413200BCDD60 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				AB85BD591D3E11C9009A9F27 /* GifHUD */,
 				ABFBF5A41D39413200BCDD60 /* Masonry */,
 			);
 			path = Externals;
@@ -601,8 +666,13 @@
 			children = (
 				D63635DA1D35E0B200DA8618 /* ExpressionLibraryViewController.h */,
 				D63635DB1D35E0B200DA8618 /* ExpressionLibraryViewController.m */,
-				ABFBF57A1D38E9B900BCDD60 /* CollectionViewController.h */,
-				ABFBF57B1D38E9B900BCDD60 /* CollectionViewController.m */,
+				ABFBF57A1D38E9B900BCDD60 /* PublicCollectionViewController.h */,
+				ABFBF57B1D38E9B900BCDD60 /* PublicCollectionViewController.m */,
+				AB85BD4D1D3DBC82009A9F27 /* SingleExpressionViewController.h */,
+				AB85BD4E1D3DBC82009A9F27 /* SingleExpressionViewController.m */,
+				AB85BD4F1D3DBC82009A9F27 /* SingleExpressionViewController.xib */,
+				AB85BD561D3DF4F7009A9F27 /* MoreExpressionViewController.h */,
+				AB85BD571D3DF4F7009A9F27 /* MoreExpressionViewController.m */,
 			);
 			name = ExpressionLibrary;
 			sourceTree = "<group>";
@@ -768,8 +838,10 @@
 				ABFBF4FE1D378AD700BCDD60 /* 表情库.png in Resources */,
 				AB49D82B1D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib in Resources */,
 				ABFBF5261D37F5F300BCDD60 /* LibraryCollectionViewCell.xib in Resources */,
+				AB85BD511D3DBC82009A9F27 /* SingleExpressionViewController.xib in Resources */,
 				ABEC55991D36B2D200E9DACD /* arrow_down@2x.png in Resources */,
 				ABFBF4FA1D377C6F00BCDD60 /* scrollview_1.jpg in Resources */,
+				AB85BD621D3E1278009A9F27 /* 48.gif in Resources */,
 				AB49D81D1D3C717B009B049A /* BigCousinTableViewCell.xib in Resources */,
 				ABEC55971D36B2D200E9DACD /* arrow_down1.png in Resources */,
 				AB9C1A341D35D1DE0067B7A8 /* LaunchScreen.storyboard in Resources */,
@@ -777,8 +849,10 @@
 				D64AED0C1D37525B001B2613 /* 123123.png in Resources */,
 				D64AED121D37730F001B2613 /* 3.png in Resources */,
 				D64AED1B1D37CAA3001B2613 /* 5.png in Resources */,
+				AB85BD641D3E1296009A9F27 /* 85.gif in Resources */,
 				D64AED101D3771DB001B2613 /* 2.png in Resources */,
 				D64AED141D377431001B2613 /* 4.png in Resources */,
+				AB85BD5E1D3E11C9009A9F27 /* pika.gif in Resources */,
 				D67E16041D371FFD00B2A887 /* DrawingCollectionViewCell.xib in Resources */,
 				ABFBF4F91D377C6F00BCDD60 /* scrollview_0.jpg in Resources */,
 				AB9C1A311D35D1DE0067B7A8 /* Assets.xcassets in Resources */,
@@ -866,6 +940,7 @@
 				AB49D82A1D3C71D7009B049A /* DrawingHottesCollectionViewCell.m in Sources */,
 				ABEC55D81D36B9BC00E9DACD /* MenuTable.m in Sources */,
 				AB49D7F21D3C705F009B049A /* PlayerView.m in Sources */,
+				AB13D18A1D3CC9BB002320DE /* ExpressionLibraryModel.m in Sources */,
 				AB9C1A2F1D35D1DE0067B7A8 /* Big_cousin.xcdatamodeld in Sources */,
 				ABEC55FA1D37413300E9DACD /* SearchView.m in Sources */,
 				ABFBF5D41D39413200BCDD60 /* NSArray+MASAdditions.m in Sources */,
@@ -877,7 +952,7 @@
 				ABFBF5DA1D39413200BCDD60 /* View+MASAdditions.m in Sources */,
 				ABFBF5C21D39413200BCDD60 /* MASCompositeConstraint.m in Sources */,
 				AB49D8121D3C712E009B049A /* BigCousinViewController.m in Sources */,
-				ABFBF57C1D38E9B900BCDD60 /* CollectionViewController.m in Sources */,
+				ABFBF57C1D38E9B900BCDD60 /* PublicCollectionViewController.m in Sources */,
 				AB9C1A261D35D1DE0067B7A8 /* AppDelegate.m in Sources */,
 				ABEC55C61D36B60E00E9DACD /* UIColor+Extension.m in Sources */,
 				ABFBF5251D37F5F300BCDD60 /* LibraryCollectionViewCell.m in Sources */,
@@ -888,18 +963,24 @@
 				D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */,
 				AB49D7ED1D3C6FDE009B049A /* WordViewController.m in Sources */,
 				ABFBF5C51D39413200BCDD60 /* MASConstraint.m in Sources */,
+				AB85BD541D3DC2E7009A9F27 /* SingleHandle.m in Sources */,
 				D63635D61D35DF8D00DA8618 /* RootViewController.m in Sources */,
 				AB49D81C1D3C717B009B049A /* BigCousinTableViewCell.m in Sources */,
+				AB85BD581D3DF4F7009A9F27 /* MoreExpressionViewController.m in Sources */,
 				D67E16031D371FFD00B2A887 /* DrawingCollectionViewCell.m in Sources */,
 				ABFBF5C81D39413200BCDD60 /* MASConstraintMaker.m in Sources */,
+				AB13D1841D3CBD88002320DE /* HomeTitleModel.m in Sources */,
 				AB49D8181D3C7149009B049A /* BigCousinVideoModel.m in Sources */,
 				AB49D8001D3C70D1009B049A /* DrawingNewViewController.m in Sources */,
 				D6FA4F0C1D3797CA00B80970 /* DrawingNewCollectionViewCell.m in Sources */,
+				AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */,
 				ABFBF5DD1D39413200BCDD60 /* ViewController+MASAdditions.m in Sources */,
 				ABEC55DB1D36BB4B00E9DACD /* MenuCell.m in Sources */,
 				D63635EE1D35EDB400DA8618 /* ExpressionTabBar.m in Sources */,
 				ABFBF5D71D39413200BCDD60 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				ABEC55CF1D36B8D400E9DACD /* NavigationMenuViewController.m in Sources */,
+				AB85BD501D3DBC82009A9F27 /* SingleExpressionViewController.m in Sources */,
+				AB85BD4C1D3D518E009A9F27 /* NSString+DecryptString.m in Sources */,
 				ABFBF5D11D39413200BCDD60 /* MASViewConstraint.m in Sources */,
 				AB49D8261D3C71A9009B049A /* BaseRequest.m in Sources */,
 				AB49D8031D3C70DE009B049A /* DrawingHottestViewController.m in Sources */,
@@ -907,11 +988,14 @@
 				AB49D8201D3C718D009B049A /* BigCousinRequest.m in Sources */,
 				ABEC56191D376DC800E9DACD /* VTCycleScrollView.m in Sources */,
 				AB49D7F71D3C7093009B049A /* NetWorkRequest.m in Sources */,
+				AB85BD401D3CFE89009A9F27 /* ArrNetWorkRequest.m in Sources */,
 				AB49D7FA1D3C70B9009B049A /* DrawingViewController.m in Sources */,
 				ABFBF5CB1D39413200BCDD60 /* MASLayoutConstraint.m in Sources */,
+				AB13D17E1D3CBCE2002320DE /* BaseModel.m in Sources */,
 				ABEC55E41D36BCD400E9DACD /* CellSelection.m in Sources */,
 				AB49D8151D3C713E009B049A /* BigCousinVideoRequest.m in Sources */,
 				ABFBF5331D387FEC00BCDD60 /* SegmentView.m in Sources */,
+				AB13D1871D3CC0B6002320DE /* LibraryRequest.m in Sources */,
 				AB9C1A231D35D1DE0067B7A8 /* main.m in Sources */,
 				AB49D80A1D3C7110009B049A /* DrawingHottesModel.m in Sources */,
 			);

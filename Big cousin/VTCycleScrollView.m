@@ -54,7 +54,6 @@
         _imageData = [imageData copy];
         // update UI
         _pageControl.numberOfPages = [_imageData count];
-        
         //获得图片后，更新scrollView中的图片
         _currentIndex = 1;
         [self scrollViewDidEndDecelerating:_scrollView];
@@ -64,22 +63,20 @@
 - (void)setupUI
 {
     // scroll view
-    _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-    _scrollView.delegate = self;
-    _scrollView.pagingEnabled = YES;
-    _scrollView.scrollEnabled = YES;
-    _scrollView.bounces = NO;
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.showsVerticalScrollIndicator = NO;
-    _scrollView.contentSize = CGSizeMake(self.bounds.size.width *3, self.bounds.size.height);
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:self.bounds];
+    scroll.delegate = self;
+    scroll.pagingEnabled = YES;
+    scroll.scrollEnabled = YES;
+    scroll.bounces = NO;
+    scroll.showsHorizontalScrollIndicator = NO;
+    scroll.showsVerticalScrollIndicator = NO;
+    scroll.contentSize = CGSizeMake(self.bounds.size.width *3, self.bounds.size.height);
+    _scrollView = scroll;
     
     // image view
     _previousImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
-//    _previousImageView.backgroundColor = [UIColor purpleColor];
     _currentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width *1, 0, self.bounds.size.width, self.bounds.size.height)];
-//    _currentImageView.backgroundColor = [UIColor cyanColor];
     _nextImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width *2, 0, self.bounds.size.width, self.bounds.size.height)];
-//    _nextImageView.backgroundColor = [UIColor grayColor];
     
     [_scrollView addSubview:_previousImageView];
     [_scrollView addSubview:_currentImageView];
@@ -87,16 +84,16 @@
     [self addSubview:_scrollView];
     
     // page control
-    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height -20.f, self.bounds.size.width, 20.f)];
-    [_pageControl setCurrentPage:0];
-    [_pageControl setNumberOfPages:1];
+    UIPageControl *page = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height -20.f, self.bounds.size.width, 20.f)];
+    [page setCurrentPage:0];
+    [page setNumberOfPages:1];
+    [page addTarget:self action:@selector(pageAction:) forControlEvents:(UIControlEventValueChanged)];
+    _pageControl = page;
     [self addSubview:_pageControl];
-    [self.pageControl addTarget:self action:@selector(pageAction:) forControlEvents:(UIControlEventValueChanged)];
     
     //timer
     _timer = [NSTimer timerWithTimeInterval:1.3f target:self selector:@selector(nextPage) userInfo:nil repeats:YES] ;
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
-    
 }
 
 #pragma mark - ScrollView Delegate
@@ -146,7 +143,6 @@
 }
 
 #pragma mark - timer
-
 int pageNumber = -1;
 - (void)nextPage
 {
@@ -157,17 +153,15 @@ int pageNumber = -1;
     }
     [self.scrollView setContentOffset:CGPointMake(self.bounds.size.width *pageNumber, 0)];
     [self.pageControl setCurrentPage:pageNumber];
-//    NSLog(@"currentPage: %ld",(long)_currentIndex);
 }
 
 - (void)images
 {
-    self.imageData = @[
-                                  [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 0] ofType:@"jpg"],
-                                  [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 1] ofType:@"jpg"],
-                                  [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 2] ofType:@"jpg"],
-                                  [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 3] ofType:@"jpg"],
-                                  ];
+    self.imageData = @[[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 0] ofType:@"jpg"],
+                       [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 1] ofType:@"jpg"],
+                       [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 2] ofType:@"jpg"],
+                       [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 3] ofType:@"jpg"],
+                       ];
 }
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
-
+/** 请求时蒙板 */
+- (void)setupProgressHud;
 @end

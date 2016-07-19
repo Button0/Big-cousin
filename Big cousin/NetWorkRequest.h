@@ -21,7 +21,8 @@ typedef void(^FailureResponse)(NSError *error);
  */
 
 -(void)requestWithUrl:(NSString *)url
-           parameters:(NSDictionary *)parameterDic           successResponse:(SuccessResponse)success failureResponse:(FailureResponse)failure;
+           parameters:(NSDictionary *)parameterDic
+      successResponse:(SuccessResponse)success failureResponse:(FailureResponse)failure;
 
 -(void)sendDataWithUrl:(NSString *)url parameters:(NSDictionary *)parameterDic successResponse:(SuccessResponse)success failure:(FailureResponse)failure;
 

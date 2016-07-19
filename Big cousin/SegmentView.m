@@ -8,7 +8,7 @@
 
 #import "SegmentView.h"
 #import "LibraryCollectionViewCell.h"
-#import "CollectionViewController.h"
+#import "PublicCollectionViewController.h"
 
 #define SWidth self.bounds.size.width
 #define SHeight self.bounds.size.height
@@ -46,13 +46,14 @@
     self.segment = segmentedControl;
 
     //ScrollView
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, SWidth, SHeight)];
-    _scrollView.delegate = self;
-    _scrollView.contentSize = CGSizeMake(SWidth *3.0f, SHeight);
-    _scrollView.contentOffset = CGPointMake(0, 0);
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.pagingEnabled = YES;
-    _scrollView.bounces = NO;
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, SWidth, SHeight)];
+    scroll.delegate = self;
+    scroll.contentSize = CGSizeMake(SWidth *3.0f, SHeight);
+    scroll.contentOffset = CGPointMake(0, 0);
+    scroll.showsHorizontalScrollIndicator = NO;
+    scroll.pagingEnabled = YES;
+    scroll.bounces = NO;
+    _scrollView = scroll;
     [self addSubview:_scrollView];
 
     //容器
@@ -69,8 +70,6 @@
     [self bringSubviewToFront:self.homeView];
 }
 
-
-
 - (void)segmentedClicked:(UISegmentedControl *)sender
 {
     self.scrollView.contentOffset = CGPointMake(SWidth * sender.selectedSegmentIndex, 0.0f);
@@ -80,6 +79,5 @@
 {
     self.segment.selectedSegmentIndex = scrollView.contentOffset.x / scrollView.frame.size.width;
 }
-
 
 @end

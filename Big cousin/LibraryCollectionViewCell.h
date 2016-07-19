@@ -7,12 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeTitleModel.h"
+#import "ExpressionLibraryModel.h"
 
 #define LibraryCollectionViewCell_Identity @"LibraryCollectionViewCell"
+
+@protocol ClickBtnDelegate <NSObject>
+-(void)ClickBtn:(UIButton *)btn;
+-(void)cellPush:(UITapGestureRecognizer *)sender;
+@end
+
 @interface LibraryCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (nonatomic, strong) HomeTitleModel *titleModel;
+@property (nonatomic, strong) ExpressionLibraryModel *libraryModel;
 
-- (void)addTarget:(id)target action:(SEL)action;
+- (void)addTapGestureRecognizerWithImage;
+//代理属性
+@property(nonatomic, weak) id<ClickBtnDelegate>clickbtnDelegate;
 
 @end
