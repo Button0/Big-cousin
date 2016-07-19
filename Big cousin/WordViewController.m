@@ -8,20 +8,24 @@
 
 #import "WordViewController.h"
 
+static NSString *aText;
+
 @interface WordViewController ()
 
-@property (strong, nonatomic) UITextView *textView;
+@property (strong, nonatomic) UIView* changeView;
 
 @property (strong, nonatomic) UIBarButtonItem *scaleItem;
 
+@property (strong, nonatomic) UILabel * myLabel;
 
 @end
+
 
 @implementation WordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     
@@ -50,23 +54,39 @@
  
     UIBarButtonItem *finishItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
     //比例按钮
-    self.scaleItem = [[UIBarButtonItem alloc]initWithTitle:@"2:1" style:(UIBarButtonItemStylePlain) target:self action:@selector(scaleItemClicked:)];
-    self.navigationItem.rightBarButtonItems = @[finishItem,self.scaleItem];
+    _scaleItem = [[UIBarButtonItem alloc]initWithTitle:@"2:1" style:(UIBarButtonItemStylePlain) target:self action:@selector(scaleItemClicked:)];
+    self.navigationItem.rightBarButtonItems = @[finishItem,_scaleItem];
     //添加一个textView
-    self.textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 250)];
-    self.textView.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:self.textView];
+    _changeView = [[UIView alloc]initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 250)];
+    _changeView.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:self.changeView];
 
     
     /** 添加一个button */
     UIButton *wordButton = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
-    wordButton.frame = CGRectMake(self.view.frame.size.width - 100, self.view.frame.size.height -100 , 50, 50);
+    wordButton.frame = CGRectMake(self.view.bounds.size.width - 100, self.view.bounds.size.height -100 , 50, 50);
     [wordButton setTitle:@"字" forState:(UIControlStateNormal)];
     wordButton.layer.cornerRadius = 25;
     [wordButton addTarget:self action:@selector(wordButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     wordButton.backgroundColor = [UIColor redColor];
     
     [self.view addSubview:wordButton];
+    _myLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 0, 0)];
+    _myLabel.backgroundColor= [UIColor yellowColor];
+    _myLabel.textColor = [UIColor blackColor];
+    _myLabel.numberOfLines = 0;
+    _myLabel.textAlignment = NSTextAlignmentCenter;
+//    _myLabel.text = @"按实际的父亲为家人和银联卡说对方空间的回复近段时间分地方的";
+
+    
+    [_changeView addSubview:_myLabel];
+    
+    NSLog(@"%@",NSStringFromCGRect(self.myLabel.frame));
+    NSLog(@"%@",NSStringFromCGRect(_myLabel.frame));
+    
+    NSLog(@"===========%@",self.myLabel.text);
+
+   
 }
 
 //button点击方法
@@ -80,16 +100,16 @@
     if ([self.scaleItem.title isEqualToString:@"2:1"]) {
         ;
         self.scaleItem.title = @"1:1";
-        self.textView.frame = CGRectMake(0, 150, self.view.frame.size.width, 350);
+        self.changeView.frame = CGRectMake(0, 150, self.view.frame.size.width, 350);
         
     }else if ([self.scaleItem.title isEqualToString:@"1:1"]){
 
         self.scaleItem.title = @"3:4";
-        self.textView.frame =CGRectMake(100, 150, self.view.frame.size.width - 200, 300);
+        self.changeView.frame =CGRectMake(100, 150, self.view.frame.size.width - 200, 300);
         
     }else if ([self.scaleItem.title isEqualToString:@"3:4"]) {
         self.scaleItem.title = @"2:1";
-        self.textView.frame = CGRectMake(0, 200, self.view.frame.size.width, 250);
+        self.changeView.frame = CGRectMake(0, 200, self.view.frame.size.width, 250);
         
     }
     
@@ -98,26 +118,40 @@
 - (void)wordButtonClicked:(UIButtonType *)btn
 {
     [self addAlertingColler];
+    
 }
 
 /** 添加弹框 */
-- (void)viewWillAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
 {
-    [self addAlertingColler];
+     [self addAlertingColler];
 }
 
 
 - (void)addAlertingColler
 {
-    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"编辑文字" message:@"输入文字" preferredStyle:(UIAlertControllerStyleAlert)];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确认" style:(UIAlertActionStyleDefault) handler:nil];
+    //定义一个中间变量
+    __block UITextField * tempFeild = [UITextField new];
+    __weak typeof(self)weakSelf = self;
+    
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"编辑文字" message:@"输入内容" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        //赋值
+    weakSelf.myLabel.text = tempFeild.text;
+        
+        [weakSelf.myLabel sizeToFit];
+        
+        weakSelf.myLabel.frame = CGRectMake(10, 10, 150, weakSelf.myLabel.frame.size.height);
+    }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
     [alertC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+         tempFeild = textField;
+         tempFeild.placeholder = @"请输入文字";
         
-        textField.placeholder = @"请输入文字";
     }];
     [alertC addAction:action];
     [alertC addAction:cancel];
+    
     [self presentViewController:alertC animated:YES completion:^{
         
     }];
