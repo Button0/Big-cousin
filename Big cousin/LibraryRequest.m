@@ -23,61 +23,82 @@ static LibraryRequest *request = nil;
 }
 
 //请求首页标题
-- (void)requestHomeTitleSuccess:(SuccessResponse)success
-                        failure:(FailureResponse)failure;
+- (void)requestHomeTitleSuccess:(SuccessResponseArr)success
+                        failure:(FailureResponseArr)failure;
 {
-    [self requestAllHomeTitleWithUrl:HomeTitle_Url success:^(NSDictionary *dic) {
-        success(dic);
-    } faolure:^(NSError *error) {
+    [self requestAllHomeTitleWithUrl:HomeTitle_Url success:^(NSArray *arr) {
+        success(arr);
+    } failure:^(NSError *error) {
         failure(error);
     }];
+    
+//    [self requestAllHomeTitleWithUrl:HomeTitle_Url success:^(NSDictionary *dic) {
+//        success(dic);
+//    } faolure:^(NSError *error) {
+//        failure(error);
+//    }];
 }
 
 //请求表情库
 - (void)requestExpressionLibraryWithID:(NSString *)ID
-                               Success:(SuccessResponse)success
-                               failure:(FailureResponse)failure
+                               Success:(SuccessResponseArr)success
+                               failure:(FailureResponseArr)failure
 {
-    [self requestAllHomeTitleWithUrl:ExpressionLibrary_Url(ID) success:^(NSDictionary *dic) {
-        success(dic);
-    } faolure:^(NSError *error) {
+    [self requestAllHomeTitleWithUrl:ExpressionLibrary_Url(ID) success:^(NSArray *arr) {
+        success(arr);
+    } failure:^(NSError *error) {
         failure(error);
     }];
+//    [self requestAllHomeTitleWithUrl:ExpressionLibrary_Url(ID) success:^(NSDictionary *dic) {
+//        success(dic);
+//    } faolure:^(NSError *error) {
+//        failure(error);
+//    }];
 }
 
 //请求最新表情
-- (void)requestNewestExpressionSuccess:(SuccessResponse)success
-                               failure:(FailureResponse)failure
+- (void)requestNewestExpressionSuccess:(SuccessResponseArr)success
+                               failure:(FailureResponseArr)failure
 {
-    [self requestAllHomeTitleWithUrl:NewestExpression_Url success:^(NSDictionary *dic) {
-        success(dic);
-    } faolure:^(NSError *error) {
+    [self requestAllHomeTitleWithUrl:NewestExpression_Url success:^(NSArray *arr) {
+        success(arr);
+    } failure:^(NSError *error) {
         failure(error);
     }];
-
 }
 
 //请求最热表情
-- (void)requestHottestExpressionSuccess:(SuccessResponse)success
-                                failure:(FailureResponse)failure
+- (void)requestHottestExpressionSuccess:(SuccessResponseArr)success
+                                failure:(FailureResponseArr)failure
 {
-    [self requestAllHomeTitleWithUrl:HottestExpression_Url success:^(NSDictionary *dic) {
-        success(dic);
-    } faolure:^(NSError *error) {
+    [self requestAllHomeTitleWithUrl:HottestExpression_Url success:^(NSArray *arr) {
+        success(arr);
+    } failure:^(NSError *error) {
         failure(error);
     }];
+//    [self requestAllHomeTitleWithUrl:HottestExpression_Url success:^(NSDictionary *dic) {
+//        success(dic);
+//    } faolure:^(NSError *error) {
+//        failure(error);
+//    }];
 }
 
 - (void)requestAllHomeTitleWithUrl:(NSString *)url
-                           success:(SuccessResponse)success
-                           faolure:(FailureResponse)failure
+                           success:(SuccessResponseArr)success
+                           failure:(FailureResponseArr)failure
 {
-    NetWorkRequest *request = [[NetWorkRequest alloc] init];
-    [request requestWithUrl:url parameters:nil successResponse:^(NSDictionary *dic) {
-        success(dic);
+    ArrNetWorkRequest *request = [[ArrNetWorkRequest alloc] init];
+   
+    [request requestArrayWithUrl:url parmeters:nil successPesponse:^(NSArray *arr) {
+        success(arr);
     } failureResponse:^(NSError *error) {
         failure(error);
     }];
+//    [request requestWithUrl:url parameters:nil successResponse:^(NSDictionary *dic) {
+//        success(dic);
+//    } failureResponse:^(NSError *error) {
+//        failure(error);
+//    }];
 }
 
 @end

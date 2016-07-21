@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ExpressionTabBar.h"
+
 
 @interface RootViewController : UITabBarController
 /** 自定义tabBar */
-@property (strong, nonatomic) ExpressionTabBar *expressionTabBar;
+
 
 @end

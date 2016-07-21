@@ -24,4 +24,11 @@
     _hottesLabel.text = libraryModel.eName;
 }
 
+- (void)setHottesModel:(DrawingHottesModel *)hottesModel
+{
+    _hottesModel = hottesModel;
+    [_hottesImageV setImageWithURL:[NSURL URLWithString:hottesModel.url]];
+    _hottesLabel.text = hottesModel.eName;
+}
+
 @end

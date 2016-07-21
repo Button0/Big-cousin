@@ -108,19 +108,31 @@
 		ABFBF5F81D3B632700BCDD60 /* downloadsuo.do.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFBF5F61D3B632700BCDD60 /* downloadsuo.do.png */; };
 		ABFBF5F91D3B632700BCDD60 /* downloadsuo.do.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFBF5F61D3B632700BCDD60 /* downloadsuo.do.png */; };
 		D6070C021D3E2F9C00EB761F /* FinshedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6070C011D3E2F9C00EB761F /* FinshedViewController.m */; };
+		D6070C051D3E593700EB761F /* DrawingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6070C041D3E593700EB761F /* DrawingRequest.m */; };
 		D63635D61D35DF8D00DA8618 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635D51D35DF8D00DA8618 /* RootViewController.m */; };
 		D63635D91D35DF9D00DA8618 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635D81D35DF9D00DA8618 /* BaseViewController.m */; };
 		D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635DB1D35E0B200DA8618 /* ExpressionLibraryViewController.m */; };
 		D63635E51D35E13200DA8618 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635E41D35E13200DA8618 /* MyViewController.m */; };
-		D63635EE1D35EDB400DA8618 /* ExpressionTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635ED1D35EDB400DA8618 /* ExpressionTabBar.m */; };
 		D64AED0C1D37525B001B2613 /* 123123.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0B1D37525B001B2613 /* 123123.png */; };
 		D64AED0E1D377113001B2613 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0D1D377113001B2613 /* 1.png */; };
 		D64AED101D3771DB001B2613 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0F1D3771DB001B2613 /* 2.png */; };
 		D64AED121D37730F001B2613 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED111D37730F001B2613 /* 3.png */; };
 		D64AED141D377431001B2613 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED131D377431001B2613 /* 4.png */; };
 		D64AED1B1D37CAA3001B2613 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED1A1D37CAA3001B2613 /* 5.png */; };
+		D65E3B561D3F69F100F1E56B /* camera-256.png in Resources */ = {isa = PBXBuildFile; fileRef = D65E3B551D3F69F100F1E56B /* camera-256.png */; };
+		D65E3B5C1D3F7D0500F1E56B /* DynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65E3B5B1D3F7D0500F1E56B /* DynamicViewController.m */; };
 		D67E16031D371FFD00B2A887 /* DrawingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D67E16011D371FFD00B2A887 /* DrawingCollectionViewCell.m */; };
 		D67E16041D371FFD00B2A887 /* DrawingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D67E16021D371FFD00B2A887 /* DrawingCollectionViewCell.xib */; };
+		D6F297DA1D40586000C8C353 /* DrawingHottestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297D81D40586000C8C353 /* DrawingHottestCollectionViewCell.m */; };
+		D6F297DB1D40586000C8C353 /* DrawingHottestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6F297D91D40586000C8C353 /* DrawingHottestCollectionViewCell.xib */; };
+		D6F297DF1D405EF400C8C353 /* MiserlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297DE1D405EF400C8C353 /* MiserlyViewController.m */; };
+		D6F297E71D40601600C8C353 /* MiserlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297E51D40601600C8C353 /* MiserlyCollectionViewCell.m */; };
+		D6F297E81D40601600C8C353 /* MiserlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6F297E61D40601600C8C353 /* MiserlyCollectionViewCell.xib */; };
+		D6F297ED1D40628900C8C353 /* DynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297EC1D40628900C8C353 /* DynamicModel.m */; };
+		D6F297F01D4062A400C8C353 /* MiserlyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297EF1D4062A400C8C353 /* MiserlyModel.m */; };
+		D6F297F31D4062FA00C8C353 /* DynamicHottestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297F21D4062FA00C8C353 /* DynamicHottestModel.m */; };
+		D6F297F81D40647A00C8C353 /* DynamicRwquest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297F71D40647A00C8C353 /* DynamicRwquest.m */; };
+		D6F297FB1D40671D00C8C353 /* MiserlyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297FA1D40671D00C8C353 /* MiserlyRequest.m */; };
 		D6FA4F0C1D3797CA00B80970 /* DrawingNewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FA4F0A1D3797CA00B80970 /* DrawingNewCollectionViewCell.m */; };
 		D6FA4F0D1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FA4F0B1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -287,6 +299,8 @@
 		ABFBF5F61D3B632700BCDD60 /* downloadsuo.do.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downloadsuo.do.png; sourceTree = "<group>"; };
 		D6070C001D3E2F9C00EB761F /* FinshedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinshedViewController.h; sourceTree = "<group>"; };
 		D6070C011D3E2F9C00EB761F /* FinshedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinshedViewController.m; sourceTree = "<group>"; };
+		D6070C031D3E593700EB761F /* DrawingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingRequest.h; sourceTree = "<group>"; };
+		D6070C041D3E593700EB761F /* DrawingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingRequest.m; sourceTree = "<group>"; };
 		D63635D41D35DF8D00DA8618 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		D63635D51D35DF8D00DA8618 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		D63635D71D35DF9D00DA8618 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -295,8 +309,6 @@
 		D63635DB1D35E0B200DA8618 /* ExpressionLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressionLibraryViewController.m; sourceTree = "<group>"; };
 		D63635E31D35E13200DA8618 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		D63635E41D35E13200DA8618 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
-		D63635EC1D35EDB400DA8618 /* ExpressionTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressionTabBar.h; sourceTree = "<group>"; };
-		D63635ED1D35EDB400DA8618 /* ExpressionTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressionTabBar.m; sourceTree = "<group>"; };
 		D63635F01D35EFA500DA8618 /* CommonString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonString.h; sourceTree = "<group>"; };
 		D64AED0B1D37525B001B2613 /* 123123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 123123.png; path = ../123123.png; sourceTree = "<group>"; };
 		D64AED0D1D377113001B2613 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -304,9 +316,30 @@
 		D64AED111D37730F001B2613 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		D64AED131D377431001B2613 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		D64AED1A1D37CAA3001B2613 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		D65E3B551D3F69F100F1E56B /* camera-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-256.png"; sourceTree = "<group>"; };
+		D65E3B5A1D3F7D0500F1E56B /* DynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicViewController.h; sourceTree = "<group>"; };
+		D65E3B5B1D3F7D0500F1E56B /* DynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicViewController.m; sourceTree = "<group>"; };
 		D67E16001D371FFD00B2A887 /* DrawingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingCollectionViewCell.h; sourceTree = "<group>"; };
 		D67E16011D371FFD00B2A887 /* DrawingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingCollectionViewCell.m; sourceTree = "<group>"; };
 		D67E16021D371FFD00B2A887 /* DrawingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6F297D71D40586000C8C353 /* DrawingHottestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottestCollectionViewCell.h; sourceTree = "<group>"; };
+		D6F297D81D40586000C8C353 /* DrawingHottestCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottestCollectionViewCell.m; sourceTree = "<group>"; };
+		D6F297D91D40586000C8C353 /* DrawingHottestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingHottestCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6F297DD1D405EF400C8C353 /* MiserlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyViewController.h; sourceTree = "<group>"; };
+		D6F297DE1D405EF400C8C353 /* MiserlyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyViewController.m; sourceTree = "<group>"; };
+		D6F297E41D40601600C8C353 /* MiserlyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyCollectionViewCell.h; sourceTree = "<group>"; };
+		D6F297E51D40601600C8C353 /* MiserlyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyCollectionViewCell.m; sourceTree = "<group>"; };
+		D6F297E61D40601600C8C353 /* MiserlyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiserlyCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6F297EB1D40628900C8C353 /* DynamicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicModel.h; sourceTree = "<group>"; };
+		D6F297EC1D40628900C8C353 /* DynamicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicModel.m; sourceTree = "<group>"; };
+		D6F297EE1D4062A400C8C353 /* MiserlyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyModel.h; sourceTree = "<group>"; };
+		D6F297EF1D4062A400C8C353 /* MiserlyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyModel.m; sourceTree = "<group>"; };
+		D6F297F11D4062FA00C8C353 /* DynamicHottestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicHottestModel.h; sourceTree = "<group>"; };
+		D6F297F21D4062FA00C8C353 /* DynamicHottestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicHottestModel.m; sourceTree = "<group>"; };
+		D6F297F61D40647A00C8C353 /* DynamicRwquest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicRwquest.h; sourceTree = "<group>"; };
+		D6F297F71D40647A00C8C353 /* DynamicRwquest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicRwquest.m; sourceTree = "<group>"; };
+		D6F297F91D40671D00C8C353 /* MiserlyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyRequest.h; sourceTree = "<group>"; };
+		D6F297FA1D40671D00C8C353 /* MiserlyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyRequest.m; sourceTree = "<group>"; };
 		D6FA4F091D3797CA00B80970 /* DrawingNewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingNewCollectionViewCell.h; sourceTree = "<group>"; };
 		D6FA4F0A1D3797CA00B80970 /* DrawingNewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingNewCollectionViewCell.m; sourceTree = "<group>"; };
 		D6FA4F0B1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingNewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -384,14 +417,8 @@
 				AB13D1831D3CBD88002320DE /* HomeTitleModel.m */,
 				AB13D1881D3CC9BB002320DE /* ExpressionLibraryModel.h */,
 				AB13D1891D3CC9BB002320DE /* ExpressionLibraryModel.m */,
-				AB49D8051D3C7106009B049A /* DrawingModel.h */,
-				AB49D8061D3C7106009B049A /* DrawingModel.m */,
-				AB49D8081D3C7110009B049A /* DrawingHottesModel.h */,
-				AB49D8091D3C7110009B049A /* DrawingHottesModel.m */,
-				AB49D8161D3C7149009B049A /* BigCousinVideoModel.h */,
-				AB49D8171D3C7149009B049A /* BigCousinVideoModel.m */,
-				AB49D8211D3C7195009B049A /* BigCousinGIFModel.h */,
-				AB49D8221D3C7195009B049A /* BigCousinGIFModel.m */,
+				D6F297E91D40620000C8C353 /* Drawing */,
+				D6F297EA1D40621F00C8C353 /* BigCousin */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -486,6 +513,7 @@
 				ABFBF4F61D377C6F00BCDD60 /* scrollview_1.jpg */,
 				ABFBF4F71D377C6F00BCDD60 /* scrollview_2.jpg */,
 				ABFBF4F81D377C6F00BCDD60 /* scrollview_3.jpg */,
+				D65E3B551D3F69F100F1E56B /* camera-256.png */,
 				ABEC55911D36B2D200E9DACD /* images */,
 				AB9C1A2A1D35D1DE0067B7A8 /* Main.storyboard */,
 				AB9C1A301D35D1DE0067B7A8 /* Assets.xcassets */,
@@ -506,6 +534,7 @@
 				AB85BD3F1D3CFE89009A9F27 /* ArrNetWorkRequest.m */,
 				AB13D1851D3CC0B6002320DE /* LibraryRequest.h */,
 				AB13D1861D3CC0B6002320DE /* LibraryRequest.m */,
+				D6F297F51D40644800C8C353 /* Drawing */,
 				AB49D8131D3C713E009B049A /* BigCousinVideoRequest.h */,
 				AB49D8141D3C713E009B049A /* BigCousinVideoRequest.m */,
 				AB49D81E1D3C718D009B049A /* BigCousinRequest.h */,
@@ -619,7 +648,6 @@
 				ABFBF5731D38E6C300BCDD60 /* ExpressionLibrary */,
 				D6FA4F001D3788CA00B80970 /* DrawingCell */,
 				AB13D17B1D3CB035002320DE /* BigCousin */,
-				D63635EB1D35E72D00DA8618 /* Tabbar */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -639,15 +667,6 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		D63635EB1D35E72D00DA8618 /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				D63635EC1D35EDB400DA8618 /* ExpressionTabBar.h */,
-				D63635ED1D35EDB400DA8618 /* ExpressionTabBar.m */,
-			);
-			name = Tabbar;
-			sourceTree = "<group>";
-		};
 		D63635EF1D35EF7D00DA8618 /* const */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +675,35 @@
 				D63635F01D35EFA500DA8618 /* CommonString.h */,
 			);
 			name = const;
+			sourceTree = "<group>";
+		};
+		D65E3B571D3F7BF200F1E56B /* BearController */ = {
+			isa = PBXGroup;
+			children = (
+				AB49D7FB1D3C70C3009B049A /* DrawingDetailViewController.h */,
+				AB49D7FC1D3C70C3009B049A /* DrawingDetailViewController.m */,
+			);
+			name = BearController;
+			sourceTree = "<group>";
+		};
+		D65E3B581D3F7C4100F1E56B /* WordController */ = {
+			isa = PBXGroup;
+			children = (
+				AB49D7EB1D3C6FDE009B049A /* WordViewController.h */,
+				AB49D7EC1D3C6FDE009B049A /* WordViewController.m */,
+				D6070C001D3E2F9C00EB761F /* FinshedViewController.h */,
+				D6070C011D3E2F9C00EB761F /* FinshedViewController.m */,
+			);
+			name = WordController;
+			sourceTree = "<group>";
+		};
+		D65E3B591D3F7C7500F1E56B /* DynamicController */ = {
+			isa = PBXGroup;
+			children = (
+				D65E3B5A1D3F7D0500F1E56B /* DynamicViewController.h */,
+				D65E3B5B1D3F7D0500F1E56B /* DynamicViewController.m */,
+			);
+			name = DynamicController;
 			sourceTree = "<group>";
 		};
 		D67E16051D37295B00B2A887 /* ExpressionLibrary */ = {
@@ -679,12 +727,10 @@
 			children = (
 				AB49D7F81D3C70B9009B049A /* DrawingViewController.h */,
 				AB49D7F91D3C70B9009B049A /* DrawingViewController.m */,
-				AB49D7FB1D3C70C3009B049A /* DrawingDetailViewController.h */,
-				AB49D7FC1D3C70C3009B049A /* DrawingDetailViewController.m */,
-				AB49D7EB1D3C6FDE009B049A /* WordViewController.h */,
-				AB49D7EC1D3C6FDE009B049A /* WordViewController.m */,
-				D6070C001D3E2F9C00EB761F /* FinshedViewController.h */,
-				D6070C011D3E2F9C00EB761F /* FinshedViewController.m */,
+				D65E3B571D3F7BF200F1E56B /* BearController */,
+				D65E3B591D3F7C7500F1E56B /* DynamicController */,
+				D65E3B581D3F7C4100F1E56B /* WordController */,
+				D6F297DC1D405EB300C8C353 /* MiserlyController */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -707,18 +753,106 @@
 			name = MY;
 			sourceTree = "<group>";
 		};
-		D6FA4F001D3788CA00B80970 /* DrawingCell */ = {
+		D6F297D11D40572F00C8C353 /* FirstDrawingCell */ = {
 			isa = PBXGroup;
 			children = (
-				D67E16001D371FFD00B2A887 /* DrawingCollectionViewCell.h */,
-				D67E16011D371FFD00B2A887 /* DrawingCollectionViewCell.m */,
-				D67E16021D371FFD00B2A887 /* DrawingCollectionViewCell.xib */,
 				D6FA4F091D3797CA00B80970 /* DrawingNewCollectionViewCell.h */,
 				D6FA4F0A1D3797CA00B80970 /* DrawingNewCollectionViewCell.m */,
 				D6FA4F0B1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib */,
 				AB49D8271D3C71D7009B049A /* DrawingHottesCollectionViewCell.h */,
 				AB49D8281D3C71D7009B049A /* DrawingHottesCollectionViewCell.m */,
 				AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */,
+			);
+			name = FirstDrawingCell;
+			sourceTree = "<group>";
+		};
+		D6F297D21D40576200C8C353 /* SecondDrawinCell */ = {
+			isa = PBXGroup;
+			children = (
+				D6F297D71D40586000C8C353 /* DrawingHottestCollectionViewCell.h */,
+				D6F297D81D40586000C8C353 /* DrawingHottestCollectionViewCell.m */,
+				D6F297D91D40586000C8C353 /* DrawingHottestCollectionViewCell.xib */,
+			);
+			name = SecondDrawinCell;
+			sourceTree = "<group>";
+		};
+		D6F297D31D40577800C8C353 /* ThirdDrawingCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ThirdDrawingCell;
+			sourceTree = "<group>";
+		};
+		D6F297DC1D405EB300C8C353 /* MiserlyController */ = {
+			isa = PBXGroup;
+			children = (
+				D6F297DD1D405EF400C8C353 /* MiserlyViewController.h */,
+				D6F297DE1D405EF400C8C353 /* MiserlyViewController.m */,
+			);
+			name = MiserlyController;
+			sourceTree = "<group>";
+		};
+		D6F297E01D405FAC00C8C353 /* FourDrawingCell */ = {
+			isa = PBXGroup;
+			children = (
+				D6F297E41D40601600C8C353 /* MiserlyCollectionViewCell.h */,
+				D6F297E51D40601600C8C353 /* MiserlyCollectionViewCell.m */,
+				D6F297E61D40601600C8C353 /* MiserlyCollectionViewCell.xib */,
+			);
+			name = FourDrawingCell;
+			sourceTree = "<group>";
+		};
+		D6F297E91D40620000C8C353 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				AB49D8051D3C7106009B049A /* DrawingModel.h */,
+				AB49D8061D3C7106009B049A /* DrawingModel.m */,
+				AB49D8081D3C7110009B049A /* DrawingHottesModel.h */,
+				AB49D8091D3C7110009B049A /* DrawingHottesModel.m */,
+				D6F297EB1D40628900C8C353 /* DynamicModel.h */,
+				D6F297EC1D40628900C8C353 /* DynamicModel.m */,
+				D6F297F11D4062FA00C8C353 /* DynamicHottestModel.h */,
+				D6F297F21D4062FA00C8C353 /* DynamicHottestModel.m */,
+				D6F297EE1D4062A400C8C353 /* MiserlyModel.h */,
+				D6F297EF1D4062A400C8C353 /* MiserlyModel.m */,
+			);
+			name = Drawing;
+			sourceTree = "<group>";
+		};
+		D6F297EA1D40621F00C8C353 /* BigCousin */ = {
+			isa = PBXGroup;
+			children = (
+				AB49D8161D3C7149009B049A /* BigCousinVideoModel.h */,
+				AB49D8171D3C7149009B049A /* BigCousinVideoModel.m */,
+				AB49D8211D3C7195009B049A /* BigCousinGIFModel.h */,
+				AB49D8221D3C7195009B049A /* BigCousinGIFModel.m */,
+			);
+			name = BigCousin;
+			sourceTree = "<group>";
+		};
+		D6F297F51D40644800C8C353 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				D6070C031D3E593700EB761F /* DrawingRequest.h */,
+				D6070C041D3E593700EB761F /* DrawingRequest.m */,
+				D6F297F61D40647A00C8C353 /* DynamicRwquest.h */,
+				D6F297F71D40647A00C8C353 /* DynamicRwquest.m */,
+				D6F297F91D40671D00C8C353 /* MiserlyRequest.h */,
+				D6F297FA1D40671D00C8C353 /* MiserlyRequest.m */,
+			);
+			name = Drawing;
+			sourceTree = "<group>";
+		};
+		D6FA4F001D3788CA00B80970 /* DrawingCell */ = {
+			isa = PBXGroup;
+			children = (
+				D67E16001D371FFD00B2A887 /* DrawingCollectionViewCell.h */,
+				D67E16011D371FFD00B2A887 /* DrawingCollectionViewCell.m */,
+				D67E16021D371FFD00B2A887 /* DrawingCollectionViewCell.xib */,
+				D6F297D11D40572F00C8C353 /* FirstDrawingCell */,
+				D6F297D21D40576200C8C353 /* SecondDrawinCell */,
+				D6F297D31D40577800C8C353 /* ThirdDrawingCell */,
+				D6F297E01D405FAC00C8C353 /* FourDrawingCell */,
 			);
 			name = DrawingCell;
 			sourceTree = "<group>";
@@ -853,6 +987,9 @@
 				AB9C1A311D35D1DE0067B7A8 /* Assets.xcassets in Resources */,
 				AB49D8111D3C712E009B049A /* BigCousinVideoTableViewCell.xib in Resources */,
 				AB9C1A2C1D35D1DE0067B7A8 /* Main.storyboard in Resources */,
+				D6F297DB1D40586000C8C353 /* DrawingHottestCollectionViewCell.xib in Resources */,
+				D65E3B561D3F69F100F1E56B /* camera-256.png in Resources */,
+				D6F297E81D40601600C8C353 /* MiserlyCollectionViewCell.xib in Resources */,
 				ABFBF4FB1D377C6F00BCDD60 /* scrollview_2.jpg in Resources */,
 				D64AED0E1D377113001B2613 /* 1.png in Resources */,
 				ABFBF5F71D3B632700BCDD60 /* downloadsuo.do.png in Resources */,
@@ -934,22 +1071,28 @@
 			files = (
 				AB49D82A1D3C71D7009B049A /* DrawingHottesCollectionViewCell.m in Sources */,
 				ABEC55D81D36B9BC00E9DACD /* MenuTable.m in Sources */,
+				D6F297E71D40601600C8C353 /* MiserlyCollectionViewCell.m in Sources */,
 				AB49D7F21D3C705F009B049A /* PlayerView.m in Sources */,
 				AB13D18A1D3CC9BB002320DE /* ExpressionLibraryModel.m in Sources */,
 				AB9C1A2F1D35D1DE0067B7A8 /* Big_cousin.xcdatamodeld in Sources */,
+				D6070C051D3E593700EB761F /* DrawingRequest.m in Sources */,
 				ABEC55FA1D37413300E9DACD /* SearchView.m in Sources */,
 				ABFBF5D41D39413200BCDD60 /* NSArray+MASAdditions.m in Sources */,
 				D63635D91D35DF9D00DA8618 /* BaseViewController.m in Sources */,
 				ABEC55D51D36B95900E9DACD /* NavigationMenuView.m in Sources */,
 				D63635E51D35E13200DA8618 /* MyViewController.m in Sources */,
+				D65E3B5C1D3F7D0500F1E56B /* DynamicViewController.m in Sources */,
 				AB49D8101D3C712E009B049A /* BigCousinVideoTableViewCell.m in Sources */,
+				D6F297DA1D40586000C8C353 /* DrawingHottestCollectionViewCell.m in Sources */,
 				AB49D7FD1D3C70C3009B049A /* DrawingDetailViewController.m in Sources */,
 				ABFBF5DA1D39413200BCDD60 /* View+MASAdditions.m in Sources */,
 				ABFBF5C21D39413200BCDD60 /* MASCompositeConstraint.m in Sources */,
+				D6F297F31D4062FA00C8C353 /* DynamicHottestModel.m in Sources */,
 				AB49D8121D3C712E009B049A /* BigCousinViewController.m in Sources */,
 				ABFBF57C1D38E9B900BCDD60 /* PublicCollectionViewController.m in Sources */,
 				AB9C1A261D35D1DE0067B7A8 /* AppDelegate.m in Sources */,
 				ABEC55C61D36B60E00E9DACD /* UIColor+Extension.m in Sources */,
+				D6F297DF1D405EF400C8C353 /* MiserlyViewController.m in Sources */,
 				ABFBF5251D37F5F300BCDD60 /* LibraryCollectionViewCell.m in Sources */,
 				ABEC55F41D36C3DB00E9DACD /* MenuConfiguration.m in Sources */,
 				ABEC55EB1D36BF0500E9DACD /* MenuButton.m in Sources */,
@@ -964,13 +1107,14 @@
 				AB85BD581D3DF4F7009A9F27 /* MoreExpressionViewController.m in Sources */,
 				D67E16031D371FFD00B2A887 /* DrawingCollectionViewCell.m in Sources */,
 				ABFBF5C81D39413200BCDD60 /* MASConstraintMaker.m in Sources */,
+				D6F297F01D4062A400C8C353 /* MiserlyModel.m in Sources */,
 				AB13D1841D3CBD88002320DE /* HomeTitleModel.m in Sources */,
 				AB49D8181D3C7149009B049A /* BigCousinVideoModel.m in Sources */,
+				D6F297FB1D40671D00C8C353 /* MiserlyRequest.m in Sources */,
 				D6FA4F0C1D3797CA00B80970 /* DrawingNewCollectionViewCell.m in Sources */,
 				AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */,
 				ABFBF5DD1D39413200BCDD60 /* ViewController+MASAdditions.m in Sources */,
 				ABEC55DB1D36BB4B00E9DACD /* MenuCell.m in Sources */,
-				D63635EE1D35EDB400DA8618 /* ExpressionTabBar.m in Sources */,
 				ABFBF5D71D39413200BCDD60 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				ABEC55CF1D36B8D400E9DACD /* NavigationMenuViewController.m in Sources */,
 				AB85BD501D3DBC82009A9F27 /* SingleExpressionViewController.m in Sources */,
@@ -981,6 +1125,7 @@
 				AB49D8201D3C718D009B049A /* BigCousinRequest.m in Sources */,
 				ABEC56191D376DC800E9DACD /* VTCycleScrollView.m in Sources */,
 				AB49D7F71D3C7093009B049A /* NetWorkRequest.m in Sources */,
+				D6F297F81D40647A00C8C353 /* DynamicRwquest.m in Sources */,
 				AB85BD401D3CFE89009A9F27 /* ArrNetWorkRequest.m in Sources */,
 				AB49D7FA1D3C70B9009B049A /* DrawingViewController.m in Sources */,
 				ABFBF5CB1D39413200BCDD60 /* MASLayoutConstraint.m in Sources */,
@@ -988,6 +1133,7 @@
 				ABEC55E41D36BCD400E9DACD /* CellSelection.m in Sources */,
 				AB49D8151D3C713E009B049A /* BigCousinVideoRequest.m in Sources */,
 				D6070C021D3E2F9C00EB761F /* FinshedViewController.m in Sources */,
+				D6F297ED1D40628900C8C353 /* DynamicModel.m in Sources */,
 				ABFBF5331D387FEC00BCDD60 /* SegmentView.m in Sources */,
 				AB13D1871D3CC0B6002320DE /* LibraryRequest.m in Sources */,
 				AB9C1A231D35D1DE0067B7A8 /* main.m in Sources */,

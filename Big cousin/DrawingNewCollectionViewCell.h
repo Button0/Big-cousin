@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DrawingModel.h"
 #define DrawingNewCollectionViewCell_Identify @"DrawingNewCollectionViewCell_Identify"
 
 @interface DrawingNewCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *drawingNewImageV;
+
+@property (strong, nonatomic) DrawingModel *model;
 
 @end

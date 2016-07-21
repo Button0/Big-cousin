@@ -14,4 +14,12 @@
     // Initialization code
 }
 
+- (void)setModel:(DrawingModel *)model
+{
+    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:model.url]];
+}
+
+
+
+
 @end

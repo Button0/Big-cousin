@@ -11,12 +11,14 @@
 #import "DrawingNewCollectionViewCell.h"
 #import "DrawingModel.h"
 #import "DrawingHottesModel.h"
+#import "DrawingRequest.h"
 @interface DrawingDetailViewController ()
 <
     UIScrollViewDelegate,
     UICollectionViewDataSource,
-    UICollectionViewDelegateFlowLayout
-
+    UICollectionViewDelegateFlowLayout,
+    UINavigationControllerDelegate,
+    UIImagePickerControllerDelegate
 >
 
 @property (strong, nonatomic) UIScrollView *scrollView;
@@ -30,6 +32,10 @@
 @property (strong, nonatomic) NSMutableArray *dataArray;
 
 @property (strong, nonatomic) NSMutableArray *hottesArray;
+
+@property (strong, nonatomic) UIImagePickerController *imagePC;
+
+@property (strong, nonatomic) UIButton *button;
 
 @end
 
@@ -49,7 +55,7 @@
     //每个分区边缘的距离
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     //每行显示个数
-    flowLayout.itemSize = CGSizeMake(100, 135);
+    flowLayout.itemSize = CGSizeMake(100, 120);
     
     /** 初始化控制器 */
     self.newestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
@@ -68,7 +74,7 @@
      self.segment.selectedSegmentIndex = 0;//默认选中的索引为0
     
      /** 创建scrollView */
-    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,69,WindowWidth, WindowHeight)];
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,0,WindowWidth, WindowHeight)];
     self.scrollView.backgroundColor = [UIColor magentaColor];
     [self.view addSubview:self.scrollView];
     /** 设置scrollView的内容 */
@@ -95,59 +101,150 @@
     [self addViews];
     [self getNewData];
     [self getHottesData];
+    //相机相册
+    [self getPhotoPicther];
+}
+
+#pragma mark --------------- 调用相册和相机 ------------
+//相机相册
+- (void)getPhotoPicther
+{
+    //添加相机和相册功能
+    _button = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    _button.frame = CGRectMake(0, 0, 40,30);
+    [_button setImage:[UIImage imageNamed:@"camera-256"] forState:(UIControlStateNormal)];
+    [_button addTarget:self action:@selector(photoClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    //    photoButton.backgroundColor = [UIColor redColor];
+    UIBarButtonItem *phototItem = [[UIBarButtonItem alloc]initWithCustomView:_button];
+    self.navigationItem.rightBarButtonItems = @[phototItem];
+    
+
+}
+//调用相册和相机
+- (void)photoClicked:(UIButton *)sender
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"Choose Your Picture:" preferredStyle:(UIAlertControllerStyleActionSheet)];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"相机" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self pictureFromeCpmmera];
+        
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"相册" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self pickerImageFromeLibrary];
+        
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+
+}
+
+/** 进入照相机 **/
+- (void)pictureFromeCpmmera
+{
+    
+    BOOL _isAvailable = [UIImagePickerController isCameraDeviceAvailable:(UIImagePickerControllerCameraDeviceRear)];
+    
+    if(!_isAvailable){
+        
+        [self alertActionWithTitle:@"相机好像坏啦" action:nil];
+        
+        return;
+    }
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    picker.allowsEditing = YES;
+    
+    picker.delegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+    
     
 }
 
+// 从相册中选择图片
+- (void)pickerImageFromeLibrary
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    picker.allowsEditing = YES;
+    
+    picker.delegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+    
+}
+
+// 提示框
+- (void)alertActionWithTitle:(NSString *)title action:(void(^)())action
+{
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    /**
+     * 弹出提示框并保存图片
+     */
+    [self presentViewController:alertC animated:YES completion:^{
+        
+        if (action) {
+            action();
+        }
+        
+    }];
+    
+    /**
+     * 添加延迟线程让视图消失
+     */
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [alertC dismissViewControllerAnimated:YES completion:nil];
+        
+    });
+}
+
+#pragma mark ---------------- 获取的数据
+
 - (void)getNewData
 {
-    NSURL *url = [NSURL URLWithString:@"http://cdn.ibiaoqing.com/ibiaoqing/admin/pic/getNew.do"];
-    
-    //    创建session 对象
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
-        
-        NSArray *array = [arr lastObject];
-        for (NSDictionary *dict in array) {
-            DrawingModel *model = [DrawingModel new];
-            [model setValuesForKeysWithDictionary:dict];
-//            NSLog(@"=======%@",model);
-            [self.dataArray addObject:model];
-//            NSLog(@"%@",self.dataArray);
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.newestCollectionView reloadData];
-        });
-    }];
-    [task resume];
 
+    __weak typeof(self)weakSelf = self;
+    [[DrawingRequest sharaDrawingRequest]requestNewDrawingSuccess:^(NSArray *arr) {
+        weakSelf.dataArray = [DrawingModel parseDrawingWihArray:arr];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.newestCollectionView reloadData];
+        });
+        
+    } failurl:^(NSError *error) {
+        NSLog(@"error ====== %@",error);
+    }];
+    
+    
+    
 }
 
 - (void)getHottesData
 {
-    NSURL *url = [NSURL URLWithString:@"http://123.57.155.230/ibiaoqing/admin/expre/listBy.do?pageNumber=1&status=Y&status1=S&token=yes"];
-    
-    //    创建session 对象
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
-        
-        NSArray *array = [arr lastObject];
-        for (NSDictionary *dict in array) {
-            DrawingHottesModel *model = [DrawingHottesModel new];
-            [model setValuesForKeysWithDictionary:dict];
-//                        NSLog(@"=======%@",model);
-            [_hottesArray addObject:model];
-                        NSLog(@"%@",self.hottesArray);
-        }
+    __weak typeof(self)weakSelf = self;
+    [[DrawingRequest sharaDrawingRequest]requestHottesDrawingSuccess:^(NSArray *arr) {
+        weakSelf.hottesArray = [DrawingHottesModel presentDrawingHottesWithArray:arr];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.hottestCollectionView reloadData];
+            [weakSelf.hottestCollectionView reloadData];
         });
+        
+    } failurl:^(NSError *error) {
+        NSLog(@"error ====== %@",error);
     }];
-    [task resume];
+    
 
 }
-
+#pragma mark ------------- 添加导航栏左部item
 - (void)addViews
 {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"🐈" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftBarButtonItemClick)];
@@ -188,14 +285,14 @@
     if (collectionView == self.newestCollectionView) {
         DrawingNewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify forIndexPath:indexPath];
         DrawingModel *model = self.dataArray[indexPath.row];
-        [cell.drawingNewImageV setImageWithURL:[NSURL URLWithString:model.url]];
+        cell.model = model;
         return cell;
     }else if (collectionView == self.hottestCollectionView)
     {
         DrawingHottesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingHottesCollectionViewCell_Identify forIndexPath:indexPath];
         DrawingHottesModel *model = self.hottesArray[indexPath.row];
-        [cell.hottesImageV setImageWithURL:[NSURL URLWithString:model.url]];
-        cell.hottesLabel.text = model.eName;
+    
+        cell.hottesModel = model;
         return cell;
     }
     return nil;

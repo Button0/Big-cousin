@@ -13,7 +13,10 @@
 /** 图片地址 */
 @property (strong, nonatomic) NSString *url;
 
+/** title */
 @property (strong, nonatomic) NSString *eName;
+
++ (NSMutableArray *)presentDrawingHottesWithArray:(NSArray *)array;
 
 
 @end

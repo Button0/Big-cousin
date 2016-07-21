@@ -10,6 +10,8 @@
 #import "DrawingCollectionViewCell.h"
 #import "DrawingDetailViewController.h"
 #import "WordViewController.h"
+#import "DynamicViewController.h"
+#import "MiserlyViewController.h"
 @interface DrawingViewController ()
 <
     UICollectionViewDataSource,
@@ -65,15 +67,38 @@
 //点击方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 2) {
-        self.hidesBottomBarWhenPushed = YES;
-        WordViewController *wordVC = [[WordViewController alloc]init];
-        [self.navigationController pushViewController:wordVC animated:YES];
-        self.hidesBottomBarWhenPushed = NO;
-    }else{
-    DrawingDetailViewController *drawingVC = [DrawingDetailViewController new];
-    [self.navigationController pushViewController:drawingVC animated:YES];
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+            DrawingDetailViewController *drawingVC =[DrawingDetailViewController new];
+            [self.navigationController pushViewController:drawingVC animated:YES];
+            break;
+        }
+            case 1:
+        {
+            DynamicViewController *dynamicVC = [[DynamicViewController alloc]init];
+            [self.navigationController pushViewController:dynamicVC animated:YES];
+            break;
+        }
+            case 2:
+        {
+            self.hidesBottomBarWhenPushed = YES;
+            WordViewController *wordVC = [[WordViewController alloc]init];
+            [self.navigationController pushViewController:wordVC animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+            break;
+        }
+            case 3:
+        {
+            MiserlyViewController *miserlyVC = [[MiserlyViewController alloc]init];
+            [self.navigationController pushViewController:miserlyVC animated:YES];
+        }
+            
+        default:
+            break;
     }
+    
 }
 
 

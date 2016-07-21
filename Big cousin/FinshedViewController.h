@@ -10,4 +10,9 @@
 
 @interface FinshedViewController : BaseViewController
 
+
+@property (strong, nonatomic) NSString *labelText;
+
+
+
 @end

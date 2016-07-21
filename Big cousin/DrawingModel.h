@@ -13,7 +13,8 @@
 @property (strong, nonatomic) NSString *eId;
 /** 图片地址 */
 @property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSString *coverUrl;
 
-
++ (NSMutableArray *)parseDrawingWihArray:(NSArray *)array;
 
 @end
