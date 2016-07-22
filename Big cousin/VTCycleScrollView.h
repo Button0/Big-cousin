@@ -14,5 +14,5 @@
 //@property (nonatomic) CGFloat timePerPicture;
 /** 图片数据 */
 @property (nonatomic, retain) NSArray *imageData;
-
+-(void)cycleImagePush:(UITapGestureRecognizer *)sender;
 @end

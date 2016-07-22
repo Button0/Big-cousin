@@ -15,8 +15,9 @@
 #import "RequestUrl.h"
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFNetworking.h>
-#import "SingleHandle.h"
 #import "GiFHUD.h"
+#import "NSString+DecryptString.h"
+#import "Masonry.h"
 
 
 #import <UMSocialData.h>

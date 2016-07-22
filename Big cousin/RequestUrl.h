@@ -26,6 +26,9 @@
 /** 最热 */
 #define HottestExpression_Url @"http://123.57.155.230/ibiaoqing/admin/expre/listBy.do?pageNumber=1&status=Y&status1=B&count=yes&versionNumber=2.5.0"
 
+/** 单个 */
+#define SingleExpression_Url(ID) [NSString stringWithFormat:@"http://cdn.ibiaoqing.com/ibiaoqing/admin/expre/getByeId.do?eId=%@&pageNumber=1&token=yes",ID]
+
 /*-------------- 大制作 ---------------*/
 //*------------------- 静态模板 ----------------------*//
 /** 最新 */

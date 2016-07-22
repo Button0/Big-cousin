@@ -10,7 +10,6 @@
 
 @implementation ArrNetWorkRequest
 
-
 - (void)requestArrayWithUrl:(NSString *)url
                   parmeters:(NSArray *)parameterArr
             successPesponse:(SuccessResponseArr)success
@@ -67,15 +66,6 @@
         failure(error);
         
     }];
-
-    
-    
 }
-
-
-
-
-
-
 
 @end

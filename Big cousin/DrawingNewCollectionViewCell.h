@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "DrawingModel.h"
 #define DrawingNewCollectionViewCell_Identify @"DrawingNewCollectionViewCell_Identify"
+@class ExpressionLibraryModel;
 
 @interface DrawingNewCollectionViewCell : UICollectionViewCell
-
 @property (strong, nonatomic) IBOutlet UIImageView *drawingNewImageV;
+/** 单个表情 */
+@property (nonatomic, strong) ExpressionLibraryModel *libraryModel;
 
 @property (strong, nonatomic) DrawingModel *model;
 

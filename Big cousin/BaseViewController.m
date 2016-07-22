@@ -22,6 +22,11 @@
     
     self.tabBarController.tabBar.translucent = NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    // title set text color
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:KColorGlyodin}];
 }
 
 - (void)setupProgressHud

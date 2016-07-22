@@ -9,6 +9,7 @@
 
 #import "LibraryCollectionViewCell.h"
 #import "PublicCollectionViewController.h"
+#import "ExpressionLibraryModel.h"
 
 @interface LibraryCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -32,8 +33,12 @@
 }
 
 - (IBAction)more:(UIButton *)sender {
-    
-    [self.clickbtnDelegate ClickBtn:sender];    
+    if (_clickbtnDelegate
+        && [_clickbtnDelegate respondsToSelector:@selector(ClickBtn:)])
+    {
+        sender.tag = [_categoryId integerValue];
+        [self.clickbtnDelegate ClickBtn:sender];
+    }
 }
 
 -(void)cellPush:(UITapGestureRecognizer *)sender
@@ -60,6 +65,60 @@
     _titleModel = titleModel;
     _titleLabel.text = [NSString stringWithFormat:@"🐒 %@",titleModel.eName];
     _eID = titleModel.eId;
+}
+
+- (void)setCategoryId:(NSNumber *)categoryId
+{
+    _categoryId = categoryId;
+    [self requestCategoryListById:categoryId];
+}
+
+- (void)requestCategoryListById:(NSNumber *)categroyId
+{
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
+    
+    [manager GET:ExpressionLibrary_Url(categroyId) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
+        
+        if (responseObject.count >= 3
+            && [[responseObject objectAtIndex:2] isKindOfClass:[NSArray class]])
+        {
+            NSMutableArray *array = [responseObject objectAtIndex:2];
+            NSMutableArray<ExpressionLibraryModel *> *categoryList = [[NSMutableArray alloc] init];
+            
+            for (int i=0; i< 4; i++)
+            {
+                NSDictionary *dataDictionary = [array objectAtIndex:i];
+                
+                ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
+                NSString *url = [dataDictionary objectForKey:@"coverUrl"];
+                NSString *name = [dataDictionary objectForKey:@"eName"];
+                model.coverUrl = url;
+                model.eName = name;
+                
+                [categoryList addObject:model];
+            }
+            //TODO:
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_oneImageView setImageWithURL:[NSURL URLWithString:categoryList[0].coverUrl]];
+                [_twoImageView setImageWithURL:[NSURL URLWithString:categoryList[1].coverUrl]];
+                [_threeImageView setImageWithURL:[NSURL URLWithString:categoryList[2].coverUrl]];
+                [_fourImageView setImageWithURL:[NSURL URLWithString:categoryList[3].coverUrl]];
+                
+                _oneLabel.text = categoryList[0].eName;
+                _towLabel.text = categoryList[1].eName;
+                _threeLabel.text = categoryList[2].eName;
+                _fourLabel.text = categoryList[3].eName;
+            });
+        }
+        else
+        {
+            NSLog(@"Error: datat Error %@", responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"===%@",error);
+    }];
 }
 
 @end

@@ -12,18 +12,17 @@
 
 #define LibraryCollectionViewCell_Identity @"LibraryCollectionViewCell"
 
+@class ExpressionLibraryModel;
 @protocol ClickBtnDelegate <NSObject>
--(void)ClickBtn:(UIButton *)btn;
+-(void)ClickBtn:(UIButton *)button;
 -(void)cellPush:(UITapGestureRecognizer *)sender;
 @end
 
 @interface LibraryCollectionViewCell : UICollectionViewCell
-
 @property (nonatomic, strong) HomeTitleModel *titleModel;
-@property (nonatomic, strong) ExpressionLibraryModel *libraryModel;
-
-- (void)addTapGestureRecognizerWithImage;
+@property (nonatomic, strong, nonnull) NSArray<ExpressionLibraryModel *> *data;
+@property (nonatomic, strong, null_unspecified) NSNumber *categoryId;
 //代理属性
-@property(nonatomic, weak) id<ClickBtnDelegate>clickbtnDelegate;
+@property(nonatomic, weak, null_unspecified) id<ClickBtnDelegate>clickbtnDelegate;
 
 @end

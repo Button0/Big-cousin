@@ -19,24 +19,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : KColorCartoonBlue } forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : KColorGlyodin } forState:UIControlStateSelected];
     [self setTabBar];
 }
 
 //setTabBar
 - (void)setTabBar
 {
-    ExpressionLibraryViewController *packVC = [ExpressionLibraryViewController new];
+    ExpressionLibraryViewController *packVC = [[ExpressionLibraryViewController alloc] init];
     [self addSystemTabBarItem:packVC title:@"表情库" imageName:@"" selectedImage:@""];
     UINavigationController *naPackVC = [[UINavigationController alloc] initWithRootViewController:packVC];
     naPackVC.tabBarItem = packVC.tabBarItem;
     
-    DrawingViewController *drawVC = [DrawingViewController new];
+    DrawingViewController *drawVC = [[DrawingViewController alloc] init];
     [self addSystemTabBarItem:drawVC title:@"大制作" imageName:@"" selectedImage:@""];
     UINavigationController *naDrawVC = [[UINavigationController alloc] initWithRootViewController:drawVC];
     naDrawVC.tabBarItem = drawVC.tabBarItem;
     
-    BigCousinViewController *bigVC = [BigCousinViewController new];
+    BigCousinViewController *bigVC = [[BigCousinViewController alloc] init];
     [self addSystemTabBarItem:bigVC title:@"大表姐" imageName:@"" selectedImage:@""];
     UINavigationController *naBigVC = [[UINavigationController alloc] initWithRootViewController:bigVC];
     naBigVC.tabBarItem = bigVC.tabBarItem;

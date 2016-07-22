@@ -7,7 +7,7 @@
 //
 
 #import "DrawingHottesCollectionViewCell.h"
-#import "SingleExpressionViewController.h"
+#import "HomeTitleModel.h"
 
 @interface DrawingHottesCollectionViewCell ()
 @end

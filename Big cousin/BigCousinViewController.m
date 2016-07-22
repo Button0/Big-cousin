@@ -30,7 +30,7 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
  
-//    NavigationMenuViewController *na = [NavigationMenuViewController new];
+//    NavigationMenuViewController *na = [NavigationMenuViewController alloc] init];
 //    [self.navigationController pushViewController:na animated:YES];
     
     self.title = @"大表姐";
@@ -79,7 +79,7 @@
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.GIFArray addObject:model];
         }
-            NSLog(@"self.activitise = %@",weakSelf.GIFArray);
+//            NSLog(@"self.activitise = %@",weakSelf.GIFArray);
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [weakSelf.GIFtableView reloadData];
@@ -102,7 +102,7 @@
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.bigCousinArray addObject:model];
         }
-        NSLog(@"self.activitise = %@",weakSelf.GIFArray);
+//        NSLog(@"self.activitise = %@",weakSelf.GIFArray);
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [weakSelf.bigCousintableView reloadData];

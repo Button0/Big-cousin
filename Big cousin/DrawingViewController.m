@@ -67,6 +67,14 @@
 //点击方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == 2) {
+        self.hidesBottomBarWhenPushed = YES;
+        WordViewController *wordVC = [[WordViewController alloc]init];
+        [self.navigationController pushViewController:wordVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    }else{
+    DrawingDetailViewController *drawingVC = [[DrawingDetailViewController alloc] init];
+    [self.navigationController pushViewController:drawingVC animated:YES];
     
     switch (indexPath.row) {
         case 0:
@@ -100,9 +108,6 @@
     }
     
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

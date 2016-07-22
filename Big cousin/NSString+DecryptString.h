@@ -11,5 +11,6 @@
 @interface NSString (DecryptString)
 
 - (NSString *)decryptedString;
+- (NSString *)replacingStringToURL;
 
 @end
