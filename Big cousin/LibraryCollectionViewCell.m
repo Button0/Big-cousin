@@ -13,7 +13,7 @@
 
 @interface LibraryCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (nonatomic, strong) NSString *eID;
+@property (nonatomic) NSNumber *eID;
 
 @property (weak, nonatomic) IBOutlet UIImageView *oneImageView;
 @property (weak, nonatomic) IBOutlet UILabel *oneLabel;
@@ -23,9 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *threeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *fourImageView;
 @property (weak, nonatomic) IBOutlet UILabel *fourLabel;
-
-
 @end
+
 @implementation LibraryCollectionViewCell
 
 - (void)awakeFromNib {
@@ -96,7 +95,6 @@
                 NSString *name = [dataDictionary objectForKey:@"eName"];
                 model.coverUrl = url;
                 model.eName = name;
-                
                 [categoryList addObject:model];
             }
             //TODO:

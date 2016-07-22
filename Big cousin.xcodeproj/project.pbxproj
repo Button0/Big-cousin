@@ -31,7 +31,6 @@
 		AB49D8261D3C71A9009B049A /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8251D3C71A9009B049A /* BaseRequest.m */; };
 		AB49D82A1D3C71D7009B049A /* DrawingHottesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8281D3C71D7009B049A /* DrawingHottesCollectionViewCell.m */; };
 		AB49D82B1D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */; };
-		AB85BD401D3CFE89009A9F27 /* ArrNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD3F1D3CFE89009A9F27 /* ArrNetWorkRequest.m */; };
 		AB85BD4C1D3D518E009A9F27 /* NSString+DecryptString.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD4B1D3D518E009A9F27 /* NSString+DecryptString.m */; };
 		AB85BD501D3DBC82009A9F27 /* SingleExpressionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD4E1D3DBC82009A9F27 /* SingleExpressionViewController.m */; };
 		AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD5B1D3E11C9009A9F27 /* GiFHUD.m */; };
@@ -48,6 +47,7 @@
 		AB9C1A3F1D35D1DE0067B7A8 /* Big_cousinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9C1A3E1D35D1DE0067B7A8 /* Big_cousinTests.m */; };
 		AB9C1A4A1D35D1DE0067B7A8 /* Big_cousinUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9C1A491D35D1DE0067B7A8 /* Big_cousinUITests.m */; };
 		ABB2BBAE1D3F2A9800949801 /* SingleFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB2BBAD1D3F2A9800949801 /* SingleFooterCollectionReusableView.m */; };
+		ABE565EB1D41BCF1004EEA2D /* ArrNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE565EA1D41BCF1004EEA2D /* ArrNetWorkRequest.m */; };
 		ABEC55961D36B2D200E9DACD /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = ABEC55921D36B2D200E9DACD /* arrow_down.png */; };
 		ABEC55971D36B2D200E9DACD /* arrow_down1.png in Resources */ = {isa = PBXBuildFile; fileRef = ABEC55931D36B2D200E9DACD /* arrow_down1.png */; };
 		ABEC55981D36B2D200E9DACD /* arrow_down1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABEC55941D36B2D200E9DACD /* arrow_down1@2x.png */; };
@@ -201,8 +201,6 @@
 		AB49D8271D3C71D7009B049A /* DrawingHottesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottesCollectionViewCell.h; sourceTree = "<group>"; };
 		AB49D8281D3C71D7009B049A /* DrawingHottesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottesCollectionViewCell.m; sourceTree = "<group>"; };
 		AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingHottesCollectionViewCell.xib; sourceTree = "<group>"; };
-		AB85BD3E1D3CFE89009A9F27 /* ArrNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrNetWorkRequest.h; sourceTree = "<group>"; };
-		AB85BD3F1D3CFE89009A9F27 /* ArrNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrNetWorkRequest.m; sourceTree = "<group>"; };
 		AB85BD4A1D3D518E009A9F27 /* NSString+DecryptString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DecryptString.h"; sourceTree = "<group>"; };
 		AB85BD4B1D3D518E009A9F27 /* NSString+DecryptString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DecryptString.m"; sourceTree = "<group>"; };
 		AB85BD4D1D3DBC82009A9F27 /* SingleExpressionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleExpressionViewController.h; sourceTree = "<group>"; };
@@ -231,6 +229,8 @@
 		AB9C1A4B1D35D1DE0067B7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABB2BBAC1D3F2A9800949801 /* SingleFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleFooterCollectionReusableView.h; sourceTree = "<group>"; };
 		ABB2BBAD1D3F2A9800949801 /* SingleFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		ABE565E91D41BCF1004EEA2D /* ArrNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrNetWorkRequest.h; sourceTree = "<group>"; };
+		ABE565EA1D41BCF1004EEA2D /* ArrNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrNetWorkRequest.m; sourceTree = "<group>"; };
 		ABEC55921D36B2D200E9DACD /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
 		ABEC55931D36B2D200E9DACD /* arrow_down1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down1.png; sourceTree = "<group>"; };
 		ABEC55941D36B2D200E9DACD /* arrow_down1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down1@2x.png"; sourceTree = "<group>"; };
@@ -526,8 +526,8 @@
 				AB49D8251D3C71A9009B049A /* BaseRequest.m */,
 				AB49D7F51D3C7093009B049A /* NetWorkRequest.h */,
 				AB49D7F61D3C7093009B049A /* NetWorkRequest.m */,
-				AB85BD3E1D3CFE89009A9F27 /* ArrNetWorkRequest.h */,
-				AB85BD3F1D3CFE89009A9F27 /* ArrNetWorkRequest.m */,
+				ABE565E91D41BCF1004EEA2D /* ArrNetWorkRequest.h */,
+				ABE565EA1D41BCF1004EEA2D /* ArrNetWorkRequest.m */,
 				AB13D1851D3CC0B6002320DE /* LibraryRequest.h */,
 				AB13D1861D3CC0B6002320DE /* LibraryRequest.m */,
 				D6F297F51D40644800C8C353 /* Drawing */,
@@ -1071,11 +1071,8 @@
 				AB49D7F21D3C705F009B049A /* PlayerView.m in Sources */,
 				AB13D18A1D3CC9BB002320DE /* ExpressionLibraryModel.m in Sources */,
 				AB9C1A2F1D35D1DE0067B7A8 /* Big_cousin.xcdatamodeld in Sources */,
-<<<<<<< HEAD
 				AB85BD671D3E8F4F009A9F27 /* SingleExpressionHeaderView.m in Sources */,
-=======
 				D6070C051D3E593700EB761F /* DrawingRequest.m in Sources */,
->>>>>>> 9548a5bede7a21befdf0964093911066cfb76d02
 				ABEC55FA1D37413300E9DACD /* SearchView.m in Sources */,
 				ABFBF5D41D39413200BCDD60 /* NSArray+MASAdditions.m in Sources */,
 				D63635D91D35DF9D00DA8618 /* BaseViewController.m in Sources */,
@@ -1125,7 +1122,6 @@
 				ABEC56191D376DC800E9DACD /* VTCycleScrollView.m in Sources */,
 				AB49D7F71D3C7093009B049A /* NetWorkRequest.m in Sources */,
 				D6F297F81D40647A00C8C353 /* DynamicRwquest.m in Sources */,
-				AB85BD401D3CFE89009A9F27 /* ArrNetWorkRequest.m in Sources */,
 				AB49D7FA1D3C70B9009B049A /* DrawingViewController.m in Sources */,
 				ABFBF5CB1D39413200BCDD60 /* MASLayoutConstraint.m in Sources */,
 				AB13D17E1D3CBCE2002320DE /* BaseModel.m in Sources */,
@@ -1136,6 +1132,7 @@
 				ABFBF5331D387FEC00BCDD60 /* SegmentView.m in Sources */,
 				AB13D1871D3CC0B6002320DE /* LibraryRequest.m in Sources */,
 				AB9C1A231D35D1DE0067B7A8 /* main.m in Sources */,
+				ABE565EB1D41BCF1004EEA2D /* ArrNetWorkRequest.m in Sources */,
 				AB49D80A1D3C7110009B049A /* DrawingHottesModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

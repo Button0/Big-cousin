@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DrawingModel.h"
+
 #define DrawingNewCollectionViewCell_Identify @"DrawingNewCollectionViewCell_Identify"
+
 @class ExpressionLibraryModel;
 
 @interface DrawingNewCollectionViewCell : UICollectionViewCell

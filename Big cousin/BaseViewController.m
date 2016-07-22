@@ -16,10 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     self.tabBarController.tabBar.translucent = NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     

@@ -25,8 +25,6 @@
 /** 最热 */
 @property (strong, nonatomic) UICollectionView *hottestCollection;
 
-
-
 @end
 
 @implementation DynamicViewController

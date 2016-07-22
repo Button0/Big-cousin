@@ -10,11 +10,4 @@
 
 @interface WordViewController : BaseViewController
 
-
-
-
-
-
-
-
 @end

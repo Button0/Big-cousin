@@ -27,5 +27,4 @@
 /** 单个图片url */
 @property (nonatomic, strong) NSString *Url;
 
-
 @end

@@ -10,7 +10,6 @@
 
 @interface SingleFooterCollectionReusableView ()
 @property (nonatomic, strong) UILabel *memoLabel;
-
 @end
 
 @implementation SingleFooterCollectionReusableView

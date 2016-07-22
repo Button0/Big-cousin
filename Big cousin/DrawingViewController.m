@@ -19,8 +19,6 @@
 >
 //定义collectionView属性
 @property (strong, nonatomic)UICollectionView *collectionView;
-
-
 @end
 
 @implementation DrawingViewController
@@ -106,7 +104,7 @@
         default:
             break;
     }
-    
+  }
 }
 
 - (void)didReceiveMemoryWarning {

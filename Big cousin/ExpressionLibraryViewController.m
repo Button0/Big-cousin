@@ -17,6 +17,7 @@
 
 #define KHeightCollection 120
 #define KHeightCycleScrollView 180
+
 @interface ExpressionLibraryViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ClickBtnDelegate>
 
 /** 分页视图 */
@@ -29,10 +30,7 @@
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *eIdHome;
 @property (nonatomic, strong) NSString *coverUrl;
 @property (nonatomic, strong) NSString *eName;
-//@property (nonatomic, strong) ExpressionLibraryModel *libraryModel;
 @property (nonatomic, strong) NSMutableArray<NSArray *> *libraries;
-
-
 //@property (nonatomic, strong) NSMutableArray *homeTitle;
 
 @end
@@ -57,7 +55,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     //导航栏图片
 //    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 18)];
@@ -204,7 +201,6 @@
             && [[responseObject objectAtIndex:2] isKindOfClass:[NSArray class]])
         {
             NSArray *categoryArray = [responseObject objectAtIndex:2];
-            
             for (NSMutableDictionary *category in categoryArray)
             {
                 HomeTitleModel *model = [[HomeTitleModel alloc] init];
@@ -212,7 +208,6 @@
                 [weakSelf.homeTitles addObject:model];
                 [weakSelf.eIdHome addObject:model.eId];
             }
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.libraryCollectionView  reloadData];
             });

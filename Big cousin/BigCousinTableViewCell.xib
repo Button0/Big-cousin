@@ -110,7 +110,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5F2CCC45-CB03-4C53-B877-0F743609DAED" translatesAutoresizingMaskIntoConstraints="NO" id="jJk-OX-cbp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3AEFA772-12E3-44D4-897D-A7094E634EB1" translatesAutoresizingMaskIntoConstraints="NO" id="jJk-OX-cbp">
                                 <rect key="frame" x="7" y="37" width="359" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="HRv-0N-63Q"/>
@@ -167,8 +167,7 @@
         <image name="1.png" width="32" height="32"/>
         <image name="2.png" width="32" height="32"/>
         <image name="3.png" width="32" height="32"/>
-        <image name="4.png" width="32" height="32"/>
-        <image name="5F2CCC45-CB03-4C53-B877-0F743609DAED" width="550" height="319">
+        <image name="3AEFA772-12E3-44D4-897D-A7094E634EB1" width="550" height="319">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -11937,5 +11936,6 @@ zQAKw9wACsPgAArD5wAKw+8ACsP8AArEAQAKxAMACsQFAArECgAKxBIACsQVAArEGgAKxCIACsQlAArE
 NwAKxDoACsQ/AAAAAAAABAEAAAAAAAAAPgAAAAAAAAAAAAAAAAAKxEE
 </mutableData>
         </image>
+        <image name="4.png" width="32" height="32"/>
     </resources>
 </document>

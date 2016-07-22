@@ -16,8 +16,7 @@
     self.DrowingImageV.layer.cornerRadius = self.DrowingImageV.bounds.size.width/2.0;
     
     self.contentView.layer.masksToBounds = YES;
-    self.contentView.layer.cornerRadius = self.contentView.bounds.size.width/2.0;
-    
+    self.contentView.layer.cornerRadius = self.contentView.bounds.size.width/2.0;    
 }
 
 @end
