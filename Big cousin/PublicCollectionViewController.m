@@ -15,6 +15,8 @@
 
 #define KHeightCollection 135
 @interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationMenuDelegate>
+#import "LibraryRequest.h"
+@interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableArray *expressions;
 @end
 
@@ -91,7 +93,6 @@
 #pragma mark - 数据
 - (void)requestAllExpressions
 {
-    
     __weak typeof(self) weakSelf = self;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
@@ -114,6 +115,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"===%@",error);
     }];
+
 }
 
 - (void)didReceiveMemoryWarning {

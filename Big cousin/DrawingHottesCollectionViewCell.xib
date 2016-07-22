@@ -8,42 +8,43 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DrawingHottesCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                 <subviews>
-                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-8X-51b">
-                        <rect key="frame" x="1" y="1" width="98" height="100"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="100" id="Sn7-iV-0AQ"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGR-Ss-Q66">
-                        <rect key="frame" x="1" y="111" width="98" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="PvU-SX-CAy"/>
-                        </constraints>
+                        <rect key="frame" x="5" y="100" width="90" height="18"/>
+                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-8X-51b">
+                        <rect key="frame" x="5" y="8" width="90" height="90"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="itg-Ue-oJH"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="ixh-8X-51b" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="919-Sa-zuZ"/>
-                <constraint firstItem="tGR-Ss-Q66" firstAttribute="top" secondItem="ixh-8X-51b" secondAttribute="bottom" constant="10" id="CWc-e5-T2p"/>
-                <constraint firstItem="ixh-8X-51b" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="IBa-LE-T2v"/>
-                <constraint firstAttribute="trailing" secondItem="ixh-8X-51b" secondAttribute="trailing" constant="1" id="QeO-mh-FnJ"/>
-                <constraint firstAttribute="trailing" secondItem="tGR-Ss-Q66" secondAttribute="trailing" constant="1" id="Tr2-Fn-x3I"/>
-                <constraint firstItem="tGR-Ss-Q66" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="bOu-Yl-1EY"/>
+                <constraint firstAttribute="trailing" secondItem="ixh-8X-51b" secondAttribute="trailing" constant="5" id="9ZN-q9-RQ7"/>
+                <constraint firstItem="tGR-Ss-Q66" firstAttribute="top" secondItem="ixh-8X-51b" secondAttribute="bottom" constant="2" id="Jsf-16-fEe"/>
+                <constraint firstItem="ixh-8X-51b" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="TvD-zV-bsj"/>
+                <constraint firstItem="ixh-8X-51b" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Wk5-yT-C3K"/>
+                <constraint firstAttribute="trailing" secondItem="tGR-Ss-Q66" secondAttribute="trailing" constant="5" id="h68-cL-4dz"/>
+                <constraint firstItem="tGR-Ss-Q66" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="nz4-0v-z7Y"/>
+                <constraint firstAttribute="bottom" secondItem="tGR-Ss-Q66" secondAttribute="bottom" constant="2" id="tAR-4j-TJ9"/>
             </constraints>
+            <size key="customSize" width="99" height="151"/>
             <connections>
                 <outlet property="hottesImageV" destination="ixh-8X-51b" id="xvQ-QW-ocS"/>
                 <outlet property="hottesLabel" destination="tGR-Ss-Q66" id="pF4-XB-WIP"/>
             </connections>
-            <point key="canvasLocation" x="31" y="106"/>
+            <point key="canvasLocation" x="304" y="346"/>
         </collectionViewCell>
     </objects>
     <resources>

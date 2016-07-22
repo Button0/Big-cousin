@@ -3,7 +3,7 @@
 //  RequestUrl.h
 //  Big cousin
 //
-//  Created by lanou3g on 16/7/14.
+//  Created by HMS,CK,LYB,SS on 16/7/14.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
@@ -30,9 +30,18 @@
 #define SingleExpression_Url(ID) [NSString stringWithFormat:@"http://cdn.ibiaoqing.com/ibiaoqing/admin/expre/getByeId.do?eId=%@&pageNumber=1&token=yes",ID]
 
 /*-------------- 大制作 ---------------*/
-
+//*------------------- 静态模板 ----------------------*//
 /** 最新 */
-#define staticDrawingNews_Url @"http://123.57.155.230/ibiaoqing/admin/expre/listBy.do?pageNumber=1&status=Y&status1=B&count=yes&versionNumber=2.5.0"
+#define staticDrawingnews_url @"http://cdn.ibiaoqing.com/ibiaoqing/admin/pic/getNew.do"
+/** 分类*/
+#define staticDrawingHottes_url @"http://123.57.155.230/ibiaoqing/admin/expre/listBy.do?pageNumber=1&status=Y&status1=S&token=yes"
+//*------------------- 动态模板 ----------------------*//
+/** 最新 */
+#define DynamicDrawingNews_Url @"http://cdn.ibiaoqing.com/ibiaoqing/admin/biaoqing/getHot.do?pageNumber=1&token=yes"
+/** 最热 */
+#define DynamicDrawingHottest_Url @"http://cdn.ibiaoqing.com/ibiaoqing/admin/biaoqing/getList.do?pageNumber=1&status=Y&status1=D&token=yes"
+//*------------------- 抠脸 ----------------------*//
+#define MiserlyDrawingHottest_Url @"http://cdn.ibiaoqing.com/ibiaoqing/admin/biaoqing/getList.do?pageNumber=1&status=Y&status1=L&token=yes"
 
 /*-------------- 大表姐 ---------------*/
 

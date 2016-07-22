@@ -19,6 +19,17 @@
 #import "NSString+DecryptString.h"
 #import "Masonry.h"
 
+
+#import <UMSocialData.h>
+#import <UMSocialSnsService.h>
+#import <UMSocialWechatHandler.h>
+#import <UMSocialSinaSSOHandler.h>
+#import <UMSocialQQHandler.h>
+#import <UMSocialSnsPlatformManager.h>
+
+
+
+
 //#import "packageView.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

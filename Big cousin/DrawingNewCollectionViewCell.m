@@ -2,7 +2,7 @@
 //  DrawingNewCollectionViewCell.m
 //  Big cousin
 //
-//  Created by lanou3g on 16/7/14.
+//  Created by HMS,CK,LYB,SS on 16/7/14.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
@@ -19,6 +19,11 @@
 {
     _libraryModel = libraryModel;
     [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[libraryModel.Url replacingStringToURL]]];
+}
+
+- (void)setModel:(DrawingModel *)model
+{
+    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:model.url]];
 }
 
 @end

@@ -2,12 +2,12 @@
 //  DrawingNewCollectionViewCell.h
 //  Big cousin
 //
-//  Created by lanou3g on 16/7/14.
+//  Created by HMS,CK,LYB,SS on 16/7/14.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DrawingModel.h"
 #define DrawingNewCollectionViewCell_Identify @"DrawingNewCollectionViewCell_Identify"
 @class ExpressionLibraryModel;
 
@@ -15,5 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *drawingNewImageV;
 /** 单个表情 */
 @property (nonatomic, strong) ExpressionLibraryModel *libraryModel;
+
+@property (strong, nonatomic) DrawingModel *model;
 
 @end
