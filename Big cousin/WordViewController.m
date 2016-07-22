@@ -33,6 +33,7 @@ static NSString *aText;
     
     
     [self addRightnavigationItem];
+    self.hidesBottomBarWhenPushed = YES;
 
 }
 //点击方法
@@ -89,7 +90,7 @@ static NSString *aText;
     //计算文本的空间：MAXFLOAT为无限大
     CGFloat width = self.changeView.frame.size.width - 20;
     CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
-    self.myLabel.frame = CGRectMake(_myLabel.frame.origin.x, _myLabel.frame.origin.y, width, _myLabel.frame.size.height);
+    self.myLabel.frame = CGRectMake(_myLabel.frame.origin.x, _myLabel.frame.origin.y, width, rect.size.height);
 
 //    _myLabel.text = @"按实际的父亲为家人和银联卡说对方空间的回复近段时间分地方的";
 
@@ -110,6 +111,9 @@ static NSString *aText;
     //缩放手势
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchClicked:)];
     [self.myLabel addGestureRecognizer:pinch];
+    //拖动手势
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panClicked:)];
+    [self.myLabel addGestureRecognizer:pan];
 }
 #warning ------------- 手势方法
 //旋转手势
@@ -128,8 +132,26 @@ static NSString *aText;
     sender.view.transform = CGAffineTransformScale(sender.view.transform, sender.scale, sender.scale);
     sender.scale = 1;
 }
-
-
+//拖动手势
+- (void)panClicked:(UIPanGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        //开始拖动
+        NSLog(@"开始拖动");
+    }else if (sender.state == UIGestureRecognizerStateChanged){
+        NSLog(@"正在移动");
+        //获取当前手指移动的距离，是相对于最原始的点
+        CGPoint transP = [sender translationInView:self.changeView];
+        //清空上一次的变形
+        self.myLabel.transform = CGAffineTransformMakeTranslation(transP.x, transP.y);
+        self.myLabel.transform = CGAffineTransformTranslate(self.myLabel.transform, transP.x, transP.y);
+        //复位，让他相当于上一次的位置
+        [sender setTranslation:CGPointZero inView:self.myLabel];
+    }else if (sender.state == UIGestureRecognizerStateEnded){
+        //结束拖动
+        NSLog(@"结束拖动");
+    }
+}
 
 #pragma mark --------------- button 点击方法 -----------
 //button点击方法
