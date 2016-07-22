@@ -18,13 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    NSString *test = @"w5g4jso0YdsfLtfgEvW8ZW5moGd7h0iJE8pzdUFV2Y2PweIUAhjO0FFtxVFB FnHEMkgetBeh7+VE2b9BVPxhXVLWo1NKMFlq";
-//    NSString *result = [[test decryptedString] stringByReplacingOccurrencesOfString:@"ivwt?)(kdn" withString:@"http://cdn"];
-//    NSLog(@"%@", result);
+//    NSString *test = @"w5g4jso0YdsfLtfgEvW8ZW5moGd7h0iJE8pzdUFV2Y2PweIUAhjO0JewU+RL /hN6fzmXgR5Gn8elqecJUZhyT+8uArO2mOnsheQr6MjVIRY=";
+//    [test replacingStringToURL];
+    
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [RootViewController new];
+    self.window.rootViewController = [[RootViewController alloc] init];
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -12,14 +12,10 @@
 
 //+ (NSMutableArray *)parseTitlesWithDic:(NSDictionary *)dic
 //{
-//    NSArray *authors = [dic objectForKey:@"authors"];
 //    NSMutableArray *returnArray = [NSMutableArray array];
-//    for (NSDictionary *tempDic in authors)
-//    {
-//        HomeTitleModel *model = [[HomeTitleModel alloc] init];
-//        [model setValuesForKeysWithDictionary:tempDic];
-//        [returnArray addObject:model];
-//    }
+//    HomeTitleModel *models = [[HomeTitleModel alloc] init];
+//    models.libraryModel.eName = [dic objectForKey:@"eName"];
+//    models.libraryModel.coverUrl = [dic objectForKey:@"coverUrl"];
 //    return returnArray;
 //}
 

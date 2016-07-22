@@ -131,7 +131,7 @@ static NSString *aText;
 - (void)addAlertingColler
 {
     //定义一个中间变量
-    __block UITextField * tempFeild = [UITextField new];
+    __block UITextField * tempFeild = [[UITextField alloc] init];
     __weak typeof(self)weakSelf = self;
     
     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"编辑文字" message:@"输入内容" preferredStyle:(UIAlertControllerStyleAlert)];

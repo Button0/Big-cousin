@@ -8,10 +8,13 @@
 
 #import "PublicCollectionViewController.h"
 #import "DrawingHottesCollectionViewCell.h"
+#import "NavigationMenuView.h"
 #import "ExpressionLibraryModel.h"
 #import "SingleExpressionViewController.h"
+#import "HomeTitleModel.h"
 
-@interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+#define KHeightCollection 135
+@interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationMenuDelegate>
 @property (nonatomic, strong) NSMutableArray *expressions;
 @end
 
@@ -34,15 +37,30 @@
     flowLayout.minimumInteritemSpacing = 1;
     flowLayout.minimumLineSpacing = 20;
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    flowLayout.itemSize = CGSizeMake(WindowWidth / 3.5, 135);
+    flowLayout.itemSize = CGSizeMake(WindowWidth / 3.5, KHeightCollection);
     
-    self.pulicCollectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    self.pulicCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight -130) collectionViewLayout:flowLayout];
     [self.view addSubview:_pulicCollectionView];
     //代理
     self.pulicCollectionView.dataSource = self;
     self.pulicCollectionView.delegate = self;
     self.pulicCollectionView.backgroundColor = [UIColor whiteColor];
 }
+
+//title引导栏
+- (void)titles
+{
+    if (self.navigationItem)
+    {
+        CGRect frame = CGRectMake(0.0, 0.0, 100.0, self.navigationController.navigationBar.bounds.size.height);
+        NavigationMenuView *menu = [[NavigationMenuView alloc] initWithFrame:frame title:@"Menu"];
+        [menu displayMenuInView:self.navigationController.view];
+        //        menu.items = @[@"原创表情",@"聊天场景",@"萌娃",@"金馆长系列",@"明星大咖",@"实力派网红",@"综艺影视",@"可爱形象",@"真人GIF"];
+        menu.delegate = self;
+        self.navigationItem.titleView = menu;
+    }
+}
+
 
 #pragma mark - collection delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -54,6 +72,7 @@
 {
     DrawingHottesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingHottesCollectionViewCell_Identify forIndexPath:indexPath];
 
+    
     ExpressionLibraryModel *model = self.expressions[indexPath.row];
     [cell setLibraryModel:model];
     
@@ -81,14 +100,13 @@
         
 //        [self setupProgressHud];
 //        NSLog(@"----%@",responseObject);
-        NSMutableArray*array=responseObject.lastObject;
-        for (NSMutableDictionary*dict in array)
+        NSMutableArray *array = responseObject.lastObject;
+        for (NSMutableDictionary *dict in array)
         {
-            ExpressionLibraryModel *model = [ExpressionLibraryModel new];
+            ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
             [model setValuesForKeysWithDictionary:dict];
             [weakSelf.expressions addObject:model];
         }
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.pulicCollectionView  reloadData];
         });

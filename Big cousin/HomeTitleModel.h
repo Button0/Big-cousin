@@ -7,13 +7,15 @@
 //
 
 #import "BaseModel.h"
+//#import "ExpressionLibraryModel.h"
 
 @interface HomeTitleModel : BaseModel
 
 /** eId */
-@property (nonatomic, strong) NSString *eId;
+@property (nonatomic, strong) NSNumber *eId;
 /** title */
 @property (nonatomic, strong) NSString *eName;
+//@property (nonatomic, strong) ExpressionLibraryModel *libraryModel;
 
 //+ (NSMutableArray *)parseTitlesWithDic:(NSDictionary *)dic;
 @end

@@ -7,21 +7,24 @@
 //
 
 #import "VTCycleScrollView.h"
+#import "LibraryRequest.h"
+#import "SingleExpressionViewController.h"
 
 @interface VTCycleScrollView ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic) NSInteger currentIndex;
+@property (nonatomic, strong) NSTimer *timer;
 
 @property (nonatomic, strong) UIImageView *previousImageView;
 @property (nonatomic, strong) UIImageView *currentImageView;
 @property (nonatomic, strong) UIImageView *nextImageView;
 
-@property (nonatomic, strong) NSTimer *timer;
-
 @end
 
+#define KSWidth self.bounds.size.width
+#define KSHeight self.bounds.size.height
 @implementation VTCycleScrollView
 
 #pragma mark - life cycle
@@ -33,16 +36,6 @@
     {
         [self setupUI];
         [self images];
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self)
-    {
-        [self setupUI];
     }
     return self;
 }
@@ -70,7 +63,7 @@
     scroll.bounces = NO;
     scroll.showsHorizontalScrollIndicator = NO;
     scroll.showsVerticalScrollIndicator = NO;
-    scroll.contentSize = CGSizeMake(self.bounds.size.width *3, self.bounds.size.height);
+    scroll.contentSize = CGSizeMake(KSWidth *3, KSHeight);
     _scrollView = scroll;
     
     // image view
@@ -82,6 +75,7 @@
     [_scrollView addSubview:_currentImageView];
     [_scrollView addSubview:_nextImageView];
     [self addSubview:_scrollView];
+    [self addTapGestureRecognizerWithImages];
     
     // page control
     UIPageControl *page = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height -20.f, self.bounds.size.width, 20.f)];
@@ -137,6 +131,27 @@
     _nextImageView.image = [UIImage imageWithContentsOfFile:[_imageData objectAtIndex:[self getCorrectIndexWith:_currentIndex + 1]]];
 }
 
+//加手势
+- (void)addTapGestureRecognizerWithImages
+{
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
+    UITapGestureRecognizer *recognizer2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
+    UITapGestureRecognizer *recognizer3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
+    [_previousImageView addGestureRecognizer:recognizer];
+    [_currentImageView addGestureRecognizer:recognizer2];
+    [_nextImageView addGestureRecognizer:recognizer3];
+    _previousImageView.userInteractionEnabled = YES;
+    _currentImageView.userInteractionEnabled = YES;
+    _nextImageView.userInteractionEnabled = YES;
+
+}
+
+-(void)cycleImagePush:(UITapGestureRecognizer *)sender
+{
+//    [self requestHomeTitles];
+//    SingleExpressionViewController *singleVC = [[SingleExpressionViewController alloc]init];
+}
+
 - (void)pageAction:(UIPageControl *)sender
 {
     [self.scrollView setContentOffset:CGPointMake(self.bounds.size.width*(sender.currentPage -1), 0) animated:NO];
@@ -154,6 +169,44 @@ int pageNumber = -1;
     [self.scrollView setContentOffset:CGPointMake(self.bounds.size.width *pageNumber, 0)];
     [self.pageControl setCurrentPage:pageNumber];
 }
+
+#pragma mark - 数据
+/*
+- (void)requestCycleImages
+{
+    __weak typeof(self) weakSelf = self;
+    LibraryRequest *request = [[LibraryRequest alloc] init];
+    [request requestCycleScrollExpressionSuccess:^(NSDictionary *dic) {
+       
+        NSDictionary *temp = [dic objectForKey:@"data"];
+        for (NSDictionary *dict in temp)
+        {
+            
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)requestHomeTitles
+{
+    __weak typeof(self) weakSelf = self;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
+    
+    [manager GET:@"http://api.jiefu.tv/app2/api/bq/article/detail.html?id=4653"
+ parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
+        
+        //        NSLog(@"----%@",responseObject);
+        NSMutableArray *array=responseObject.lastObject;
+        for (NSMutableDictionary *dict in array)
+        {
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"===%@",error);
+    }];
+}
+//*/
 
 - (void)images
 {

@@ -57,8 +57,9 @@ static LibraryRequest *request = nil;
 
 }
 
-//请求最热表情
-- (void)requestHottestExpressionSuccess:(SuccessResponse)success
+//-----------------------
+//请求轮播图表情
+- (void)requestCycleScrollExpressionSuccess:(SuccessResponse)success
                                 failure:(FailureResponse)failure
 {
     [self requestAllHomeTitleWithUrl:HottestExpression_Url success:^(NSDictionary *dic) {

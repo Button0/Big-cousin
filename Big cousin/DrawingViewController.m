@@ -71,7 +71,7 @@
         [self.navigationController pushViewController:wordVC animated:YES];
         self.hidesBottomBarWhenPushed = NO;
     }else{
-    DrawingDetailViewController *drawingVC = [DrawingDetailViewController new];
+    DrawingDetailViewController *drawingVC = [[DrawingDetailViewController alloc] init];
     [self.navigationController pushViewController:drawingVC animated:YES];
     }
 }

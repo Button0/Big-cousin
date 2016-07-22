@@ -7,11 +7,18 @@
 //
 
 #import "DrawingNewCollectionViewCell.h"
+#import "ExpressionLibraryModel.h"
 
 @implementation DrawingNewCollectionViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+}
+
+- (void)setLibraryModel:(ExpressionLibraryModel *)libraryModel
+{
+    _libraryModel = libraryModel;
+    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[libraryModel.Url replacingStringToURL]]];
 }
 
 @end

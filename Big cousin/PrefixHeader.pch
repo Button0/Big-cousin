@@ -15,8 +15,9 @@
 #import "RequestUrl.h"
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFNetworking.h>
-#import "SingleHandle.h"
 #import "GiFHUD.h"
+#import "NSString+DecryptString.h"
+#import "Masonry.h"
 
 //#import "packageView.h"
 // Include any system framework and library headers here that should be included in all compilation units.
