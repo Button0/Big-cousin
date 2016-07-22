@@ -83,7 +83,7 @@
 {
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController popViewControllerAnimated:YES];
-    self.hidesBottomBarWhenPushed = NO;
+    self.hidesBottomBarWhenPushed = YES;
 }
 
 //分享
