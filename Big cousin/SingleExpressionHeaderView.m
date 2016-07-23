@@ -24,7 +24,9 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        [self setupUI];
+        [self setupUI];//KColorLightBlue
+        self.backgroundColor = KColorLightBlue;
+        NSLog(@"---%@",NSStringFromCGRect(self.frame));
     }
     return self;
 }
@@ -32,37 +34,113 @@
 - (void)setupUI
 {
     //表情展示框
-    _singleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SWidth/2.0f, SHeight)];
+    _singleImageView = [[UIImageView alloc] init];
     _singleImageView.backgroundColor = [UIColor whiteColor];
-    [self addSubview:_singleImageView];
+    [_singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self addSubview:_singleImageView];
+        make.top.mas_equalTo(20);
+        make.bottom.mas_equalTo(-20);
+        make.left.mas_equalTo(25);
+        make.width.mas_equalTo(SWidth/4.0f);
+    }];
+    NSLog(@"%@",NSStringFromCGRect(_singleImageView.frame));
     
-    _shareView = [[UIView alloc] initWithFrame:CGRectMake(_singleImageView.frame.size.width +25, 0, SWidth/2.0f, SHeight)];
+    /*
+    //分享按钮view
+    _shareView = [[UIView alloc] init];
     [self addSubview:_shareView];
-    
+    _singleImageView.backgroundColor = [UIColor redColor];
+
+    CGFloat shareWidth = SWidth- SWidth/4.0f;
+    [_shareView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(20);
+        make.right.mas_equalTo(-25);
+        make.width.mas_equalTo(shareWidth);
+        make.height.equalTo(_singleImageView.mas_height);
+    }];
+
     //分享按钮
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SWidth/2.0f, SHeight/3.0f-30)];
+    UILabel *label = [[UILabel alloc] init];
     label.text = @"发送表情到：";
     label.textColor = KColorHighGray;
-    [self.shareView addSubview:label];
     
-    for (int num = 0; num < 4; num++)
-    {
-        UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        button.frame = CGRectMake(0+((SWidth/4.0f-60)*num), label.frame.size.height+20, SWidth/4.0f-60, SHeight/3.0f-30);
-        button.backgroundColor = [UIColor redColor];
-        [self.shareView addSubview:button];
-        [button mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-        }];
-    }
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_shareView addSubview:label];
+        make.right.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.left.mas_equalTo(0);
+    }];
+    
+    CGFloat btnWidth = SWidth/10.0f+28;
+    CGFloat btnOffset = (shareWidth - btnWidth*4)/5.0f;
+    
+    UIButton *QQBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [self setRadius:QQBtn];
+    QQBtn.backgroundColor = [UIColor whiteColor];
+    [QQBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_shareView addSubview:QQBtn];
+        make.top.equalTo(label.mas_bottom).offset(15);
+        make.left.equalTo(label.mas_left);
+        make.height.and.width.mas_equalTo(btnWidth);
+    }];
+    
+    UIButton *webo = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [self setRadius:webo];
+    webo.backgroundColor = [UIColor whiteColor];
+    [webo mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_shareView addSubview:webo];
+        make.size.equalTo(QQBtn);
+        make.top.equalTo(QQBtn.mas_top);
+        make.left.equalTo(QQBtn.mas_right).offset(btnOffset);
+    }];
+    
+    UIButton *downLoad = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [self setRadius:downLoad];
+    downLoad.backgroundColor = [UIColor whiteColor];
+    [downLoad mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_shareView addSubview:downLoad];
+        make.size.equalTo(QQBtn);
+        make.top.equalTo(QQBtn.mas_top);
+        make.left.equalTo(webo.mas_right).offset(btnOffset);
+    }];
+    
+    UIButton *head = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [self setRadius:head];
+    head.backgroundColor = [UIColor whiteColor];
+    [head mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_shareView addSubview:head];
+        make.size.equalTo(QQBtn);
+        make.top.equalTo(QQBtn.mas_top);
+        make.right.mas_equalTo(0);
+    }];
+    
     UIButton *wechatBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    wechatBtn.frame = CGRectMake(0, SHeight - (SHeight/3.0f), SWidth/2.f+20, SHeight/3.0f-15);
+    [self setRadius:wechatBtn];
     wechatBtn.backgroundColor = [UIColor whiteColor];
-    [self.shareView addSubview:wechatBtn];
-    UIButton *btn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    btn.frame = CGRectMake(wechatBtn.frame.size.width+20, SHeight-(SHeight/3.0f), SWidth/4.0f-20, wechatBtn.frame.size.height);
-    btn.backgroundColor = [UIColor blueColor];
-    [self.shareView addSubview:btn];
+    
+    [wechatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_shareView addSubview:wechatBtn];
+        make.bottom.mas_equalTo(0);
+        make.left.mas_equalTo(0);
+        make.size.mas_equalTo(CGSizeMake(btnWidth*3.0f+btnOffset*2-28, btnWidth));
+    }];
+    
+    UIButton *circle = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [self setRadius:circle];
+    circle.backgroundColor = [UIColor whiteColor];
+    [circle mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_shareView addSubview:circle];
+        make.size.equalTo(QQBtn);
+        make.bottom.equalTo(wechatBtn.mas_bottom);
+        make.right.mas_equalTo(0);
+    }];
+     //*/
+}
+
+- (void)setRadius:(UIView *)object
+{
+    object.layer.masksToBounds = YES;
+    object.layer.cornerRadius = 7.0f;
 }
 
 /*

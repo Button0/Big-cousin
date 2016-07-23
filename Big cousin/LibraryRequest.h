@@ -26,11 +26,13 @@
 - (void)requestNewestExpressionSuccess:(SuccessResponseArr)success
                                failure:(FailureResponseArr)failure;
 
-/** 请求轮播图表情 */
-- (void)requestCycleScrollExpressionSuccess:(SuccessResponse)success
-                                failure:(FailureResponse)failure;
 /** 请求最热表情 */
 - (void)requestHottestExpressionSuccess:(SuccessResponseArr)success
                                 failure:(FailureResponseArr)failure;
+
+/** 请求轮播图表情 */
+- (void)requestCycleScrollExpressionWithUrl:(NSString *)url
+                                    success:(SuccessResponse)success
+                                    failure:(FailureResponse)failure;
 
 @end

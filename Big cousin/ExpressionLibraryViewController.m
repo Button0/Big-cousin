@@ -11,14 +11,13 @@
 #import "VTCycleScrollView.h"
 #import "LibraryCollectionViewCell.h"
 #import "PublicCollectionViewController.h"
-#import "HomeTitleModel.h"
-#import "LibraryRequest.h"
 #import "SingleExpressionViewController.h"
+#import "HomeTitleModel.h"
 
 #define KHeightCollection 120
 #define KHeightCycleScrollView 180
 
-@interface ExpressionLibraryViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ClickBtnDelegate>
+@interface ExpressionLibraryViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ClickBtnDelegate, ClickImageDelegate>
 
 /** 分页视图 */
 @property (nonatomic, strong) SegmentView *segmentView;
@@ -28,6 +27,8 @@
 @property (nonatomic, strong) NSMutableArray *homeTitles;
 @property (nonatomic, strong) NSMutableArray *expressions;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *eIdHome;
+@property (nonatomic, strong) NSNumber *single_eId;
+
 @property (nonatomic, strong) NSString *coverUrl;
 @property (nonatomic, strong) NSString *eName;
 @property (nonatomic, strong) NSMutableArray<NSArray *> *libraries;
@@ -42,15 +43,11 @@
     self = [super init];
     if (self)
     {
+        _homeTitles = [NSMutableArray array];
         _libraries = [[NSMutableArray alloc] init];
         _eIdHome = [NSMutableArray array];
     }
     return self;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
 }
 
 - (void)viewDidLoad {
@@ -68,7 +65,6 @@
     [self.libraryCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     
     [self requestHomeTitles];
-    self.homeTitles = [NSMutableArray array];
 }
 
 //- (void)viewWillLayoutSubviews
@@ -108,6 +104,7 @@
 - (UIView *)addCycleScrollView
 {
     VTCycleScrollView *cycleScrollView = [[VTCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, WindowWidth, KHeightCycleScrollView)];
+    cycleScrollView.imageDelegate = self;
     
     return cycleScrollView;
 }
@@ -126,10 +123,11 @@
     layout.itemSize = CGSizeMake(WindowWidth-10, KHeightCollection);
     layout.sectionInset = UIEdgeInsetsMake(12, 5, 5, 5);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    
     layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, KHeightCycleScrollView);
     
     _libraryCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight-130) collectionViewLayout:layout];
-//    collectionView.bounces = NO;
+//    _libraryCollectionView.contentInset 
     _libraryCollectionView.delegate = self;
     _libraryCollectionView.dataSource = self;
     _libraryCollectionView.backgroundColor = [UIColor whiteColor];
@@ -179,10 +177,17 @@
     [self.navigationController pushViewController:moreVC animated:YES];
 }
 
+- (void)passValue:(NSNumber *)aId
+{
+    self.single_eId = aId;
+}
+
 -(void)cellPush:(UITapGestureRecognizer *)sender
 {
     SingleExpressionViewController *singleVC = [[SingleExpressionViewController alloc]init];
-//    singleVC.expressionModel.coverUrl = ExpressionLibrary_Url(self.eId);
+//    singleVC.expressionModel.eId = _single_eId;
+    singleVC.single_Id = _single_eId;
+//    NSLog(@"%@",SingleExpression_Url(_single_eId));
     [self.navigationController pushViewController:singleVC animated:YES];
 }
 

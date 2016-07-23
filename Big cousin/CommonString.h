@@ -32,6 +32,8 @@
 #define KColorGrayedLavender [UIColor colorWithRed:224/255.0 green:225/255.0 blue:234/255.0 alpha:1.0]
 //桃粉peach
 #define KColorPeach [UIColor colorWithRed:253/255.0 green:129/255.0 blue:172/255.0 alpha:1.0]
+//扉页背景灰
+#define KColorFeiGray [UIColor colorWithRed:244/255.0 green:241/255.0 blue:239/255.0 alpha:1.0]
 //高级灰
 #define KColorHighGray [UIColor colorWithRed:119/255.0 green:129/255.0 blue:149/255.0 alpha:1.0]
 //果绿

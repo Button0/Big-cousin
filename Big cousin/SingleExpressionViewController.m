@@ -13,7 +13,7 @@
 #import "ExpressionLibraryModel.h"
 
 #define KHeightCollection 90
-#define KHeightSingleHeaderView 150
+#define KHeightSingleHeaderView 180
 
 @interface SingleExpressionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -22,8 +22,6 @@
 @property (nonatomic, strong) NSMutableArray *singleExpressions;
 @property (nonatomic, strong) SingleExpressionHeaderView *singleHeader;
 @property (nonatomic, strong) SingleFooterCollectionReusableView *singleFooter;
-/** 照片个数展示 */
-@property (nonatomic, strong) UILabel *picCountlabel;
 
 @end
 
@@ -42,27 +40,39 @@
     
     [self layoutSetting];
     [self.singleCollectionView registerNib:[UINib nibWithNibName:@"DrawingNewCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify];
-    [self.singleCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SingleHeader"];
     [self.singleCollectionView registerClass:[SingleFooterCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SingleFooter"];
     
     self.singleExpressions = [NSMutableArray array];
     [self requestSingleExpressions];
+    [self addSingleHeaderView];
 }
 
 
 #pragma mark - UI
+- (void)addSingleHeaderView
+{
+    _singleHeader = [[SingleExpressionHeaderView alloc] init];
+//    _singleHeader.frame = CGRectMake(0, 0, WindowWidth, KHeightSingleHeaderView);
+    
+    [_singleHeader mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.view addSubview:_singleHeader];
+        make.size.mas_equalTo(CGSizeMake(WindowWidth, WindowHeight/4.0f));
+        make.top.mas_equalTo(0);
+        make.left.mas_equalTo(0);
+    }];
+}
+
 - (void)layoutSetting
 {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.minimumLineSpacing = 30;
-    flowLayout.sectionInset = UIEdgeInsetsMake(80, 10, 10, 10);
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     flowLayout.itemSize = CGSizeMake(WindowWidth / 5, KHeightCollection);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    flowLayout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, KHeightSingleHeaderView+50);
-    flowLayout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 150);
+    flowLayout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 100);
 
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight-120) collectionViewLayout:flowLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, WindowHeight/4.0f, WindowWidth, WindowHeight-200) collectionViewLayout:flowLayout];
     //代理
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -94,31 +104,16 @@
     _singleFooter.memo1 = _expressionModel.memo1;
  }
 
-//头视图
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionReusableView *reusableview = nil;
-    if (kind == UICollectionElementKindSectionHeader)
-    {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"SingleHeader" forIndexPath:indexPath];
-        headerView.backgroundColor = KColorLightStoneBlue;
-        [headerView addSubview:[self addSingleHeaderView]];
-        reusableview = headerView;
-    }
-    else if (kind == UICollectionElementKindSectionFooter)
+    if (kind == UICollectionElementKindSectionFooter)
     {
         _singleFooter = (SingleFooterCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"SingleFooter" forIndexPath:indexPath];
         _singleFooter.backgroundColor = KColorLightBlue;
-        reusableview = _singleFooter;
     }
-    return reusableview;
+    return _singleFooter;
 }
 
-- (UIView *)addSingleHeaderView
-{
-     _singleHeader = [[SingleExpressionHeaderView alloc] initWithFrame:CGRectMake(30, 25, 250, KHeightSingleHeaderView)];
-    return _singleHeader;
-}
 
 #pragma mark - 数据
 - (void)requestSingleExpressions
@@ -127,7 +122,10 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
     
+//    [manager GET:SingleExpression_Url(_single_Id) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
+
     [manager GET:SingleExpression_Url(_expressionModel.eId) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
+    
        
         if (responseObject.count >= 3
             && [[responseObject objectAtIndex:2] isKindOfClass:[NSArray class]])

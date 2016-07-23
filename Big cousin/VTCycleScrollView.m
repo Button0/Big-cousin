@@ -7,24 +7,23 @@
 //
 
 #import "VTCycleScrollView.h"
-#import "LibraryRequest.h"
-#import "SingleExpressionViewController.h"
 
 @interface VTCycleScrollView ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic) NSInteger currentIndex;
-@property (nonatomic, strong) NSTimer *timer;
 
 @property (nonatomic, strong) UIImageView *previousImageView;
 @property (nonatomic, strong) UIImageView *currentImageView;
 @property (nonatomic, strong) UIImageView *nextImageView;
 
-@end
+@property (nonatomic, strong) NSTimer *timer;
 
-#define KSWidth self.bounds.size.width
-#define KSHeight self.bounds.size.height
+@property (nonatomic, strong) NSMutableArray<UIImageView *> *images;
+@property (nonatomic, strong) NSMutableArray<UIImageView *> *cycleSExpressions;
+
+@end
 
 @implementation VTCycleScrollView
 
@@ -36,7 +35,7 @@
     if (self)
     {
         [self setupUI];
-        [self images];
+        [self imagesData];
     }
     return self;
 }
@@ -64,26 +63,25 @@
     scroll.bounces = NO;
     scroll.showsHorizontalScrollIndicator = NO;
     scroll.showsVerticalScrollIndicator = NO;
-    scroll.contentSize = CGSizeMake(KSWidth *3, KSHeight);
+    scroll.contentSize = CGSizeMake(self.bounds.size.width *3, self.bounds.size.height);
     _scrollView = scroll;
     
     // image view
     _previousImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
     _currentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width *1, 0, self.bounds.size.width, self.bounds.size.height)];
     _nextImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width *2, 0, self.bounds.size.width, self.bounds.size.height)];
+    [self addTapGestureRecognizerWithImages];
     
     [_scrollView addSubview:_previousImageView];
     [_scrollView addSubview:_currentImageView];
     [_scrollView addSubview:_nextImageView];
     [self addSubview:_scrollView];
-    [self addTapGestureRecognizerWithImages];
     
     // page control
-    UIPageControl *page = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height -20.f, self.bounds.size.width, 20.f)];
-    [page setCurrentPage:0];
-    [page setNumberOfPages:1];
-    [page addTarget:self action:@selector(pageAction:) forControlEvents:(UIControlEventValueChanged)];
-    _pageControl = page;
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height -20.f, self.bounds.size.width, 20.f)];
+    [_pageControl setCurrentPage:0];
+    [_pageControl setNumberOfPages:1];
+    [_pageControl addTarget:self action:@selector(pageAction:) forControlEvents:(UIControlEventValueChanged)];
     [self addSubview:_pageControl];
     
     //timer
@@ -132,27 +130,6 @@
     _nextImageView.image = [UIImage imageWithContentsOfFile:[_imageData objectAtIndex:[self getCorrectIndexWith:_currentIndex + 1]]];
 }
 
-//加手势
-- (void)addTapGestureRecognizerWithImages
-{
-    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
-    UITapGestureRecognizer *recognizer2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
-    UITapGestureRecognizer *recognizer3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
-    [_previousImageView addGestureRecognizer:recognizer];
-    [_currentImageView addGestureRecognizer:recognizer2];
-    [_nextImageView addGestureRecognizer:recognizer3];
-    _previousImageView.userInteractionEnabled = YES;
-    _currentImageView.userInteractionEnabled = YES;
-    _nextImageView.userInteractionEnabled = YES;
-
-}
-
--(void)cycleImagePush:(UITapGestureRecognizer *)sender
-{
-//    [self requestHomeTitles];
-//    SingleExpressionViewController *singleVC = [[SingleExpressionViewController alloc]init];
-}
-
 - (void)pageAction:(UIPageControl *)sender
 {
     [self.scrollView setContentOffset:CGPointMake(self.bounds.size.width*(sender.currentPage -1), 0) animated:NO];
@@ -171,45 +148,28 @@ int pageNumber = -1;
     [self.pageControl setCurrentPage:pageNumber];
 }
 
-#pragma mark - 数据
-/*
-- (void)requestCycleImages
+//加手势
+- (void)addTapGestureRecognizerWithImages
 {
-    __weak typeof(self) weakSelf = self;
-    LibraryRequest *request = [[LibraryRequest alloc] init];
-    [request requestCycleScrollExpressionSuccess:^(NSDictionary *dic) {
-       
-        NSDictionary *temp = [dic objectForKey:@"data"];
-        for (NSDictionary *dict in temp)
-        {
-            
-        }
-    } failure:^(NSError *error) {
-        
-    }];
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
+    UITapGestureRecognizer *recognizer2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
+    UITapGestureRecognizer *recognizer3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
+    [_previousImageView addGestureRecognizer:recognizer];
+    [_currentImageView addGestureRecognizer:recognizer2];
+    [_nextImageView addGestureRecognizer:recognizer3];
+    _previousImageView.userInteractionEnabled = YES;
+    _currentImageView.userInteractionEnabled = YES;
+    _nextImageView.userInteractionEnabled = YES;
 }
 
-- (void)requestHomeTitles
+-(void)cycleImagePush:(UITapGestureRecognizer *)sender
 {
-    __weak typeof(self) weakSelf = self;
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
-    
-    [manager GET:@"http://api.jiefu.tv/app2/api/bq/article/detail.html?id=4653"
- parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
-        
-        //        NSLog(@"----%@",responseObject);
-        NSMutableArray *array=responseObject.lastObject;
-        for (NSMutableDictionary *dict in array)
-        {
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"===%@",error);
-    }];
+    [self addTapGestureRecognizerWithImages];
+    [_imageDelegate cycleImagePush:sender];
 }
-//*/
 
-- (void)images
+#pragma mark - 数据资源
+- (void)imagesData
 {
     self.imageData = @[[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 0] ofType:@"jpg"],
                        [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 1] ofType:@"jpg"],
