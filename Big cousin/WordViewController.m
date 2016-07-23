@@ -62,6 +62,7 @@ static NSString *aText;
     //添加一个textView
     _changeView = [[UIView alloc]initWithFrame:CGRectMake(0, 150, self.view.bounds.size.width, 250)];
     _changeView.backgroundColor = [UIColor whiteColor];
+    _changeView.clipsToBounds = YES;
     [self.view addSubview:self.changeView];
 
     
@@ -75,7 +76,7 @@ static NSString *aText;
     
     [self.view addSubview:wordButton];
     _myLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 0, 0)];
-    _myLabel.backgroundColor= [UIColor yellowColor];
+//    _myLabel.backgroundColor= [UIColor yellowColor];
     //字体颜色
     _myLabel.textColor = [UIColor blackColor];
     //字体大小
@@ -93,6 +94,10 @@ static NSString *aText;
     CGFloat width = self.changeView.frame.size.width - 20;
     CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
     self.myLabel.frame = CGRectMake(_myLabel.frame.origin.x, _myLabel.frame.origin.y, width, rect.size.height);
+    //边框粗细
+    _myLabel.layer.borderWidth = 2.0;
+    //边框颜色
+    _myLabel.layer.borderColor = [[UIColor redColor]CGColor];
     
     [_changeView addSubview:_myLabel];
     //给label添加手势
@@ -122,6 +127,7 @@ static NSString *aText;
     sender.view.transform = CGAffineTransformRotate(sender.view.transform, sender.rotation);
     //旋转的手指
     sender.rotation = 0;
+    
 }
 
 //缩放手势
@@ -227,6 +233,7 @@ static NSString *aText;
 /** 添加弹框 */
 -(void)viewWillAppear:(BOOL)animated
 {
+    
      [self addAlertingColler];
 }
 
@@ -243,8 +250,10 @@ static NSString *aText;
         weakSelf.myLabel.text = tempFeild.text;
         weakSelf.myLabel.numberOfLines = 0;
         [weakSelf.myLabel sizeToFit];
-        weakSelf.myLabel.frame = CGRectMake(10, 10, 150, weakSelf.myLabel.frame.size.height);
-
+        //计算文本的空间：MAXFLOAT为无限大
+            CGFloat width = self.changeView.frame.size.width - 20;
+            CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
+        self.myLabel.frame = CGRectMake(100, 10, rect.size.width, rect.size.height);
         
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
@@ -261,6 +270,8 @@ static NSString *aText;
     }];
 
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

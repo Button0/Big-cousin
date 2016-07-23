@@ -17,6 +17,7 @@
 #define KHeightCollection 135
 
 @interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationMenuDelegate>
+
 @property (nonatomic, strong) NSMutableArray *expressions;
 @end
 

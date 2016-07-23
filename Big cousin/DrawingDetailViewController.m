@@ -59,10 +59,10 @@
     
     /** 初始化控制器 */
     self.newestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
-    self.newestCollectionView.backgroundColor = [UIColor redColor];
+    self.newestCollectionView.backgroundColor = [UIColor whiteColor];
     
     self.hottestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
-    self.hottestCollectionView.backgroundColor = [UIColor orangeColor];
+    self.hottestCollectionView.backgroundColor = [UIColor whiteColor];
 //    self.hottestCollectionView.edgesForExtendedLayout = UIRectEdgeNone
     
     self.segment = [[UISegmentedControl alloc]initWithItems:@[@"最新",@"分类"]];
@@ -290,6 +290,14 @@
     }
     return nil;
 }
+//cell点击方法
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CompileViewController *compileVC = [[CompileViewController alloc]init];
+    [self.navigationController pushViewController:compileVC animated:YES];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

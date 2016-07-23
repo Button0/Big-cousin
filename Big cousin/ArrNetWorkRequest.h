@@ -16,6 +16,7 @@ typedef void(^SuccessResponseArr)(NSArray *arr);
 //失败回调
 typedef void(^FailureResponseArr)(NSError *error);
 
+
 - (void)requestArrayWithUrl:(NSString *)url
                   parmeters:(NSArray *)parameterArr
             successPesponse:(SuccessResponseArr)success

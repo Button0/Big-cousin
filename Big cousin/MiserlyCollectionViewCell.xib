@@ -28,6 +28,7 @@
             <connections>
                 <outlet property="miserlyImageV" destination="bxT-7L-W42" id="mZ2-21-CHg"/>
             </connections>
+            <point key="canvasLocation" x="68" y="301"/>
         </collectionViewCell>
     </objects>
     <resources>

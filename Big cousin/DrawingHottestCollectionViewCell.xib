@@ -28,6 +28,7 @@
             <connections>
                 <outlet property="HottestImageV" destination="WI6-re-pFW" id="M9k-TE-XJZ"/>
             </connections>
+            <point key="canvasLocation" x="19" y="230"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -2,7 +2,7 @@
 //  MiserlyCollectionViewCell.m
 //  Big cousin
 //
-//  Created by lanou3g on 16/7/21.
+//  Created by HMS,CK,SS,LYB3g on 16/7/21.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
@@ -13,5 +13,15 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+
+
+- (void)setModel:(MiserlyModel *)model
+{
+    [_miserlyImageV setImageWithURL:[NSURL URLWithString:[model.URL replacingStringToURL]]];
+
+}
+
+
+
 
 @end

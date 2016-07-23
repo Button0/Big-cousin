@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DrawingModel.h"
+#import "DynamicModel.h"
 
 #define DrawingNewCollectionViewCell_Identify @"DrawingNewCollectionViewCell_Identify"
 
@@ -19,5 +20,7 @@
 @property (nonatomic, strong) ExpressionLibraryModel *libraryModel;
 
 @property (strong, nonatomic) DrawingModel *model;
+
+@property (strong, nonatomic) DynamicModel *dynamicModel;
 
 @end
