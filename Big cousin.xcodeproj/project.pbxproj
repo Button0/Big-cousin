@@ -25,7 +25,6 @@
 		AB49D8151D3C713E009B049A /* BigCousinVideoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8141D3C713E009B049A /* BigCousinVideoRequest.m */; };
 		AB49D8181D3C7149009B049A /* BigCousinVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8171D3C7149009B049A /* BigCousinVideoModel.m */; };
 		AB49D81C1D3C717B009B049A /* BigCousinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D81A1D3C717B009B049A /* BigCousinTableViewCell.m */; };
-		AB49D81D1D3C717B009B049A /* BigCousinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49D81B1D3C717B009B049A /* BigCousinTableViewCell.xib */; };
 		AB49D8201D3C718D009B049A /* BigCousinRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D81F1D3C718D009B049A /* BigCousinRequest.m */; };
 		AB49D8231D3C7195009B049A /* BigCousinGIFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8221D3C7195009B049A /* BigCousinGIFModel.m */; };
 		AB49D8261D3C71A9009B049A /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8251D3C71A9009B049A /* BaseRequest.m */; };
@@ -113,6 +112,7 @@
 		D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635DB1D35E0B200DA8618 /* ExpressionLibraryViewController.m */; };
 		D63635E51D35E13200DA8618 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635E41D35E13200DA8618 /* MyViewController.m */; };
 		D63EE24A1D42FA5500B73B7A /* LabelWithAlertActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D63EE2491D42FA5500B73B7A /* LabelWithAlertActionView.m */; };
+		D63EE24C1D4336ED00B73B7A /* BigCousinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63EE24B1D4336ED00B73B7A /* BigCousinTableViewCell.xib */; };
 		D64AED0C1D37525B001B2613 /* 123123.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0B1D37525B001B2613 /* 123123.png */; };
 		D64AED0E1D377113001B2613 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0D1D377113001B2613 /* 1.png */; };
 		D64AED101D3771DB001B2613 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0F1D3771DB001B2613 /* 2.png */; };
@@ -191,7 +191,6 @@
 		AB49D8171D3C7149009B049A /* BigCousinVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigCousinVideoModel.m; sourceTree = "<group>"; };
 		AB49D8191D3C717B009B049A /* BigCousinTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigCousinTableViewCell.h; sourceTree = "<group>"; };
 		AB49D81A1D3C717B009B049A /* BigCousinTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigCousinTableViewCell.m; sourceTree = "<group>"; };
-		AB49D81B1D3C717B009B049A /* BigCousinTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigCousinTableViewCell.xib; sourceTree = "<group>"; };
 		AB49D81E1D3C718D009B049A /* BigCousinRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigCousinRequest.h; sourceTree = "<group>"; };
 		AB49D81F1D3C718D009B049A /* BigCousinRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigCousinRequest.m; sourceTree = "<group>"; };
 		AB49D8211D3C7195009B049A /* BigCousinGIFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigCousinGIFModel.h; sourceTree = "<group>"; };
@@ -310,6 +309,7 @@
 		D63635F01D35EFA500DA8618 /* CommonString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonString.h; sourceTree = "<group>"; };
 		D63EE2481D42FA5500B73B7A /* LabelWithAlertActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "\U0010LabelWithAlertActionView.h"; sourceTree = "<group>"; };
 		D63EE2491D42FA5500B73B7A /* LabelWithAlertActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "\U0010LabelWithAlertActionView.m"; sourceTree = "<group>"; };
+		D63EE24B1D4336ED00B73B7A /* BigCousinTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigCousinTableViewCell.xib; sourceTree = "<group>"; };
 		D64AED0B1D37525B001B2613 /* 123123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 123123.png; path = ../123123.png; sourceTree = "<group>"; };
 		D64AED0D1D377113001B2613 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		D64AED0F1D3771DB001B2613 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -396,7 +396,7 @@
 			children = (
 				AB49D8191D3C717B009B049A /* BigCousinTableViewCell.h */,
 				AB49D81A1D3C717B009B049A /* BigCousinTableViewCell.m */,
-				AB49D81B1D3C717B009B049A /* BigCousinTableViewCell.xib */,
+				D63EE24B1D4336ED00B73B7A /* BigCousinTableViewCell.xib */,
 				AB49D80B1D3C712E009B049A /* BigCousinVideoTableViewCell.h */,
 				AB49D80C1D3C712E009B049A /* BigCousinVideoTableViewCell.m */,
 				AB49D80D1D3C712E009B049A /* BigCousinVideoTableViewCell.xib */,
@@ -967,7 +967,6 @@
 				ABEC55991D36B2D200E9DACD /* arrow_down@2x.png in Resources */,
 				ABFBF4FA1D377C6F00BCDD60 /* scrollview_1.jpg in Resources */,
 				AB85BD621D3E1278009A9F27 /* 48.gif in Resources */,
-				AB49D81D1D3C717B009B049A /* BigCousinTableViewCell.xib in Resources */,
 				ABEC55971D36B2D200E9DACD /* arrow_down1.png in Resources */,
 				AB9C1A341D35D1DE0067B7A8 /* LaunchScreen.storyboard in Resources */,
 				D6FA4F0D1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib in Resources */,
@@ -975,6 +974,7 @@
 				D64AED121D37730F001B2613 /* 3.png in Resources */,
 				D64AED1B1D37CAA3001B2613 /* 5.png in Resources */,
 				AB85BD641D3E1296009A9F27 /* 85.gif in Resources */,
+				D63EE24C1D4336ED00B73B7A /* BigCousinTableViewCell.xib in Resources */,
 				D64AED101D3771DB001B2613 /* 2.png in Resources */,
 				D64AED141D377431001B2613 /* 4.png in Resources */,
 				AB85BD5E1D3E11C9009A9F27 /* pika.gif in Resources */,
@@ -1122,8 +1122,6 @@
 				AB49D8201D3C718D009B049A /* BigCousinRequest.m in Sources */,
 				ABEC56191D376DC800E9DACD /* VTCycleScrollView.m in Sources */,
 				AB49D7F71D3C7093009B049A /* NetWorkRequest.m in Sources */,
-				AB85BD401D3CFE89009A9F27 /* ArrNetWorkRequest.m in Sources */,
-				D6F297F81D40647A00C8C353 /* DynamicRwquest.m in Sources */,
 				AB49D7FA1D3C70B9009B049A /* DrawingViewController.m in Sources */,
 				ABFBF5CB1D39413200BCDD60 /* MASLayoutConstraint.m in Sources */,
 				AB13D17E1D3CBCE2002320DE /* BaseModel.m in Sources */,

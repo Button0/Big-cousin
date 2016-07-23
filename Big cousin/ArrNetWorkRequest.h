@@ -17,9 +17,6 @@ typedef void(^SuccessResponseArr)(NSArray *arr);
 typedef void(^FailureResponseArr)(NSError *error);
 
 
-
-@interface ArrNetWorkRequest : NSObject
-
 - (void)requestArrayWithUrl:(NSString *)url
                   parmeters:(NSArray *)parameterArr
             successPesponse:(SuccessResponseArr)success
