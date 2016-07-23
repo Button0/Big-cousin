@@ -7,6 +7,7 @@
 //
 
 #import "LibraryRequest.h"
+#import "NetWorkRequest.h"
 
 @implementation LibraryRequest
 
@@ -67,12 +68,6 @@ static LibraryRequest *request = nil;
     }];
 }
 
-//-----------------------
-//请求轮播图表情
-- (void)requestCycleScrollExpressionSuccess:(SuccessResponse)success
-                                failure:(FailureResponse)failure
-{}
-
 //请求最热表情
 - (void)requestHottestExpressionSuccess:(SuccessResponseArr)success
                                 failure:(FailureResponseArr)failure
@@ -100,11 +95,22 @@ static LibraryRequest *request = nil;
     } failureResponse:^(NSError *error) {
         failure(error);
     }];
-//    [request requestWithUrl:url parameters:nil successResponse:^(NSDictionary *dic) {
-//        success(dic);
-//    } failureResponse:^(NSError *error) {
-//        failure(error);
-//    }];
 }
+
+//-----------------------
+//请求轮播图表情
+- (void)requestCycleScrollExpressionWithUrl:(NSString *)url
+                                    success:(SuccessResponse)success
+                                    failure:(FailureResponse)failure
+{
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:url parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+
+}
+
 
 @end

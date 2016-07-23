@@ -18,6 +18,8 @@ static NSString *aText;
 
 @property (strong, nonatomic) UILabel * myLabel;
 
+@property (nonatomic,assign) CGPoint startPoint;
+
 @end
 
 
@@ -63,7 +65,7 @@ static NSString *aText;
     [self.view addSubview:self.changeView];
 
     
-    /** 添加一个button */
+    /** 字 */
     UIButton *wordButton = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
     wordButton.frame = CGRectMake(self.view.bounds.size.width - 100, self.view.bounds.size.height - 150 , 50, 50);
     [wordButton setTitle:@"字" forState:(UIControlStateNormal)];
@@ -91,15 +93,12 @@ static NSString *aText;
     CGFloat width = self.changeView.frame.size.width - 20;
     CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
     self.myLabel.frame = CGRectMake(_myLabel.frame.origin.x, _myLabel.frame.origin.y, width, rect.size.height);
-
-//    _myLabel.text = @"按实际的父亲为家人和银联卡说对方空间的回复近段时间分地方的";
-
     
     [_changeView addSubview:_myLabel];
     //给label添加手势
     [self makeGestureWithLabel];
 }
-#pragma mark ----------- 手势 ----------
+#pragma mark - 手势
 /** 旋转手势 */
 - (void)makeGestureWithLabel
 {
@@ -112,10 +111,10 @@ static NSString *aText;
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchClicked:)];
     [self.myLabel addGestureRecognizer:pinch];
     //拖动手势
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panClicked:)];
-    [self.myLabel addGestureRecognizer:pan];
+//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panClicked:)];
+//    [self.myLabel addGestureRecognizer:pan];
 }
-#warning ------------- 手势方法
+
 //旋转手势
 - (void)rotationClicked:(UIRotationGestureRecognizer *)sender
 {
@@ -132,28 +131,62 @@ static NSString *aText;
     sender.view.transform = CGAffineTransformScale(sender.view.transform, sender.scale, sender.scale);
     sender.scale = 1;
 }
-//拖动手势
+
+//TODO:拖动问题未完成
+//任意位置拖动
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    _startPoint = [touch locationInView:_myLabel];
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint destPoint = [touch locationInView:_myLabel];
+    
+    float x = destPoint.x - _startPoint.x;
+    float y = destPoint.y - _startPoint.y;
+    
+    CGPoint center = _myLabel.center;
+    center.x += x;
+    center.y += y;
+    
+    _myLabel.center = center;
+}
+
+//手势拖动
+/*
 - (void)panClicked:(UIPanGestureRecognizer *)sender
 {
-    if (sender.state == UIGestureRecognizerStateBegan) {
+    if (sender.state == UIGestureRecognizerStateBegan) 
+ {
         //开始拖动
         NSLog(@"开始拖动");
-    }else if (sender.state == UIGestureRecognizerStateChanged){
+        _startPoint = [sender locationInView:_myLabel];
+    }
+    else if (sender.state == UIGestureRecognizerStateChanged)
+    {
         NSLog(@"正在移动");
-        //获取当前手指移动的距离，是相对于最原始的点
-        CGPoint transP = [sender translationInView:self.changeView];
-        //清空上一次的变形
-        self.myLabel.transform = CGAffineTransformMakeTranslation(transP.x, transP.y);
-        self.myLabel.transform = CGAffineTransformTranslate(self.myLabel.transform, transP.x, transP.y);
-        //复位，让他相当于上一次的位置
-        [sender setTranslation:CGPointZero inView:self.myLabel];
-    }else if (sender.state == UIGestureRecognizerStateEnded){
+        CGPoint destPoint = [sender locationInView:_myLabel];
+        
+        float x = destPoint.x - _startPoint.x;
+        float y = destPoint.y - _startPoint.y;
+        
+        CGPoint center = _myLabel.center;
+        center.x += x;
+        center.y += y;
+        _myLabel.center = center;
+    }
+    else if (sender.state == UIGestureRecognizerStateEnded)
+    {
         //结束拖动
         NSLog(@"结束拖动");
     }
 }
+//*/
 
-#pragma mark --------------- button 点击方法 -----------
+#pragma mark - button 点击方法
 //button点击方法
 - (void)rightBarItemClicked:(UIButton *)btn
 {

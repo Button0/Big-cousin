@@ -15,14 +15,12 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGR-Ss-Q66">
                         <rect key="frame" x="5" y="100" width="90" height="18"/>
-                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-8X-51b">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="加载1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-8X-51b">
                         <rect key="frame" x="5" y="8" width="90" height="90"/>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="90" id="itg-Ue-oJH"/>
                         </constraints>
@@ -44,10 +42,10 @@
                 <outlet property="hottesImageV" destination="ixh-8X-51b" id="xvQ-QW-ocS"/>
                 <outlet property="hottesLabel" destination="tGR-Ss-Q66" id="pF4-XB-WIP"/>
             </connections>
-            <point key="canvasLocation" x="304" y="346"/>
+            <point key="canvasLocation" x="139" y="191"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="downloadsuo.do.png" width="405" height="311"/>
+        <image name="加载1.jpg" width="600" height="600"/>
     </resources>
 </document>

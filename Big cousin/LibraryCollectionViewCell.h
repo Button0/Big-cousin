@@ -14,15 +14,15 @@
 
 @class ExpressionLibraryModel;
 @protocol ClickBtnDelegate <NSObject>
--(void)ClickBtn:(UIButton *)button;
--(void)cellPush:(UITapGestureRecognizer *)sender;
+- (void)ClickBtn:(UIButton *)button;
+- (void)cellPush:(UITapGestureRecognizer *)sender;
+- (void)passValue:(NSNumber *)aId;
 @end
 
 @interface LibraryCollectionViewCell : UICollectionViewCell
 @property (nonatomic, strong) HomeTitleModel *titleModel;
-@property (nonatomic, strong, nonnull) NSArray<ExpressionLibraryModel *> *data;
-@property (nonatomic, strong, null_unspecified) NSNumber *categoryId;
+@property (nonatomic, strong) NSNumber *categoryId;
 //代理属性
-@property(nonatomic, weak, null_unspecified) id<ClickBtnDelegate>clickbtnDelegate;
+@property(nonatomic, weak) id<ClickBtnDelegate>clickbtnDelegate;
 
 @end

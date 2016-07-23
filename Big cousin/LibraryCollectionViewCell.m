@@ -14,6 +14,7 @@
 @interface LibraryCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic) NSNumber *eID;
+@property (nonatomic) NSNumber *single_eId;
 
 @property (weak, nonatomic) IBOutlet UIImageView *oneImageView;
 @property (weak, nonatomic) IBOutlet UILabel *oneLabel;
@@ -74,7 +75,7 @@
 
 - (void)requestCategoryListById:(NSNumber *)categroyId
 {
-    
+    __weak typeof(self) weakSelf = self;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
     
@@ -93,8 +94,11 @@
                 ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
                 NSString *url = [dataDictionary objectForKey:@"coverUrl"];
                 NSString *name = [dataDictionary objectForKey:@"eName"];
+                NSNumber *eId = [dataDictionary objectForKey:@"eId"];
                 model.coverUrl = url;
                 model.eName = name;
+                model.eId = eId;
+                [weakSelf.clickbtnDelegate passValue:eId];
                 [categoryList addObject:model];
             }
             //TODO:

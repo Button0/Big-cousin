@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VTCycleScrollView : UIView
+@protocol ClickImageDelegate <NSObject>
+-(void)cycleImagePush:(UITapGestureRecognizer *)sender;
+@end
 
+@interface VTCycleScrollView : UIView
 /** 时间管理器 */
 //@property (nonatomic) CGFloat timePerPicture;
 /** 图片数据 */
 @property (nonatomic, retain) NSArray *imageData;
--(void)cycleImagePush:(UITapGestureRecognizer *)sender;
+@property (nonatomic, strong) id<ClickImageDelegate> imageDelegate;
+
 @end

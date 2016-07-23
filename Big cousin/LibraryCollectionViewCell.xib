@@ -35,7 +35,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtg-Rk-JCH">
                         <rect key="frame" x="4" y="25" width="85" height="95"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="wFm-mg-6QN">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="加载1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wFm-mg-6QN">
                                 <rect key="frame" x="2" y="0.0" width="80" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -64,7 +64,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3w-EP-VGy">
                         <rect key="frame" x="182" y="25" width="85" height="95"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="SHf-II-l3W">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="加载1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SHf-II-l3W">
                                 <rect key="frame" x="2" y="0.0" width="80" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -85,7 +85,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCB-hf-Kpo">
                         <rect key="frame" x="271" y="25" width="85" height="95"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-Rc-m0M">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="加载1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-Rc-m0M">
                                 <rect key="frame" x="2" y="0.0" width="80" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -106,7 +106,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tX8-Sp-m8N">
                         <rect key="frame" x="93" y="25" width="85" height="95"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="YfT-cy-7Ks">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="加载1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YfT-cy-7Ks">
                                 <rect key="frame" x="2" y="0.0" width="80" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -191,6 +191,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="downloadsuo.do.png" width="405" height="311"/>
+        <image name="加载1.jpg" width="600" height="600"/>
     </resources>
 </document>

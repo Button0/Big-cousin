@@ -36,10 +36,10 @@
     
     
     self.titleLabel.text = model.title;
-    self.thumbUpLabel.text = [NSString stringWithFormat:@"%ld",model.upNum];
-    self.stepOnLabel.text = [NSString stringWithFormat:@"%ld",model.downNum];
-    self.commentsLabel.text = [NSString stringWithFormat:@"%ld",model.commentNum];
-    self.reprintedLabel.text = [NSString stringWithFormat:@"%ld",model.shareNum];
+    self.thumbUpLabel.text = [NSString stringWithFormat:@"%ld",(long)model.upNum];
+    self.stepOnLabel.text = [NSString stringWithFormat:@"%ld",(long)model.downNum];
+    self.commentsLabel.text = [NSString stringWithFormat:@"%ld",(long)model.commentNum];
+    self.reprintedLabel.text = [NSString stringWithFormat:@"%ld",(long)model.shareNum];
 //    self.VideoImageView setImageWithURL:[NSURL URLWithString:model.mainPicPath]];
     [self.VideoImageView setImageWithURL:[NSURL URLWithString:model.gifPath] placeholderImage:nil];
 
