@@ -2,13 +2,16 @@
 //  DynamicViewController.m
 //  Big cousin
 //
-//  Created by lanou3g on 16/7/20.
+//  Created by HMS,CK,SS,LYB3g on 16/7/20.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
 #import "DynamicViewController.h"
 #import "DrawingNewCollectionViewCell.h"
 #import "DrawingHottestCollectionViewCell.h"
+#import "DrawingRequest.h"
+#import "DynamicHottestModel.h"
+#import "DynamicModel.h"
 @interface DynamicViewController ()
 <
     UIScrollViewDelegate,
@@ -25,14 +28,19 @@
 /** 最热 */
 @property (strong, nonatomic) UICollectionView *hottestCollection;
 
-
-
+@property (strong, nonatomic) NSMutableArray *dynsmicArray;
+@property (strong, nonatomic) NSMutableArray *hottestArray;
 @end
 
 @implementation DynamicViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _dynsmicArray = [NSMutableArray array];
+    
+    _hottestArray = [NSMutableArray array];
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     //间距
     //    flowLayout.minimumInteritemSpacing = 1;
@@ -45,12 +53,12 @@
 
     /** 初始化控制器 */
     _newsCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
-    _newsCollection.backgroundColor = [UIColor redColor];
+    _newsCollection.backgroundColor = [UIColor whiteColor];
     
     _hottestCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
-    _hottestCollection.backgroundColor = [UIColor orangeColor];
+    _hottestCollection.backgroundColor = [UIColor whiteColor];
     //分页
-    _segment = [[UISegmentedControl alloc]initWithItems:@[@"最新",@"分类"]];
+    _segment = [[UISegmentedControl alloc]initWithItems:@[@"最新",@"最热"]];
     
     self.navigationItem.titleView = self.segment;
     
@@ -80,6 +88,11 @@
     
     [_newsCollection registerNib:[UINib nibWithNibName:@"DrawingNewCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify];
     [_hottestCollection registerNib:[UINib nibWithNibName:@"DrawingHottestCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:DrawingHottestCollectionViewCell_Identify];
+    //获得数据
+    //最新
+    [self getDynsmicNewsData];
+    //最热
+    [self getDynsmicHottestData];
 
 }
 #pragma mark ========== scrollView的代理方法 ==========
@@ -95,9 +108,45 @@
 
 }
 
+#pragma mark --------------------- 获取数据
+- (void)getDynsmicNewsData
+{
+    __weak typeof(self)weakSelf = self;
+    [[DrawingRequest sharaDrawingRequest]requestDynameicNewWithSuccess:^(NSArray *arr) {
+        weakSelf.dynsmicArray = [DynamicModel presentDynamicWithArray:arr];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.newsCollection reloadData];
+        });
+        NSLog(@"===============%@",weakSelf.dynsmicArray);
+
+    } failure:^(NSError *error) {
+        NSLog(@"error ===== %@",error);
+    }];
+}
+
+- (void)getDynsmicHottestData
+{
+    __weak typeof(self)weakSelf = self;
+    [[DrawingRequest sharaDrawingRequest] requestDynameicHottestWithSuccess:^(NSArray *arr) {
+        weakSelf.hottestArray = [DynamicHottestModel presentDynamicHottestWithArray:arr];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.hottestCollection reloadData];
+        });
+
+    } failure:^(NSError *error) {
+        NSLog(@"error ====== %@",error);
+    }];
+}
+
 #pragma mark ---------- collectionView
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    if (collectionView == self.newsCollection) {
+        return self.dynsmicArray.count;
+    }else if(collectionView == self.hottestCollection)
+    {
+        return self.hottestArray.count;
+    }
     return 10;
 }
 
@@ -105,17 +154,27 @@
 {
     if (collectionView == self.newsCollection) {
         DrawingNewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify forIndexPath:indexPath];
+        DynamicModel *model = self.dynsmicArray[indexPath.row];
+        cell.dynamicModel = model;
         return cell;
     }else if (collectionView == self.hottestCollection)
     {
         DrawingHottestCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingHottestCollectionViewCell_Identify forIndexPath:indexPath];
+        DynamicHottestModel *model = self.hottestArray[indexPath.row];
+        cell.model = model;
         return cell;
         
     }
     return nil;
 }
 
-
+//点击方法
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CompileViewController *compileVC = [[CompileViewController alloc]init];
+    [self.navigationController pushViewController:compileVC animated:YES];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

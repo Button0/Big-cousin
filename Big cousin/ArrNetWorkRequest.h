@@ -6,12 +6,15 @@
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
+
+
 #import <Foundation/Foundation.h>
 
 //成功回调
 typedef void(^SuccessResponseArr)(NSArray *arr);
 //失败回调
 typedef void(^FailureResponseArr)(NSError *error);
+
 
 @interface ArrNetWorkRequest : NSObject
 

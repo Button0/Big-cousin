@@ -27,7 +27,7 @@
 #import <UMSocialQQHandler.h>
 #import <UMSocialSnsPlatformManager.h>
 
-
+#import "CompileViewController.h"
 
 
 //#import "packageView.h"

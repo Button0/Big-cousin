@@ -2,7 +2,7 @@
 //  DrawingHottestCollectionViewCell.m
 //  Big cousin
 //
-//  Created by lanou3g on 16/7/21.
+//  Created by HMS,CK,SS,LYB3g on 16/7/21.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
@@ -14,8 +14,10 @@
     // Initialization code
 }
 
-
-
+-(void)setModel:(DynamicHottestModel *)model
+{
+    [_HottestImageV setImageWithURL:[NSURL URLWithString:[model.URL replacingStringToURL]]];
+}
 
 
 

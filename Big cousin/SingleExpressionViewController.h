@@ -11,5 +11,7 @@
 @class ExpressionLibraryModel;
 
 @interface SingleExpressionViewController : BaseViewController
+
 @property (nonatomic, strong) ExpressionLibraryModel *expressionModel;
+
 @end

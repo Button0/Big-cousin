@@ -112,12 +112,14 @@
 		D63635D91D35DF9D00DA8618 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635D81D35DF9D00DA8618 /* BaseViewController.m */; };
 		D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635DB1D35E0B200DA8618 /* ExpressionLibraryViewController.m */; };
 		D63635E51D35E13200DA8618 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635E41D35E13200DA8618 /* MyViewController.m */; };
+		D63EE24A1D42FA5500B73B7A /* LabelWithAlertActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D63EE2491D42FA5500B73B7A /* LabelWithAlertActionView.m */; };
 		D64AED0C1D37525B001B2613 /* 123123.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0B1D37525B001B2613 /* 123123.png */; };
 		D64AED0E1D377113001B2613 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0D1D377113001B2613 /* 1.png */; };
 		D64AED101D3771DB001B2613 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0F1D3771DB001B2613 /* 2.png */; };
 		D64AED121D37730F001B2613 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED111D37730F001B2613 /* 3.png */; };
 		D64AED141D377431001B2613 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED131D377431001B2613 /* 4.png */; };
 		D64AED1B1D37CAA3001B2613 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED1A1D37CAA3001B2613 /* 5.png */; };
+		D65102F31D4255930088ECC2 /* CompileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65102F21D4255930088ECC2 /* CompileViewController.m */; };
 		D65E3B561D3F69F100F1E56B /* camera-256.png in Resources */ = {isa = PBXBuildFile; fileRef = D65E3B551D3F69F100F1E56B /* camera-256.png */; };
 		D65E3B5C1D3F7D0500F1E56B /* DynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65E3B5B1D3F7D0500F1E56B /* DynamicViewController.m */; };
 		D67E16031D371FFD00B2A887 /* DrawingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D67E16011D371FFD00B2A887 /* DrawingCollectionViewCell.m */; };
@@ -130,8 +132,6 @@
 		D6F297ED1D40628900C8C353 /* DynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297EC1D40628900C8C353 /* DynamicModel.m */; };
 		D6F297F01D4062A400C8C353 /* MiserlyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297EF1D4062A400C8C353 /* MiserlyModel.m */; };
 		D6F297F31D4062FA00C8C353 /* DynamicHottestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297F21D4062FA00C8C353 /* DynamicHottestModel.m */; };
-		D6F297F81D40647A00C8C353 /* DynamicRwquest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297F71D40647A00C8C353 /* DynamicRwquest.m */; };
-		D6F297FB1D40671D00C8C353 /* MiserlyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F297FA1D40671D00C8C353 /* MiserlyRequest.m */; };
 		D6FA4F0C1D3797CA00B80970 /* DrawingNewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FA4F0A1D3797CA00B80970 /* DrawingNewCollectionViewCell.m */; };
 		D6FA4F0D1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FA4F0B1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -308,12 +308,16 @@
 		D63635E31D35E13200DA8618 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		D63635E41D35E13200DA8618 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		D63635F01D35EFA500DA8618 /* CommonString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonString.h; sourceTree = "<group>"; };
+		D63EE2481D42FA5500B73B7A /* LabelWithAlertActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "\U0010LabelWithAlertActionView.h"; sourceTree = "<group>"; };
+		D63EE2491D42FA5500B73B7A /* LabelWithAlertActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "\U0010LabelWithAlertActionView.m"; sourceTree = "<group>"; };
 		D64AED0B1D37525B001B2613 /* 123123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 123123.png; path = ../123123.png; sourceTree = "<group>"; };
 		D64AED0D1D377113001B2613 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		D64AED0F1D3771DB001B2613 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		D64AED111D37730F001B2613 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		D64AED131D377431001B2613 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		D64AED1A1D37CAA3001B2613 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		D65102F11D4255930088ECC2 /* CompileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompileViewController.h; sourceTree = "<group>"; };
+		D65102F21D4255930088ECC2 /* CompileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompileViewController.m; sourceTree = "<group>"; };
 		D65E3B551D3F69F100F1E56B /* camera-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-256.png"; sourceTree = "<group>"; };
 		D65E3B5A1D3F7D0500F1E56B /* DynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicViewController.h; sourceTree = "<group>"; };
 		D65E3B5B1D3F7D0500F1E56B /* DynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicViewController.m; sourceTree = "<group>"; };
@@ -334,10 +338,6 @@
 		D6F297EF1D4062A400C8C353 /* MiserlyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyModel.m; sourceTree = "<group>"; };
 		D6F297F11D4062FA00C8C353 /* DynamicHottestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicHottestModel.h; sourceTree = "<group>"; };
 		D6F297F21D4062FA00C8C353 /* DynamicHottestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicHottestModel.m; sourceTree = "<group>"; };
-		D6F297F61D40647A00C8C353 /* DynamicRwquest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicRwquest.h; sourceTree = "<group>"; };
-		D6F297F71D40647A00C8C353 /* DynamicRwquest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicRwquest.m; sourceTree = "<group>"; };
-		D6F297F91D40671D00C8C353 /* MiserlyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyRequest.h; sourceTree = "<group>"; };
-		D6F297FA1D40671D00C8C353 /* MiserlyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyRequest.m; sourceTree = "<group>"; };
 		D6FA4F091D3797CA00B80970 /* DrawingNewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingNewCollectionViewCell.h; sourceTree = "<group>"; };
 		D6FA4F0A1D3797CA00B80970 /* DrawingNewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingNewCollectionViewCell.m; sourceTree = "<group>"; };
 		D6FA4F0B1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingNewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -597,6 +597,8 @@
 				ABFBF5231D37F5F300BCDD60 /* LibraryCollectionViewCell.m */,
 				ABFBF5241D37F5F300BCDD60 /* LibraryCollectionViewCell.xib */,
 				ABFBF5F61D3B632700BCDD60 /* downloadsuo.do.png */,
+				D63EE2481D42FA5500B73B7A /* LabelWithAlertActionView.h */,
+				D63EE2491D42FA5500B73B7A /* LabelWithAlertActionView.m */,
 			);
 			name = ExpressionLibrary;
 			sourceTree = "<group>";
@@ -724,6 +726,8 @@
 			children = (
 				AB49D7F81D3C70B9009B049A /* DrawingViewController.h */,
 				AB49D7F91D3C70B9009B049A /* DrawingViewController.m */,
+				D65102F11D4255930088ECC2 /* CompileViewController.h */,
+				D65102F21D4255930088ECC2 /* CompileViewController.m */,
 				D65E3B571D3F7BF200F1E56B /* BearController */,
 				D65E3B591D3F7C7500F1E56B /* DynamicController */,
 				D65E3B581D3F7C4100F1E56B /* WordController */,
@@ -832,10 +836,6 @@
 			children = (
 				D6070C031D3E593700EB761F /* DrawingRequest.h */,
 				D6070C041D3E593700EB761F /* DrawingRequest.m */,
-				D6F297F61D40647A00C8C353 /* DynamicRwquest.h */,
-				D6F297F71D40647A00C8C353 /* DynamicRwquest.m */,
-				D6F297F91D40671D00C8C353 /* MiserlyRequest.h */,
-				D6F297FA1D40671D00C8C353 /* MiserlyRequest.m */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -1071,11 +1071,8 @@
 				AB49D7F21D3C705F009B049A /* PlayerView.m in Sources */,
 				AB13D18A1D3CC9BB002320DE /* ExpressionLibraryModel.m in Sources */,
 				AB9C1A2F1D35D1DE0067B7A8 /* Big_cousin.xcdatamodeld in Sources */,
-<<<<<<< HEAD
 				AB85BD671D3E8F4F009A9F27 /* SingleExpressionHeaderView.m in Sources */,
-=======
 				D6070C051D3E593700EB761F /* DrawingRequest.m in Sources */,
->>>>>>> 9548a5bede7a21befdf0964093911066cfb76d02
 				ABEC55FA1D37413300E9DACD /* SearchView.m in Sources */,
 				ABFBF5D41D39413200BCDD60 /* NSArray+MASAdditions.m in Sources */,
 				D63635D91D35DF9D00DA8618 /* BaseViewController.m in Sources */,
@@ -1100,15 +1097,16 @@
 				AB49D8071D3C7106009B049A /* DrawingModel.m in Sources */,
 				D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */,
 				AB49D7ED1D3C6FDE009B049A /* WordViewController.m in Sources */,
+				D63EE24A1D42FA5500B73B7A /* LabelWithAlertActionView.m in Sources */,
 				ABFBF5C51D39413200BCDD60 /* MASConstraint.m in Sources */,
 				D63635D61D35DF8D00DA8618 /* RootViewController.m in Sources */,
+				D65102F31D4255930088ECC2 /* CompileViewController.m in Sources */,
 				AB49D81C1D3C717B009B049A /* BigCousinTableViewCell.m in Sources */,
 				D67E16031D371FFD00B2A887 /* DrawingCollectionViewCell.m in Sources */,
 				ABFBF5C81D39413200BCDD60 /* MASConstraintMaker.m in Sources */,
 				D6F297F01D4062A400C8C353 /* MiserlyModel.m in Sources */,
 				AB13D1841D3CBD88002320DE /* HomeTitleModel.m in Sources */,
 				AB49D8181D3C7149009B049A /* BigCousinVideoModel.m in Sources */,
-				D6F297FB1D40671D00C8C353 /* MiserlyRequest.m in Sources */,
 				D6FA4F0C1D3797CA00B80970 /* DrawingNewCollectionViewCell.m in Sources */,
 				AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */,
 				ABFBF5DD1D39413200BCDD60 /* ViewController+MASAdditions.m in Sources */,
@@ -1124,7 +1122,6 @@
 				AB49D8201D3C718D009B049A /* BigCousinRequest.m in Sources */,
 				ABEC56191D376DC800E9DACD /* VTCycleScrollView.m in Sources */,
 				AB49D7F71D3C7093009B049A /* NetWorkRequest.m in Sources */,
-				D6F297F81D40647A00C8C353 /* DynamicRwquest.m in Sources */,
 				AB85BD401D3CFE89009A9F27 /* ArrNetWorkRequest.m in Sources */,
 				AB49D7FA1D3C70B9009B049A /* DrawingViewController.m in Sources */,
 				ABFBF5CB1D39413200BCDD60 /* MASLayoutConstraint.m in Sources */,

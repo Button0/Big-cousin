@@ -12,11 +12,10 @@
 #import "ExpressionLibraryModel.h"
 #import "SingleExpressionViewController.h"
 #import "HomeTitleModel.h"
-
+#import "LibraryRequest.h"
 #define KHeightCollection 135
 @interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationMenuDelegate>
-#import "LibraryRequest.h"
-@interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+
 @property (nonatomic, strong) NSMutableArray *expressions;
 @end
 
