@@ -12,7 +12,6 @@
 #define SHeight self.bounds.size.height
 
 @interface SingleExpressionHeaderView ()
-
 /** 分享视图 */
 @property (nonatomic, strong) UIView *shareView;
 
@@ -64,7 +63,6 @@
     btn.frame = CGRectMake(wechatBtn.frame.size.width+20, SHeight-(SHeight/3.0f), SWidth/4.0f-20, wechatBtn.frame.size.height);
     btn.backgroundColor = [UIColor blueColor];
     [self.shareView addSubview:btn];
-    
 }
 
 /*

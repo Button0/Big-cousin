@@ -10,8 +10,6 @@
 
 @class ExpressionLibraryModel;
 
-//typedef void(^PassModelBlock)(ExpressionLibraryModel *model);
-
 @interface PublicCollectionViewController : BaseViewController
 /** 公用 */
 @property (nonatomic, strong) UICollectionView *pulicCollectionView;

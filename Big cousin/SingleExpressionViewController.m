@@ -20,10 +20,8 @@
 @property (nonatomic, strong) UICollectionView *singleCollectionView;
 /** 数据源 */
 @property (nonatomic, strong) NSMutableArray *singleExpressions;
-
 @property (nonatomic, strong) SingleExpressionHeaderView *singleHeader;
 @property (nonatomic, strong) SingleFooterCollectionReusableView *singleFooter;
-
 /** 照片个数展示 */
 @property (nonatomic, strong) UILabel *picCountlabel;
 
@@ -131,18 +129,25 @@
     
     [manager GET:SingleExpression_Url(_expressionModel.eId) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
        
+        if (responseObject.count >= 3
+            && [[responseObject objectAtIndex:2] isKindOfClass:[NSArray class]])
+        {
 //        NSLog(@"----%@",responseObject);
-        NSMutableArray *array = responseObject.lastObject;
-        for (NSMutableDictionary *dict in array)
+        NSArray *categoryArray = [responseObject objectAtIndex:2];
+        for (NSMutableDictionary *dict in categoryArray)
         {
             ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
             [model setValuesForKeysWithDictionary:dict];
             [weakSelf.singleExpressions addObject:model];
         }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.singleCollectionView reloadData];
-        });
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.singleCollectionView reloadData];
+            });
+        }
+        else
+        {
+            NSLog(@"Error: data error %@", responseObject);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"single failure %@",error);
     }];

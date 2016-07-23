@@ -13,7 +13,9 @@
 #import "SingleExpressionViewController.h"
 #import "HomeTitleModel.h"
 #import "LibraryRequest.h"
+
 #define KHeightCollection 135
+
 @interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationMenuDelegate>
 
 @property (nonatomic, strong) NSMutableArray *expressions;
@@ -72,7 +74,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DrawingHottesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingHottesCollectionViewCell_Identify forIndexPath:indexPath];
-
     
     ExpressionLibraryModel *model = self.expressions[indexPath.row];
     [cell setLibraryModel:model];
@@ -97,11 +98,13 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
     
     [manager GET:_url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
-        
+        if (responseObject.count >= 3
+            && [[responseObject objectAtIndex:2] isKindOfClass:[NSArray class]])
+        {
 //        [self setupProgressHud];
 //        NSLog(@"----%@",responseObject);
-        NSMutableArray *array = responseObject.lastObject;
-        for (NSMutableDictionary *dict in array)
+        NSArray *categoryArray = [responseObject objectAtIndex:2];
+        for (NSMutableDictionary *dict in categoryArray)
         {
             ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
             [model setValuesForKeysWithDictionary:dict];
@@ -111,6 +114,11 @@
             [weakSelf.pulicCollectionView  reloadData];
         });
 //        [GiFHUD dismiss];
+        }
+        else
+        {
+            NSLog(@"Error: data error %@", responseObject);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"===%@",error);
     }];

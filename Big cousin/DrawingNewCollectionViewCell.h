@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "DrawingModel.h"
 #import "DynamicModel.h"
+
 #define DrawingNewCollectionViewCell_Identify @"DrawingNewCollectionViewCell_Identify"
+
 @class ExpressionLibraryModel;
 
 @interface DrawingNewCollectionViewCell : UICollectionViewCell

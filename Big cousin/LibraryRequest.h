@@ -7,7 +7,6 @@
 //
 
 #import "BaseRequest.h"
-
 #import "ArrNetWorkRequest.h"
 
 @interface LibraryRequest : BaseRequest

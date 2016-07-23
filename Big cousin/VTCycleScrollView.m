@@ -25,6 +25,7 @@
 
 #define KSWidth self.bounds.size.width
 #define KSHeight self.bounds.size.height
+
 @implementation VTCycleScrollView
 
 #pragma mark - life cycle

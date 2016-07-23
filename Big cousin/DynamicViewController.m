@@ -30,6 +30,7 @@
 
 @property (strong, nonatomic) NSMutableArray *dynsmicArray;
 @property (strong, nonatomic) NSMutableArray *hottestArray;
+
 @end
 
 @implementation DynamicViewController
