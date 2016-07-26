@@ -1,0 +1,6 @@
+framework module Pods_Big_cousin {
+  umbrella header "Pods-Big cousin-umbrella.h"
+
+  export *
+  module * { export * }
+}

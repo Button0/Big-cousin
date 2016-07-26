@@ -10,6 +10,8 @@
 #import "ExpressionLibraryViewController.h"
 #import "DrawingViewController.h"
 #import "BigCousinViewController.h"
+#import "MyViewController.h"
+#import "XFEssenceViewController.h"
 
 @interface RootViewController ()
 @end
@@ -37,7 +39,7 @@
     UINavigationController *naDrawVC = [[UINavigationController alloc] initWithRootViewController:drawVC];
     naDrawVC.tabBarItem = drawVC.tabBarItem;
     
-    BigCousinViewController *bigVC = [[BigCousinViewController alloc] init];
+    XFEssenceViewController *bigVC = [[XFEssenceViewController alloc] init];
     [self addSystemTabBarItem:bigVC title:@"大表姐" imageName:@"" selectedImage:@""];
     UINavigationController *naBigVC = [[UINavigationController alloc] initWithRootViewController:bigVC];
     naBigVC.tabBarItem = bigVC.tabBarItem;
