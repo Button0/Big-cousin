@@ -60,22 +60,33 @@ static NSString *aText;
     _scaleItem = [[UIBarButtonItem alloc]initWithTitle:@"2:1" style:(UIBarButtonItemStylePlain) target:self action:@selector(scaleItemClicked:)];
     self.navigationItem.rightBarButtonItems = @[finishItem,_scaleItem];
     //添加一个textView
-    _changeView = [[UIView alloc]initWithFrame:CGRectMake(0, 150, self.view.bounds.size.width, 250)];
+    _changeView = [[UIView alloc]init];
     _changeView.backgroundColor = [UIColor whiteColor];
     _changeView.clipsToBounds = YES;
     [self.view addSubview:self.changeView];
-
+    //约束
+    [_changeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.mas_top).with.offset(100);
+        make.left.mas_equalTo(self.view.mas_left).with.offset(0);
+        make.size.mas_equalTo(CGSizeMake(self.view.frame.size.width, 200));
+    }];
     
     /** 字 */
     UIButton *wordButton = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
-    wordButton.frame = CGRectMake(self.view.bounds.size.width - 100, self.view.bounds.size.height - 150 , 50, 50);
     [wordButton setTitle:@"字" forState:(UIControlStateNormal)];
     wordButton.layer.cornerRadius = 25;
     [wordButton addTarget:self action:@selector(wordButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     wordButton.backgroundColor = [UIColor redColor];
     
     [self.view addSubview:wordButton];
-    _myLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 0, 0)];
+    //约束
+    [wordButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view).with.offset(-50);
+        make.bottom.equalTo(self.view).with.offset(-50);
+        make.size.mas_equalTo(CGSizeMake(50, 50));
+    }];
+
+    _myLabel = [[UILabel alloc]init];
 //    _myLabel.backgroundColor= [UIColor yellowColor];
     //字体颜色
     _myLabel.textColor = [UIColor blackColor];
@@ -91,9 +102,8 @@ static NSString *aText;
     //label自适应
     [self.myLabel sizeToFit];
     //计算文本的空间：MAXFLOAT为无限大
-    CGFloat width = self.changeView.frame.size.width - 20;
-    CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
-    self.myLabel.frame = CGRectMake(_myLabel.frame.origin.x, _myLabel.frame.origin.y, width, rect.size.height);
+//    CGFloat width = self.changeView.frame.size.width - 20;
+//    CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
     //边框粗细
     _myLabel.layer.borderWidth = 2.0;
     //边框颜色
@@ -102,6 +112,14 @@ static NSString *aText;
     [_changeView addSubview:_myLabel];
     //给label添加手势
     [self makeGestureWithLabel];
+    //约束
+    [_myLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_changeView.mas_top).with.offset(10);
+        make.left.mas_equalTo(_changeView.mas_left).with.offset(40);
+        make.right.mas_equalTo(_changeView.mas_right).with.offset(-40);
+        make.height.mas_equalTo(_myLabel.mas_height).with.offset(50);
+    }];
+
 }
 #pragma mark - 手势
 /** 旋转手势 */
@@ -208,19 +226,30 @@ static NSString *aText;
     if ([self.scaleItem.title isEqualToString:@"2:1"]) {
         ;
         self.scaleItem.title = @"1:1";
-        self.changeView.frame = CGRectMake(0, 100, self.view.frame.size.width, 350);
-        
+        [_changeView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.view.mas_top).with.offset(50);
+            make.left.mas_equalTo(self.view.mas_left).with.offset(0);
+            make.size.mas_equalTo(CGSizeMake(self.view.frame.size.width, 300));
+        }];
     }else if ([self.scaleItem.title isEqualToString:@"1:1"]){
 
         self.scaleItem.title = @"3:4";
-        self.changeView.frame =CGRectMake(100, 100, self.view.frame.size.width - 200, 300);
-        
+        [_changeView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.view.mas_top).with.offset(50);
+            make.right.mas_equalTo(self.view.mas_right).with.offset(-80);
+            make.left.mas_equalTo(self.view.mas_left).with.offset(80);
+//            make.size.mas_equalTo(CGSizeMake(200, 250));
+            make.height.mas_equalTo(250);
+        }];
     }else if ([self.scaleItem.title isEqualToString:@"3:4"]) {
         self.scaleItem.title = @"2:1";
-        self.changeView.frame = CGRectMake(0, 150, self.view.frame.size.width, 250);
-        
+        [_changeView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.view.mas_top).with.offset(100);
+            make.left.mas_equalTo(self.view.mas_left).with.offset(0);
+            make.right.mas_equalTo(self.view.mas_right).with.offset(0);
+            make.height.mas_equalTo(200);
+        }];
     }
-    
 }
 
 - (void)wordButtonClicked:(UIButtonType *)btn

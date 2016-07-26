@@ -26,7 +26,7 @@
     {
         [self setupUI];//KColorLightBlue
         self.backgroundColor = KColorLightBlue;
-        NSLog(@"---%@",NSStringFromCGRect(self.frame));
+//        NSLog(@"---%@",NSStringFromCGRect(self.frame));
     }
     return self;
 }
@@ -43,7 +43,7 @@
         make.left.mas_equalTo(25);
         make.width.mas_equalTo(SWidth/4.0f);
     }];
-    NSLog(@"%@",NSStringFromCGRect(_singleImageView.frame));
+//    NSLog(@"%@",NSStringFromCGRect(_singleImageView.frame));
     
     /*
     //分享按钮view
