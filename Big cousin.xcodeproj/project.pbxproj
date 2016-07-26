@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
+<<<<<<< HEAD
 		429FD8F242D2F92839FAEF1E /* libPods-Big cousin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1F11C9B7441F2EB1648DA0 /* libPods-Big cousin.a */; };
-
-
+=======
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 		AB13D17E1D3CBCE2002320DE /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB13D17D1D3CBCE2002320DE /* BaseModel.m */; };
 		AB13D1841D3CBD88002320DE /* HomeTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB13D1831D3CBD88002320DE /* HomeTitleModel.m */; };
 		AB13D1871D3CC0B6002320DE /* LibraryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB13D1861D3CC0B6002320DE /* LibraryRequest.m */; };
@@ -22,18 +22,18 @@
 		AB49D7FD1D3C70C3009B049A /* DrawingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D7FC1D3C70C3009B049A /* DrawingDetailViewController.m */; };
 		AB49D8071D3C7106009B049A /* DrawingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8061D3C7106009B049A /* DrawingModel.m */; };
 		AB49D80A1D3C7110009B049A /* DrawingHottesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8091D3C7110009B049A /* DrawingHottesModel.m */; };
-
+<<<<<<< HEAD
 		AB49D8101D3C712E009B049A /* BigCousinVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D80C1D3C712E009B049A /* BigCousinVideoTableViewCell.m */; };
 		AB49D8111D3C712E009B049A /* BigCousinVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49D80D1D3C712E009B049A /* BigCousinVideoTableViewCell.xib */; };
 		AB49D8121D3C712E009B049A /* BigCousinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D80F1D3C712E009B049A /* BigCousinViewController.m */; };
-
-
+=======
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 		AB49D8151D3C713E009B049A /* BigCousinVideoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8141D3C713E009B049A /* BigCousinVideoRequest.m */; };
 		AB49D8201D3C718D009B049A /* BigCousinRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D81F1D3C718D009B049A /* BigCousinRequest.m */; };
-
+<<<<<<< HEAD
 		AB49D8231D3C7195009B049A /* BigCousinGIFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8221D3C7195009B049A /* BigCousinGIFModel.m */; };
-
-
+=======
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 		AB49D8261D3C71A9009B049A /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8251D3C71A9009B049A /* BaseRequest.m */; };
 		AB49D82A1D3C71D7009B049A /* DrawingHottesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8281D3C71D7009B049A /* DrawingHottesCollectionViewCell.m */; };
 		AB49D82B1D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */; };
@@ -225,11 +225,11 @@
 
 /* Begin PBXFileReference section */
 		3B57DC203874B5E147E05701 /* Pods-Big cousin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big cousin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Big cousin/Pods-Big cousin.debug.xcconfig"; sourceTree = "<group>"; };
-
+<<<<<<< HEAD
 		7B1F11C9B7441F2EB1648DA0 /* libPods-Big cousin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Big cousin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-
+=======
 		7A1EE69616C0D3DB804F4CF6 /* Pods_Big_cousin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_cousin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 		AB13D17C1D3CBCE2002320DE /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		AB13D17D1D3CBCE2002320DE /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		AB13D1821D3CBD88002320DE /* HomeTitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTitleModel.h; sourceTree = "<group>"; };
@@ -254,17 +254,23 @@
 		AB49D8061D3C7106009B049A /* DrawingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingModel.m; sourceTree = "<group>"; };
 		AB49D8081D3C7110009B049A /* DrawingHottesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottesModel.h; sourceTree = "<group>"; };
 		AB49D8091D3C7110009B049A /* DrawingHottesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottesModel.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		AB49D80B1D3C712E009B049A /* BigCousinVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigCousinVideoTableViewCell.h; sourceTree = "<group>"; };
 		AB49D80C1D3C712E009B049A /* BigCousinVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigCousinVideoTableViewCell.m; sourceTree = "<group>"; };
 		AB49D80D1D3C712E009B049A /* BigCousinVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigCousinVideoTableViewCell.xib; sourceTree = "<group>"; };
 		AB49D80E1D3C712E009B049A /* BigCousinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigCousinViewController.h; sourceTree = "<group>"; };
 		AB49D80F1D3C712E009B049A /* BigCousinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigCousinViewController.m; sourceTree = "<group>"; };
+=======
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 		AB49D8131D3C713E009B049A /* BigCousinVideoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigCousinVideoRequest.h; sourceTree = "<group>"; };
 		AB49D8141D3C713E009B049A /* BigCousinVideoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigCousinVideoRequest.m; sourceTree = "<group>"; };
 		AB49D81E1D3C718D009B049A /* BigCousinRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigCousinRequest.h; sourceTree = "<group>"; };
 		AB49D81F1D3C718D009B049A /* BigCousinRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigCousinRequest.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		AB49D8211D3C7195009B049A /* BigCousinGIFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigCousinGIFModel.h; sourceTree = "<group>"; };
 		AB49D8221D3C7195009B049A /* BigCousinGIFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigCousinGIFModel.m; sourceTree = "<group>"; };
+=======
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 		AB49D8241D3C71A9009B049A /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
 		AB49D8251D3C71A9009B049A /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
 		AB49D8271D3C71D7009B049A /* DrawingHottesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottesCollectionViewCell.h; sourceTree = "<group>"; };
@@ -508,13 +514,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				ABEC55E81D36BD7200E9DACD /* UIKit.framework in Frameworks */,
 				ABEC55E61D36BD6600E9DACD /* QuartzCore.framework in Frameworks */,
 				429FD8F242D2F92839FAEF1E /* libPods-Big cousin.a in Frameworks */,
+=======
 				D64ED54B1D476281003AA29F /* ImageIO.framework in Frameworks */,
 				ABEC55E81D36BD7200E9DACD /* UIKit.framework in Frameworks */,
 				ABEC55E61D36BD6600E9DACD /* QuartzCore.framework in Frameworks */,
 				CFB3A78CBB48A29917307485 /* Pods_Big_cousin.framework in Frameworks */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,13 +556,16 @@
 		414934C94C62055C4EC5AD62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				ABEC55E71D36BD7200E9DACD /* UIKit.framework */,
 				ABEC55E51D36BD6600E9DACD /* QuartzCore.framework */,
 				7B1F11C9B7441F2EB1648DA0 /* libPods-Big cousin.a */,
+=======
 				D64ED54A1D476281003AA29F /* ImageIO.framework */,
 				ABEC55E71D36BD7200E9DACD /* UIKit.framework */,
 				ABEC55E51D36BD6600E9DACD /* QuartzCore.framework */,
 				7A1EE69616C0D3DB804F4CF6 /* Pods_Big_cousin.framework */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -674,7 +686,10 @@
 		ABEC54E51D36496D00E9DACD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
 				D64ED54D1D476383003AA29F /* bigResource */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				ABFBF4FD1D378AD700BCDD60 /* 表情库.png */,
 				ABFBF4F51D377C6F00BCDD60 /* scrollview_0.jpg */,
 				ABFBF4F61D377C6F00BCDD60 /* scrollview_1.jpg */,
@@ -862,6 +877,8 @@
 			name = const;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
 		D64ED54D1D476383003AA29F /* bigResource */ = {
 			isa = PBXGroup;
 			children = (
@@ -899,6 +916,7 @@
 			name = bigResource;
 			sourceTree = "<group>";
 		};
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 		D65E3B571D3F7BF200F1E56B /* BearController */ = {
 			isa = PBXGroup;
 			children = (
@@ -957,6 +975,8 @@
 			sourceTree = "<group>";
 		};
 		D67E16071D37297700B2A887 /* BIgCousin */ = {
+<<<<<<< HEAD
+=======
 			isa = PBXGroup;
 			children = (
 				D64ED4F31D475F6B003AA29F /* XFLatestViewController.h */,
@@ -988,11 +1008,13 @@
 			sourceTree = "<group>";
 		};
 		D67E16081D37298500B2A887 /* MY */ = {
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 			isa = PBXGroup;
 			children = (
 				AB49D80E1D3C712E009B049A /* BigCousinViewController.h */,
 				AB49D80F1D3C712E009B049A /* BigCousinViewController.m */,
 			);
+<<<<<<< HEAD
 			name = BIgCousin;
 			sourceTree = "<group>";
 		};
@@ -1002,6 +1024,8 @@
 				D63635E31D35E13200DA8618 /* MyViewController.h */,
 				D63635E41D35E13200DA8618 /* MyViewController.m */,
 			);
+=======
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 			name = MY;
 			sourceTree = "<group>";
 		};
@@ -1075,10 +1099,12 @@
 		D6F297EA1D40621F00C8C353 /* BigCousin */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				AB49D8161D3C7149009B049A /* BigCousinVideoModel.h */,
 				AB49D8171D3C7149009B049A /* BigCousinVideoModel.m */,
 				AB49D8211D3C7195009B049A /* BigCousinGIFModel.h */,
 				AB49D8221D3C7195009B049A /* BigCousinGIFModel.m */,
+=======
 				D64ED52C1D475FF6003AA29F /* XFTopicModel.h */,
 				D64ED52D1D475FF6003AA29F /* XFTopicModel.m */,
 				D64ED52E1D475FF6003AA29F /* XFUserModel.h */,
@@ -1091,6 +1117,7 @@
 				D64ED5351D475FF6003AA29F /* HttpTool.m */,
 				D64ED5361D475FF6003AA29F /* XFModuleDataTool.h */,
 				D64ED5371D475FF6003AA29F /* XFModuleDataTool.m */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 			);
 			name = BigCousin;
 			sourceTree = "<group>";
@@ -1226,11 +1253,13 @@
 			files = (
 				D64ED5701D47639E003AA29F /* zhuanzai.png in Resources */,
 				ABEC55981D36B2D200E9DACD /* arrow_down1@2x.png in Resources */,
+<<<<<<< HEAD
 				ABE29C8D1D42824400B4F5B9 /* Images.xcassets in Resources */,
 				ABFBF4FE1D378AD700BCDD60 /* 表情库.png in Resources */,
 				AB49D82B1D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib in Resources */,
 				ABFBF5261D37F5F300BCDD60 /* LibraryCollectionViewCell.xib in Resources */,
 				ABE29C931D428AA800B4F5B9 /* 加载1.jpg in Resources */,
+=======
 				D64ED5291D475FD1003AA29F /* XFContentVideoView.xib in Resources */,
 				D64ED5251D475FD1003AA29F /* XFCommentCell.xib in Resources */,
 				D64ED5891D47639E003AA29F /* 4.png in Resources */,
@@ -1249,23 +1278,29 @@
 				D64ED5821D47639E003AA29F /* comment_bar_at_icon.png in Resources */,
 				D64ED5811D47639E003AA29F /* 570c76d964a19_1024_58.png in Resources */,
 				D64ED5841D47639E003AA29F /* Profile_manIcon.png in Resources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				ABEC55991D36B2D200E9DACD /* arrow_down@2x.png in Resources */,
 				D64ED5881D47639E003AA29F /* 2.png in Resources */,
 				D64ED5751D47639E003AA29F /* kr-video-player-pause@2x.png in Resources */,
 				ABFBF4FA1D377C6F00BCDD60 /* scrollview_1.jpg in Resources */,
 				AB85BD621D3E1278009A9F27 /* 48.gif in Resources */,
 				ABEC55971D36B2D200E9DACD /* arrow_down1.png in Resources */,
+<<<<<<< HEAD
+=======
 				D64ED5781D47639E003AA29F /* kr-video-player-play@2x.png in Resources */,
 				D64ED57E1D47639E003AA29F /* see-big-picture.png in Resources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				AB9C1A341D35D1DE0067B7A8 /* LaunchScreen.storyboard in Resources */,
 				D64ED5721D47639E003AA29F /* dianzan.png in Resources */,
 				D64ED5791D47639E003AA29F /* kr-video-player-point@2x.png in Resources */,
 				D6FA4F0D1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib in Resources */,
 				D64AED0C1D37525B001B2613 /* 123123.png in Resources */,
+<<<<<<< HEAD
 				D64AED121D37730F001B2613 /* 3.png in Resources */,
 				D64AED1B1D37CAA3001B2613 /* 5.png in Resources */,
 				AB85BD641D3E1296009A9F27 /* 85.gif in Resources */,
 				D63EE24C1D4336ED00B73B7A /* BigCousinTableViewCell.xib in Resources */,
+=======
 				D64ED5831D47639E003AA29F /* comment-bar-bg.png in Resources */,
 				D64ED57B1D47639E003AA29F /* mainCellComment.png in Resources */,
 				D64ED5871D47639E003AA29F /* 1.png in Resources */,
@@ -1275,6 +1310,7 @@
 				D64ED5741D47639E003AA29F /* yyy.png in Resources */,
 				AB85BD641D3E1296009A9F27 /* 85.gif in Resources */,
 				D64ED5151D475F6B003AA29F /* XFVociePlayerController.xib in Resources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				D64AED101D3771DB001B2613 /* 2.png in Resources */,
 				D64ED52B1D475FD1003AA29F /* XFContentPictureView.xib in Resources */,
 				D64ED57F1D47639E003AA29F /* see-big-picture-background.png in Resources */,
@@ -1282,15 +1318,18 @@
 				AB85BD5E1D3E11C9009A9F27 /* pika.gif in Resources */,
 				D64ED57A1D47639E003AA29F /* kr-video-player-shrinkscreen@2x.png in Resources */,
 				D67E16041D371FFD00B2A887 /* DrawingCollectionViewCell.xib in Resources */,
+<<<<<<< HEAD
 				ABFBF4F91D377C6F00BCDD60 /* scrollview_0.jpg in Resources */,
 				AB9C1A311D35D1DE0067B7A8 /* Assets.xcassets in Resources */,
 				ABE29C8F1D428A2C00B4F5B9 /* 加载2.jpg in Resources */,
 				AB49D8111D3C712E009B049A /* BigCousinVideoTableViewCell.xib in Resources */,
+=======
 				D64ED5801D47639E003AA29F /* cellmorebtnnormal.png in Resources */,
 				ABFBF4F91D377C6F00BCDD60 /* scrollview_0.jpg in Resources */,
 				AB9C1A311D35D1DE0067B7A8 /* Assets.xcassets in Resources */,
 				ABE29C8F1D428A2C00B4F5B9 /* 加载2.jpg in Resources */,
 				D64ED5851D47639E003AA29F /* play-voice-stop.png in Resources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				AB9C1A2C1D35D1DE0067B7A8 /* Main.storyboard in Resources */,
 				D6F297DB1D40586000C8C353 /* DrawingHottestCollectionViewCell.xib in Resources */,
 				D64ED56D1D47639E003AA29F /* cai.png in Resources */,
@@ -1301,7 +1340,10 @@
 				ABE29C911D428A7100B4F5B9 /* 加载3.jpg in Resources */,
 				D64ED5861D47639E003AA29F /* play-voice-bg.png in Resources */,
 				D64AED0E1D377113001B2613 /* 1.png in Resources */,
+<<<<<<< HEAD
+=======
 				D64ED57C1D47639E003AA29F /* mainCellShare.png in Resources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				ABEC55961D36B2D200E9DACD /* arrow_down.png in Resources */,
 				D64ED5761D47639E003AA29F /* kr-video-player-close@2x.png in Resources */,
 				ABFBF4FC1D377C6F00BCDD60 /* scrollview_3.jpg in Resources */,
@@ -1380,15 +1422,21 @@
 				AB49D82A1D3C71D7009B049A /* DrawingHottesCollectionViewCell.m in Sources */,
 				ABEC55D81D36B9BC00E9DACD /* MenuTable.m in Sources */,
 				D6F297E71D40601600C8C353 /* MiserlyCollectionViewCell.m in Sources */,
+<<<<<<< HEAD
 				AB49D7F21D3C705F009B049A /* PlayerView.m in Sources */,
+=======
 				D64ED5121D475F6B003AA29F /* XFCommentViewController.m in Sources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				AB13D18A1D3CC9BB002320DE /* ExpressionLibraryModel.m in Sources */,
 				D64ED5401D476047003AA29F /* UIView+Extension.m in Sources */,
 				AB9C1A2F1D35D1DE0067B7A8 /* Big_cousin.xcdatamodeld in Sources */,
 				D64ED5391D475FF6003AA29F /* XFUserModel.m in Sources */,
 				AB85BD671D3E8F4F009A9F27 /* SingleExpressionHeaderView.m in Sources */,
 				D6070C051D3E593700EB761F /* DrawingRequest.m in Sources */,
+<<<<<<< HEAD
+=======
 				D64ED5241D475FD1003AA29F /* XFCommentCell.m in Sources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				ABEC55FA1D37413300E9DACD /* SearchView.m in Sources */,
 				ABFBF5D41D39413200BCDD60 /* NSArray+MASAdditions.m in Sources */,
 				D64ED5381D475FF6003AA29F /* XFTopicModel.m in Sources */,
@@ -1399,14 +1447,20 @@
 				D64ED53C1D475FF6003AA29F /* HttpTool.m in Sources */,
 				D64ED5101D475F6B003AA29F /* XFAllViewController.m in Sources */,
 				D63635E51D35E13200DA8618 /* MyViewController.m in Sources */,
+<<<<<<< HEAD
+=======
 				D64ED50D1D475F6B003AA29F /* XFDetailPictureController.m in Sources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				D65E3B5C1D3F7D0500F1E56B /* DynamicViewController.m in Sources */,
 				AB49D8101D3C712E009B049A /* BigCousinVideoTableViewCell.m in Sources */,
 				D6F297DA1D40586000C8C353 /* DrawingHottestCollectionViewCell.m in Sources */,
 				AB49D7FD1D3C70C3009B049A /* DrawingDetailViewController.m in Sources */,
 				D64ED50F1D475F6B003AA29F /* XFPictrueViewController.m in Sources */,
 				ABFBF5DA1D39413200BCDD60 /* View+MASAdditions.m in Sources */,
+<<<<<<< HEAD
+=======
 				D64ED5281D475FD1003AA29F /* XFContentVideoView.m in Sources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				ABFBF5C21D39413200BCDD60 /* MASCompositeConstraint.m in Sources */,
 				D6F297F31D4062FA00C8C353 /* DynamicHottestModel.m in Sources */,
 				AB49D8121D3C712E009B049A /* BigCousinViewController.m in Sources */,
@@ -1423,21 +1477,27 @@
 				D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */,
 				AB49D7ED1D3C6FDE009B049A /* WordViewController.m in Sources */,
 				D63EE24A1D42FA5500B73B7A /* LabelWithAlertActionView.m in Sources */,
+<<<<<<< HEAD
 				ABFBF5C51D39413200BCDD60 /* MASConstraint.m in Sources */,
 				D63635D61D35DF8D00DA8618 /* RootViewController.m in Sources */,
 				D65102F31D4255930088ECC2 /* CompileViewController.m in Sources */,
 				AB49D81C1D3C717B009B049A /* BigCousinTableViewCell.m in Sources */,
+=======
 				D64ED53A1D475FF6003AA29F /* XFCommentModel.m in Sources */,
 				ABFBF5C51D39413200BCDD60 /* MASConstraint.m in Sources */,
 				D63635D61D35DF8D00DA8618 /* RootViewController.m in Sources */,
 				D65102F31D4255930088ECC2 /* CompileViewController.m in Sources */,
 				D64ED50B1D475F6B003AA29F /* XFLatestViewController.m in Sources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				D67E16031D371FFD00B2A887 /* DrawingCollectionViewCell.m in Sources */,
 				ABFBF5C81D39413200BCDD60 /* MASConstraintMaker.m in Sources */,
 				D6F297F01D4062A400C8C353 /* MiserlyModel.m in Sources */,
 				D64ED5461D476059003AA29F /* UIImageView+Header.m in Sources */,
 				AB13D1841D3CBD88002320DE /* HomeTitleModel.m in Sources */,
+<<<<<<< HEAD
 				AB49D8181D3C7149009B049A /* BigCousinVideoModel.m in Sources */,
+=======
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				D6FA4F0C1D3797CA00B80970 /* DrawingNewCollectionViewCell.m in Sources */,
 				AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */,
 				D64ED53B1D475FF6003AA29F /* XFTopicFrame.m in Sources */,
@@ -1453,14 +1513,17 @@
 				AB85BD4C1D3D518E009A9F27 /* NSString+DecryptString.m in Sources */,
 				ABFBF5D11D39413200BCDD60 /* MASViewConstraint.m in Sources */,
 				AB49D8261D3C71A9009B049A /* BaseRequest.m in Sources */,
+<<<<<<< HEAD
 				AB49D8231D3C7195009B049A /* BigCousinGIFModel.m in Sources */,
 				AB49D8201D3C718D009B049A /* BigCousinRequest.m in Sources */,
 				ABEC56191D376DC800E9DACD /* VTCycleScrollView.m in Sources */,
+=======
 				AB49D8201D3C718D009B049A /* BigCousinRequest.m in Sources */,
 				D64ED5161D475F6B003AA29F /* KRVideoPlayerController.m in Sources */,
 				D64ED5141D475F6B003AA29F /* XFVociePlayerController.m in Sources */,
 				ABEC56191D376DC800E9DACD /* VTCycleScrollView.m in Sources */,
 				D64ED52A1D475FD1003AA29F /* XFContentPictureView.m in Sources */,
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 				AB49D7F71D3C7093009B049A /* NetWorkRequest.m in Sources */,
 				AB49D7FA1D3C70B9009B049A /* DrawingViewController.m in Sources */,
 				ABFBF5CB1D39413200BCDD60 /* MASLayoutConstraint.m in Sources */,
