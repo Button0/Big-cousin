@@ -122,7 +122,7 @@
     
     //设置页码
     _pageControl.currentPage = _currentIndex;
-    NSLog(@"currentPage: %ld",(long)_currentIndex);
+//    NSLog(@"currentPage: %ld",(long)_currentIndex);
     
     //设置图片
     _currentImageView.image = [UIImage imageWithContentsOfFile:[_imageData objectAtIndex:[self getCorrectIndexWith:_currentIndex]]];

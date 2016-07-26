@@ -29,6 +29,8 @@
 
 #import "CompileViewController.h"
 
+#import "FinshedViewController.h"
+
 
 //#import "packageView.h"
 // Include any system framework and library headers here that should be included in all compilation units.

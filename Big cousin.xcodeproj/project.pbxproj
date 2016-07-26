@@ -604,7 +604,6 @@
 				ABE29C8E1D428A2C00B4F5B9 /* 加载2.jpg */,
 				ABE29C921D428AA800B4F5B9 /* 加载1.jpg */,
 				ABE29C901D428A7100B4F5B9 /* 加载3.jpg */,
-				ABFBF5F61D3B632700BCDD60 /* downloadsuo.do.png */,
 				D63EE2481D42FA5500B73B7A /* LabelWithAlertActionView.h */,
 				D63EE2491D42FA5500B73B7A /* LabelWithAlertActionView.m */,
 			);
