@@ -118,7 +118,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.newsCollection reloadData];
         });
-//        NSLog(@"===============%@",weakSelf.dynsmicArray);
+        NSLog(@"===============%@",weakSelf.dynsmicArray);
 
     } failure:^(NSError *error) {
         NSLog(@"error ===== %@",error);
@@ -172,19 +172,8 @@
 //点击方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.hidesBottomBarWhenPushed = YES;
     CompileViewController *compileVC = [[CompileViewController alloc]init];
     [self.navigationController pushViewController:compileVC animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
-    if (collectionView ==  _newsCollection) {
-        DynamicModel *model = self.dynsmicArray[indexPath.row];
-        compileVC.imageString = [model.URL replacingStringToURL];
-    }else if (collectionView == _hottestCollection)
-    {
-        DynamicHottestModel *model = self.hottestArray[indexPath.row];
-        compileVC.imageString = [model.URL replacingStringToURL];
-    }
-    
     
 }
 

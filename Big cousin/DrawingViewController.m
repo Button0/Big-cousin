@@ -26,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"快速制作";
-    self.view.backgroundColor = KColorFeiGray;
     
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
@@ -39,21 +38,15 @@
     //每行显示个数
     flowLayout.itemSize = CGSizeMake(100, 100);
     
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.view.frame)+40, CGRectGetMinY(self.view.bounds) + 150, self.view.bounds.size.width - 80, self.view.bounds.size.height - (CGRectGetMaxY(self.view.bounds) - 300)) collectionViewLayout:flowLayout];
    
     //代理
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"DrawingCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:DrawingCollectionViewCell_Identify];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:self.collectionView];
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        //设置view的大小
-        make.size.mas_equalTo(CGSizeMake(250, 300));
-        make.center.equalTo(self.view);
-    }];
-
     
 }
 //返回个数

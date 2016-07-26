@@ -31,9 +31,6 @@
 #import "NSString+DecryptString.h"
 #import "Masonry.h"
 
-#import <MJRefresh/MJRefresh.h>
-#import "MJRefresh.h"
-
 
 #import <UMSocialData.h>
 #import <UMSocialSnsService.h>
@@ -42,6 +39,7 @@
 #import <UMSocialQQHandler.h>
 #import <UMSocialSnsPlatformManager.h>
 
+#import "CompileViewController.h"
 
 #import "ReactiveCocoa.h"
 #import "UIView+Extension.h"
@@ -55,14 +53,6 @@ typedef NS_ENUM(NSUInteger, TopicType) {
     TopicTypeVoice = 31, // 声音
     TopicTypeVideo = 41 // 视频
 };
-
-
-#import "CompileViewController.h"
-
-#import "FinshedViewController.h"
-
-
-
 
 //#import "packageView.h"
 // Include any system framework and library headers here that should be included in all compilation units.
