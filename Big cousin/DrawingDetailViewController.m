@@ -58,10 +58,10 @@
     flowLayout.itemSize = CGSizeMake(100, 120);
     
     /** 初始化控制器 */
-    self.newestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight-50) collectionViewLayout:flowLayout];
+    self.newestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
     self.newestCollectionView.backgroundColor = [UIColor whiteColor];
     
-    self.hottestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight-49) collectionViewLayout:flowLayout];
+    self.hottestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
     self.hottestCollectionView.backgroundColor = [UIColor whiteColor];
 //    self.hottestCollectionView.edgesForExtendedLayout = UIRectEdgeNone
     
@@ -293,22 +293,8 @@
 //cell点击方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.hidesBottomBarWhenPushed = YES;
     CompileViewController *compileVC = [[CompileViewController alloc]init];
     [self.navigationController pushViewController:compileVC animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
-    //
-    if (collectionView ==self.newestCollectionView ) {
-        DrawingModel *model = self.dataArray[indexPath.row];
-        compileVC.imageString = model.url;
-        NSLog(@"model.url ======= %@",model.url);
-
-    }else if (collectionView == self.hottestCollectionView)
-    {
-        DrawingHottesModel *model = self.hottesArray[indexPath.row];
-        compileVC.imageString = [model.coverUrl replacingStringToURL];
-    }
-    
 }
 
 

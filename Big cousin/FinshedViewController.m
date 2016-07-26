@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) UILabel *finshedLabel;
 
-@property (strong, nonatomic) UIImageView *imageV;
+
 
 @end
 
@@ -24,19 +24,9 @@
     [super viewDidLoad];
     self.title = @"保存/分享";
     self.view.backgroundColor = [UIColor colorWithRed:238/256.0 green:238/256.0 blue:238/256.0 alpha:1];
-    _finshedView = [[UIView alloc]init];
-    
+    _finshedView = [[UIView alloc]initWithFrame:CGRectMake(100, 10,200 , 300)];
     _finshedView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_finshedView];
-    //约束
-    [_finshedView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top).with.offset(10);
-        make.left.mas_equalTo(self.view.mas_left).with.offset(50);
-        make.right.mas_equalTo(self.view.mas_right).with.offset(-50);
-        make.height.mas_equalTo(300);
-    }];
-
-
     //自定义navigationItem
     
     UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
@@ -58,7 +48,7 @@
     _finshedLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
     _finshedLabel.backgroundColor = [UIColor redColor];
     _finshedLabel.text = self.labelText;
-//    NSLog(@"==========%@", _finshedLabel.text);
+    NSLog(@"==========%@", _finshedLabel.text);
     _finshedLabel.numberOfLines = 0;
     [_finshedLabel sizeToFit];
     CGFloat width = self.finshedView.frame.size.width - 20;
@@ -76,45 +66,19 @@
     
     saceButton.backgroundColor = [UIColor grayColor];
     [self.view addSubview:saceButton];
-    [saceButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(80, 30));
-        make.top.mas_equalTo(self.finshedView.mas_bottom).with.offset(10);
-        make.left.mas_equalTo(self.finshedView.mas_left).with.offset(0);
-    }];
-
     //button上字体的大小
     saceButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
     
     UIButton *downloadButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//    downloadButton.frame = CGRectMake(CGRectGetMaxX(saceButton.frame) + 30, CGRectGetMinY(saceButton.frame) , 80, 30);
+    downloadButton.frame = CGRectMake(CGRectGetMaxX(saceButton.frame) + 30, CGRectGetMinY(saceButton.frame) , 80, 30);
     [downloadButton setTitle:@"下载至本地" forState:(UIControlStateNormal)];
     downloadButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
     downloadButton.layer.cornerRadius = 15;
     [downloadButton addTarget:self action:@selector(downloadClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     downloadButton.backgroundColor = [UIColor grayColor];
     [self.view addSubview:downloadButton];
-    [downloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(80, 30));
-        make.top.mas_equalTo(self.finshedView.mas_bottom).with.offset(10);
-//        make.left.mas_equalTo(saceButton.mas_right).with.offset(50);
-        make.right.mas_equalTo(self.finshedView.mas_right).with.offset(0);
-    }];
-
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"⏮" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftClicked)];
-    
-    
-    _imageV = [[UIImageView alloc]init];
-    _imageV.backgroundColor = [UIColor redColor];
-    [self.finshedView addSubview:_imageV];
-    [_imageV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(100, 100));
-        make.centerX.mas_equalTo(_finshedView.mas_centerX);
-        make.bottom.mas_equalTo(_finshedView.mas_bottom).with.offset(-10);
-    }];
-    
-    [_imageV setImageWithURL:[NSURL URLWithString:self.imageVString]];
-    
-    NSLog(@"imageVString ======= %@",self.imageVString);
     
 }
 

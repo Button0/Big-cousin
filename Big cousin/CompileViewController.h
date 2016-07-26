@@ -10,7 +10,4 @@
 
 @interface CompileViewController : BaseViewController
 
-@property (strong, nonatomic) NSString *imageString;
-
-
 @end

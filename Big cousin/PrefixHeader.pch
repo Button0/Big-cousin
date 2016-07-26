@@ -29,8 +29,23 @@
 
 #import "CompileViewController.h"
 
+<<<<<<< HEAD
 #import "FinshedViewController.h"
 
+=======
+#import "ReactiveCocoa.h"
+#import "UIView+Extension.h"
+#import "UIImage+XFCircle.h"
+#import "UIImageView+Header.h"
+
+typedef NS_ENUM(NSUInteger, TopicType) {
+    TopicTypeAll = 1, // 全部
+    TopicTypePicture = 10, // 图片
+    TopicTypeTalk = 29, // 段子
+    TopicTypeVoice = 31, // 声音
+    TopicTypeVideo = 41 // 视频
+};
+>>>>>>> cb5711d996d27c9995ae0479f5522b35b8add22c
 
 //#import "packageView.h"
 // Include any system framework and library headers here that should be included in all compilation units.
