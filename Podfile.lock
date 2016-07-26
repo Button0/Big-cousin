@@ -14,16 +14,55 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - DACircularProgress (2.3.1)
+  - MJExtension (3.0.10)
+  - MJRefresh (3.1.9)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
+  - ReactiveCocoa (4.0.4-alpha-4):
+    - ReactiveCocoa/UI (= 4.0.4-alpha-4)
+    - Result (~> 1.0)
+  - ReactiveCocoa/Core (4.0.4-alpha-4):
+    - ReactiveCocoa/no-arc
+    - Result (~> 1.0)
+  - ReactiveCocoa/no-arc (4.0.4-alpha-4):
+    - Result (~> 1.0)
+  - ReactiveCocoa/UI (4.0.4-alpha-4):
+    - ReactiveCocoa/Core
+    - Result (~> 1.0)
+  - Result (1.0.2)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - SVProgressHUD (2.0.3)
   - UMengSocialCOM (5.2.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - DACircularProgress (~> 2.3.1)
+  - MJExtension (~> 3.0.7)
+  - MJRefresh (~> 3.1.9)
+  - NJKWebViewProgress (~> 0.2.3)
+  - ReactiveCocoa (~> 4.0.4-alpha-4)
+  - SDWebImage (~> 3.7.3)
+  - SVProgressHUD (~> 2.0-beta8)
   - UMengSocialCOM (~> 5.2.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
+  MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+  ReactiveCocoa: e459ea92099447802df20c4735e31e8139b06094
+  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   UMengSocialCOM: 074c135ce349aa4c8848d3fb8458757bcb6ffb67
 
-PODFILE CHECKSUM: 9c57ad13f83102d412aab3089cbf09599e669b14
+PODFILE CHECKSUM: 6062d0499a53d1a54a3cb041807aaa56669350a6
 
 COCOAPODS: 1.0.1
