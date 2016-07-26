@@ -82,26 +82,3 @@ strip_invalid_archs() {
   fi
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/DACircularProgress/DACircularProgress.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MJExtension/MJExtension.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/NJKWebViewProgress/NJKWebViewProgress.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Result/Result.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/DACircularProgress/DACircularProgress.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MJExtension/MJExtension.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/NJKWebViewProgress/NJKWebViewProgress.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Result/Result.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
-fi

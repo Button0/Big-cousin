@@ -9,9 +9,8 @@
 #import "RootViewController.h"
 #import "ExpressionLibraryViewController.h"
 #import "DrawingViewController.h"
-//#import "BigCousinViewController.h"
+#import "BigCousinViewController.h"
 #import "MyViewController.h"
-#import "XFEssenceViewController.h"
 
 @interface RootViewController ()
 @end
@@ -29,16 +28,8 @@
 //setTabBar
 - (void)setTabBar
 {
-
-    ExpressionLibraryViewController *packVC = [ExpressionLibraryViewController new];
-    UIImage * homenormalImage = [[UIImage imageNamed:@"Image004Q1.tif"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage * homeselectImage = [[UIImage imageNamed:@""]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    packVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:homenormalImage selectedImage:homeselectImage];
-//    [self addSystemTabBarItem:packVC title:@"" ima];
-
     ExpressionLibraryViewController *packVC = [[ExpressionLibraryViewController alloc] init];
     [self addSystemTabBarItem:packVC title:@"表情库" imageName:@"" selectedImage:@""];
-
     UINavigationController *naPackVC = [[UINavigationController alloc] initWithRootViewController:packVC];
     naPackVC.tabBarItem = packVC.tabBarItem;
     
@@ -47,16 +38,10 @@
     UINavigationController *naDrawVC = [[UINavigationController alloc] initWithRootViewController:drawVC];
     naDrawVC.tabBarItem = drawVC.tabBarItem;
     
-
-    XFEssenceViewController *bigVC = [XFEssenceViewController new];
-
     BigCousinViewController *bigVC = [[BigCousinViewController alloc] init];
-
     [self addSystemTabBarItem:bigVC title:@"大表姐" imageName:@"" selectedImage:@""];
     UINavigationController *naBigVC = [[UINavigationController alloc] initWithRootViewController:bigVC];
     naBigVC.tabBarItem = bigVC.tabBarItem;
-    
-    
     
     self.viewControllers = @[naPackVC,naDrawVC,naBigVC];
 }
