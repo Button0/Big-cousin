@@ -7,6 +7,7 @@
 //
 
 #import "DrawingNewCollectionViewCell.h"
+#import "ExpressionLibraryModel.h"
 
 @implementation DrawingNewCollectionViewCell
 
@@ -14,12 +15,22 @@
     // Initialization code
 }
 
+- (void)setLibraryModel:(ExpressionLibraryModel *)libraryModel
+{
+    _libraryModel = libraryModel;
+    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[libraryModel.Url replacingStringToURL]]];
+}
+
 - (void)setModel:(DrawingModel *)model
 {
     [_drawingNewImageV setImageWithURL:[NSURL URLWithString:model.url]];
 }
 
-
+- (void)setDynamicModel:(DynamicModel *)dynamicModel
+{
+    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[dynamicModel.URL replacingStringToURL]]];
+    NSLog(@"dynamicModel.url ======= %@",[dynamicModel.URL replacingStringToURL]);
+}
 
 
 @end

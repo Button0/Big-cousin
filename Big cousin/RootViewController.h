@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface RootViewController : UITabBarController
-/** 自定义tabBar */
-
 
 @end

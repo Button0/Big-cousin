@@ -18,6 +18,8 @@ static NSString *aText;
 
 @property (strong, nonatomic) UILabel * myLabel;
 
+@property (nonatomic,assign) CGPoint startPoint;
+
 @end
 
 
@@ -33,6 +35,7 @@ static NSString *aText;
     
     
     [self addRightnavigationItem];
+    self.hidesBottomBarWhenPushed = YES;
 
 }
 //点击方法
@@ -59,10 +62,11 @@ static NSString *aText;
     //添加一个textView
     _changeView = [[UIView alloc]initWithFrame:CGRectMake(0, 150, self.view.bounds.size.width, 250)];
     _changeView.backgroundColor = [UIColor whiteColor];
+    _changeView.clipsToBounds = YES;
     [self.view addSubview:self.changeView];
 
     
-    /** 添加一个button */
+    /** 字 */
     UIButton *wordButton = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
     wordButton.frame = CGRectMake(self.view.bounds.size.width - 100, self.view.bounds.size.height - 150 , 50, 50);
     [wordButton setTitle:@"字" forState:(UIControlStateNormal)];
@@ -72,7 +76,7 @@ static NSString *aText;
     
     [self.view addSubview:wordButton];
     _myLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 0, 0)];
-    _myLabel.backgroundColor= [UIColor yellowColor];
+//    _myLabel.backgroundColor= [UIColor yellowColor];
     //字体颜色
     _myLabel.textColor = [UIColor blackColor];
     //字体大小
@@ -89,16 +93,17 @@ static NSString *aText;
     //计算文本的空间：MAXFLOAT为无限大
     CGFloat width = self.changeView.frame.size.width - 20;
     CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
-    self.myLabel.frame = CGRectMake(_myLabel.frame.origin.x, _myLabel.frame.origin.y, width, _myLabel.frame.size.height);
-
-//    _myLabel.text = @"按实际的父亲为家人和银联卡说对方空间的回复近段时间分地方的";
-
+    self.myLabel.frame = CGRectMake(_myLabel.frame.origin.x, _myLabel.frame.origin.y, width, rect.size.height);
+    //边框粗细
+    _myLabel.layer.borderWidth = 2.0;
+    //边框颜色
+    _myLabel.layer.borderColor = [[UIColor redColor]CGColor];
     
     [_changeView addSubview:_myLabel];
     //给label添加手势
     [self makeGestureWithLabel];
 }
-#pragma mark ----------- 手势 ----------
+#pragma mark - 手势
 /** 旋转手势 */
 - (void)makeGestureWithLabel
 {
@@ -110,8 +115,11 @@ static NSString *aText;
     //缩放手势
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchClicked:)];
     [self.myLabel addGestureRecognizer:pinch];
+    //拖动手势
+//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panClicked:)];
+//    [self.myLabel addGestureRecognizer:pan];
 }
-#warning ------------- 手势方法
+
 //旋转手势
 - (void)rotationClicked:(UIRotationGestureRecognizer *)sender
 {
@@ -119,6 +127,7 @@ static NSString *aText;
     sender.view.transform = CGAffineTransformRotate(sender.view.transform, sender.rotation);
     //旋转的手指
     sender.rotation = 0;
+    
 }
 
 //缩放手势
@@ -129,9 +138,61 @@ static NSString *aText;
     sender.scale = 1;
 }
 
+//TODO:拖动问题未完成
+//任意位置拖动
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    _startPoint = [touch locationInView:_myLabel];
+}
 
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint destPoint = [touch locationInView:_myLabel];
+    
+    float x = destPoint.x - _startPoint.x;
+    float y = destPoint.y - _startPoint.y;
+    
+    CGPoint center = _myLabel.center;
+    center.x += x;
+    center.y += y;
+    
+    _myLabel.center = center;
+}
 
-#pragma mark --------------- button 点击方法 -----------
+//手势拖动
+/*
+- (void)panClicked:(UIPanGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateBegan) 
+ {
+        //开始拖动
+        NSLog(@"开始拖动");
+        _startPoint = [sender locationInView:_myLabel];
+    }
+    else if (sender.state == UIGestureRecognizerStateChanged)
+    {
+        NSLog(@"正在移动");
+        CGPoint destPoint = [sender locationInView:_myLabel];
+        
+        float x = destPoint.x - _startPoint.x;
+        float y = destPoint.y - _startPoint.y;
+        
+        CGPoint center = _myLabel.center;
+        center.x += x;
+        center.y += y;
+        _myLabel.center = center;
+    }
+    else if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        //结束拖动
+        NSLog(@"结束拖动");
+    }
+}
+//*/
+
+#pragma mark - button 点击方法
 //button点击方法
 - (void)rightBarItemClicked:(UIButton *)btn
 {
@@ -172,6 +233,7 @@ static NSString *aText;
 /** 添加弹框 */
 -(void)viewWillAppear:(BOOL)animated
 {
+    
      [self addAlertingColler];
 }
 
@@ -179,7 +241,7 @@ static NSString *aText;
 - (void)addAlertingColler
 {
     //定义一个中间变量
-    __block UITextField * tempFeild = [UITextField new];
+    __block UITextField * tempFeild = [[UITextField alloc] init];
     __weak typeof(self)weakSelf = self;
     
     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"编辑文字" message:@"输入内容" preferredStyle:(UIAlertControllerStyleAlert)];
@@ -188,8 +250,10 @@ static NSString *aText;
         weakSelf.myLabel.text = tempFeild.text;
         weakSelf.myLabel.numberOfLines = 0;
         [weakSelf.myLabel sizeToFit];
-        weakSelf.myLabel.frame = CGRectMake(10, 10, 150, weakSelf.myLabel.frame.size.height);
-
+        //计算文本的空间：MAXFLOAT为无限大
+            CGFloat width = self.changeView.frame.size.width - 20;
+            CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
+        self.myLabel.frame = CGRectMake(100, 10, rect.size.width, rect.size.height);
         
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
@@ -206,6 +270,8 @@ static NSString *aText;
     }];
 
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

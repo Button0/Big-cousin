@@ -11,7 +11,7 @@
 @interface DrawingHottesModel : NSObject
 
 /** 图片地址 */
-@property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSString *coverUrl;
 
 /** title */
 @property (strong, nonatomic) NSString *eName;

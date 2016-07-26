@@ -59,10 +59,10 @@
     
     /** 初始化控制器 */
     self.newestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
-    self.newestCollectionView.backgroundColor = [UIColor redColor];
+    self.newestCollectionView.backgroundColor = [UIColor whiteColor];
     
     self.hottestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
-    self.hottestCollectionView.backgroundColor = [UIColor orangeColor];
+    self.hottestCollectionView.backgroundColor = [UIColor whiteColor];
 //    self.hottestCollectionView.edgesForExtendedLayout = UIRectEdgeNone
     
     self.segment = [[UISegmentedControl alloc]initWithItems:@[@"最新",@"分类"]];
@@ -89,10 +89,8 @@
     self.hottestCollectionView.dataSource = self;
     self.hottestCollectionView.delegate = self;
     
-    
     [self.scrollView addSubview:self.newestCollectionView];
     [self.scrollView addSubview:self.hottestCollectionView];
-    
     
     //注册两个cell
     [self.newestCollectionView registerNib:[UINib nibWithNibName:@"DrawingNewCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify];
@@ -117,7 +115,6 @@
     //    photoButton.backgroundColor = [UIColor redColor];
     UIBarButtonItem *phototItem = [[UIBarButtonItem alloc]initWithCustomView:_button];
     self.navigationItem.rightBarButtonItems = @[phototItem];
-    
 
 }
 //调用相册和相机
@@ -138,8 +135,6 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil]];
     
     [self presentViewController:alert animated:YES completion:nil];
-    
-
 }
 
 /** 进入照相机 **/
@@ -164,8 +159,6 @@
     picker.delegate = self;
     
     [self presentViewController:picker animated:YES completion:nil];
-    
-    
 }
 
 // 从相册中选择图片
@@ -297,8 +290,12 @@
     }
     return nil;
 }
-
-
+//cell点击方法
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CompileViewController *compileVC = [[CompileViewController alloc]init];
+    [self.navigationController pushViewController:compileVC animated:YES];
+}
 
 
 

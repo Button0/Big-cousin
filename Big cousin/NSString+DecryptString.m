@@ -49,5 +49,12 @@
     }
 }
 
+/** 解密原来的加密字符、替换成可用url */
+- (NSString *)replacingStringToURL
+{
+   NSString *result = [[self decryptedString] stringByReplacingOccurrencesOfString:@"ivwt?)(kdn" withString:@"http://cdn"];
+//    NSLog(@"替换后的可用URL:%@",result);
+    return result;
+}
 
 @end

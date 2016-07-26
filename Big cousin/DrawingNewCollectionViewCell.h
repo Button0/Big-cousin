@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "DrawingModel.h"
+#import "DynamicModel.h"
+
 #define DrawingNewCollectionViewCell_Identify @"DrawingNewCollectionViewCell_Identify"
 
-@interface DrawingNewCollectionViewCell : UICollectionViewCell
+@class ExpressionLibraryModel;
 
+@interface DrawingNewCollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *drawingNewImageV;
+/** 单个表情 */
+@property (nonatomic, strong) ExpressionLibraryModel *libraryModel;
 
 @property (strong, nonatomic) DrawingModel *model;
+
+@property (strong, nonatomic) DynamicModel *dynamicModel;
 
 @end

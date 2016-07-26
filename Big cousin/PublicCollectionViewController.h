@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 
 @class ExpressionLibraryModel;
+
 @interface PublicCollectionViewController : BaseViewController
 /** 公用 */
 @property (nonatomic, strong) UICollectionView *pulicCollectionView;
@@ -18,7 +19,5 @@
 @property (nonatomic, strong) UIView *hottestView;
 /** url */
 @property (nonatomic, strong) NSString *url;
-//@property (nonatomic, strong) NSString *url_ID;
-@property (nonatomic, strong) ExpressionLibraryModel *expressionModel;
 
 @end

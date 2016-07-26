@@ -7,8 +7,12 @@
 //
 
 #import "BaseViewController.h"
-#import "ExpressionLibraryModel.h"
+
+@class ExpressionLibraryModel;
 
 @interface SingleExpressionViewController : BaseViewController
+
 @property (nonatomic, strong) ExpressionLibraryModel *expressionModel;
+@property (nonatomic, strong) NSNumber *single_Id;
+
 @end

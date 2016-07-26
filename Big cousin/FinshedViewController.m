@@ -2,7 +2,7 @@
 //  FinshedViewController.m
 //  Big cousin
 //
-//  Created by lanou3g on 16/7/19.
+//  Created by HMS,CK,SS,LYB3g on 16/7/19.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
@@ -51,7 +51,10 @@
     NSLog(@"==========%@", _finshedLabel.text);
     _finshedLabel.numberOfLines = 0;
     [_finshedLabel sizeToFit];
-    _finshedLabel.frame = CGRectMake(10, 10, 100, _finshedLabel.frame.size.height);
+    CGFloat width = self.finshedView.frame.size.width - 20;
+    CGRect rect = [_finshedLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_finshedLabel.font} context:nil];
+
+    _finshedLabel.frame = CGRectMake(10, 10, width, rect.size.height);
 
     [_finshedView addSubview:_finshedLabel];
     
@@ -83,7 +86,7 @@
 {
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController popViewControllerAnimated:YES];
-    self.hidesBottomBarWhenPushed = NO;
+    self.hidesBottomBarWhenPushed = YES;
 }
 
 //分享
@@ -107,7 +110,19 @@
 //下载
 - (void)downloadClicked:(UIButton *)sender
 {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
+    NSURL *URL = [NSURL URLWithString:@"http://example.com/download.zip"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        NSLog(@"File downloaded to: %@", filePath);
+    }];
+    [downloadTask resume];
 }
 
 

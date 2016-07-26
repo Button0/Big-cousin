@@ -10,13 +10,18 @@
 
 @interface ExpressionLibraryModel : BaseModel
 
-/** id */
-@property (nonatomic, strong) NSString *eId;
 /** 图片 */
 @property (nonatomic, strong) NSString *coverUrl;
 /** 名字 */
 @property (nonatomic, strong) NSString *eName;
+/** id */
+@property (nonatomic, strong) NSNumber *eId;
 /** 备忘标题 */
-@property (nonatomic, strong) NSString *memo;
+@property (nonatomic, strong) NSString *memo1;
+
+
+//singleExpression key
+/** 单个图片url */
+@property (nonatomic, strong) NSString *Url;
 
 @end

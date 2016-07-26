@@ -8,7 +8,6 @@
 
 #import "NetWorkRequest.h"
 
-
 @implementation NetWorkRequest
 
 -(void)requestWithUrl:(NSString *)url parameters:(NSDictionary *)parameterDic successResponse:(SuccessResponse)success failureResponse:(FailureResponse)failure{
@@ -38,8 +37,6 @@
         
         failure(error);
     }];
-
-
 }
 
 //上传图片

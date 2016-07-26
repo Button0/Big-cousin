@@ -20,6 +20,9 @@
 
 @property (nonatomic, strong) NSTimer *timer;
 
+@property (nonatomic, strong) NSMutableArray<UIImageView *> *images;
+@property (nonatomic, strong) NSMutableArray<UIImageView *> *cycleSExpressions;
+
 @end
 
 @implementation VTCycleScrollView
@@ -32,17 +35,7 @@
     if (self)
     {
         [self setupUI];
-        [self images];
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self)
-    {
-        [self setupUI];
+        [self imagesData];
     }
     return self;
 }
@@ -77,6 +70,7 @@
     _previousImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
     _currentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width *1, 0, self.bounds.size.width, self.bounds.size.height)];
     _nextImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width *2, 0, self.bounds.size.width, self.bounds.size.height)];
+    [self addTapGestureRecognizerWithImages];
     
     [_scrollView addSubview:_previousImageView];
     [_scrollView addSubview:_currentImageView];
@@ -84,11 +78,10 @@
     [self addSubview:_scrollView];
     
     // page control
-    UIPageControl *page = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height -20.f, self.bounds.size.width, 20.f)];
-    [page setCurrentPage:0];
-    [page setNumberOfPages:1];
-    [page addTarget:self action:@selector(pageAction:) forControlEvents:(UIControlEventValueChanged)];
-    _pageControl = page;
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height -20.f, self.bounds.size.width, 20.f)];
+    [_pageControl setCurrentPage:0];
+    [_pageControl setNumberOfPages:1];
+    [_pageControl addTarget:self action:@selector(pageAction:) forControlEvents:(UIControlEventValueChanged)];
     [self addSubview:_pageControl];
     
     //timer
@@ -155,7 +148,28 @@ int pageNumber = -1;
     [self.pageControl setCurrentPage:pageNumber];
 }
 
-- (void)images
+//加手势
+- (void)addTapGestureRecognizerWithImages
+{
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
+    UITapGestureRecognizer *recognizer2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
+    UITapGestureRecognizer *recognizer3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cycleImagePush:)];
+    [_previousImageView addGestureRecognizer:recognizer];
+    [_currentImageView addGestureRecognizer:recognizer2];
+    [_nextImageView addGestureRecognizer:recognizer3];
+    _previousImageView.userInteractionEnabled = YES;
+    _currentImageView.userInteractionEnabled = YES;
+    _nextImageView.userInteractionEnabled = YES;
+}
+
+-(void)cycleImagePush:(UITapGestureRecognizer *)sender
+{
+    [self addTapGestureRecognizerWithImages];
+    [_imageDelegate cycleImagePush:sender];
+}
+
+#pragma mark - 数据资源
+- (void)imagesData
 {
     self.imageData = @[[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 0] ofType:@"jpg"],
                        [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 1] ofType:@"jpg"],

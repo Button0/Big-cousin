@@ -7,7 +7,7 @@
 //
 
 #import "DrawingHottesCollectionViewCell.h"
-#import "SingleExpressionViewController.h"
+#import "HomeTitleModel.h"
 
 @interface DrawingHottesCollectionViewCell ()
 @end
@@ -26,8 +26,12 @@
 
 - (void)setHottesModel:(DrawingHottesModel *)hottesModel
 {
+//    _libraryModel = libraryModel;
+//    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[libraryModel.Url replacingStringToURL]]];
+
     _hottesModel = hottesModel;
-    [_hottesImageV setImageWithURL:[NSURL URLWithString:hottesModel.url]];
+    [_hottesImageV setImageWithURL:[NSURL URLWithString:[hottesModel.coverUrl replacingStringToURL]]];
+    NSLog(@"_hottesImageV=====%@",[hottesModel.coverUrl replacingStringToURL]);
     _hottesLabel.text = hottesModel.eName;
 }
 

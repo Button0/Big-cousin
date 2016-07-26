@@ -19,8 +19,6 @@
 >
 //定义collectionView属性
 @property (strong, nonatomic)UICollectionView *collectionView;
-
-
 @end
 
 @implementation DrawingViewController
@@ -67,7 +65,6 @@
 //点击方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     switch (indexPath.row) {
         case 0:
         {
@@ -97,10 +94,8 @@
             
         default:
             break;
+       }
     }
-    
-}
-
 
 
 

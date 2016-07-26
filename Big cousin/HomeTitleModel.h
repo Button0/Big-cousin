@@ -10,10 +10,10 @@
 
 @interface HomeTitleModel : BaseModel
 
-/** eId */
-@property (nonatomic, strong) NSString *eId;
 /** title */
 @property (nonatomic, strong) NSString *eName;
+/** eId */
+@property (nonatomic, strong) NSNumber *eId;
 
 //+ (NSMutableArray *)parseTitlesWithDic:(NSDictionary *)dic;
 @end

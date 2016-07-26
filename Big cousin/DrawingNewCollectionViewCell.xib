@@ -13,7 +13,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadsuo.do.png" translatesAutoresizingMaskIntoConstraints="NO" id="NHG-w6-HMz">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="加载1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NHG-w6-HMz">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                     </imageView>
                 </subviews>
@@ -28,10 +28,10 @@
             <connections>
                 <outlet property="drawingNewImageV" destination="NHG-w6-HMz" id="n9n-fU-SBx"/>
             </connections>
-            <point key="canvasLocation" x="116" y="285"/>
+            <point key="canvasLocation" x="215" y="219"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="downloadsuo.do.png" width="405" height="311"/>
+        <image name="加载1.jpg" width="600" height="600"/>
     </resources>
 </document>
