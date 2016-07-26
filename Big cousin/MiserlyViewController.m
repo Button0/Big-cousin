@@ -84,8 +84,14 @@
 //cell点击方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.hidesBottomBarWhenPushed = YES;
     CompileViewController *compileVC = [[CompileViewController alloc]init];
     [self.navigationController pushViewController:compileVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+    
+    MiserlyModel *model = self.miserlyArray[indexPath.row];
+    compileVC.imageString = [model.URL replacingStringToURL];
+    
 }
 
 

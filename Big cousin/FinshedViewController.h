@@ -13,6 +13,6 @@
 
 @property (strong, nonatomic) NSString *labelText;
 
-
+@property (strong, nonatomic) NSString *imageVString;
 
 @end
