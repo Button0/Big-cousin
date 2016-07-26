@@ -8,11 +8,11 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "NSString+DecryptString.h"
 #import <UMSocial.h>
 #import <UMSocialWechatHandler.h>
 #import <UMSocialSinaSSOHandler.h>
 #import <UMSocialQQHandler.h>
+
 @interface AppDelegate ()
 
 @end
@@ -21,10 +21,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [[UIWindow alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[RootViewController alloc] init];
     [self.window makeKeyAndVisible];
+    
     //友盟APPKey
     //设置友盟社会化组件appkey
     [UMSocialData setAppKey:@"578ee82d67e58e214b001958"];
@@ -40,6 +41,7 @@
     [UMSocialQQHandler setSupportWebView:YES];
     return YES;
 }
+
 //系统回调
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {

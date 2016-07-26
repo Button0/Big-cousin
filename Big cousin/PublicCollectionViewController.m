@@ -7,18 +7,21 @@
 //
 
 #import "PublicCollectionViewController.h"
+#import "ExpressionLibraryViewController.h"
 #import "DrawingHottesCollectionViewCell.h"
+#import "SingleExpressionViewController.h"
 #import "NavigationMenuView.h"
 #import "ExpressionLibraryModel.h"
-#import "SingleExpressionViewController.h"
-#import "HomeTitleModel.h"
 #import "LibraryRequest.h"
 
 #define KHeightCollection 135
 
 @interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationMenuDelegate>
 
+/** 公用 */
+@property (nonatomic, strong) UICollectionView *pulicCollectionView;
 @property (nonatomic, strong) NSMutableArray *expressions;
+
 @end
 
 @implementation PublicCollectionViewController
@@ -26,9 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //UI
     [self layoutSetting];
     [self.pulicCollectionView registerNib:[UINib nibWithNibName:@"DrawingHottesCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:DrawingHottesCollectionViewCell_Identify];
-    
+    //Data
     self.expressions = [NSMutableArray array];
     [self requestAllExpressions];
 }
@@ -90,54 +94,27 @@
     [self.navigationController pushViewController:singleVC animated:YES];
 }
 
+
 #pragma mark - 数据
 - (void)requestAllExpressions
 {
-    __weak typeof(self) weakSelf = self;
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
-    
-    [manager GET:_url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
-        if (responseObject.count >= 3
-            && [[responseObject objectAtIndex:2] isKindOfClass:[NSArray class]])
-        {
+    __weak typeof(self)weakSelf = self;
+    [[LibraryRequest shareLibraryRequest] requestPulicExpressionsWithUrl:_url success:^(NSArray *arr) {
 //        [self setupProgressHud];
-//        NSLog(@"----%@",responseObject);
-        NSArray *categoryArray = [responseObject objectAtIndex:2];
-        for (NSMutableDictionary *dict in categoryArray)
-        {
-            ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
-            [model setValuesForKeysWithDictionary:dict];
-            [weakSelf.expressions addObject:model];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.pulicCollectionView  reloadData];
-        });
+        weakSelf.expressions = [ExpressionLibraryModel presentPublicWithArray:arr];
 //        [GiFHUD dismiss];
-        }
-        else
-        {
-            NSLog(@"Error: data error %@", responseObject);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"===%@",error);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.pulicCollectionView reloadData];
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"error === %@",error);
     }];
-
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

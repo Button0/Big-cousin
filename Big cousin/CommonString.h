@@ -83,5 +83,4 @@
 // 石棉
 #define kColorAsbestos [UIColor colorWithRed:127/255.0 green:140/255.0 blue:141/255.0 alpha:1.0]
 
-
 #endif /* CommonString_h */

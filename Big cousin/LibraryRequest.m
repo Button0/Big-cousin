@@ -23,6 +23,19 @@ static LibraryRequest *request = nil;
     return request;
 }
 
+- (void)requestAllHomeTitleWithUrl:(NSString *)url
+                           success:(SuccessResponseArr)success
+                           failure:(FailureResponseArr)failure
+{
+    ArrNetWorkRequest *request = [[ArrNetWorkRequest alloc] init];
+    
+    [request requestArrayWithUrl:url parmeters:nil successPesponse:^(NSArray *arr) {
+        success(arr);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 //请求首页标题
 - (void)requestHomeTitleSuccess:(SuccessResponseArr)success
                         failure:(FailureResponseArr)failure;
@@ -32,16 +45,36 @@ static LibraryRequest *request = nil;
     } failure:^(NSError *error) {
         failure(error);
     }];
-    
-//    [self requestAllHomeTitleWithUrl:HomeTitle_Url success:^(NSDictionary *dic) {
-//        success(dic);
-//    } faolure:^(NSError *error) {
-//        failure(error);
-//    }];
 }
 
-//请求表情库
-- (void)requestExpressionLibraryWithID:(NSString *)ID
+//最新最热
+- (void)requestPulicExpressionsWithUrl:(NSString *)url
+                               success:(SuccessResponseArr)success
+                               failure:(FailureResponseArr)failure
+{
+    ArrNetWorkRequest *request = [[ArrNetWorkRequest alloc] init];
+    [request requestArrayWithUrl:url parmeters:nil successPesponse:^(NSArray *arr) {
+        success(arr);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+//请求轮播图表情
+- (void)requestCycleScrollExpressionWithID:(NSNumber *)ID
+                                   success:(SuccessResponse)success
+                                   failure:(FailureResponse)failure
+{
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:VTCycleScrollView_Url(ID) parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+//请求表情库首页cell
+- (void)requestExpressionLibraryWithID:(NSNumber *)ID
                                Success:(SuccessResponseArr)success
                                failure:(FailureResponseArr)failure
 {
@@ -50,67 +83,18 @@ static LibraryRequest *request = nil;
     } failure:^(NSError *error) {
         failure(error);
     }];
-//    [self requestAllHomeTitleWithUrl:ExpressionLibrary_Url(ID) success:^(NSDictionary *dic) {
-//        success(dic);
-//    } faolure:^(NSError *error) {
-//        failure(error);
-//    }];
 }
 
-//请求最新表情
-- (void)requestNewestExpressionSuccess:(SuccessResponseArr)success
-                               failure:(FailureResponseArr)failure
+//请求单个表情组
+- (void)requestSingleExpressionWithID:(NSNumber *)ID
+                              Success:(SuccessResponseArr)success
+                              failure:(FailureResponseArr)failure
 {
-    [self requestAllHomeTitleWithUrl:NewestExpression_Url success:^(NSArray *arr) {
+    [self requestAllHomeTitleWithUrl:SingleExpression_Url(ID) success:^(NSArray *arr) {
         success(arr);
     } failure:^(NSError *error) {
         failure(error);
     }];
 }
-
-//请求最热表情
-- (void)requestHottestExpressionSuccess:(SuccessResponseArr)success
-                                failure:(FailureResponseArr)failure
-{
-    [self requestAllHomeTitleWithUrl:HottestExpression_Url success:^(NSArray *arr) {
-        success(arr);
-    } failure:^(NSError *error) {
-        failure(error);
-    }];
-//    [self requestAllHomeTitleWithUrl:HottestExpression_Url success:^(NSDictionary *dic) {
-//        success(dic);
-//    } faolure:^(NSError *error) {
-//        failure(error);
-//    }];
-}
-
-- (void)requestAllHomeTitleWithUrl:(NSString *)url
-                           success:(SuccessResponseArr)success
-                           failure:(FailureResponseArr)failure
-{
-    ArrNetWorkRequest *request = [[ArrNetWorkRequest alloc] init];
-   
-    [request requestArrayWithUrl:url parmeters:nil successPesponse:^(NSArray *arr) {
-        success(arr);
-    } failureResponse:^(NSError *error) {
-        failure(error);
-    }];
-}
-
-//-----------------------
-//请求轮播图表情
-- (void)requestCycleScrollExpressionWithUrl:(NSString *)url
-                                    success:(SuccessResponse)success
-                                    failure:(FailureResponse)failure
-{
-    NetWorkRequest *request = [[NetWorkRequest alloc] init];
-    [request requestWithUrl:url parameters:nil successResponse:^(NSDictionary *dic) {
-        success(dic);
-    } failureResponse:^(NSError *error) {
-        failure(error);
-    }];
-
-}
-
 
 @end

@@ -10,12 +10,13 @@
 #import "LibraryCollectionViewCell.h"
 #import "PublicCollectionViewController.h"
 #import "ExpressionLibraryModel.h"
+#import "LibraryRequest.h"
 
 @interface LibraryCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic) NSNumber *eID;
-@property (nonatomic) NSNumber *single_eId;
 
+@property (weak, nonatomic) IBOutlet UIView *oneView;
 @property (weak, nonatomic) IBOutlet UIImageView *oneImageView;
 @property (weak, nonatomic) IBOutlet UILabel *oneLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *twoImageView;
@@ -30,6 +31,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+//    _oneImageView.contentMode = UIViewContentModeScaleAspectFit;
+//    _twoImageView.contentMode = UIViewContentModeScaleAspectFit;
+//    _threeImageView.contentMode = UIViewContentModeScaleAspectFit;
+//    _fourImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (IBAction)more:(UIButton *)sender {
@@ -45,6 +50,11 @@
 {
     [self.clickbtnDelegate cellPush:sender];
 }
+
+//- (void)cellImagePushOfName:(ExpressionLibraryModel *)eName
+//{
+//    [self.clickbtnDelegate cellImagePushOfName:eName];
+//}
 
 - (void)addTapGestureRecognizerWithImage
 {
@@ -75,50 +85,27 @@
 
 - (void)requestCategoryListById:(NSNumber *)categroyId
 {
-    __weak typeof(self) weakSelf = self;
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
-    
-    [manager GET:ExpressionLibrary_Url(categroyId) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
+    [[LibraryRequest shareLibraryRequest] requestExpressionLibraryWithID:categroyId Success:^(NSArray *arr) {
         
-        if (responseObject.count >= 3
-            && [[responseObject objectAtIndex:2] isKindOfClass:[NSArray class]])
-        {
-            NSMutableArray *array = [responseObject objectAtIndex:2];
-            NSMutableArray<ExpressionLibraryModel *> *categoryList = [[NSMutableArray alloc] init];
+        NSMutableArray<ExpressionLibraryModel *> *categoryList = [ExpressionLibraryModel presentLibraryCellWithArray:arr];
+        dispatch_async(dispatch_get_main_queue(), ^{
             
-            for (int i=0; i< 4; i++)
-            {
-                NSDictionary *dataDictionary = [array objectAtIndex:i];
-                
-                ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
-                NSString *url = [dataDictionary objectForKey:@"coverUrl"];
-                NSString *name = [dataDictionary objectForKey:@"eName"];
-                NSNumber *eId = [dataDictionary objectForKey:@"eId"];
-                model.coverUrl = url;
-                model.eName = name;
-                model.eId = eId;
-                [weakSelf.clickbtnDelegate passValue:eId];
-                [categoryList addObject:model];
-            }
-            //TODO:
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_oneImageView setImageWithURL:[NSURL URLWithString:categoryList[0].coverUrl]];
-                [_twoImageView setImageWithURL:[NSURL URLWithString:categoryList[1].coverUrl]];
-                [_threeImageView setImageWithURL:[NSURL URLWithString:categoryList[2].coverUrl]];
-                [_fourImageView setImageWithURL:[NSURL URLWithString:categoryList[3].coverUrl]];
-                
-                _oneLabel.text = categoryList[0].eName;
-                _towLabel.text = categoryList[1].eName;
-                _threeLabel.text = categoryList[2].eName;
-                _fourLabel.text = categoryList[3].eName;
-            });
-        }
-        else
-        {
-            NSLog(@"Error: datat Error %@", responseObject);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [_oneImageView setImageWithURL:[NSURL URLWithString:categoryList[0].coverUrl]];
+            [_twoImageView setImageWithURL:[NSURL URLWithString:categoryList[1].coverUrl]];
+            [_threeImageView setImageWithURL:[NSURL URLWithString:categoryList[2].coverUrl]];
+            [_fourImageView setImageWithURL:[NSURL URLWithString:categoryList[3].coverUrl]];
+            
+            _oneImageView.tag = [categoryList[0].eId integerValue];
+            _twoImageView.tag = [categoryList[1].eId integerValue];
+            _threeImageView.tag = [categoryList[2].eId integerValue];
+            _fourImageView.tag = [categoryList[3].eId integerValue];
+            
+            _oneLabel.text = categoryList[0].eName;
+            _towLabel.text = categoryList[1].eName;
+            _threeLabel.text = categoryList[2].eName;
+            _fourLabel.text = categoryList[3].eName;
+        });
+    } failure:^(NSError *error) {
         NSLog(@"===%@",error);
     }];
 }

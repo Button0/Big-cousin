@@ -19,11 +19,13 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        _memoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, self.frame.size.width, 30)];
-        _memoLabel.textColor = KColorHighGray;
-//        [_memoLabel sizeToFit];
-//        _memoLabel.frame = CGRectMake(0, 30, _memoLabel.frame.size.width, 30);
+        _memoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 310, self.bounds.size.height)];
         [self addSubview:_memoLabel];
+        _memoLabel.textColor = KColorHighGray;
+        _memoLabel.numberOfLines = 0;
+        _memoLabel.adjustsFontSizeToFitWidth = YES;
+        [_memoLabel sizeToFit];
+        _memoLabel.frame = CGRectMake(0, 0, 310, self.bounds.size.height);
     }
     return self;
 }

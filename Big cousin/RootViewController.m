@@ -10,7 +10,6 @@
 #import "ExpressionLibraryViewController.h"
 #import "DrawingViewController.h"
 #import "BigCousinViewController.h"
-#import "MyViewController.h"
 
 @interface RootViewController ()
 @end
@@ -50,14 +49,6 @@
 {
     viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:[UIImage imageNamed:image] selectedImage:[UIImage imageNamed:selectedImage]];
 }
-
-/*
-//代理方法
-- (void)expressionItemDidClicked:(ExpressionTabBar *)tabbar
-{
-    self.selectedIndex = tabbar.currentSelected;
-}
-//*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

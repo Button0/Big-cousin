@@ -13,12 +13,12 @@
 #import "NetWorkRequest.h"
 #import "CommonString.h"
 #import "RequestUrl.h"
+#import "NSString+DecryptString.h"
+
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFNetworking.h>
 #import "GiFHUD.h"
-#import "NSString+DecryptString.h"
 #import "Masonry.h"
-
 
 #import <UMSocialData.h>
 #import <UMSocialSnsService.h>

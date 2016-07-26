@@ -18,7 +18,14 @@
 - (void)setLibraryModel:(ExpressionLibraryModel *)libraryModel
 {
     _libraryModel = libraryModel;
-    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[libraryModel.Url replacingStringToURL]]];
+    if (libraryModel.Url != nil)
+    {
+        [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[libraryModel.Url replacingStringToURL]]];
+    }
+    else if (libraryModel.gifPath != nil)
+    {
+    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:libraryModel.gifPath]];
+    }
 }
 
 - (void)setModel:(DrawingModel *)model
@@ -31,6 +38,5 @@
     [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[dynamicModel.URL replacingStringToURL]]];
     NSLog(@"dynamicModel.url ======= %@",[dynamicModel.URL replacingStringToURL]);
 }
-
 
 @end

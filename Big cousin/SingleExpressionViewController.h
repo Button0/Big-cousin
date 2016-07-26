@@ -7,12 +7,10 @@
 //
 
 #import "BaseViewController.h"
-
-@class ExpressionLibraryModel;
+#import "ExpressionLibraryModel.h"
 
 @interface SingleExpressionViewController : BaseViewController
-
+//push时传参数用
 @property (nonatomic, strong) ExpressionLibraryModel *expressionModel;
-@property (nonatomic, strong) NSNumber *single_Id;
 
 @end

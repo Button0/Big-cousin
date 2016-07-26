@@ -19,9 +19,19 @@
 /** 备忘标题 */
 @property (nonatomic, strong) NSString *memo1;
 
-
 //singleExpression key
 /** 单个图片url */
 @property (nonatomic, strong) NSString *Url;
+/** 轮播图 */
+@property (nonatomic, strong) NSString *gifPath;
+
+/** 表情库首页cell解析 */
++ (NSMutableArray *)presentLibraryCellWithArray:(NSArray *)array;
+/** 最新最热解析 */
++ (NSMutableArray *)presentPublicWithArray:(NSArray *)array;
+/** 轮播图 */
++ (NSMutableArray *)presentCycleWithDictionary:(NSDictionary *)dict;
+/** 点击详情组后单个表情组 */
++ (NSMutableArray *)presentSingleWithArray:(NSArray *)array;
 
 @end

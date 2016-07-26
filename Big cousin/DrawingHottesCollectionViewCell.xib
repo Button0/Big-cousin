@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,15 +14,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGR-Ss-Q66">
-                        <rect key="frame" x="5" y="100" width="90" height="18"/>
+                        <rect key="frame" x="5" y="107" width="90" height="11"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="加载1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ixh-8X-51b">
-                        <rect key="frame" x="5" y="8" width="90" height="90"/>
+                        <rect key="frame" x="5" y="5" width="90" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="90" id="itg-Ue-oJH"/>
+                            <constraint firstAttribute="height" constant="100" id="itg-Ue-oJH"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -32,7 +32,7 @@
                 <constraint firstAttribute="trailing" secondItem="ixh-8X-51b" secondAttribute="trailing" constant="5" id="9ZN-q9-RQ7"/>
                 <constraint firstItem="tGR-Ss-Q66" firstAttribute="top" secondItem="ixh-8X-51b" secondAttribute="bottom" constant="2" id="Jsf-16-fEe"/>
                 <constraint firstItem="ixh-8X-51b" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="TvD-zV-bsj"/>
-                <constraint firstItem="ixh-8X-51b" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Wk5-yT-C3K"/>
+                <constraint firstItem="ixh-8X-51b" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Wk5-yT-C3K"/>
                 <constraint firstAttribute="trailing" secondItem="tGR-Ss-Q66" secondAttribute="trailing" constant="5" id="h68-cL-4dz"/>
                 <constraint firstItem="tGR-Ss-Q66" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="nz4-0v-z7Y"/>
                 <constraint firstAttribute="bottom" secondItem="tGR-Ss-Q66" secondAttribute="bottom" constant="2" id="tAR-4j-TJ9"/>

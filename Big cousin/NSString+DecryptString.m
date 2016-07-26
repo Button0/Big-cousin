@@ -13,6 +13,7 @@
 
 @implementation NSString (DecryptString)
 
+/** 解密 base64 */
 - (NSString *)decryptedString
 {
     //base64 decrypt
@@ -30,7 +31,7 @@
                                      kCCOptionPKCS7Padding,
                                      key.bytes,
                                      kCCKeySizeDES,
-                                     NULL,
+                                     NULL, //这个参数好像蛮关键。如果调用直接出不来可用URL，可能被重复加密
                                      data.bytes,
                                      data.length,
                                      buffer_decrypt,
@@ -49,7 +50,8 @@
     }
 }
 
-/** 解密原来的加密字符、替换成可用url */
+/** 解密原来的加密字符，并且将重复加密的字符替换域名，成可用url */
+/** Decrypt the encrypted characters, and to replace the domain name, repeat the encrypted characters into available url */
 - (NSString *)replacingStringToURL
 {
    NSString *result = [[self decryptedString] stringByReplacingOccurrencesOfString:@"ivwt?)(kdn" withString:@"http://cdn"];

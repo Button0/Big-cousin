@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SingleExpressionHeaderView : UIView
-/** 单个表情图展示 */
+/** 点击单个表情图展示框 */
 @property (nonatomic, strong) UIImageView *singleImageView;
+@property (nonatomic, strong) UIButton *QQBtn;
 @end

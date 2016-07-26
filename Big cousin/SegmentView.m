@@ -7,8 +7,6 @@
 //
 
 #import "SegmentView.h"
-#import "LibraryCollectionViewCell.h"
-#import "PublicCollectionViewController.h"
 
 #define SWidth self.bounds.size.width
 #define SHeight self.bounds.size.height
@@ -40,7 +38,7 @@
     
     //分段控件
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"首页",@"最新",@"最热"]];
-    segmentedControl.frame = CGRectMake(0, 0, SWidth, 20);
+    segmentedControl.frame = CGRectMake(0, 0, SWidth, 20);    
     [segmentedControl addTarget:self action:@selector(segmentedClicked:) forControlEvents:(UIControlEventValueChanged)];
     segmentedControl.tintColor = KColorGlyodin;
     NSDictionary* selectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:14], NSForegroundColorAttributeName: [UIColor whiteColor]};

@@ -38,9 +38,9 @@
     //设置搜索栏的位置
     searchC.searchBar.frame = CGRectMake(searchC.searchBar.frame.origin.x, searchC.searchBar.frame.origin.y, searchC.searchBar.frame.size.width, 44.0);
     self.searchController = searchC;
-    self.tableView.tableHeaderView = self.searchController.searchBar;
+    _tableView.tableHeaderView = _searchController.searchBar;
     
-    [self addSubview:self.tableView];
+    [self addSubview:_tableView];
 }
 
 @end

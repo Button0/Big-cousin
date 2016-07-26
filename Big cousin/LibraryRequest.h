@@ -17,22 +17,24 @@
 - (void)requestHomeTitleSuccess:(SuccessResponseArr)success
                         failure:(FailureResponseArr)failure;
 
-/** 请求表情库 */
-- (void)requestExpressionLibraryWithID:(NSString *)ID
-                               Success:(SuccessResponseArr)success
-                                failure:(FailureResponseArr)failure;
-
-/** 请求最新表情 */
-- (void)requestNewestExpressionSuccess:(SuccessResponseArr)success
+/** 请求最新最热 */
+- (void)requestPulicExpressionsWithUrl:(NSString *)url
+                               success:(SuccessResponseArr)success
                                failure:(FailureResponseArr)failure;
 
-/** 请求最热表情 */
-- (void)requestHottestExpressionSuccess:(SuccessResponseArr)success
-                                failure:(FailureResponseArr)failure;
-
 /** 请求轮播图表情 */
-- (void)requestCycleScrollExpressionWithUrl:(NSString *)url
-                                    success:(SuccessResponse)success
-                                    failure:(FailureResponse)failure;
+- (void)requestCycleScrollExpressionWithID:(NSNumber *)ID
+                                   success:(SuccessResponse)success
+                                   failure:(FailureResponse)failure;
+
+/** 请求表情库首页cell */
+- (void)requestExpressionLibraryWithID:(NSNumber *)ID
+                               Success:(SuccessResponseArr)success
+                               failure:(FailureResponseArr)failure;
+
+/** 请求单个表情组 */
+- (void)requestSingleExpressionWithID:(NSNumber *)ID
+                               Success:(SuccessResponseArr)success
+                               failure:(FailureResponseArr)failure;
 
 @end

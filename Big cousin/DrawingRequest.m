@@ -21,7 +21,6 @@ static DrawingRequest *request = nil;
     return request;
 }
 #pragma mark --------------------------- 静态模板 -------------------
-//**--------------------------- 静态模板 -------------------**//
 //最新
 - (void)requestNewDrawingSuccess:(SuccessResponseArr)success
                          failurl:(FailureResponseArr)failurl

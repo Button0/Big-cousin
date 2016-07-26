@@ -76,7 +76,7 @@ static NSString *aText;
     
     [self.view addSubview:wordButton];
     _myLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 0, 0)];
-//    _myLabel.backgroundColor= [UIColor yellowColor];
+    _myLabel.backgroundColor= [UIColor yellowColor];
     //字体颜色
     _myLabel.textColor = [UIColor blackColor];
     //字体大小
@@ -102,6 +102,9 @@ static NSString *aText;
     [_changeView addSubview:_myLabel];
     //给label添加手势
     [self makeGestureWithLabel];
+    
+    
+    
 }
 #pragma mark - 手势
 /** 旋转手势 */
@@ -159,6 +162,8 @@ static NSString *aText;
     center.y += y;
     
     _myLabel.center = center;
+    
+//    [self labelButtonWithCenter:center];
 }
 
 //手势拖动
@@ -255,6 +260,16 @@ static NSString *aText;
             CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
         self.myLabel.frame = CGRectMake(100, 10, rect.size.width, rect.size.height);
         
+        if (tempFeild.text != nil )//&& ![_changeView.subviews containsObject:[UIButton class]] )
+        {
+            [self labelButtonWithCenter:_myLabel.center];
+        }
+        else if (tempFeild.text == nil)
+        {
+            [_changeView willRemoveSubview:_myLabel];
+        }
+
+        
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
     [alertC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -271,7 +286,42 @@ static NSString *aText;
 
 }
 
-
+- (void)labelButtonWithCenter:(CGPoint )center
+{
+    //label四角按钮
+    UIButton *delete = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    delete.backgroundColor = [UIColor redColor];
+    CGFloat deleteX = _myLabel.frame.origin.x;
+    CGFloat deleteY = _myLabel.frame.origin.y;
+    delete.center = CGPointMake(deleteX, deleteY);
+    delete.bounds = CGRectMake(0, 0, 20, 20);
+    
+    UIButton *edit = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    edit.backgroundColor = [UIColor blueColor];
+    CGFloat editX = _myLabel.frame.origin.x+_myLabel.frame.size.width;
+    CGFloat editY = _myLabel.frame.origin.y;
+    edit.center = CGPointMake(editX, editY);
+    edit.bounds = CGRectMake(0, 0, 20, 20);
+    
+    UIButton *zoom = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    zoom.backgroundColor = [UIColor cyanColor];
+    CGFloat zoomX = _myLabel.frame.origin.x+_myLabel.bounds.size.width;
+    CGFloat zoomY = _myLabel.frame.origin.y+_myLabel.bounds.size.height;
+    zoom.center = CGPointMake(zoomX, zoomY);
+    zoom.bounds = CGRectMake(0, 0, 20, 20);
+    
+    UIButton *rotate = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    rotate.backgroundColor = [UIColor blackColor];
+    CGFloat rotateX = _myLabel.frame.origin.x;
+    CGFloat rotateY = _myLabel.frame.origin.y+_myLabel.bounds.size.height;
+    rotate.center = CGPointMake(rotateX, rotateY);
+    rotate.bounds = CGRectMake(0, 0, 20, 20);
+    
+    [_changeView addSubview:delete];
+    [_changeView addSubview:edit];
+    [_changeView addSubview:zoom];
+    [_changeView addSubview:rotate];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

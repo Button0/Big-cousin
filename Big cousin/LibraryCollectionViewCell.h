@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeTitleModel.h"
-#import "ExpressionLibraryModel.h"
 
 #define LibraryCollectionViewCell_Identity @"LibraryCollectionViewCell"
 
-@class ExpressionLibraryModel;
 @protocol ClickBtnDelegate <NSObject>
 - (void)ClickBtn:(UIButton *)button;
 - (void)cellPush:(UITapGestureRecognizer *)sender;
-- (void)passValue:(NSNumber *)aId;
 @end
 
 @interface LibraryCollectionViewCell : UICollectionViewCell

@@ -142,6 +142,37 @@
     }
 }
 
+- (void)mas_distributeViewsHorizontalWithFixedItemSize:(CGSize)fixedItemSize leadSpacing:(CGFloat)leadSpacing tailSpacing:(CGFloat)tailSpacing {
+    if (self.count < 2) {
+        NSAssert(self.count>1,@"views to distribute need to bigger than one");
+        return;
+    }
+    
+    MAS_VIEW *tempSuperView = [self mas_commonSuperviewOfViews];
+    MAS_VIEW *prev;
+    for (int i = 0; i < self.count; i++) {
+        MAS_VIEW *v = self[i];
+        [v mas_makeConstraints:^(MASConstraintMaker *make) {
+            if (prev) {
+                CGFloat offset = (1-(i/((CGFloat)self.count-1)))*(fixedItemSize.width+leadSpacing)-i*tailSpacing/(((CGFloat)self.count-1));
+                make.top.mas_equalTo(prev.mas_top);
+                make.size.mas_equalTo(fixedItemSize);
+                if (i == self.count - 1) {//last one
+                    make.right.equalTo(tempSuperView).offset(-tailSpacing);
+                }
+                else {
+                    make.right.equalTo(tempSuperView).multipliedBy(i/((CGFloat)self.count-1)).with.offset(offset);
+                }
+            }
+            else {//first one
+                make.left.equalTo(tempSuperView).offset(leadSpacing);
+                make.size.mas_equalTo(fixedItemSize);
+            }
+        }];
+        prev = v;
+    }
+}
+
 - (MAS_VIEW *)mas_commonSuperviewOfViews
 {
     MAS_VIEW *commonSuperview = nil;

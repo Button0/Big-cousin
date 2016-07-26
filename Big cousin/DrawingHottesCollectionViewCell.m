@@ -31,7 +31,6 @@
 
     _hottesModel = hottesModel;
     [_hottesImageV setImageWithURL:[NSURL URLWithString:[hottesModel.coverUrl replacingStringToURL]]];
-    NSLog(@"_hottesImageV=====%@",[hottesModel.coverUrl replacingStringToURL]);
     _hottesLabel.text = hottesModel.eName;
 }
 

@@ -10,18 +10,20 @@
 #import "DrawingNewCollectionViewCell.h"
 #import "SingleExpressionHeaderView.h"
 #import "SingleFooterCollectionReusableView.h"
+
 #import "ExpressionLibraryModel.h"
+#import "LibraryRequest.h"
 
 #define KHeightCollection 90
-#define KHeightSingleHeaderView 180
 
-@interface SingleExpressionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface SingleExpressionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UMSocialUIDelegate>
 
 @property (nonatomic, strong) UICollectionView *singleCollectionView;
-/** 数据源 */
-@property (nonatomic, strong) NSMutableArray *singleExpressions;
+
 @property (nonatomic, strong) SingleExpressionHeaderView *singleHeader;
 @property (nonatomic, strong) SingleFooterCollectionReusableView *singleFooter;
+/** 数据源 */
+@property (nonatomic, strong) NSMutableArray <ExpressionLibraryModel *>*singleExpressions;
 
 @end
 
@@ -31,35 +33,64 @@
 {
     [super viewWillAppear:animated];
     self.title = self.expressionModel.eName;
-//    [_singleHeader.singleImageView setImageWithURL:[NSURL URLWithString:_expressionModel.coverUrl]];
-//    _singleFooter.memo1Label.text = _expressionModel.memo1;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //UI
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"🏃🏻" style:(UIBarButtonItemStyleDone) target:self action:@selector(leftBarButtonItemClick)];
+    [self addSingleHeaderView];
     [self layoutSetting];
     [self.singleCollectionView registerNib:[UINib nibWithNibName:@"DrawingNewCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify];
     [self.singleCollectionView registerClass:[SingleFooterCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SingleFooter"];
     
+    //Data
     self.singleExpressions = [NSMutableArray array];
-    [self requestSingleExpressions];
-    [self addSingleHeaderView];
+    //if ([NSString stringWithFormat:@"%@",_expressionModel.eId].length >3)
+    //if ([[NSString stringWithFormat:@"%@",_expressionModel.eId] rangeOfString:@"46"].location == 0)
+    if ([[[NSString stringWithFormat:@"%@",_expressionModel.eId] substringToIndex:2] isEqual: @"46"])
+    {
+        [self requestCycleScrollImages];
+    }
+    else 
+    {
+        [self requestSingleExpressions];
+    }
 }
 
 
 #pragma mark - UI
+- (void)leftBarButtonItemClick
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)addSingleHeaderView
 {
     _singleHeader = [[SingleExpressionHeaderView alloc] init];
-//    _singleHeader.frame = CGRectMake(0, 0, WindowWidth, KHeightSingleHeaderView);
+    [self.view addSubview:_singleHeader];
+    [_singleHeader.QQBtn addTarget:self action:@selector(QQshare:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [_singleHeader mas_makeConstraints:^(MASConstraintMaker *make) {
-        [self.view addSubview:_singleHeader];
-        make.size.mas_equalTo(CGSizeMake(WindowWidth, WindowHeight/4.0f));
-        make.top.mas_equalTo(0);
-        make.left.mas_equalTo(0);
+        make.top.and.left.equalTo(self.view);
+        make.width.mas_equalTo(self.view.mas_width);
+        make.height.mas_equalTo(self.view.mas_height).multipliedBy(.3f);
     }];
+}
+
+//分享
+- (void)QQshare:(UIButton *)sender
+{
+    [UMSocialData defaultData].extConfig.title = @"分享的title";
+    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
+    UMSocialUrlResource *urlResource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeImage url:nil];
+    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToSina] content:@"say something..." image:_singleHeader.singleImageView.image location:nil urlResource:urlResource presentedController:self completion:^(UMSocialResponseEntity *shareResponse){
+        if (shareResponse.responseCode == UMSResponseCodeSuccess) {
+            NSLog(@"分享成功！");
+        }
+    }];
+//shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
 }
 
 - (void)layoutSetting
@@ -70,9 +101,9 @@
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     flowLayout.itemSize = CGSizeMake(WindowWidth / 5, KHeightCollection);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    flowLayout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 100);
+    flowLayout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 120);
 
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, WindowHeight/4.0f, WindowWidth, WindowHeight-200) collectionViewLayout:flowLayout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, WindowHeight/4.0f, WindowWidth, WindowHeight-250) collectionViewLayout:flowLayout];
     //代理
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -83,6 +114,11 @@
 
 
 #pragma mark - libraryCollectionView init and Delegate
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.singleExpressions.count;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DrawingNewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingNewCollectionViewCell_Identify forIndexPath:indexPath];
@@ -92,15 +128,17 @@
     return cell;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return self.singleExpressions.count;
-}
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ExpressionLibraryModel *model = self.singleExpressions[indexPath.row];
-    [_singleHeader.singleImageView setImageWithURL:[NSURL URLWithString:[model.Url replacingStringToURL]]];
+    if ([[[NSString stringWithFormat:@"%@",_expressionModel.eId] substringToIndex:2] isEqual: @"46"])
+    {
+        [_singleHeader.singleImageView setImageWithURL:[NSURL URLWithString:model.gifPath]];
+    }
+    else
+    {
+        [_singleHeader.singleImageView setImageWithURL:[NSURL URLWithString:[model.Url replacingStringToURL]]];
+    }
     _singleFooter.memo1 = _expressionModel.memo1;
  }
 
@@ -119,35 +157,34 @@
 - (void)requestSingleExpressions
 {
     __weak typeof(self) weakSelf = self;
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain", nil];
-    
-//    [manager GET:SingleExpression_Url(_single_Id) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
+    [[LibraryRequest shareLibraryRequest] requestSingleExpressionWithID:_expressionModel.eId Success:^(NSArray *arr) {
+        [self setupProgressHud];
+        NSMutableArray *tempArray = [ExpressionLibraryModel presentSingleWithArray:arr];
+        weakSelf.singleExpressions = tempArray[0];
+        [weakSelf.singleHeader.singleImageView setImageWithURL:[NSURL URLWithString:tempArray[1]]];
+        [GiFHUD dismiss];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.singleCollectionView reloadData];
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"single error %@",error);
+    }];
+}
 
-    [manager GET:SingleExpression_Url(_expressionModel.eId) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray*  _Nullable responseObject) {
-    
-       
-        if (responseObject.count >= 3
-            && [[responseObject objectAtIndex:2] isKindOfClass:[NSArray class]])
-        {
-//        NSLog(@"----%@",responseObject);
-        NSArray *categoryArray = [responseObject objectAtIndex:2];
-        for (NSMutableDictionary *dict in categoryArray)
-        {
-            ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
-            [model setValuesForKeysWithDictionary:dict];
-            [weakSelf.singleExpressions addObject:model];
-        }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.singleCollectionView reloadData];
-            });
-        }
-        else
-        {
-            NSLog(@"Error: data error %@", responseObject);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"single failure %@",error);
+- (void)requestCycleScrollImages
+{
+    __weak typeof(self) weakSelf = self;
+    [[LibraryRequest shareLibraryRequest] requestCycleScrollExpressionWithID:_expressionModel.eId success:^(NSDictionary *dic) {
+        NSMutableArray *tempArray = [ExpressionLibraryModel presentCycleWithDictionary:dic];
+        weakSelf.singleExpressions = tempArray[0];
+        [weakSelf.singleHeader.singleImageView setImageWithURL:[NSURL URLWithString:tempArray[1]]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.singleCollectionView reloadData];
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"cycle error %@",error);
     }];
 }
 
@@ -155,15 +192,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

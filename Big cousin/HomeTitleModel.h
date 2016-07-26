@@ -9,11 +9,11 @@
 #import "BaseModel.h"
 
 @interface HomeTitleModel : BaseModel
-
 /** title */
 @property (nonatomic, strong) NSString *eName;
 /** eId */
 @property (nonatomic, strong) NSNumber *eId;
 
-//+ (NSMutableArray *)parseTitlesWithDic:(NSDictionary *)dic;
++ (NSMutableArray *)parseTitlesWithArray:(NSArray *)array;
+
 @end

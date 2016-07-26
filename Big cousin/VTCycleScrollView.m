@@ -7,6 +7,7 @@
 //
 
 #import "VTCycleScrollView.h"
+#import "LibraryRequest.h"
 
 @interface VTCycleScrollView ()<UIScrollViewDelegate>
 
@@ -19,9 +20,7 @@
 @property (nonatomic, strong) UIImageView *nextImageView;
 
 @property (nonatomic, strong) NSTimer *timer;
-
 @property (nonatomic, strong) NSMutableArray<UIImageView *> *images;
-@property (nonatomic, strong) NSMutableArray<UIImageView *> *cycleSExpressions;
 
 @end
 
@@ -36,9 +35,11 @@
     {
         [self setupUI];
         [self imagesData];
+        _images = [NSMutableArray array];
     }
     return self;
 }
+
 
 - (void)setImageData:(NSArray *)imageData
 {
@@ -160,6 +161,10 @@ int pageNumber = -1;
     _previousImageView.userInteractionEnabled = YES;
     _currentImageView.userInteractionEnabled = YES;
     _nextImageView.userInteractionEnabled = YES;
+    
+    _previousImageView.tag = 4649;
+    _currentImageView.tag = 4653;
+    _nextImageView.tag = 4651;
 }
 
 -(void)cycleImagePush:(UITapGestureRecognizer *)sender
@@ -168,13 +173,14 @@ int pageNumber = -1;
     [_imageDelegate cycleImagePush:sender];
 }
 
+
 #pragma mark - 数据资源
 - (void)imagesData
 {
     self.imageData = @[[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 0] ofType:@"jpg"],
                        [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 1] ofType:@"jpg"],
                        [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 2] ofType:@"jpg"],
-                       [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 3] ofType:@"jpg"],
+//                       [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"scrollview_%u", 3] ofType:@"jpg"],
                        ];
 }
 

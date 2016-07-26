@@ -69,4 +69,6 @@ typedef NS_ENUM(NSUInteger, MASAxisType) {
  */
 - (void)mas_distributeViewsAlongAxis:(MASAxisType)axisType withFixedItemLength:(CGFloat)fixedItemLength leadSpacing:(CGFloat)leadSpacing tailSpacing:(CGFloat)tailSpacing;
 
+//水平排列
+- (void)mas_distributeViewsHorizontalWithFixedItemSize:(CGSize)fixedItemSize leadSpacing:(CGFloat)leadSpacing tailSpacing:(CGFloat)tailSpacing;
 @end

@@ -10,13 +10,29 @@
 
 @implementation HomeTitleModel
 
-//+ (NSMutableArray *)parseTitlesWithDic:(NSDictionary *)dic
-//{
-//    NSMutableArray *returnArray = [NSMutableArray array];
-//    HomeTitleModel *models = [[HomeTitleModel alloc] init];
-//    models.libraryModel.eName = [dic objectForKey:@"eName"];
-//    models.libraryModel.coverUrl = [dic objectForKey:@"coverUrl"];
-//    return returnArray;
-//}
++ (NSMutableArray *)parseTitlesWithArray:(NSArray *)array
+{
+    NSMutableArray *returnData = [NSMutableArray array];
+    NSMutableArray<NSNumber*> *eId = [NSMutableArray array];
+    NSMutableArray *totalArray = [NSMutableArray arrayWithObjects:returnData, eId, nil];
+    
+    if (array.count >= 3
+        && [[array objectAtIndex:2] isKindOfClass:[NSArray class]])
+    {
+        NSArray *categoryArray = [array objectAtIndex:2];
+        for (NSMutableDictionary *category in categoryArray)
+        {
+            HomeTitleModel *model = [[HomeTitleModel alloc] init];
+            [model setValuesForKeysWithDictionary:category];
+            [returnData addObject:model];
+            [eId addObject:model.eId];
+        }
+    }
+    else
+    {
+        NSLog(@"Error: data error %@", array);
+    }
+    return totalArray;
+}
 
 @end
