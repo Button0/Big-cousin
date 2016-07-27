@@ -120,7 +120,7 @@
 {
     FinshedViewController *finshVC = [[FinshedViewController alloc]init];
    
-    NSData *data = UIImageJPEGRepresentation(self.imageV.image, 1.0f);
+//    NSData *data = UIImageJPEGRepresentation(self.imageV.image, 1.0f);
     
 //    NSString *string = [data base64EncodedStringWithOptions:(NSDataBase64Encoding64CharacterLineLength)];
     finshVC.imageVString = _imageString;

@@ -9,7 +9,6 @@
 #import "RootViewController.h"
 #import "ExpressionLibraryViewController.h"
 #import "DrawingViewController.h"
-#import "BigCousinViewController.h"
 #import "MyViewController.h"
 #import "XFEssenceViewController.h"
 

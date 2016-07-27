@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		429FD8F242D2F92839FAEF1E /* libPods-Big cousin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1F11C9B7441F2EB1648DA0 /* libPods-Big cousin.a */; };
 		AB0F93721D476609003E2483 /* QQicon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0F936E1D476609003E2483 /* QQicon.png */; };
 		AB0F93731D476609003E2483 /* wechat.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0F936F1D476609003E2483 /* wechat.png */; };
 		AB0F93741D476609003E2483 /* sinaWeibo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0F93701D476609003E2483 /* sinaWeibo.png */; };
@@ -26,6 +25,9 @@
 		AB49D8261D3C71A9009B049A /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8251D3C71A9009B049A /* BaseRequest.m */; };
 		AB49D82A1D3C71D7009B049A /* DrawingHottesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49D8281D3C71D7009B049A /* DrawingHottesCollectionViewCell.m */; };
 		AB49D82B1D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */; };
+		AB7952AC1D48539B00C7AB8B /* memory1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB7952AB1D48539B00C7AB8B /* memory1.jpg */; };
+		AB7952B01D4853C200C7AB8B /* memory3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB7952AE1D4853C200C7AB8B /* memory3.jpg */; };
+		AB7952B41D48631500C7AB8B /* memory.png in Resources */ = {isa = PBXBuildFile; fileRef = AB7952B31D48631500C7AB8B /* memory.png */; };
 		AB85BD4C1D3D518E009A9F27 /* NSString+DecryptString.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD4B1D3D518E009A9F27 /* NSString+DecryptString.m */; };
 		AB85BD501D3DBC82009A9F27 /* SingleExpressionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD4E1D3DBC82009A9F27 /* SingleExpressionViewController.m */; };
 		AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD5B1D3E11C9009A9F27 /* GiFHUD.m */; };
@@ -105,9 +107,6 @@
 		D63635D91D35DF9D00DA8618 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635D81D35DF9D00DA8618 /* BaseViewController.m */; };
 		D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635DB1D35E0B200DA8618 /* ExpressionLibraryViewController.m */; };
 		D63635E51D35E13200DA8618 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635E41D35E13200DA8618 /* MyViewController.m */; };
-		D63EE24C1D4336ED00B73B7A /* BigCousinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63EE24B1D4336ED00B73B7A /* BigCousinTableViewCell.xib */; };
-		D63EE24A1D42FA5500B73B7A /* LabelWithAlertActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D63EE2491D42FA5500B73B7A /* LabelWithAlertActionView.m */; };
-		D64AED0C1D37525B001B2613 /* 123123.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0B1D37525B001B2613 /* 123123.png */; };
 		D64AED0E1D377113001B2613 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0D1D377113001B2613 /* 1.png */; };
 		D64AED101D3771DB001B2613 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0F1D3771DB001B2613 /* 2.png */; };
 		D64AED121D37730F001B2613 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED111D37730F001B2613 /* 3.png */; };
@@ -215,14 +214,13 @@
 
 /* Begin PBXFileReference section */
 		3B57DC203874B5E147E05701 /* Pods-Big cousin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big cousin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Big cousin/Pods-Big cousin.debug.xcconfig"; sourceTree = "<group>"; };
-		7B1F11C9B7441F2EB1648DA0 /* libPods-Big cousin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Big cousin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1EE69616C0D3DB804F4CF6 /* Pods_Big_cousin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_cousin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0F936E1D476609003E2483 /* QQicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QQicon.png; sourceTree = "<group>"; };
 		AB0F936F1D476609003E2483 /* wechat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat.png; sourceTree = "<group>"; };
 		AB0F93701D476609003E2483 /* sinaWeibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sinaWeibo.png; sourceTree = "<group>"; };
 		AB0F93711D476609003E2483 /* downloads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downloads.png; sourceTree = "<group>"; };
 		AB0F93781D4768EC003E2483 /* friendCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friendCircle.png; sourceTree = "<group>"; };
 		AB0F937A1D47691A003E2483 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
-		7A1EE69616C0D3DB804F4CF6 /* Pods_Big_cousin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_cousin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB13D17C1D3CBCE2002320DE /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		AB13D17D1D3CBCE2002320DE /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		AB13D1821D3CBD88002320DE /* HomeTitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTitleModel.h; sourceTree = "<group>"; };
@@ -248,6 +246,9 @@
 		AB49D8271D3C71D7009B049A /* DrawingHottesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottesCollectionViewCell.h; sourceTree = "<group>"; };
 		AB49D8281D3C71D7009B049A /* DrawingHottesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottesCollectionViewCell.m; sourceTree = "<group>"; };
 		AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingHottesCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB7952AB1D48539B00C7AB8B /* memory1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = memory1.jpg; sourceTree = "<group>"; };
+		AB7952AE1D4853C200C7AB8B /* memory3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = memory3.jpg; sourceTree = "<group>"; };
+		AB7952B31D48631500C7AB8B /* memory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memory.png; sourceTree = "<group>"; };
 		AB85BD4A1D3D518E009A9F27 /* NSString+DecryptString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DecryptString.h"; sourceTree = "<group>"; };
 		AB85BD4B1D3D518E009A9F27 /* NSString+DecryptString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DecryptString.m"; sourceTree = "<group>"; };
 		AB85BD4D1D3DBC82009A9F27 /* SingleExpressionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleExpressionViewController.h; sourceTree = "<group>"; };
@@ -353,10 +354,6 @@
 		D63635E31D35E13200DA8618 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		D63635E41D35E13200DA8618 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		D63635F01D35EFA500DA8618 /* CommonString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonString.h; sourceTree = "<group>"; };
-		D63EE24B1D4336ED00B73B7A /* BigCousinTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigCousinTableViewCell.xib; sourceTree = "<group>"; };
-		D63EE2481D42FA5500B73B7A /* LabelWithAlertActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "\U0010LabelWithAlertActionView.h"; sourceTree = "<group>"; };
-		D63EE2491D42FA5500B73B7A /* LabelWithAlertActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "\U0010LabelWithAlertActionView.m"; sourceTree = "<group>"; };
-		D64AED0B1D37525B001B2613 /* 123123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 123123.png; path = ../123123.png; sourceTree = "<group>"; };
 		D64AED0D1D377113001B2613 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		D64AED0F1D3771DB001B2613 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		D64AED111D37730F001B2613 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -652,6 +649,9 @@
 			children = (
 				D64ED54D1D476383003AA29F /* bigResource */,
 				ABFBF4FD1D378AD700BCDD60 /* 表情库.png */,
+				AB7952AB1D48539B00C7AB8B /* memory1.jpg */,
+				AB7952AE1D4853C200C7AB8B /* memory3.jpg */,
+				AB7952B31D48631500C7AB8B /* memory.png */,
 				AB0F936E1D476609003E2483 /* QQicon.png */,
 				AB0F93701D476609003E2483 /* sinaWeibo.png */,
 				AB0F93711D476609003E2483 /* downloads.png */,
@@ -750,9 +750,6 @@
 				ABFBF5231D37F5F300BCDD60 /* LibraryCollectionViewCell.m */,
 				ABFBF5241D37F5F300BCDD60 /* LibraryCollectionViewCell.xib */,
 				ABE29C921D428AA800B4F5B9 /* 加载1.jpg */,
-				ABE29C901D428A7100B4F5B9 /* 加载3.jpg */,
-				D63EE2481D42FA5500B73B7A /* LabelWithAlertActionView.h */,
-				D63EE2491D42FA5500B73B7A /* LabelWithAlertActionView.m */,
 			);
 			name = ExpressionLibrary;
 			sourceTree = "<group>";
@@ -1209,6 +1206,7 @@
 				D64ED57D1D47639E003AA29F /* show_image_back_icon.png in Resources */,
 				D64ED56F1D47639E003AA29F /* bofang.png in Resources */,
 				D64ED5821D47639E003AA29F /* comment_bar_at_icon.png in Resources */,
+				AB7952AC1D48539B00C7AB8B /* memory1.jpg in Resources */,
 				D64ED5811D47639E003AA29F /* 570c76d964a19_1024_58.png in Resources */,
 				D64ED5841D47639E003AA29F /* Profile_manIcon.png in Resources */,
 				ABEC55991D36B2D200E9DACD /* arrow_down@2x.png in Resources */,
@@ -1224,7 +1222,6 @@
 				D64ED5721D47639E003AA29F /* dianzan.png in Resources */,
 				D64ED5791D47639E003AA29F /* kr-video-player-point@2x.png in Resources */,
 				D6FA4F0D1D3797CA00B80970 /* DrawingNewCollectionViewCell.xib in Resources */,
-				D64AED0C1D37525B001B2613 /* 123123.png in Resources */,
 				D64ED5831D47639E003AA29F /* comment-bar-bg.png in Resources */,
 				D64ED57B1D47639E003AA29F /* mainCellComment.png in Resources */,
 				D64ED5871D47639E003AA29F /* 1.png in Resources */,
@@ -1235,6 +1232,7 @@
 				AB85BD641D3E1296009A9F27 /* 85.gif in Resources */,
 				D64ED5151D475F6B003AA29F /* XFVociePlayerController.xib in Resources */,
 				D64AED101D3771DB001B2613 /* 2.png in Resources */,
+				AB7952B01D4853C200C7AB8B /* memory3.jpg in Resources */,
 				D64ED52B1D475FD1003AA29F /* XFContentPictureView.xib in Resources */,
 				D64ED57F1D47639E003AA29F /* see-big-picture-background.png in Resources */,
 				D64AED141D377431001B2613 /* 4.png in Resources */,
@@ -1244,9 +1242,8 @@
 				D64ED5801D47639E003AA29F /* cellmorebtnnormal.png in Resources */,
 				ABFBF4F91D377C6F00BCDD60 /* scrollview_0.jpg in Resources */,
 				AB9C1A311D35D1DE0067B7A8 /* Assets.xcassets in Resources */,
-				AB49D8111D3C712E009B049A /* BigCousinVideoTableViewCell.xib in Resources */,
+				AB7952B41D48631500C7AB8B /* memory.png in Resources */,
 				AB0F93791D4768EC003E2483 /* friendCircle.png in Resources */,
-				ABE29C8F1D428A2C00B4F5B9 /* 加载2.jpg in Resources */,
 				D64ED5851D47639E003AA29F /* play-voice-stop.png in Resources */,
 				AB9C1A2C1D35D1DE0067B7A8 /* Main.storyboard in Resources */,
 				D6F297DB1D40586000C8C353 /* DrawingHottestCollectionViewCell.xib in Resources */,
@@ -1260,13 +1257,11 @@
 				AB0F93741D476609003E2483 /* sinaWeibo.png in Resources */,
 				ABEC55961D36B2D200E9DACD /* arrow_down.png in Resources */,
 				AB0F93751D476609003E2483 /* downloads.png in Resources */,
-				ABE29C911D428A7100B4F5B9 /* 加载3.jpg in Resources */,
 				D64ED5861D47639E003AA29F /* play-voice-bg.png in Resources */,
 				D64AED0E1D377113001B2613 /* 1.png in Resources */,
 				D64ED57C1D47639E003AA29F /* mainCellShare.png in Resources */,
 				ABEC55961D36B2D200E9DACD /* arrow_down.png in Resources */,
 				D64ED5761D47639E003AA29F /* kr-video-player-close@2x.png in Resources */,
-				ABFBF4FC1D377C6F00BCDD60 /* scrollview_3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1383,8 +1378,6 @@
 				D64ED50E1D475F6B003AA29F /* XFVideoViewController.m in Sources */,
 				D65964C81D47945B005E143A /* DynamicViewController.m in Sources */,
 				D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */,
-				AB49D7ED1D3C6FDE009B049A /* WordViewController.m in Sources */,
-				D63EE24A1D42FA5500B73B7A /* LabelWithAlertActionView.m in Sources */,
 				D64ED53A1D475FF6003AA29F /* XFCommentModel.m in Sources */,
 				ABFBF5C51D39413200BCDD60 /* MASConstraint.m in Sources */,
 				D63635D61D35DF8D00DA8618 /* RootViewController.m in Sources */,
