@@ -12,6 +12,7 @@
 #import <UMSocialWechatHandler.h>
 #import <UMSocialSinaSSOHandler.h>
 #import <UMSocialQQHandler.h>
+#import "LYB_ChouTiViewController.h"
 
 @interface AppDelegate ()
 
@@ -39,6 +40,17 @@
                                          RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     //设置支持没有客户端情况下使用SSO授权
     [UMSocialQQHandler setSupportWebView:YES];
+    
+    
+    
+    //抽屉
+    //抽屉的使用
+    [self.window makeKeyAndVisible];
+    [LYB_ChouTiViewController leftViewController:nil centerViewController:self.window.rootViewController];
+    [LYB_ChouTiViewController getMenuViewController].menuArray = [@[@"表情 · SMILE",@"表情包 · SMILEBAG",@"作品 · GOODS"] mutableCopy];
+    
+    
+    
     return YES;
 }
 

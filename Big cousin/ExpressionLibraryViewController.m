@@ -17,10 +17,19 @@
 #import "LibraryRequest.h"
 #import "MJRefresh.h"
 
+#import "MoreViewController.h"
+#import "DetailViewController.h"
+#import "LYB_ChouTiViewController.h"
+#import "smileViewController.h"
+#import "smileBagViewController.h"
+#import "goodsViewController.h"
+#import "setViewController.h"
+#import "shoucangViewController.h"
+
 #define KHeightCollection 120
 #define KHeightCycleScrollView self.view.bounds.size.height*0.35f
 
-@interface ExpressionLibraryViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ClickBtnDelegate, ClickImageDelegate>
+@interface ExpressionLibraryViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ClickBtnDelegate, ClickImageDelegate,MenuClickDelegate>
 
 /** 分页视图 */
 @property (nonatomic, strong) SegmentView *segmentView;
@@ -77,7 +86,103 @@
     
     //3.加载数据
     [self requestHomeTitles:control];
+    [self requestHomeTitles];
+    
+    //抽屉相关
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"菜单.png"] style:UIBarButtonItemStylePlain target:self action:@selector(ClickShowMenu:)];
+    [LYB_ChouTiViewController getMenuViewController].menuClickDelegate = self;
+    
+    
 }
+
+
+
+#warning 抽屉相关
+//菜单按钮点击方法
+-(void)ClickShowMenu:(UIBarButtonItem *)sender
+{
+    if ([LYB_ChouTiViewController getMenuViewController].isShowing) {
+        [[LYB_ChouTiViewController getMenuViewController] hideLeftViewController];
+    }else
+    {
+        [[LYB_ChouTiViewController getMenuViewController] showLeftViewController];
+    }
+    
+}
+
+
+
+-(void)ClickBtnn:(UIButton *)btnn
+{
+    MoreViewController *moreVC = [[MoreViewController alloc]init];
+    [self.navigationController pushViewController:moreVC animated:YES];
+}
+
+
+#warning menuclick代理
+-(void)ClickMenuIndex:(NSInteger)Index Title:(NSString *)title
+{
+    switch (Index) {
+        case 0:
+        {
+            smileViewController *smileVC = [[smileViewController alloc]init];
+            smileVC.title = title;
+            [self.navigationController pushViewController:smileVC animated:YES];
+        }
+            break;
+            
+        case 1:
+        {
+            smileBagViewController *smileBagVC = [[smileBagViewController alloc]init];
+            smileBagVC.title = title;
+            [self.navigationController pushViewController:smileBagVC animated:YES];
+        }
+            break;
+            
+            
+        case 2:
+        {
+            goodsViewController *goodsVC = [[goodsViewController alloc]init];
+            goodsVC.title = title;
+            [self.navigationController pushViewController:goodsVC animated:YES];
+        }
+            break;
+            
+            
+        default:
+            break;
+    }
+}
+
+
+-(void)ClickBut:(UIButton *)button
+{
+    switch (button.tag) {
+        case 1000:
+        {
+            setViewController *setVC = [[setViewController alloc]init];
+            [self.navigationController pushViewController:setVC animated:YES];
+            
+        }
+            break;
+            
+        case 1001:
+        {
+            shoucangViewController *shoucangVC = [[shoucangViewController alloc]init];
+            [self.navigationController pushViewController:shoucangVC animated:YES];
+        }
+            break;
+            
+            
+        default:
+            break;
+    }
+    
+    
+>>>>>>> 22e7344fe5534d2c7c480a7b5888ca6a1e20dade
+}
+
+
 
 
 #pragma mark - UI
