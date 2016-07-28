@@ -107,10 +107,6 @@
 		D63635D91D35DF9D00DA8618 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635D81D35DF9D00DA8618 /* BaseViewController.m */; };
 		D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635DB1D35E0B200DA8618 /* ExpressionLibraryViewController.m */; };
 		D63635E51D35E13200DA8618 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635E41D35E13200DA8618 /* MyViewController.m */; };
-
-		D64AED0C1D37525B001B2613 /* 123123.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0B1D37525B001B2613 /* 123123.png */; };
-
-
 		D64AED0E1D377113001B2613 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0D1D377113001B2613 /* 1.png */; };
 		D64AED101D3771DB001B2613 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED0F1D3771DB001B2613 /* 2.png */; };
 		D64AED121D37730F001B2613 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = D64AED111D37730F001B2613 /* 3.png */; };
@@ -182,9 +178,9 @@
 		D65964C01D47940E005E143A /* CompileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65964BE1D47940E005E143A /* CompileViewController.m */; };
 		D65964C41D479446005E143A /* DrawingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65964C31D479446005E143A /* DrawingDetailViewController.m */; };
 		D65964C81D47945B005E143A /* DynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65964C71D47945B005E143A /* DynamicViewController.m */; };
-		D65964CE1D479472005E143A /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65964CB1D479472005E143A /* WordViewController.m */; };
 		D65964CF1D479472005E143A /* FinshedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65964CD1D479472005E143A /* FinshedViewController.m */; };
 		D65964D31D479487005E143A /* MiserlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65964D21D479487005E143A /* MiserlyViewController.m */; };
+		D65D267F1D488DA9006A1A8A /* UIImage+ATWatermark.m in Sources */ = {isa = PBXBuildFile; fileRef = D65D267E1D488DA9006A1A8A /* UIImage+ATWatermark.m */; };
 		D65E3B561D3F69F100F1E56B /* camera-256.png in Resources */ = {isa = PBXBuildFile; fileRef = D65E3B551D3F69F100F1E56B /* camera-256.png */; };
 		D67E16031D371FFD00B2A887 /* DrawingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D67E16011D371FFD00B2A887 /* DrawingCollectionViewCell.m */; };
 		D67E16041D371FFD00B2A887 /* DrawingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D67E16021D371FFD00B2A887 /* DrawingCollectionViewCell.xib */; };
@@ -358,10 +354,6 @@
 		D63635E31D35E13200DA8618 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		D63635E41D35E13200DA8618 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		D63635F01D35EFA500DA8618 /* CommonString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonString.h; sourceTree = "<group>"; };
-
-		D64AED0B1D37525B001B2613 /* 123123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 123123.png; path = ../123123.png; sourceTree = "<group>"; };
-
-
 		D64AED0D1D377113001B2613 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		D64AED0F1D3771DB001B2613 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		D64AED111D37730F001B2613 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -462,12 +454,12 @@
 		D65964C31D479446005E143A /* DrawingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingDetailViewController.m; sourceTree = "<group>"; };
 		D65964C61D47945B005E143A /* DynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicViewController.h; sourceTree = "<group>"; };
 		D65964C71D47945B005E143A /* DynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicViewController.m; sourceTree = "<group>"; };
-		D65964CA1D479472005E143A /* WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
-		D65964CB1D479472005E143A /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
 		D65964CC1D479472005E143A /* FinshedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinshedViewController.h; sourceTree = "<group>"; };
 		D65964CD1D479472005E143A /* FinshedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinshedViewController.m; sourceTree = "<group>"; };
 		D65964D11D479487005E143A /* MiserlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyViewController.h; sourceTree = "<group>"; };
 		D65964D21D479487005E143A /* MiserlyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyViewController.m; sourceTree = "<group>"; };
+		D65D267D1D488DA9006A1A8A /* UIImage+ATWatermark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ATWatermark.h"; sourceTree = "<group>"; };
+		D65D267E1D488DA9006A1A8A /* UIImage+ATWatermark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ATWatermark.m"; sourceTree = "<group>"; };
 		D65E3B551D3F69F100F1E56B /* camera-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-256.png"; sourceTree = "<group>"; };
 		D67E16001D371FFD00B2A887 /* DrawingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingCollectionViewCell.h; sourceTree = "<group>"; };
 		D67E16011D371FFD00B2A887 /* DrawingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingCollectionViewCell.m; sourceTree = "<group>"; };
@@ -765,6 +757,7 @@
 		ABFBF5A31D39413200BCDD60 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				D65D267C1D488DA9006A1A8A /* UIImage+ATWatermark */,
 				AB85BD591D3E11C9009A9F27 /* GifHUD */,
 				ABFBF5A41D39413200BCDD60 /* Masonry */,
 			);
@@ -888,8 +881,6 @@
 			children = (
 				D65964BB1D47940E005E143A /* DrawingViewController.h */,
 				D65964BC1D47940E005E143A /* DrawingViewController.m */,
-				D65964BD1D47940E005E143A /* CompileViewController.h */,
-				D65964BE1D47940E005E143A /* CompileViewController.m */,
 				D65964C11D47943B005E143A /* BearController */,
 				D65964C51D479449005E143A /* DynamicController */,
 				D65964C91D47945E005E143A /* WordController */,
@@ -919,8 +910,8 @@
 		D65964C91D47945E005E143A /* WordController */ = {
 			isa = PBXGroup;
 			children = (
-				D65964CA1D479472005E143A /* WordViewController.h */,
-				D65964CB1D479472005E143A /* WordViewController.m */,
+				D65964BD1D47940E005E143A /* CompileViewController.h */,
+				D65964BE1D47940E005E143A /* CompileViewController.m */,
 				D65964CC1D479472005E143A /* FinshedViewController.h */,
 				D65964CD1D479472005E143A /* FinshedViewController.m */,
 			);
@@ -934,6 +925,15 @@
 				D65964D21D479487005E143A /* MiserlyViewController.m */,
 			);
 			name = MiserlyController;
+			sourceTree = "<group>";
+		};
+		D65D267C1D488DA9006A1A8A /* UIImage+ATWatermark */ = {
+			isa = PBXGroup;
+			children = (
+				D65D267D1D488DA9006A1A8A /* UIImage+ATWatermark.h */,
+				D65D267E1D488DA9006A1A8A /* UIImage+ATWatermark.m */,
+			);
+			path = "UIImage+ATWatermark";
 			sourceTree = "<group>";
 		};
 		D67E16051D37295B00B2A887 /* ExpressionLibrary */ = {
@@ -1250,10 +1250,7 @@
 				D64ED5801D47639E003AA29F /* cellmorebtnnormal.png in Resources */,
 				ABFBF4F91D377C6F00BCDD60 /* scrollview_0.jpg in Resources */,
 				AB9C1A311D35D1DE0067B7A8 /* Assets.xcassets in Resources */,
-
-
 				AB7952B41D48631500C7AB8B /* memory.png in Resources */,
-
 				AB0F93791D4768EC003E2483 /* friendCircle.png in Resources */,
 				D64ED5851D47639E003AA29F /* play-voice-stop.png in Resources */,
 				AB9C1A2C1D35D1DE0067B7A8 /* Main.storyboard in Resources */,
@@ -1368,6 +1365,7 @@
 				D64ED53C1D475FF6003AA29F /* HttpTool.m in Sources */,
 				D64ED5101D475F6B003AA29F /* XFAllViewController.m in Sources */,
 				D63635E51D35E13200DA8618 /* MyViewController.m in Sources */,
+				D65D267F1D488DA9006A1A8A /* UIImage+ATWatermark.m in Sources */,
 				D64ED50D1D475F6B003AA29F /* XFDetailPictureController.m in Sources */,
 				D6F297DA1D40586000C8C353 /* DrawingHottestCollectionViewCell.m in Sources */,
 				D64ED50F1D475F6B003AA29F /* XFPictrueViewController.m in Sources */,
@@ -1380,7 +1378,6 @@
 				D65964BF1D47940E005E143A /* DrawingViewController.m in Sources */,
 				AB9C1A261D35D1DE0067B7A8 /* AppDelegate.m in Sources */,
 				ABEC55C61D36B60E00E9DACD /* UIColor+Extension.m in Sources */,
-				D65964CE1D479472005E143A /* WordViewController.m in Sources */,
 				ABFBF5251D37F5F300BCDD60 /* LibraryCollectionViewCell.m in Sources */,
 				ABEC55F41D36C3DB00E9DACD /* MenuConfiguration.m in Sources */,
 				ABEC55EB1D36BF0500E9DACD /* MenuButton.m in Sources */,

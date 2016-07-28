@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) NSString *imageVString;
 
+@property (strong, nonatomic) UIImageView *imagesV;
+
 @end
