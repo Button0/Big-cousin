@@ -15,9 +15,10 @@
 
 #import "HomeTitleModel.h"
 #import "LibraryRequest.h"
+#import "MJRefresh.h"
 
 #define KHeightCollection 120
-#define KHeightCycleScrollView self.view.bounds.size.height*0.4f
+#define KHeightCycleScrollView self.view.bounds.size.height*0.35f
 
 @interface ExpressionLibraryViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ClickBtnDelegate, ClickImageDelegate>
 
@@ -48,19 +49,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //导航栏图片
-//    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 18)];
-//    image.image = [UIImage imageNamed:@"表情库"];
-//    self.navigationItem.titleView = image;
     self.title = @"表情库";
-    //UI    
+    // 集成刷新控件
+    [self setupRefresh];
+    
+    // UI
     [self addSegmentView];
     [self layoutSetting];
     [self.libraryCollectionView registerNib:[UINib nibWithNibName:@"LibraryCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:LibraryCollectionViewCell_Identity];
     [self.libraryCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     
     //Data
-    [self requestHomeTitles];
+//    [self requestHomeTitles];
+}
+
+-(void)setupRefresh
+{
+    //1.添加刷新控件
+    UIRefreshControl *control = [[UIRefreshControl alloc] init];
+    control.tintColor = [UIColor grayColor];
+    control.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to reload!"];
+    [control addTarget:self action:@selector(requestHomeTitles:) forControlEvents:UIControlEventValueChanged];
+    [_libraryCollectionView addSubview:control];
+    
+    //2.马上进入刷新状态，并不会触发UIControlEventValueChanged事件
+    [control beginRefreshing];
+    
+    //3.加载数据
+    [self requestHomeTitles:control];
 }
 
 
@@ -106,10 +122,10 @@
     layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, KHeightCycleScrollView-20);
 
     _libraryCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight-130) collectionViewLayout:layout];
-//    _libraryCollectionView.contentInset 
     _libraryCollectionView.delegate = self;
     _libraryCollectionView.dataSource = self;
     _libraryCollectionView.backgroundColor = [UIColor whiteColor];
+    _libraryCollectionView.alwaysBounceVertical = YES;
     [_segmentView.homeView addSubview:_libraryCollectionView];
 }
 
@@ -192,7 +208,7 @@
     }
 }
 
-- (void)requestHomeTitles
+- (void)requestHomeTitles:(UIRefreshControl *)control
 {
     __weak typeof(self) weakSelf = self;
     [[LibraryRequest shareLibraryRequest] requestHomeTitleSuccess:^(NSArray *arr) {
@@ -204,10 +220,12 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.libraryCollectionView reloadData];
+            [control endRefreshing];
         });
         
     } failure:^(NSError *error) {
         NSLog(@"===%@",error);
+        [control endRefreshing];
     }];
 }
 

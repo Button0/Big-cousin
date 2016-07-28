@@ -27,7 +27,6 @@
 		AB49D82B1D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */; };
 		AB7952AC1D48539B00C7AB8B /* memory1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB7952AB1D48539B00C7AB8B /* memory1.jpg */; };
 		AB7952B01D4853C200C7AB8B /* memory3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB7952AE1D4853C200C7AB8B /* memory3.jpg */; };
-		AB7952B41D48631500C7AB8B /* memory.png in Resources */ = {isa = PBXBuildFile; fileRef = AB7952B31D48631500C7AB8B /* memory.png */; };
 		AB85BD4C1D3D518E009A9F27 /* NSString+DecryptString.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD4B1D3D518E009A9F27 /* NSString+DecryptString.m */; };
 		AB85BD501D3DBC82009A9F27 /* SingleExpressionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD4E1D3DBC82009A9F27 /* SingleExpressionViewController.m */; };
 		AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85BD5B1D3E11C9009A9F27 /* GiFHUD.m */; };
@@ -47,6 +46,7 @@
 		ABE29C8D1D42824400B4F5B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE29C8C1D42824400B4F5B9 /* Images.xcassets */; };
 		ABE29C931D428AA800B4F5B9 /* 加载1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABE29C921D428AA800B4F5B9 /* 加载1.jpg */; };
 		ABE565EB1D41BCF1004EEA2D /* ArrNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE565EA1D41BCF1004EEA2D /* ArrNetWorkRequest.m */; };
+		ABEB80491D48E9EC0062F6CA /* strat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABEB80481D48E9EC0062F6CA /* strat.jpg */; };
 		ABEC55961D36B2D200E9DACD /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = ABEC55921D36B2D200E9DACD /* arrow_down.png */; };
 		ABEC55971D36B2D200E9DACD /* arrow_down1.png in Resources */ = {isa = PBXBuildFile; fileRef = ABEC55931D36B2D200E9DACD /* arrow_down1.png */; };
 		ABEC55981D36B2D200E9DACD /* arrow_down1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABEC55941D36B2D200E9DACD /* arrow_down1@2x.png */; };
@@ -248,7 +248,6 @@
 		AB49D8291D3C71D7009B049A /* DrawingHottesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingHottesCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB7952AB1D48539B00C7AB8B /* memory1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = memory1.jpg; sourceTree = "<group>"; };
 		AB7952AE1D4853C200C7AB8B /* memory3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = memory3.jpg; sourceTree = "<group>"; };
-		AB7952B31D48631500C7AB8B /* memory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memory.png; sourceTree = "<group>"; };
 		AB85BD4A1D3D518E009A9F27 /* NSString+DecryptString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DecryptString.h"; sourceTree = "<group>"; };
 		AB85BD4B1D3D518E009A9F27 /* NSString+DecryptString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DecryptString.m"; sourceTree = "<group>"; };
 		AB85BD4D1D3DBC82009A9F27 /* SingleExpressionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleExpressionViewController.h; sourceTree = "<group>"; };
@@ -281,6 +280,7 @@
 		ABE29C921D428AA800B4F5B9 /* 加载1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "加载1.jpg"; sourceTree = "<group>"; };
 		ABE565E91D41BCF1004EEA2D /* ArrNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrNetWorkRequest.h; sourceTree = "<group>"; };
 		ABE565EA1D41BCF1004EEA2D /* ArrNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrNetWorkRequest.m; sourceTree = "<group>"; };
+		ABEB80481D48E9EC0062F6CA /* strat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = strat.jpg; sourceTree = "<group>"; };
 		ABEC55921D36B2D200E9DACD /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
 		ABEC55931D36B2D200E9DACD /* arrow_down1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down1.png; sourceTree = "<group>"; };
 		ABEC55941D36B2D200E9DACD /* arrow_down1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down1@2x.png"; sourceTree = "<group>"; };
@@ -649,9 +649,9 @@
 			children = (
 				D64ED54D1D476383003AA29F /* bigResource */,
 				ABFBF4FD1D378AD700BCDD60 /* 表情库.png */,
+				ABEB80481D48E9EC0062F6CA /* strat.jpg */,
 				AB7952AB1D48539B00C7AB8B /* memory1.jpg */,
 				AB7952AE1D4853C200C7AB8B /* memory3.jpg */,
-				AB7952B31D48631500C7AB8B /* memory.png */,
 				AB0F936E1D476609003E2483 /* QQicon.png */,
 				AB0F93701D476609003E2483 /* sinaWeibo.png */,
 				AB0F93711D476609003E2483 /* downloads.png */,
@@ -816,14 +816,14 @@
 		D63635D31D35DEE300DA8618 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D67E16081D37298500B2A887 /* MY */,
 				D63635D41D35DF8D00DA8618 /* RootViewController.h */,
 				D63635D51D35DF8D00DA8618 /* RootViewController.m */,
 				D63635D71D35DF9D00DA8618 /* BaseViewController.h */,
 				D63635D81D35DF9D00DA8618 /* BaseViewController.m */,
-				D65964BA1D4793FC005E143A /* Drawing */,
 				D67E16051D37295B00B2A887 /* ExpressionLibrary */,
+				D65964BA1D4793FC005E143A /* Drawing */,
 				D67E16071D37297700B2A887 /* BIgCousin */,
-				D67E16081D37298500B2A887 /* MY */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1239,10 +1239,10 @@
 				AB85BD5E1D3E11C9009A9F27 /* pika.gif in Resources */,
 				D64ED57A1D47639E003AA29F /* kr-video-player-shrinkscreen@2x.png in Resources */,
 				D67E16041D371FFD00B2A887 /* DrawingCollectionViewCell.xib in Resources */,
+				ABEB80491D48E9EC0062F6CA /* strat.jpg in Resources */,
 				D64ED5801D47639E003AA29F /* cellmorebtnnormal.png in Resources */,
 				ABFBF4F91D377C6F00BCDD60 /* scrollview_0.jpg in Resources */,
 				AB9C1A311D35D1DE0067B7A8 /* Assets.xcassets in Resources */,
-				AB7952B41D48631500C7AB8B /* memory.png in Resources */,
 				AB0F93791D4768EC003E2483 /* friendCircle.png in Resources */,
 				D64ED5851D47639E003AA29F /* play-voice-stop.png in Resources */,
 				AB9C1A2C1D35D1DE0067B7A8 /* Main.storyboard in Resources */,

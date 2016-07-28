@@ -12,10 +12,11 @@
 #define SWidth self.bounds.size.width
 #define SHeight self.bounds.size.height
 
-@interface SingleExpressionHeaderView ()<UMSocialUIDelegate>
+@interface SingleExpressionHeaderView ()
 /** 分享视图 */
 @property (nonatomic, strong) UIView *shareView;
 /** 分享按钮 */
+@property (nonatomic, strong) UIButton *QQBtn;
 @property (nonatomic, strong) UIButton *weibo;
 @property (nonatomic, strong) UIButton *download;
 @property (nonatomic, strong) UIButton *head;
@@ -78,10 +79,10 @@
     //分享按钮
     _QQBtn = [self addButtonWithImage:@"QQicon" action:@selector(QQshare:)];
     _weibo = [self addButtonWithImage:@"sinaWeibo" action:@selector(weiboShare:)];
-    _download = [self addButtonWithImage:@"downloads" action:@selector(download:)];
-    _head = [self addButtonWithImage:@"head" action:@selector(head:)];
     _wechatBtn = [self addButtonWithImage:@"wechat" action:@selector(wechatShare:)];
     _circle = [self addButtonWithImage:@"friendCircle" action:@selector(circleShare:)];
+    _download = [self addButtonWithImage:@"downloads" action:@selector(download:)];
+    _head = [self addButtonWithImage:@"head" action:@selector(head:)];
     
     //layout
     [_singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -114,16 +115,35 @@
 }
 
 //分享
+
 - (void)QQshare:(UIButton *)sender
 {
-    [UMSocialData defaultData].extConfig.title = @"分享的title";
-    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
-    [UMSocialSnsService presentSnsIconSheetView:_singleExpressionVC
-                                         appKey:@"507fcab25270157b37000010"
-                                      shareText:nil
-                                     shareImage:[UIImage imageNamed:@"icon"]
-                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
-                                       delegate:self];
+    [self.sharedelegate QQshare:sender];
+}
+
+- (void)weiboShare:(UIButton *)sender
+{
+    [self.sharedelegate weiboShare:sender];
+}
+
+- (void)wechatShare:(UIButton *)sender
+{
+    [self.sharedelegate wechatShare:sender];
+}
+
+- (void)circleShare:(UIButton *)sender
+{
+    [self.sharedelegate circleShare:sender];
+}
+
+- (void)download:(UIButton *)sender
+{
+    
+}
+
+- (void)head:(UIButton *)sender
+{
+    
 }
 
 /** 圆角设置 */
@@ -137,7 +157,7 @@
 {
     UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [button setImage:[UIImage imageNamed:imageName] forState:(UIControlStateNormal)];
-    [button addTarget:self action:action forControlEvents:(UIControlEventTouchDragInside)];
+    [button addTarget:self action:action forControlEvents:(UIControlEventTouchUpInside)];
     [self setRadius:button];
     [_shareView addSubview:button];
     

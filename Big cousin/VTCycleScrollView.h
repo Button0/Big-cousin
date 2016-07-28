@@ -17,6 +17,6 @@
 //@property (nonatomic) CGFloat timePerPicture;
 /** 图片数据 */
 @property (nonatomic, retain) NSArray *imageData;
-@property (nonatomic, strong) id<ClickImageDelegate> imageDelegate;
+@property (nonatomic, weak) id<ClickImageDelegate> imageDelegate;
 
 @end

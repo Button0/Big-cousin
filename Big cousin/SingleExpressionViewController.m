@@ -16,10 +16,9 @@
 
 #define KHeightCollection 90
 
-@interface SingleExpressionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UMSocialUIDelegate>
+@interface SingleExpressionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UMSocialUIDelegate, shareDelegate>
 
 @property (nonatomic, strong) UICollectionView *singleCollectionView;
-
 @property (nonatomic, strong) SingleExpressionHeaderView *singleHeader;
 @property (nonatomic, strong) SingleFooterCollectionReusableView *singleFooter;
 /** 数据源 */
@@ -70,27 +69,14 @@
 {
     _singleHeader = [[SingleExpressionHeaderView alloc] init];
     [self.view addSubview:_singleHeader];
-    [_singleHeader.QQBtn addTarget:self action:@selector(QQshare:) forControlEvents:(UIControlEventTouchUpInside)];
+    _singleHeader.sharedelegate = self;
+//    [_singleHeader.QQBtn addTarget:self action:@selector(QQshare:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [_singleHeader mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.equalTo(self.view);
         make.width.mas_equalTo(self.view.mas_width);
         make.height.mas_equalTo(self.view.mas_height).multipliedBy(.3f);
     }];
-}
-
-//分享
-- (void)QQshare:(UIButton *)sender
-{
-    [UMSocialData defaultData].extConfig.title = @"分享的title";
-    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
-    UMSocialUrlResource *urlResource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeImage url:nil];
-    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToSina] content:@"say something..." image:_singleHeader.singleImageView.image location:nil urlResource:urlResource presentedController:self completion:^(UMSocialResponseEntity *shareResponse){
-        if (shareResponse.responseCode == UMSResponseCodeSuccess) {
-            NSLog(@"分享成功！");
-        }
-    }];
-//shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
 }
 
 - (void)layoutSetting
@@ -152,6 +138,39 @@
     return _singleFooter;
 }
 
+
+#pragma mark - share
+- (void)QQshare:(UIButton *)sender
+{
+    [self share:UMShareToQQ];
+}
+
+- (void)weiboShare:(UIButton *)sender
+{
+    [self share:UMShareToSina];
+}
+
+- (void)wechatShare:(UIButton *)sender
+{
+    [self share:UMShareToWechatSession];
+}
+
+- (void)circleShare:(UIButton *)sender
+{
+    [self share:UMShareToWechatTimeline];
+}
+
+- (void)share:(NSString *)platformTypes
+{
+    [UMSocialData defaultData].extConfig.title = @"分享的title";
+    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
+    UMSocialUrlResource *urlResource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeImage url:nil];
+    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[platformTypes] content:@"say something..." image:_singleHeader.singleImageView.image location:nil urlResource:urlResource presentedController:self completion:^(UMSocialResponseEntity *shareResponse){
+        if (shareResponse.responseCode == UMSResponseCodeSuccess) {
+            NSLog(@"分享成功！");
+        }
+    }];
+}
 
 #pragma mark - 数据
 - (void)requestSingleExpressions
