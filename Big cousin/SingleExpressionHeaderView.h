@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol shareDelegate <NSObject>
+
+- (void)QQshare:(UIButton *)sender;
+- (void)weiboShare:(UIButton *)sender;
+- (void)wechatShare:(UIButton *)sender;
+- (void)circleShare:(UIButton *)sender;
+@end
+
 @interface SingleExpressionHeaderView : UIView
 /** 点击单个表情图展示框 */
 @property (nonatomic, strong) UIImageView *singleImageView;
-@property (nonatomic, strong) UIButton *QQBtn;
+@property (nonatomic, weak) id<shareDelegate> sharedelegate;
+
 @end
