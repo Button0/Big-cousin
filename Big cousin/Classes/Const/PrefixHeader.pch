@@ -1,0 +1,64 @@
+//
+//  PrefixHeader.pch
+//  Big cousin
+//
+//  Created by HMS on 16/7/13.
+//  Copyright © 2016年 Twilight. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_FRAME [UIScreen mainScreen].bounds
+
+#define GLOBALCOLOR(r,g,b,a) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1]
+
+//背景色
+#define BackgroundColor GLOBALCOLOR(229, 229, 229,1)
+
+#define BaseURL @"http://api.budejie.com/api/api_open.php"
+
+
+#import "AFNetworking.h"
+#import "NetWorkRequest.h"
+#import "CommonString.h"
+#import "RequestUrl.h"
+#import "NSString+DecryptString.h"
+
+//#import "UIImageView+WebCache.h"
+#import "UIImageView+AFNetworking.h"
+
+#import "GiFHUD.h"
+#import "Masonry.h"
+
+#import <UMSocialData.h>
+#import <UMSocialSnsService.h>
+#import <UMSocialWechatHandler.h>
+#import <UMSocialSinaSSOHandler.h>
+#import <UMSocialQQHandler.h>
+#import <UMSocialSnsPlatformManager.h>
+
+#import "CompileViewController.h"
+
+#import "ReactiveCocoa.h"
+#import "UIView+Extension.h"
+#import "UIImage+XFCircle.h"
+#import "UIImageView+Header.h"
+
+typedef NS_ENUM(NSUInteger, TopicType) {
+    TopicTypeAll = 1, // 全部
+    TopicTypePicture = 10, // 图片
+    TopicTypeTalk = 29, // 段子
+    TopicTypeVoice = 31, // 声音
+    TopicTypeVideo = 41 // 视频
+};
+
+#import "FinshedViewController.h"
+
+//#import "packageView.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
