@@ -86,7 +86,7 @@
     
     //3.加载数据
     [self requestHomeTitles:control];
-    [self requestHomeTitles];
+//    [self requestHomeTitles];
     
     //抽屉相关
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"菜单.png"] style:UIBarButtonItemStylePlain target:self action:@selector(ClickShowMenu:)];
@@ -178,8 +178,6 @@
             break;
     }
     
-    
->>>>>>> 22e7344fe5534d2c7c480a7b5888ca6a1e20dade
 }
 
 

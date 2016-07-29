@@ -70,7 +70,7 @@
     
     saceButton.layer.cornerRadius = 15;
     [saceButton addTarget:self action:@selector(saceButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
-    [saceButton setTitle:@"保存到作品" forState:(UIControlStateNormal)];
+    [saceButton setTitle:@"收藏" forState:(UIControlStateNormal)];
     
     saceButton.backgroundColor = [UIColor grayColor];
     [self.view addSubview:saceButton];
@@ -135,14 +135,6 @@
                                      shareImage:self.imagesV.image
                                 shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
                                 delegate:self];
-//    UMSocialUrlResource *urlResource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeImage url:nil];
-//    
-//    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone] content:@"say something..." image:self.imagesV.image location:nil urlResource:urlResource presentedController:self completion:^(UMSocialResponseEntity *shareResponse){
-//        if (shareResponse.responseCode == UMSResponseCodeSuccess) {
-//            NSLog(@"分享成功！");
-//        }
-//
-//    }];
 }
 //保存
 - (void)saceButtonClicked:(UIButton *)sender
@@ -154,6 +146,7 @@
 {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
     NSData *data = UIImageJPEGRepresentation(self.imagesV.image, 1.0f);
     NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     

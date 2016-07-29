@@ -58,10 +58,10 @@
     flowLayout.itemSize = CGSizeMake(100, 120);
     
     /** 初始化控制器 */
-    self.newestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight-50) collectionViewLayout:flowLayout];
+    self.newestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight-105) collectionViewLayout:flowLayout];
     self.newestCollectionView.backgroundColor = [UIColor whiteColor];
     
-    self.hottestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight-49) collectionViewLayout:flowLayout];
+    self.hottestCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight-100) collectionViewLayout:flowLayout];
     self.hottestCollectionView.backgroundColor = [UIColor whiteColor];
 //    self.hottestCollectionView.edgesForExtendedLayout = UIRectEdgeNone
     

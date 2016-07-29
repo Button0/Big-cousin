@@ -137,6 +137,10 @@
 		ABFBF5DF1D39413200BCDD60 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFBF5BE1D39413200BCDD60 /* ViewController+MASAdditions.m */; };
 		CFB3A78CBB48A29917307485 /* Pods_Big_cousin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1EE69616C0D3DB804F4CF6 /* Pods_Big_cousin.framework */; };
 		D6070C051D3E593700EB761F /* DrawingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6070C041D3E593700EB761F /* DrawingRequest.m */; };
+		D62EBB751D4A0E9F004E4A57 /* SingleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62EBB731D4A0E9F004E4A57 /* SingleCollectionViewCell.m */; };
+		D62EBB761D4A0E9F004E4A57 /* SingleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62EBB741D4A0E9F004E4A57 /* SingleCollectionViewCell.xib */; };
+		D62EBB7A1D4A0FAF004E4A57 /* WholeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62EBB781D4A0FAF004E4A57 /* WholeCollectionViewCell.m */; };
+		D62EBB7B1D4A0FAF004E4A57 /* WholeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62EBB791D4A0FAF004E4A57 /* WholeCollectionViewCell.xib */; };
 		D63635D61D35DF8D00DA8618 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635D51D35DF8D00DA8618 /* RootViewController.m */; };
 		D63635D91D35DF9D00DA8618 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635D81D35DF9D00DA8618 /* BaseViewController.m */; };
 		D63635DC1D35E0B200DA8618 /* ExpressionLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63635DB1D35E0B200DA8618 /* ExpressionLibraryViewController.m */; };
@@ -427,6 +431,12 @@
 		ABFBF5BE1D39413200BCDD60 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		D6070C031D3E593700EB761F /* DrawingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingRequest.h; sourceTree = "<group>"; };
 		D6070C041D3E593700EB761F /* DrawingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingRequest.m; sourceTree = "<group>"; };
+		D62EBB721D4A0E9F004E4A57 /* SingleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCollectionViewCell.h; sourceTree = "<group>"; };
+		D62EBB731D4A0E9F004E4A57 /* SingleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCollectionViewCell.m; sourceTree = "<group>"; };
+		D62EBB741D4A0E9F004E4A57 /* SingleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleCollectionViewCell.xib; sourceTree = "<group>"; };
+		D62EBB771D4A0FAF004E4A57 /* WholeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WholeCollectionViewCell.h; sourceTree = "<group>"; };
+		D62EBB781D4A0FAF004E4A57 /* WholeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WholeCollectionViewCell.m; sourceTree = "<group>"; };
+		D62EBB791D4A0FAF004E4A57 /* WholeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WholeCollectionViewCell.xib; sourceTree = "<group>"; };
 		D63635D41D35DF8D00DA8618 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		D63635D51D35DF8D00DA8618 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		D63635D71D35DF9D00DA8618 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -611,6 +621,12 @@
 				08B95D5C1D48A43B006CAB56 /* setTableViewCell.xib */,
 				08B95D5D1D48A43B006CAB56 /* shoucangViewController.h */,
 				08B95D5E1D48A43B006CAB56 /* shoucangViewController.m */,
+				D62EBB721D4A0E9F004E4A57 /* SingleCollectionViewCell.h */,
+				D62EBB731D4A0E9F004E4A57 /* SingleCollectionViewCell.m */,
+				D62EBB741D4A0E9F004E4A57 /* SingleCollectionViewCell.xib */,
+				D62EBB771D4A0FAF004E4A57 /* WholeCollectionViewCell.h */,
+				D62EBB781D4A0FAF004E4A57 /* WholeCollectionViewCell.m */,
+				D62EBB791D4A0FAF004E4A57 /* WholeCollectionViewCell.xib */,
 				08B95D5F1D48A43B006CAB56 /* opinionViewController.h */,
 				08B95D601D48A43B006CAB56 /* opinionViewController.m */,
 				08B95D611D48A43B006CAB56 /* opinionViewController.xib */,
@@ -1395,6 +1411,8 @@
 				AB85BD641D3E1296009A9F27 /* 85.gif in Resources */,
 				D64ED5151D475F6B003AA29F /* XFVociePlayerController.xib in Resources */,
 				D64AED101D3771DB001B2613 /* 2.png in Resources */,
+				D62EBB761D4A0E9F004E4A57 /* SingleCollectionViewCell.xib in Resources */,
+				D62EBB7B1D4A0FAF004E4A57 /* WholeCollectionViewCell.xib in Resources */,
 				08B95D8F1D48CBEC006CAB56 /* 设置.png in Resources */,
 				AB7952B01D4853C200C7AB8B /* memory3.jpg in Resources */,
 				D64ED52B1D475FD1003AA29F /* XFContentPictureView.xib in Resources */,
@@ -1409,7 +1427,6 @@
 				D64ED5801D47639E003AA29F /* cellmorebtnnormal.png in Resources */,
 				ABFBF4F91D377C6F00BCDD60 /* scrollview_0.jpg in Resources */,
 				AB9C1A311D35D1DE0067B7A8 /* Assets.xcassets in Resources */,
-				AB7952B41D48631500C7AB8B /* memory.png in Resources */,
 				AB0F93791D4768EC003E2483 /* friendCircle.png in Resources */,
 				D64ED5851D47639E003AA29F /* play-voice-stop.png in Resources */,
 				AB9C1A2C1D35D1DE0067B7A8 /* Main.storyboard in Resources */,
@@ -1519,8 +1536,10 @@
 				D64ED5401D476047003AA29F /* UIView+Extension.m in Sources */,
 				AB9C1A2F1D35D1DE0067B7A8 /* Big_cousin.xcdatamodeld in Sources */,
 				D64ED5391D475FF6003AA29F /* XFUserModel.m in Sources */,
+				D62EBB751D4A0E9F004E4A57 /* SingleCollectionViewCell.m in Sources */,
 				AB85BD671D3E8F4F009A9F27 /* SingleExpressionHeaderView.m in Sources */,
 				D6070C051D3E593700EB761F /* DrawingRequest.m in Sources */,
+				D62EBB7A1D4A0FAF004E4A57 /* WholeCollectionViewCell.m in Sources */,
 				D64ED5241D475FD1003AA29F /* XFCommentCell.m in Sources */,
 				ABEC55FA1D37413300E9DACD /* SearchView.m in Sources */,
 				ABFBF5D41D39413200BCDD60 /* NSArray+MASAdditions.m in Sources */,

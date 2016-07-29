@@ -53,10 +53,10 @@
     flowLayout.itemSize = CGSizeMake(100, 120);
 
     /** 初始化控制器 */
-    _newsCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
+    _newsCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight-100) collectionViewLayout:flowLayout];
     _newsCollection.backgroundColor = [UIColor whiteColor];
     
-    _hottestCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
+    _hottestCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(WindowWidth, 0, WindowWidth, WindowHeight-100) collectionViewLayout:flowLayout];
     _hottestCollection.backgroundColor = [UIColor whiteColor];
     //分页
     _segment = [[UISegmentedControl alloc]initWithItems:@[@"最新",@"最热"]];

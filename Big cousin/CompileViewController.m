@@ -95,7 +95,6 @@
         make.top.mas_equalTo(_imageV.mas_top).with.offset(10);
         make.left.mas_equalTo(_imageV.mas_left).with.offset(40);
         make.right.mas_equalTo(_imageV.mas_right).with.offset(-40);
-        make.height.mas_equalTo(_myLabel.mas_height).with.offset(50);
     }];
     
     
@@ -154,7 +153,7 @@
         
         NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
         attrDict[NSForegroundColorAttributeName] = [UIColor redColor];
-        attrDict[NSFontAttributeName] = [UIFont systemFontOfSize:18.f];
+        attrDict[NSFontAttributeName] = [UIFont systemFontOfSize:22.f];
         
         NSAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:self.myLabel.text attributes:attrDict];
         UIImage *imageWithImageAndTextWatermark = [UIImage imageWithUIImage:imageWithImageWatermark watermarkOfText:attrString position:(ATWatermarkPositonBottom)];
