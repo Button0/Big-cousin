@@ -9,7 +9,6 @@
 #import "DrawingViewController.h"
 #import "DrawingCollectionViewCell.h"
 #import "DrawingDetailViewController.h"
-#import "WordViewController.h"
 #import "DynamicViewController.h"
 #import "MiserlyViewController.h"
 @interface DrawingViewController ()
@@ -59,7 +58,7 @@
 //返回个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 4;
+    return 3;
 }
 //cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -87,18 +86,9 @@
         }
             case 2:
         {
-            self.hidesBottomBarWhenPushed = YES;
-            WordViewController *wordVC = [[WordViewController alloc]init];
-            [self.navigationController pushViewController:wordVC animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
-            break;
-        }
-            case 3:
-        {
             MiserlyViewController *miserlyVC = [[MiserlyViewController alloc]init];
             [self.navigationController pushViewController:miserlyVC animated:YES];
         }
-            
         default:
             break;
        }
