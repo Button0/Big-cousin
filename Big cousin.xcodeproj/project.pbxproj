@@ -84,7 +84,6 @@
 		ABEB81931D4AF23F0062F6CA /* DynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB817A1D4AF23F0062F6CA /* DynamicViewController.m */; };
 		ABEB81941D4AF23F0062F6CA /* MiserlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB817D1D4AF23F0062F6CA /* MiserlyViewController.m */; };
 		ABEB81951D4AF23F0062F6CA /* FinshedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81801D4AF23F0062F6CA /* FinshedViewController.m */; };
-		ABEB81961D4AF23F0062F6CA /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81821D4AF23F0062F6CA /* WordViewController.m */; };
 		ABEB81971D4AF23F0062F6CA /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81851D4AF23F0062F6CA /* DataBaseManager.m */; };
 		ABEB81981D4AF23F0062F6CA /* ExpressionLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81871D4AF23F0062F6CA /* ExpressionLibraryViewController.m */; };
 		ABEB81991D4AF23F0062F6CA /* PublicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81891D4AF23F0062F6CA /* PublicCollectionViewController.m */; };
@@ -379,8 +378,6 @@
 		ABEB817D1D4AF23F0062F6CA /* MiserlyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyViewController.m; sourceTree = "<group>"; };
 		ABEB817F1D4AF23F0062F6CA /* FinshedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinshedViewController.h; sourceTree = "<group>"; };
 		ABEB81801D4AF23F0062F6CA /* FinshedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinshedViewController.m; sourceTree = "<group>"; };
-		ABEB81811D4AF23F0062F6CA /* WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
-		ABEB81821D4AF23F0062F6CA /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
 		ABEB81841D4AF23F0062F6CA /* DataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
 		ABEB81851D4AF23F0062F6CA /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
 		ABEB81861D4AF23F0062F6CA /* ExpressionLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressionLibraryViewController.h; sourceTree = "<group>"; };
@@ -998,8 +995,6 @@
 			children = (
 				ABEB817F1D4AF23F0062F6CA /* FinshedViewController.h */,
 				ABEB81801D4AF23F0062F6CA /* FinshedViewController.m */,
-				ABEB81811D4AF23F0062F6CA /* WordViewController.h */,
-				ABEB81821D4AF23F0062F6CA /* WordViewController.m */,
 			);
 			path = WordController;
 			sourceTree = "<group>";
@@ -1705,7 +1700,6 @@
 				ABEB82031D4AFB890062F6CA /* MiserlyModel.m in Sources */,
 				D64ED5461D476059003AA29F /* UIImageView+Header.m in Sources */,
 				AB85BD5D1D3E11C9009A9F27 /* GiFHUD.m in Sources */,
-				ABEB81961D4AF23F0062F6CA /* WordViewController.m in Sources */,
 				ABEB818F1D4AF23F0062F6CA /* BaseViewController.m in Sources */,
 				ABEB81FE1D4AFB890062F6CA /* XFUserModel.m in Sources */,
 				ABEB822F1D4AFF610062F6CA /* CellSelection.m in Sources */,
