@@ -11,13 +11,8 @@
 #import "SingleCollectionViewCell.h"
 #import "WholeCollectionViewCell.h"
 
-@interface CollectionPackViewController ()
-<
-    UICollectionViewDataSource,
-    UICollectionViewDelegateFlowLayout,
-    UIScrollViewDelegate
->
-
+@interface CollectionPackViewController ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,UIScrollViewDelegate>
+@property (nonatomic,strong) NSMutableArray * expressionsPack;
 
 @property (strong, nonatomic) UICollectionView *singleCollectionView;
 
@@ -27,8 +22,6 @@
 
 @property (strong, nonatomic) UISegmentedControl *segment;
 
-@property (nonatomic,strong) NSMutableArray * expressionsPack;
-
 @end
 
 @implementation CollectionPackViewController
@@ -36,13 +29,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+
     self.title = @"收藏";
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tabBarController.tabBar.translucent = NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
-
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-//    flowLayout.minimumInteritemSpacing = 10;
+    //    flowLayout.minimumInteritemSpacing = 10;
     flowLayout.minimumLineSpacing = 10;
     //每个分区边缘的距离
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
@@ -84,8 +79,20 @@
     //注册cell
     [_singleCollectionView registerNib:[UINib nibWithNibName:@"SingleCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:SingleCollectionViewCell_Identify];
     [_wholeCollectionView registerNib:[UINib nibWithNibName:@"WholeCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:WholeCollectionViewCell_Identify];
+
+
 }
 
+//获取当前用户收藏过的活动
+- (void)getAllActivities
+{
+    // 从数据库中读取活动对象数据
+    self.expressionsPack = [[DataBaseManager shareInstance] selectAllExpressionPack];
+    if (_expressionsPack.count == 0)
+    {
+        NSLog(@"暂无收藏！");
+    }
+}
 - (void)segmentControClicked:(UISegmentedControl *)sender
 {
     [self.scrollView setContentOffset:CGPointMake(sender.selectedSegmentIndex * WindowWidth, 0)];
@@ -112,20 +119,6 @@
         return cell;
     }
     return nil;
-}
-
-
-
-
-//获取当前用户收藏过的活动
-- (void)getAllActivities
-{
-    // 从数据库中读取活动对象数据
-    self.expressionsPack = [[DataBaseManager shareInstance] selectAllExpressionPack];
-    if (_expressionsPack.count == 0)
-    {
-        NSLog(@"暂无收藏！");
-    }
 }
 
 

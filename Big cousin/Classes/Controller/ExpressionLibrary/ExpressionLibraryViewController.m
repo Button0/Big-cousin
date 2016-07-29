@@ -26,9 +26,8 @@
 #import "CollectionPackViewController.h"
 
 #define KHeightCollection 120
-#define KHeightCycleScrollView self.view.bounds.size.height*0.35f
+#define KHeightCycleScrollView self.view.bounds.size.height*0.3f
 
-static const CGFloat MJDuration = 2.0;
 
 @interface ExpressionLibraryViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ClickBtnDelegate, ClickImageDelegate, MenuClickDelegate>
 
@@ -60,9 +59,6 @@ static const CGFloat MJDuration = 2.0;
     [super viewDidLoad];
     
     self.title = @"表情库";
-    // 集成刷新控件
-//    [self setupRefresh];
-    [self update];
     
     // UI
     [self lifeMenu];
@@ -72,83 +68,16 @@ static const CGFloat MJDuration = 2.0;
     [self.libraryCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     
     //Data
-//    [self requestHomeTitles];
-}
-
--(void)setupRefresh
-{
-    //1.添加刷新控件
-    UIRefreshControl *control = [[UIRefreshControl alloc] init];
-    control.tintColor = [UIColor grayColor];
-    control.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull down to reload!"];
-    [control addTarget:self action:@selector(requestHomeTitles) forControlEvents:UIControlEventValueChanged];
-    [_libraryCollectionView addSubview:control];
-    
-    //2.马上进入刷新状态，并不会触发UIControlEventValueChanged事件
-    [control beginRefreshing];
-    
-    //3.加载数据
-    [self requestHomeTitles:control];
-//    [self requestHomeTitles];
-    
-    //抽屉相关
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"菜单.png"] style:UIBarButtonItemStylePlain target:self action:@selector(ClickShowMenu:)];
-    [LYB_ChouTiViewController getMenuViewController].menuClickDelegate = self;
-    
-    
-//    [self requestHomeTitles:control];
-//    [self requestHomeTitles];
-ExpressionLibrary/ExpressionLibraryViewController.m
-}
-
-- (void)update
-{
-    __weak __typeof(self) weakSelf = self;
     [self requestHomeTitles];
-    
-    // 下拉刷新
-    _libraryCollectionView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self requestHomeTitles];
-        
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.libraryCollectionView reloadData];
-            
-            // 结束刷新
-            [weakSelf.libraryCollectionView.mj_header endRefreshing];
-        });
-    }];
-    [self.libraryCollectionView.mj_header beginRefreshing];
 }
+
 
 #pragma mark - UI
 - (void)lifeMenu
 {
-    switch (button.tag) {
-        case 1000:
-        {
-            setViewController *setVC = [[setViewController alloc]init];
-            [self.navigationController pushViewController:setVC animated:YES];
-            
-        }
-            break;
-            
-        case 1001:
-        {
-            shoucangViewController *shoucangVC = [[shoucangViewController alloc]init];
-            [self.navigationController pushViewController:shoucangVC animated:YES];
-        }
-            break;
-            
-            
-        default:
-            break;
-    }
-    
     //抽屉相关
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"菜单.png"] style:UIBarButtonItemStylePlain target:self action:@selector(ClickShowMenu:)];
     [LYB_ChouTiViewController getMenuViewController].menuClickDelegate = self;
-ExpressionLibrary/ExpressionLibraryViewController.m
 }
 
 //分页容器
@@ -237,7 +166,7 @@ ExpressionLibrary/ExpressionLibraryViewController.m
 
 #pragma mark - 抽屉相关
 //菜单按钮点击方法
--(void)ClickShowMenu:(UIBarButtonItem *)sender
+- (void)ClickShowMenu:(UIBarButtonItem *)sender
 {
     if ([LYB_ChouTiViewController getMenuViewController].isShowing) {
         [[LYB_ChouTiViewController getMenuViewController] hideLeftViewController];
@@ -248,7 +177,7 @@ ExpressionLibrary/ExpressionLibraryViewController.m
 }
 
 //menuclick代理
--(void)ClickMenuIndex:(NSInteger)Index Title:(NSString *)title
+- (void)ClickMenuIndex:(NSInteger)Index Title:(NSString *)title
 {
     switch (Index) {
         case 0:
@@ -280,7 +209,7 @@ ExpressionLibrary/ExpressionLibraryViewController.m
     }
 }
 
--(void)ClickBut:(UIButton *)button
+- (void)ClickBut:(UIButton *)button
 {
     switch (button.tag) {
         case 1000:
@@ -303,7 +232,7 @@ ExpressionLibrary/ExpressionLibraryViewController.m
 
 #pragma mark - 数据
 //轮播图手势代理
--(void)cycleImagePush:(UITapGestureRecognizer *)sender
+- (void)cycleImagePush:(UITapGestureRecognizer *)sender
 {
     UIView *targetView = sender.view;
     if (targetView
@@ -320,7 +249,7 @@ ExpressionLibrary/ExpressionLibraryViewController.m
 }
 
 //LibraryCollectionViewCell 手势代理
--(void)ClickBtn:(UIButton *)button
+- (void)ClickBtn:(UIButton *)button
 {
     PublicCollectionViewController *moreVC = [[PublicCollectionViewController alloc]init];
     moreVC.url = ExpressionLibrary_Url(@(button.tag));
@@ -328,7 +257,7 @@ ExpressionLibrary/ExpressionLibraryViewController.m
 }
 
 //点击单个图片 跳转 且传入 被点击图片的ID 
--(void)cellPush:(UITapGestureRecognizer *)sender
+- (void)cellPush:(UITapGestureRecognizer *)sender
 {
     UIView *targetView = sender.view;
     if (targetView
@@ -344,7 +273,7 @@ ExpressionLibrary/ExpressionLibraryViewController.m
     }
 }
 
-- (void)requestHomeTitles//:(UIRefreshControl *)control
+- (void)requestHomeTitles
 {
     __weak typeof(self) weakSelf = self;
     [[LibraryRequest shareLibraryRequest] requestHomeTitleSuccess:^(NSArray *arr) {
@@ -356,12 +285,9 @@ ExpressionLibrary/ExpressionLibraryViewController.m
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.libraryCollectionView reloadData];
-//            [control endRefreshing];
         });
-        
     } failure:^(NSError *error) {
         NSLog(@"===%@",error);
-//        [control endRefreshing];
     }];
 }
 

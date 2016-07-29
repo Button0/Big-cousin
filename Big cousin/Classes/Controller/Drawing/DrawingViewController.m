@@ -89,6 +89,7 @@
             MiserlyViewController *miserlyVC = [[MiserlyViewController alloc]init];
             [self.navigationController pushViewController:miserlyVC animated:YES];
         }
+            
         default:
             break;
        }

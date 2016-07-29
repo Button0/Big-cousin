@@ -72,7 +72,6 @@ static sqlite3 *db = nil;
     int result = sqlite3_prepare_v2(db, [sql UTF8String], -1, &stmt, NULL);
     if (result == SQLITE_OK)
     {
-        NSLog(@"插入成功");
         sqlite3_bind_text(stmt, 1, [pack.eId UTF8String], -1, NULL);
         sqlite3_bind_text(stmt, 2, [pack.coverUrl UTF8String], -1, NULL);
         sqlite3_bind_text(stmt, 3, pack.eName.UTF8String, -1, NULL);
@@ -83,7 +82,9 @@ static sqlite3 *db = nil;
         sqlite3_bind_blob(stmt, 4, [data bytes], (int)[data length], NULL);
         
         sqlite3_step(stmt);
+        NSLog(@"插入成功");
     }
+    
     sqlite3_finalize(stmt);
 }
 
@@ -198,7 +199,7 @@ static sqlite3 *db = nil;
 //数据库存储的路径
 - (NSString *)dataBaseFilePath:(NSString *)dataBaseName
 {
-    NSLog(@"sandbox %@",[[self cachesPath] stringByAppendingPathComponent:dataBaseName]);
+    NSLog(@"sandbox－－ %@",[[self cachesPath] stringByAppendingPathComponent:dataBaseName]);
     return [[self cachesPath] stringByAppendingPathComponent:dataBaseName];
 }
 
