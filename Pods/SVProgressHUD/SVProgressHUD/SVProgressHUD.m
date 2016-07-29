@@ -350,7 +350,7 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
 
         if ([[UIImage class] instancesRespondToSelector:@selector(imageWithRenderingMode:)]) {
             _infoImage = [infoImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            _successImage = [successImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            _successImage = [successImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             _errorImage = [errorImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         } else {
             _infoImage = infoImage;
@@ -364,7 +364,7 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
         
         _cornerRadius = 14.0f;
         
-        _minimumDismissTimeInterval = 5.0;
+        _minimumDismissTimeInterval = 2.5;
 
         _fadeInAnimationDuration = SVProgressHUDDefaultAnimationDuration;
         _fadeOutAnimationDuration = SVProgressHUDDefaultAnimationDuration;
@@ -1206,7 +1206,7 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
 
 - (UIColor*)backgroundColorForStyle {
     if(self.defaultStyle == SVProgressHUDStyleLight) {
-        return [UIColor whiteColor];
+        return [UIColor colorWithRed:229/255.0 green:240/255.0 blue:244/255.0 alpha:1.0];//[UIColor whiteColor];
     } else if(self.defaultStyle == SVProgressHUDStyleDark) {
         return [UIColor blackColor];
     } else {
