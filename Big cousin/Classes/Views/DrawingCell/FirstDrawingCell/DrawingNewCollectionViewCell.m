@@ -36,7 +36,7 @@
 - (void)setDynamicModel:(DynamicModel *)dynamicModel
 {
     [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[dynamicModel.URL replacingStringToURL]]];
-//    NSLog(@"dynamicModel.url ======= %@",[dynamicModel.URL replacingStringToURL]);
+    NSLog(@"dynamicModel.url ======= %@",[dynamicModel.URL replacingStringToURL]);
 }
 
 @end

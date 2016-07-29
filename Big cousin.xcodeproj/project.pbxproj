@@ -91,12 +91,6 @@
 		ABEB81671D4AEE060062F6CA /* 设置.png in Resources */ = {isa = PBXBuildFile; fileRef = ABEB812A1D4AEE060062F6CA /* 设置.png */; };
 		ABEB818E1D4AF23F0062F6CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB816B1D4AF23F0062F6CA /* AppDelegate.m */; };
 		ABEB818F1D4AF23F0062F6CA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB816E1D4AF23F0062F6CA /* BaseViewController.m */; };
-		ABEB81901D4AF23F0062F6CA /* DrawingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81731D4AF23F0062F6CA /* DrawingDetailViewController.m */; };
-		ABEB81911D4AF23F0062F6CA /* CompileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81751D4AF23F0062F6CA /* CompileViewController.m */; };
-		ABEB81921D4AF23F0062F6CA /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81771D4AF23F0062F6CA /* DrawingViewController.m */; };
-		ABEB81931D4AF23F0062F6CA /* DynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB817A1D4AF23F0062F6CA /* DynamicViewController.m */; };
-		ABEB81941D4AF23F0062F6CA /* MiserlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB817D1D4AF23F0062F6CA /* MiserlyViewController.m */; };
-		ABEB81951D4AF23F0062F6CA /* FinshedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81801D4AF23F0062F6CA /* FinshedViewController.m */; };
 		ABEB81971D4AF23F0062F6CA /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81851D4AF23F0062F6CA /* DataBaseManager.m */; };
 		ABEB81981D4AF23F0062F6CA /* ExpressionLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81871D4AF23F0062F6CA /* ExpressionLibraryViewController.m */; };
 		ABEB81991D4AF23F0062F6CA /* PublicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB81891D4AF23F0062F6CA /* PublicCollectionViewController.m */; };
@@ -158,16 +152,6 @@
 		ABEB82791D4B07060062F6CA /* XFContentVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB825D1D4B07060062F6CA /* XFContentVideoView.xib */; };
 		ABEB827A1D4B07060062F6CA /* XFTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB825F1D4B07060062F6CA /* XFTopicCell.m */; };
 		ABEB827B1D4B07060062F6CA /* XFTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB82601D4B07060062F6CA /* XFTopicCell.xib */; };
-		ABEB827C1D4B07060062F6CA /* DrawingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB82631D4B07060062F6CA /* DrawingCollectionViewCell.m */; };
-		ABEB827D1D4B07060062F6CA /* DrawingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB82641D4B07060062F6CA /* DrawingCollectionViewCell.xib */; };
-		ABEB827E1D4B07060062F6CA /* DrawingHottesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB82671D4B07060062F6CA /* DrawingHottesCollectionViewCell.m */; };
-		ABEB827F1D4B07060062F6CA /* DrawingHottesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB82681D4B07060062F6CA /* DrawingHottesCollectionViewCell.xib */; };
-		ABEB82801D4B07060062F6CA /* DrawingNewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB826A1D4B07060062F6CA /* DrawingNewCollectionViewCell.m */; };
-		ABEB82811D4B07060062F6CA /* DrawingNewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB826B1D4B07060062F6CA /* DrawingNewCollectionViewCell.xib */; };
-		ABEB82821D4B07060062F6CA /* MiserlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB826E1D4B07060062F6CA /* MiserlyCollectionViewCell.m */; };
-		ABEB82831D4B07060062F6CA /* MiserlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB826F1D4B07060062F6CA /* MiserlyCollectionViewCell.xib */; };
-		ABEB82841D4B07060062F6CA /* DrawingHottestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB82721D4B07060062F6CA /* DrawingHottestCollectionViewCell.m */; };
-		ABEB82851D4B07060062F6CA /* DrawingHottestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEB82731D4B07060062F6CA /* DrawingHottestCollectionViewCell.xib */; };
 		ABEB82951D4B08B50062F6CA /* ArrNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB82881D4B08B50062F6CA /* ArrNetWorkRequest.m */; };
 		ABEB82961D4B08B50062F6CA /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB828A1D4B08B50062F6CA /* BaseRequest.m */; };
 		ABEB82971D4B08B50062F6CA /* BigCousinRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEB828C1D4B08B50062F6CA /* BigCousinRequest.m */; };
@@ -195,6 +179,27 @@
 		ABEC55E81D36BD7200E9DACD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEC55E71D36BD7200E9DACD /* UIKit.framework */; };
 		CFB3A78CBB48A29917307485 /* Pods_Big_cousin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1EE69616C0D3DB804F4CF6 /* Pods_Big_cousin.framework */; };
 		D64ED54B1D476281003AA29F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64ED54A1D476281003AA29F /* ImageIO.framework */; };
+		D6FBD05B1D4B53260050A45D /* UIImage+ATWatermark.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD05A1D4B53260050A45D /* UIImage+ATWatermark.m */; };
+		D6FBD0601D4B537F0050A45D /* CompileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD05D1D4B537F0050A45D /* CompileViewController.m */; };
+		D6FBD0611D4B537F0050A45D /* FinshedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD05F1D4B537F0050A45D /* FinshedViewController.m */; };
+		D6FBD0641D4B53980050A45D /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD0631D4B53980050A45D /* DrawingViewController.m */; };
+		D6FBD0671D4B53A70050A45D /* DrawingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD0661D4B53A70050A45D /* DrawingDetailViewController.m */; };
+		D6FBD06A1D4B53B70050A45D /* DynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD0691D4B53B70050A45D /* DynamicViewController.m */; };
+		D6FBD06D1D4B53C70050A45D /* MiserlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD06C1D4B53C70050A45D /* MiserlyViewController.m */; };
+		D6FBD0741D4B54430050A45D /* SingleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD06F1D4B54430050A45D /* SingleCollectionViewCell.m */; };
+		D6FBD0751D4B54430050A45D /* SingleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FBD0701D4B54430050A45D /* SingleCollectionViewCell.xib */; };
+		D6FBD0761D4B54430050A45D /* WholeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD0721D4B54430050A45D /* WholeCollectionViewCell.m */; };
+		D6FBD0771D4B54430050A45D /* WholeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FBD0731D4B54430050A45D /* WholeCollectionViewCell.xib */; };
+		D6FBD07B1D4B59BD0050A45D /* DrawingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD0791D4B59BD0050A45D /* DrawingCollectionViewCell.m */; };
+		D6FBD07C1D4B59BD0050A45D /* DrawingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FBD07A1D4B59BD0050A45D /* DrawingCollectionViewCell.xib */; };
+		D6FBD0831D4B59CF0050A45D /* DrawingNewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD07E1D4B59CF0050A45D /* DrawingNewCollectionViewCell.m */; };
+		D6FBD0841D4B59CF0050A45D /* DrawingNewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FBD07F1D4B59CF0050A45D /* DrawingNewCollectionViewCell.xib */; };
+		D6FBD0851D4B59CF0050A45D /* DrawingHottesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD0811D4B59CF0050A45D /* DrawingHottesCollectionViewCell.m */; };
+		D6FBD0861D4B59CF0050A45D /* DrawingHottesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FBD0821D4B59CF0050A45D /* DrawingHottesCollectionViewCell.xib */; };
+		D6FBD08A1D4B59EA0050A45D /* MiserlyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD0881D4B59EA0050A45D /* MiserlyCollectionViewCell.m */; };
+		D6FBD08B1D4B59EA0050A45D /* MiserlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FBD0891D4B59EA0050A45D /* MiserlyCollectionViewCell.xib */; };
+		D6FBD08F1D4B5A110050A45D /* DrawingHottestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FBD08D1D4B5A110050A45D /* DrawingHottestCollectionViewCell.m */; };
+		D6FBD0901D4B5A110050A45D /* DrawingHottestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FBD08E1D4B5A110050A45D /* DrawingHottestCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -328,18 +333,6 @@
 		ABEB816B1D4AF23F0062F6CA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ABEB816D1D4AF23F0062F6CA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		ABEB816E1D4AF23F0062F6CA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		ABEB81721D4AF23F0062F6CA /* DrawingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingDetailViewController.h; sourceTree = "<group>"; };
-		ABEB81731D4AF23F0062F6CA /* DrawingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingDetailViewController.m; sourceTree = "<group>"; };
-		ABEB81741D4AF23F0062F6CA /* CompileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompileViewController.h; sourceTree = "<group>"; };
-		ABEB81751D4AF23F0062F6CA /* CompileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompileViewController.m; sourceTree = "<group>"; };
-		ABEB81761D4AF23F0062F6CA /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
-		ABEB81771D4AF23F0062F6CA /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
-		ABEB81791D4AF23F0062F6CA /* DynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicViewController.h; sourceTree = "<group>"; };
-		ABEB817A1D4AF23F0062F6CA /* DynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicViewController.m; sourceTree = "<group>"; };
-		ABEB817C1D4AF23F0062F6CA /* MiserlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyViewController.h; sourceTree = "<group>"; };
-		ABEB817D1D4AF23F0062F6CA /* MiserlyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyViewController.m; sourceTree = "<group>"; };
-		ABEB817F1D4AF23F0062F6CA /* FinshedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinshedViewController.h; sourceTree = "<group>"; };
-		ABEB81801D4AF23F0062F6CA /* FinshedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinshedViewController.m; sourceTree = "<group>"; };
 		ABEB81841D4AF23F0062F6CA /* DataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
 		ABEB81851D4AF23F0062F6CA /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
 		ABEB81861D4AF23F0062F6CA /* ExpressionLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressionLibraryViewController.h; sourceTree = "<group>"; };
@@ -449,21 +442,6 @@
 		ABEB825E1D4B07060062F6CA /* XFTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFTopicCell.h; sourceTree = "<group>"; };
 		ABEB825F1D4B07060062F6CA /* XFTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFTopicCell.m; sourceTree = "<group>"; };
 		ABEB82601D4B07060062F6CA /* XFTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFTopicCell.xib; sourceTree = "<group>"; };
-		ABEB82621D4B07060062F6CA /* DrawingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingCollectionViewCell.h; sourceTree = "<group>"; };
-		ABEB82631D4B07060062F6CA /* DrawingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingCollectionViewCell.m; sourceTree = "<group>"; };
-		ABEB82641D4B07060062F6CA /* DrawingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingCollectionViewCell.xib; sourceTree = "<group>"; };
-		ABEB82661D4B07060062F6CA /* DrawingHottesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottesCollectionViewCell.h; sourceTree = "<group>"; };
-		ABEB82671D4B07060062F6CA /* DrawingHottesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottesCollectionViewCell.m; sourceTree = "<group>"; };
-		ABEB82681D4B07060062F6CA /* DrawingHottesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingHottesCollectionViewCell.xib; sourceTree = "<group>"; };
-		ABEB82691D4B07060062F6CA /* DrawingNewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingNewCollectionViewCell.h; sourceTree = "<group>"; };
-		ABEB826A1D4B07060062F6CA /* DrawingNewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingNewCollectionViewCell.m; sourceTree = "<group>"; };
-		ABEB826B1D4B07060062F6CA /* DrawingNewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingNewCollectionViewCell.xib; sourceTree = "<group>"; };
-		ABEB826D1D4B07060062F6CA /* MiserlyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyCollectionViewCell.h; sourceTree = "<group>"; };
-		ABEB826E1D4B07060062F6CA /* MiserlyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyCollectionViewCell.m; sourceTree = "<group>"; };
-		ABEB826F1D4B07060062F6CA /* MiserlyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiserlyCollectionViewCell.xib; sourceTree = "<group>"; };
-		ABEB82711D4B07060062F6CA /* DrawingHottestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottestCollectionViewCell.h; sourceTree = "<group>"; };
-		ABEB82721D4B07060062F6CA /* DrawingHottestCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottestCollectionViewCell.m; sourceTree = "<group>"; };
-		ABEB82731D4B07060062F6CA /* DrawingHottestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingHottestCollectionViewCell.xib; sourceTree = "<group>"; };
 		ABEB82871D4B08B50062F6CA /* ArrNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrNetWorkRequest.h; sourceTree = "<group>"; };
 		ABEB82881D4B08B50062F6CA /* ArrNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrNetWorkRequest.m; sourceTree = "<group>"; };
 		ABEB82891D4B08B50062F6CA /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
@@ -512,6 +490,41 @@
 		ABEC55E51D36BD6600E9DACD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ABEC55E71D36BD7200E9DACD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D64ED54A1D476281003AA29F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		D6FBD0591D4B53260050A45D /* UIImage+ATWatermark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ATWatermark.h"; sourceTree = "<group>"; };
+		D6FBD05A1D4B53260050A45D /* UIImage+ATWatermark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ATWatermark.m"; sourceTree = "<group>"; };
+		D6FBD05C1D4B537F0050A45D /* CompileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompileViewController.h; sourceTree = "<group>"; };
+		D6FBD05D1D4B537F0050A45D /* CompileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompileViewController.m; sourceTree = "<group>"; };
+		D6FBD05E1D4B537F0050A45D /* FinshedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinshedViewController.h; sourceTree = "<group>"; };
+		D6FBD05F1D4B537F0050A45D /* FinshedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinshedViewController.m; sourceTree = "<group>"; };
+		D6FBD0621D4B53980050A45D /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
+		D6FBD0631D4B53980050A45D /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
+		D6FBD0651D4B53A70050A45D /* DrawingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingDetailViewController.h; sourceTree = "<group>"; };
+		D6FBD0661D4B53A70050A45D /* DrawingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingDetailViewController.m; sourceTree = "<group>"; };
+		D6FBD0681D4B53B70050A45D /* DynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicViewController.h; sourceTree = "<group>"; };
+		D6FBD0691D4B53B70050A45D /* DynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicViewController.m; sourceTree = "<group>"; };
+		D6FBD06B1D4B53C70050A45D /* MiserlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyViewController.h; sourceTree = "<group>"; };
+		D6FBD06C1D4B53C70050A45D /* MiserlyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyViewController.m; sourceTree = "<group>"; };
+		D6FBD06E1D4B54430050A45D /* SingleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCollectionViewCell.h; sourceTree = "<group>"; };
+		D6FBD06F1D4B54430050A45D /* SingleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCollectionViewCell.m; sourceTree = "<group>"; };
+		D6FBD0701D4B54430050A45D /* SingleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6FBD0711D4B54430050A45D /* WholeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WholeCollectionViewCell.h; sourceTree = "<group>"; };
+		D6FBD0721D4B54430050A45D /* WholeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WholeCollectionViewCell.m; sourceTree = "<group>"; };
+		D6FBD0731D4B54430050A45D /* WholeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WholeCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6FBD0781D4B59BD0050A45D /* DrawingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingCollectionViewCell.h; sourceTree = "<group>"; };
+		D6FBD0791D4B59BD0050A45D /* DrawingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingCollectionViewCell.m; sourceTree = "<group>"; };
+		D6FBD07A1D4B59BD0050A45D /* DrawingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6FBD07D1D4B59CF0050A45D /* DrawingNewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingNewCollectionViewCell.h; sourceTree = "<group>"; };
+		D6FBD07E1D4B59CF0050A45D /* DrawingNewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingNewCollectionViewCell.m; sourceTree = "<group>"; };
+		D6FBD07F1D4B59CF0050A45D /* DrawingNewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingNewCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6FBD0801D4B59CF0050A45D /* DrawingHottesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottesCollectionViewCell.h; sourceTree = "<group>"; };
+		D6FBD0811D4B59CF0050A45D /* DrawingHottesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottesCollectionViewCell.m; sourceTree = "<group>"; };
+		D6FBD0821D4B59CF0050A45D /* DrawingHottesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingHottesCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6FBD0871D4B59EA0050A45D /* MiserlyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiserlyCollectionViewCell.h; sourceTree = "<group>"; };
+		D6FBD0881D4B59EA0050A45D /* MiserlyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiserlyCollectionViewCell.m; sourceTree = "<group>"; };
+		D6FBD0891D4B59EA0050A45D /* MiserlyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiserlyCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6FBD08C1D4B5A110050A45D /* DrawingHottestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingHottestCollectionViewCell.h; sourceTree = "<group>"; };
+		D6FBD08D1D4B5A110050A45D /* DrawingHottestCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingHottestCollectionViewCell.m; sourceTree = "<group>"; };
+		D6FBD08E1D4B5A110050A45D /* DrawingHottestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingHottestCollectionViewCell.xib; sourceTree = "<group>"; };
 		EDB5E2B478E05044938B2AC1 /* Pods-Big cousin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big cousin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Big cousin/Pods-Big cousin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -593,8 +606,8 @@
 			children = (
 				ABEB81681D4AF23F0062F6CA /* Classes */,
 				ABEB80E91D4AEE060062F6CA /* Resource */,
-				AB9C1A211D35D1DE0067B7A8 /* Supporting Files */,
 				ABB3FCDA1D4B3A85002F446E /* Externals */,
+				AB9C1A211D35D1DE0067B7A8 /* Supporting Files */,
 			);
 			path = "Big cousin";
 			sourceTree = "<group>";
@@ -628,6 +641,7 @@
 		ABB3FCDA1D4B3A85002F446E /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				D6FBD0581D4B53260050A45D /* UIImage+ATWatermark */,
 				ABB3FCDB1D4B3A85002F446E /* GifHUD */,
 				ABB3FCE01D4B3A85002F446E /* Masonry */,
 			);
@@ -862,10 +876,8 @@
 		ABEB81701D4AF23F0062F6CA /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
-				ABEB81741D4AF23F0062F6CA /* CompileViewController.h */,
-				ABEB81751D4AF23F0062F6CA /* CompileViewController.m */,
-				ABEB81761D4AF23F0062F6CA /* DrawingViewController.h */,
-				ABEB81771D4AF23F0062F6CA /* DrawingViewController.m */,
+				D6FBD0621D4B53980050A45D /* DrawingViewController.h */,
+				D6FBD0631D4B53980050A45D /* DrawingViewController.m */,
 				ABEB81711D4AF23F0062F6CA /* BearController */,
 				ABEB81781D4AF23F0062F6CA /* DynamicController */,
 				ABEB817B1D4AF23F0062F6CA /* MiserlyController */,
@@ -877,8 +889,8 @@
 		ABEB81711D4AF23F0062F6CA /* BearController */ = {
 			isa = PBXGroup;
 			children = (
-				ABEB81721D4AF23F0062F6CA /* DrawingDetailViewController.h */,
-				ABEB81731D4AF23F0062F6CA /* DrawingDetailViewController.m */,
+				D6FBD0651D4B53A70050A45D /* DrawingDetailViewController.h */,
+				D6FBD0661D4B53A70050A45D /* DrawingDetailViewController.m */,
 			);
 			path = BearController;
 			sourceTree = "<group>";
@@ -886,8 +898,8 @@
 		ABEB81781D4AF23F0062F6CA /* DynamicController */ = {
 			isa = PBXGroup;
 			children = (
-				ABEB81791D4AF23F0062F6CA /* DynamicViewController.h */,
-				ABEB817A1D4AF23F0062F6CA /* DynamicViewController.m */,
+				D6FBD0681D4B53B70050A45D /* DynamicViewController.h */,
+				D6FBD0691D4B53B70050A45D /* DynamicViewController.m */,
 			);
 			path = DynamicController;
 			sourceTree = "<group>";
@@ -895,8 +907,8 @@
 		ABEB817B1D4AF23F0062F6CA /* MiserlyController */ = {
 			isa = PBXGroup;
 			children = (
-				ABEB817C1D4AF23F0062F6CA /* MiserlyViewController.h */,
-				ABEB817D1D4AF23F0062F6CA /* MiserlyViewController.m */,
+				D6FBD06B1D4B53C70050A45D /* MiserlyViewController.h */,
+				D6FBD06C1D4B53C70050A45D /* MiserlyViewController.m */,
 			);
 			path = MiserlyController;
 			sourceTree = "<group>";
@@ -904,8 +916,10 @@
 		ABEB817E1D4AF23F0062F6CA /* WordController */ = {
 			isa = PBXGroup;
 			children = (
-				ABEB817F1D4AF23F0062F6CA /* FinshedViewController.h */,
-				ABEB81801D4AF23F0062F6CA /* FinshedViewController.m */,
+				D6FBD05C1D4B537F0050A45D /* CompileViewController.h */,
+				D6FBD05D1D4B537F0050A45D /* CompileViewController.m */,
+				D6FBD05E1D4B537F0050A45D /* FinshedViewController.h */,
+				D6FBD05F1D4B537F0050A45D /* FinshedViewController.m */,
 			);
 			path = WordController;
 			sourceTree = "<group>";
@@ -1053,9 +1067,9 @@
 		ABEB82611D4B07060062F6CA /* DrawingCell */ = {
 			isa = PBXGroup;
 			children = (
-				ABEB82621D4B07060062F6CA /* DrawingCollectionViewCell.h */,
-				ABEB82631D4B07060062F6CA /* DrawingCollectionViewCell.m */,
-				ABEB82641D4B07060062F6CA /* DrawingCollectionViewCell.xib */,
+				D6FBD0781D4B59BD0050A45D /* DrawingCollectionViewCell.h */,
+				D6FBD0791D4B59BD0050A45D /* DrawingCollectionViewCell.m */,
+				D6FBD07A1D4B59BD0050A45D /* DrawingCollectionViewCell.xib */,
 				ABEB82651D4B07060062F6CA /* FirstDrawingCell */,
 				ABEB826C1D4B07060062F6CA /* FourDrawingCell */,
 				ABEB82701D4B07060062F6CA /* SecondDrawinCell */,
@@ -1066,12 +1080,12 @@
 		ABEB82651D4B07060062F6CA /* FirstDrawingCell */ = {
 			isa = PBXGroup;
 			children = (
-				ABEB82661D4B07060062F6CA /* DrawingHottesCollectionViewCell.h */,
-				ABEB82671D4B07060062F6CA /* DrawingHottesCollectionViewCell.m */,
-				ABEB82681D4B07060062F6CA /* DrawingHottesCollectionViewCell.xib */,
-				ABEB82691D4B07060062F6CA /* DrawingNewCollectionViewCell.h */,
-				ABEB826A1D4B07060062F6CA /* DrawingNewCollectionViewCell.m */,
-				ABEB826B1D4B07060062F6CA /* DrawingNewCollectionViewCell.xib */,
+				D6FBD07D1D4B59CF0050A45D /* DrawingNewCollectionViewCell.h */,
+				D6FBD07E1D4B59CF0050A45D /* DrawingNewCollectionViewCell.m */,
+				D6FBD07F1D4B59CF0050A45D /* DrawingNewCollectionViewCell.xib */,
+				D6FBD0801D4B59CF0050A45D /* DrawingHottesCollectionViewCell.h */,
+				D6FBD0811D4B59CF0050A45D /* DrawingHottesCollectionViewCell.m */,
+				D6FBD0821D4B59CF0050A45D /* DrawingHottesCollectionViewCell.xib */,
 			);
 			path = FirstDrawingCell;
 			sourceTree = "<group>";
@@ -1079,9 +1093,9 @@
 		ABEB826C1D4B07060062F6CA /* FourDrawingCell */ = {
 			isa = PBXGroup;
 			children = (
-				ABEB826D1D4B07060062F6CA /* MiserlyCollectionViewCell.h */,
-				ABEB826E1D4B07060062F6CA /* MiserlyCollectionViewCell.m */,
-				ABEB826F1D4B07060062F6CA /* MiserlyCollectionViewCell.xib */,
+				D6FBD0871D4B59EA0050A45D /* MiserlyCollectionViewCell.h */,
+				D6FBD0881D4B59EA0050A45D /* MiserlyCollectionViewCell.m */,
+				D6FBD0891D4B59EA0050A45D /* MiserlyCollectionViewCell.xib */,
 			);
 			path = FourDrawingCell;
 			sourceTree = "<group>";
@@ -1089,9 +1103,9 @@
 		ABEB82701D4B07060062F6CA /* SecondDrawinCell */ = {
 			isa = PBXGroup;
 			children = (
-				ABEB82711D4B07060062F6CA /* DrawingHottestCollectionViewCell.h */,
-				ABEB82721D4B07060062F6CA /* DrawingHottestCollectionViewCell.m */,
-				ABEB82731D4B07060062F6CA /* DrawingHottestCollectionViewCell.xib */,
+				D6FBD08C1D4B5A110050A45D /* DrawingHottestCollectionViewCell.h */,
+				D6FBD08D1D4B5A110050A45D /* DrawingHottestCollectionViewCell.m */,
+				D6FBD08E1D4B5A110050A45D /* DrawingHottestCollectionViewCell.xib */,
 			);
 			path = SecondDrawinCell;
 			sourceTree = "<group>";
@@ -1163,10 +1177,25 @@
 				ABEB82C31D4B0C7E0062F6CA /* WeiboViewController.m */,
 				ABEB82B11D4B0C7E0062F6CA /* CollectionPackViewController.h */,
 				ABEB82B21D4B0C7E0062F6CA /* CollectionPackViewController.m */,
+				D6FBD06E1D4B54430050A45D /* SingleCollectionViewCell.h */,
+				D6FBD06F1D4B54430050A45D /* SingleCollectionViewCell.m */,
+				D6FBD0701D4B54430050A45D /* SingleCollectionViewCell.xib */,
+				D6FBD0711D4B54430050A45D /* WholeCollectionViewCell.h */,
+				D6FBD0721D4B54430050A45D /* WholeCollectionViewCell.m */,
+				D6FBD0731D4B54430050A45D /* WholeCollectionViewCell.xib */,
 				ABEB82C01D4B0C7E0062F6CA /* StatementViewController.h */,
 				ABEB82C11D4B0C7E0062F6CA /* StatementViewController.m */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		D6FBD0581D4B53260050A45D /* UIImage+ATWatermark */ = {
+			isa = PBXGroup;
+			children = (
+				D6FBD0591D4B53260050A45D /* UIImage+ATWatermark.h */,
+				D6FBD05A1D4B53260050A45D /* UIImage+ATWatermark.m */,
+			);
+			path = "UIImage+ATWatermark";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1284,7 +1313,9 @@
 				ABEB82441D4AFFD60062F6CA /* Main.storyboard in Resources */,
 				ABEB81591D4AEE060062F6CA /* 加载1.jpg in Resources */,
 				ABEB820A1D4AFCD30062F6CA /* Images.xcassets in Resources */,
+				D6FBD08B1D4B59EA0050A45D /* MiserlyCollectionViewCell.xib in Resources */,
 				ABEB81481D4AEE060062F6CA /* zhuanzai.png in Resources */,
+				D6FBD07C1D4B59BD0050A45D /* DrawingCollectionViewCell.xib in Resources */,
 				ABEB81471D4AEE060062F6CA /* zan.png in Resources */,
 				ABEB81521D4AEE060062F6CA /* QQicon.png in Resources */,
 				ABEB815F1D4AEE060062F6CA /* meng.jpg in Resources */,
@@ -1295,6 +1326,7 @@
 				ABEB82091D4AFCD30062F6CA /* Assets.xcassets in Resources */,
 				ABEB815E1D4AEE060062F6CA /* lajixiang.png in Resources */,
 				ABEB82AD1D4B0C660062F6CA /* ChatTableViewCell.xib in Resources */,
+				D6FBD0861D4B59CF0050A45D /* DrawingHottesCollectionViewCell.xib in Resources */,
 				ABEB82AF1D4B0C660062F6CA /* setTableViewCell.xib in Resources */,
 				ABEB81391D4AEE060062F6CA /* kr-video-player-fullscreen@2x.png in Resources */,
 				ABEB814E1D4AEE060062F6CA /* friendCircle.png in Resources */,
@@ -1304,17 +1336,15 @@
 				ABEB81341D4AEE060062F6CA /* comment-bar-bg.png in Resources */,
 				ABEB81491D4AEE060062F6CA /* btn_shoucang_0.png in Resources */,
 				ABEB82AB1D4B0C660062F6CA /* ChatImageTableViewCell.xib in Resources */,
-				ABEB82811D4B07060062F6CA /* DrawingNewCollectionViewCell.xib in Resources */,
+				D6FBD0771D4B54430050A45D /* WholeCollectionViewCell.xib in Resources */,
 				ABEB813A1D4AEE060062F6CA /* kr-video-player-pause@2x.png in Resources */,
 				ABEB81351D4AEE060062F6CA /* comment_bar_at_icon.png in Resources */,
-				ABEB827F1D4B07060062F6CA /* DrawingHottesCollectionViewCell.xib in Resources */,
 				ABEB812C1D4AEE060062F6CA /* arrow_down1.png in Resources */,
 				ABEB812E1D4AEE060062F6CA /* arrow_down@2x.png in Resources */,
 				ABEB81BC1D4AF87A0062F6CA /* XFCommentViewController.xib in Resources */,
-				ABEB82831D4B07060062F6CA /* MiserlyCollectionViewCell.xib in Resources */,
 				ABEB812F1D4AEE060062F6CA /* 570c76d964a19_1024_58.png in Resources */,
+				D6FBD0751D4B54430050A45D /* SingleCollectionViewCell.xib in Resources */,
 				ABEB81651D4AEE060062F6CA /* 收藏.png in Resources */,
-				ABEB827D1D4B07060062F6CA /* DrawingCollectionViewCell.xib in Resources */,
 				ABEB81611D4AEE060062F6CA /* weixin.png in Resources */,
 				ABEB813F1D4AEE060062F6CA /* pinglun.png in Resources */,
 				ABEB81581D4AEE060062F6CA /* yellow_01.png in Resources */,
@@ -1330,6 +1360,7 @@
 				ABB3FD031D4B3A85002F446E /* 85.gif in Resources */,
 				ABEB814C1D4AEE060062F6CA /* btn_shoucang_1@3x.png in Resources */,
 				ABEB81531D4AEE060062F6CA /* scrollview_0.jpg in Resources */,
+				D6FBD0901D4B5A110050A45D /* DrawingHottestCollectionViewCell.xib in Resources */,
 				ABEB814B1D4AEE060062F6CA /* btn_shoucang_1@2x.png in Resources */,
 				ABEB81431D4AEE060062F6CA /* see-big-picture-background.png in Resources */,
 				ABEB813C1D4AEE060062F6CA /* kr-video-player-point@2x.png in Resources */,
@@ -1341,7 +1372,7 @@
 				ABEB81411D4AEE060062F6CA /* play-voice-stop.png in Resources */,
 				ABEB81C41D4AF87A0062F6CA /* XFVociePlayerController.xib in Resources */,
 				ABEB81381D4AEE060062F6CA /* kr-video-player-close@2x.png in Resources */,
-				ABEB82851D4B07060062F6CA /* DrawingHottestCollectionViewCell.xib in Resources */,
+				D6FBD0841D4B59CF0050A45D /* DrawingNewCollectionViewCell.xib in Resources */,
 				ABEB81571D4AEE060062F6CA /* wechat.png in Resources */,
 				ABEB81301D4AEE060062F6CA /* bofang.png in Resources */,
 				ABEB813E1D4AEE060062F6CA /* mainCellShare.png in Resources */,
@@ -1439,6 +1470,7 @@
 				ABEB823A1D4AFF610062F6CA /* VTCycleScrollView.m in Sources */,
 				ABEB81971D4AF23F0062F6CA /* DataBaseManager.m in Sources */,
 				ABEB82391D4AFF610062F6CA /* SingleFooterCollectionReusableView.m in Sources */,
+				D6FBD0641D4B53980050A45D /* DrawingViewController.m in Sources */,
 				ABEB823D1D4AFFB00062F6CA /* Big_cousin.xcdatamodeld in Sources */,
 				ABEB81B91D4AF87A0062F6CA /* KRVideoPlayerControlView.m in Sources */,
 				ABB3FD0C1D4B3A85002F446E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -1447,43 +1479,47 @@
 				ABEB81FC1D4AFB890062F6CA /* XFTopicFrame.m in Sources */,
 				ABB3FD061D4B3A85002F446E /* MASConstraint.m in Sources */,
 				ABB3FD071D4B3A85002F446E /* MASConstraintMaker.m in Sources */,
+				D6FBD0671D4B53A70050A45D /* DrawingDetailViewController.m in Sources */,
 				ABEB81C31D4AF87A0062F6CA /* XFVociePlayerController.m in Sources */,
 				ABEB81BB1D4AF87A0062F6CA /* XFCommentViewController.m in Sources */,
 				ABEB82C61D4B0C7E0062F6CA /* LYB_ChouTiViewController.m in Sources */,
+				D6FBD06A1D4B53B70050A45D /* DynamicViewController.m in Sources */,
 				ABEB82761D4B07060062F6CA /* XFContentPictureView.m in Sources */,
 				ABEB82AE1D4B0C660062F6CA /* setTableViewCell.m in Sources */,
 				ABEB81FF1D4AFB890062F6CA /* DrawingHottesModel.m in Sources */,
 				ABEB81F91D4AFB890062F6CA /* HttpTool.m in Sources */,
 				ABEB82961D4B08B50062F6CA /* BaseRequest.m in Sources */,
 				ABEB82381D4AFF610062F6CA /* SingleExpressionHeaderView.m in Sources */,
-				ABEB82841D4B07060062F6CA /* DrawingHottestCollectionViewCell.m in Sources */,
 				ABB3FD091D4B3A85002F446E /* MASViewAttribute.m in Sources */,
 				ABEB81981D4AF23F0062F6CA /* ExpressionLibraryViewController.m in Sources */,
-				ABEB82801D4B07060062F6CA /* DrawingNewCollectionViewCell.m in Sources */,
+				D6FBD08A1D4B59EA0050A45D /* MiserlyCollectionViewCell.m in Sources */,
+				D6FBD0761D4B54430050A45D /* WholeCollectionViewCell.m in Sources */,
 				ABEB81BA1D4AF87A0062F6CA /* XFAllViewController.m in Sources */,
 				ABEB82301D4AFF610062F6CA /* MenuButton.m in Sources */,
 				ABEB81FB1D4AFB890062F6CA /* XFModuleDataTool.m in Sources */,
+				D6FBD0831D4B59CF0050A45D /* DrawingNewCollectionViewCell.m in Sources */,
 				ABB3FD0B1D4B3A85002F446E /* NSArray+MASAdditions.m in Sources */,
 				ABEB81991D4AF23F0062F6CA /* PublicCollectionViewController.m in Sources */,
+				D6FBD07B1D4B59BD0050A45D /* DrawingCollectionViewCell.m in Sources */,
 				ABEB82971D4B08B50062F6CA /* BigCousinRequest.m in Sources */,
 				ABB3FD111D4B3A85002F446E /* View+MASAdditions.m in Sources */,
 				ABEB81C01D4AF87A0062F6CA /* XFPictrueViewController.m in Sources */,
 				ABEB822D1D4AFF610062F6CA /* LibraryCollectionViewCell.m in Sources */,
 				ABEB82041D4AFB890062F6CA /* ExpressionLibraryModel.m in Sources */,
 				ABEB81F81D4AFB890062F6CA /* BaseModel.m in Sources */,
-				ABEB81911D4AF23F0062F6CA /* CompileViewController.m in Sources */,
+				D6FBD06D1D4B53C70050A45D /* MiserlyViewController.m in Sources */,
 				ABEB819A1D4AF23F0062F6CA /* SingleExpressionViewController.m in Sources */,
 				ABEB81BE1D4AF87A0062F6CA /* XFEssenceViewController.m in Sources */,
 				ABB3FD041D4B3A85002F446E /* GiFHUD.m in Sources */,
-				ABEB81941D4AF23F0062F6CA /* MiserlyViewController.m in Sources */,
 				ABEB82981D4B08B50062F6CA /* BigCousinVideoRequest.m in Sources */,
 				ABEB81C21D4AF87A0062F6CA /* XFVideoViewController.m in Sources */,
 				ABEB82C51D4B0C7E0062F6CA /* goodsViewController.m in Sources */,
+				D6FBD08F1D4B5A110050A45D /* DrawingHottestCollectionViewCell.m in Sources */,
+				D6FBD05B1D4B53260050A45D /* UIImage+ATWatermark.m in Sources */,
 				ABEB819B1D4AF23F0062F6CA /* RootViewController.m in Sources */,
-				ABEB81931D4AF23F0062F6CA /* DynamicViewController.m in Sources */,
 				ABEB82051D4AFB890062F6CA /* HomeTitleModel.m in Sources */,
 				ABB3FD0A1D4B3A85002F446E /* MASViewConstraint.m in Sources */,
-				ABEB81901D4AF23F0062F6CA /* DrawingDetailViewController.m in Sources */,
+				D6FBD0601D4B537F0050A45D /* CompileViewController.m in Sources */,
 				ABEB82031D4AFB890062F6CA /* MiserlyModel.m in Sources */,
 				ABB3FD051D4B3A85002F446E /* MASCompositeConstraint.m in Sources */,
 				ABB3FD0E1D4B3A85002F446E /* UIImage+XFCircle.m in Sources */,
@@ -1497,30 +1533,27 @@
 				ABEB82CB1D4B0C7E0062F6CA /* smileViewController.m in Sources */,
 				ABEB82021D4AFB890062F6CA /* DynamicModel.m in Sources */,
 				ABEB82991D4B08B50062F6CA /* DrawingRequest.m in Sources */,
-				ABEB81921D4AF23F0062F6CA /* DrawingViewController.m in Sources */,
 				ABEB82CD1D4B0C7E0062F6CA /* WeiboViewController.m in Sources */,
 				ABEB82C71D4B0C7E0062F6CA /* OpinionViewController.m in Sources */,
 				ABEB82781D4B07060062F6CA /* XFContentVideoView.m in Sources */,
 				ABEB82AA1D4B0C660062F6CA /* ChatImageTableViewCell.m in Sources */,
 				ABEB829B1D4B08B50062F6CA /* NetWorkRequest.m in Sources */,
 				ABEB82321D4AFF610062F6CA /* MenuConfiguration.m in Sources */,
-				ABEB827E1D4B07060062F6CA /* DrawingHottesCollectionViewCell.m in Sources */,
 				ABEB81FD1D4AFB890062F6CA /* XFTopicModel.m in Sources */,
 				ABEB82001D4AFB890062F6CA /* DrawingModel.m in Sources */,
 				ABEB82CA1D4B0C7E0062F6CA /* smileBagViewController.m in Sources */,
 				ABEB81BF1D4AF87A0062F6CA /* XFLatestViewController.m in Sources */,
+				D6FBD0611D4B537F0050A45D /* FinshedViewController.m in Sources */,
 				ABEB82741D4B07060062F6CA /* XFCommentCell.m in Sources */,
 				ABEB81B81D4AF87A0062F6CA /* KRVideoPlayerController.m in Sources */,
 				ABB3FD101D4B3A85002F446E /* UIView+Extension.m in Sources */,
 				ABEB82C41D4B0C7E0062F6CA /* CollectionPackViewController.m in Sources */,
 				ABEB82341D4AFF610062F6CA /* NavigationMenuView.m in Sources */,
 				ABEB82371D4AFF610062F6CA /* SegmentView.m in Sources */,
-				ABEB827C1D4B07060062F6CA /* DrawingCollectionViewCell.m in Sources */,
 				ABEB81FA1D4AFB890062F6CA /* XFCommentModel.m in Sources */,
 				AB9C1A231D35D1DE0067B7A8 /* main.m in Sources */,
+				D6FBD0741D4B54430050A45D /* SingleCollectionViewCell.m in Sources */,
 				ABEB829A1D4B08B50062F6CA /* LibraryRequest.m in Sources */,
-				ABEB82821D4B07060062F6CA /* MiserlyCollectionViewCell.m in Sources */,
-				ABEB81951D4AF23F0062F6CA /* FinshedViewController.m in Sources */,
 				ABEB822C1D4AFF610062F6CA /* LGRefreshView.m in Sources */,
 				ABEB82361D4AFF610062F6CA /* NSString+DecryptString.m in Sources */,
 				ABEB81C11D4AF87A0062F6CA /* XFTalkViewController.m in Sources */,
@@ -1528,6 +1561,7 @@
 				ABB3FD081D4B3A85002F446E /* MASLayoutConstraint.m in Sources */,
 				ABEB82951D4B08B50062F6CA /* ArrNetWorkRequest.m in Sources */,
 				ABEB827A1D4B07060062F6CA /* XFTopicCell.m in Sources */,
+				D6FBD0851D4B59CF0050A45D /* DrawingHottesCollectionViewCell.m in Sources */,
 				ABEB82C91D4B0C7E0062F6CA /* setViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

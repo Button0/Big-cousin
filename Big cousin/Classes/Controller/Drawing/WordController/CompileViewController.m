@@ -25,7 +25,6 @@
     self.hidesBottomBarWhenPushed = YES;
     self.view.backgroundColor = KColorGrayedLavender;
     
-//    self.view.backgroundColor = KColorFeiGray;
     //添加一个view
     _comipleView = [[UIView alloc]initWithFrame:CGRectMake(100, 100, self.view.frame.size.width - 200, 300)];
     _comipleView.backgroundColor = [UIColor whiteColor];
@@ -37,12 +36,23 @@
         make.right.mas_equalTo(self.view.mas_right).with.offset(-80);
         make.bottom.mas_equalTo(self.view.mas_bottom).with.offset(-300);
     }];
-    
+    _imageV = [[UIImageView alloc]init];
+    _imageV.backgroundColor = [UIColor whiteColor];
+    _imageV.contentMode = UIViewContentModeScaleAspectFit;
+    [_comipleView addSubview:_imageV];
+    [_imageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_comipleView.mas_top).with.offset(0);
+        make.left.mas_equalTo(_comipleView.mas_left).with.offset(0);
+        make.right.mas_equalTo(_comipleView.mas_right).with.offset(0);
+        make.bottom.mas_equalTo(_comipleView.mas_bottom).with.offset(0);
+    }];
+    //    _imageV.image = [UIImage imageNamed:self.imageString];
+    [_imageV setImageWithURL:[NSURL URLWithString:self.imageString ]];
 
     
     /** 字 */
     UIButton *wordButton = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
-    wordButton.frame = CGRectMake(self.view.bounds.size.width - 100, self.view.bounds.size.height - 150 , 50, 50);
+//    wordButton.frame = CGRectMake(self.view.bounds.size.width - 100, self.view.bounds.size.height - 150 , 50, 50);
     [wordButton setTitle:@"字" forState:(UIControlStateNormal)];
     wordButton.layer.cornerRadius = 25;
     [wordButton addTarget:self action:@selector(wordButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
@@ -68,6 +78,7 @@
     //添加边框
     _myLabel.layer.borderColor = [UIColor blackColor].CGColor;
     _myLabel.layer.borderWidth = 1.0;
+    _myLabel.alpha = 0;
     //label自适应
     [self.myLabel sizeToFit];
     //计算文本的空间：MAXFLOAT为无限大
@@ -79,25 +90,14 @@
     //边框颜色
     _myLabel.layer.borderColor = [[UIColor redColor]CGColor];
     
-    [_comipleView addSubview:_myLabel];
+    [_imageV addSubview:_myLabel];
     //约束
     [_myLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_comipleView.mas_top).with.offset(10);
-        make.left.mas_equalTo(_comipleView.mas_left).with.offset(40);
-        make.right.mas_equalTo(_comipleView.mas_right).with.offset(-40);
-        make.height.mas_equalTo(_myLabel.mas_height).with.offset(50);
+        make.top.mas_equalTo(_imageV.mas_top).with.offset(10);
+        make.left.mas_equalTo(_imageV.mas_left).with.offset(40);
+        make.right.mas_equalTo(_imageV.mas_right).with.offset(-40);
     }];
     
-    _imageV = [[UIImageView alloc]init];
-    _imageV.backgroundColor = [UIColor orangeColor];
-    [_comipleView addSubview:_imageV];
-    [_imageV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(100, 100));
-        make.centerX.mas_equalTo(_comipleView.mas_centerX);
-        make.bottom.mas_equalTo(_comipleView.mas_bottom).with.offset(-10);
-    }];
-//    _imageV.image = [UIImage imageNamed:self.imageString];
-    [_imageV setImageWithURL:[NSURL URLWithString:self.imageString ]];
     
     
     [self addRightItem];
@@ -119,12 +119,10 @@
 - (void)buttonClicked:(UIButton *)sender
 {
     FinshedViewController *finshVC = [[FinshedViewController alloc]init];
-   
-//    NSData *data = UIImageJPEGRepresentation(self.imageV.image, 1.0f);
     
-//    NSString *string = [data base64EncodedStringWithOptions:(NSDataBase64Encoding64CharacterLineLength)];
-    finshVC.imageVString = _imageString;
-
+    NSData *data = UIImageJPEGRepresentation(self.imageV.image, 1.0f);
+    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    finshVC.imageVString = encodedImageStr;
     [self.navigationController pushViewController:finshVC animated:YES];
     
     
@@ -148,10 +146,20 @@
         weakSelf.myLabel.text = tempFeild.text;
         weakSelf.myLabel.numberOfLines = 0;
         [weakSelf.myLabel sizeToFit];
-        //计算文本的空间：MAXFLOAT为无限大
-//        CGFloat width = self.comipleView.frame.size.width - 20;
-//        CGRect rect = [_myLabel.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options: NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName:_myLabel.font} context:nil];
         self.myLabel.frame = CGRectMake(10, 10, 200, self.myLabel.frame.size.height);
+        //添加水印
+        UIImage *watermarkImage = [UIImage imageNamed:@""];
+        UIImage *imageWithImageWatermark = [UIImage imageWithUIImage:self.imageV.image watermarkOfImage:watermarkImage position:ATWatermarkPositonTopRight];
+        //    self.imageView.image = imageWithImageWatermark;
+        
+        NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
+        attrDict[NSForegroundColorAttributeName] = [UIColor redColor];
+        attrDict[NSFontAttributeName] = [UIFont systemFontOfSize:22.f];
+        
+        NSAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:self.myLabel.text attributes:attrDict];
+        UIImage *imageWithImageAndTextWatermark = [UIImage imageWithUIImage:imageWithImageWatermark watermarkOfText:attrString position:(ATWatermarkPositonBottom)];
+        self.imageV.image = imageWithImageAndTextWatermark;
+
         
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];

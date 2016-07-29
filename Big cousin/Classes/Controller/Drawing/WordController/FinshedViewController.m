@@ -14,8 +14,6 @@
 
 @property (strong, nonatomic) UILabel *finshedLabel;
 
-@property (strong, nonatomic) UIImageView *imageV;
-
 @end
 
 @implementation FinshedViewController
@@ -72,7 +70,7 @@
     
     saceButton.layer.cornerRadius = 15;
     [saceButton addTarget:self action:@selector(saceButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
-    [saceButton setTitle:@"保存到作品" forState:(UIControlStateNormal)];
+    [saceButton setTitle:@"收藏" forState:(UIControlStateNormal)];
     
     saceButton.backgroundColor = [UIColor grayColor];
     [self.view addSubview:saceButton];
@@ -86,7 +84,6 @@
     saceButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
     
     UIButton *downloadButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//    downloadButton.frame = CGRectMake(CGRectGetMaxX(saceButton.frame) + 30, CGRectGetMinY(saceButton.frame) , 80, 30);
     [downloadButton setTitle:@"下载至本地" forState:(UIControlStateNormal)];
     downloadButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
     downloadButton.layer.cornerRadius = 15;
@@ -103,18 +100,20 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"⏮" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftClicked)];
     
     
-    _imageV = [[UIImageView alloc]init];
-    _imageV.backgroundColor = [UIColor redColor];
-    [self.finshedView addSubview:_imageV];
-    [_imageV mas_makeConstraints:^(MASConstraintMaker *make) {
+    _imagesV = [[UIImageView alloc]init];
+//    _imagesV.backgroundColor = [UIColor redColor];
+    [self.finshedView addSubview:_imagesV];
+    [_imagesV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(100, 100));
         make.centerX.mas_equalTo(_finshedView.mas_centerX);
         make.bottom.mas_equalTo(_finshedView.mas_bottom).with.offset(-10);
     }];
     
-    [_imageV setImageWithURL:[NSURL URLWithString:self.imageVString]];
+    NSData *data = [[NSData alloc]initWithBase64Encoding:self.imageVString];
+    UIImage *decodedImage = [UIImage imageWithData:data];
+    self.imagesV.image = decodedImage;
     
-    NSLog(@"imageVString ======= %@",self.imageVString);
+    
     
 }
 
@@ -133,10 +132,9 @@
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"507fcab25270157b37000010"
                                       shareText:self.finshedLabel.text
-                                     shareImage:[UIImage imageNamed:@"icon"]
+                                     shareImage:self.imagesV.image
                                 shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
-                                       delegate:self];
-
+                                delegate:self];
 }
 //保存
 - (void)saceButtonClicked:(UIButton *)sender
@@ -149,7 +147,11 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSURL *URL = [NSURL URLWithString:@"http://example.com/download.zip"];
+    NSData *data = UIImageJPEGRepresentation(self.imagesV.image, 1.0f);
+    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    NSURL *URL = [NSURL URLWithString:[encodedImageStr replacingStringToURL]];
+    NSLog(@"encodedImageStr ======== %@",encodedImageStr);
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {

@@ -37,7 +37,7 @@
     //每行显示个数
     flowLayout.itemSize = CGSizeMake(100, 100);
     //初始化
-    _miserlyCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight) collectionViewLayout:flowLayout];
+    _miserlyCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WindowWidth, WindowHeight-100) collectionViewLayout:flowLayout];
     _miserlyCollection.backgroundColor = [UIColor whiteColor];
     //代理
     _miserlyCollection.delegate = self;
