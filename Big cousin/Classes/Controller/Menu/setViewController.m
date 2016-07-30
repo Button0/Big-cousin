@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
     self.title = @"设置";
     
     self.myTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -37,19 +37,39 @@
     self.myTableView.dataSource = self;
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.myTableView];
-    
+    [self.myTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(self.view);
+        make.top.equalTo(self.view.mas_top).offset(0);
+        make.left.mas_equalTo(self.view.mas_left).offset(0);
+        make.right.mas_equalTo(self.view.mas_right).offset(0);
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(0);
+    }];
     //注册cell
     [self.myTableView registerNib:[UINib nibWithNibName:@"setTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
     
     self.myImageView = [[UIImageView alloc]initWithFrame:CGRectMake(70, mHight - 320, mWidth - 140, 140)];
+    self.myImageView.backgroundColor = [UIColor redColor];
     self.myImageView.image = [UIImage imageNamed:@"meng.jpg"];
     [self.myTableView addSubview:self.myImageView];
+    [self.myImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.myTableView.mas_centerX);
+        make.top.mas_equalTo(self.myTableView.mas_top).offset(400);
+        make.height.mas_equalTo(55);
+        make.width.mas_equalTo(55);
+        
+    }];
     
     self.lable = [[UILabel alloc]initWithFrame:CGRectMake(90, mHight - 350 + 140, mWidth - 200, 40)];
-    self.lable.text = @"v 0.0.1";
+    self.lable.text = @"v 1.0";
     self.lable.textAlignment = NSTextAlignmentCenter;
     [self.myTableView addSubview:self.lable];
-    
+    [self.lable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.myImageView.mas_bottom).offset(5);
+        make.centerX.mas_equalTo(self.myImageView.mas_centerX);
+        make.height.mas_equalTo(20);
+        make.width.mas_equalTo(50);
+        
+    }];
 
 }
 
