@@ -80,7 +80,6 @@
     [_singleCollectionView registerNib:[UINib nibWithNibName:@"SingleCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:SingleCollectionViewCell_Identify];
     [_wholeCollectionView registerNib:[UINib nibWithNibName:@"WholeCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:WholeCollectionViewCell_Identify];
 
-
 }
 
 //获取当前用户收藏过的活动
