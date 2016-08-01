@@ -112,7 +112,7 @@
     _button.frame = CGRectMake(0, 0, 40,30);
     [_button setImage:[UIImage imageNamed:@"camera-256"] forState:(UIControlStateNormal)];
     [_button addTarget:self action:@selector(photoClicked:) forControlEvents:(UIControlEventTouchUpInside)];
-    //    photoButton.backgroundColor = [UIColor redColor];
+        _button.backgroundColor = [UIColor redColor];
     UIBarButtonItem *phototItem = [[UIBarButtonItem alloc]initWithCustomView:_button];
     self.navigationItem.rightBarButtonItems = @[phototItem];
 
