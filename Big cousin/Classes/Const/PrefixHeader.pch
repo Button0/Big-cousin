@@ -27,7 +27,7 @@
 #import "RequestUrl.h"
 #import "NSString+DecryptString.h"
 
-//#import "UIImageView+WebCache.h"
+#import "UIImageView+WebCache.h"
 #import "UIImageView+AFNetworking.h"
 
 #import "GiFHUD.h"

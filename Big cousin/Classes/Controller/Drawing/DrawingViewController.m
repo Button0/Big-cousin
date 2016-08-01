@@ -64,7 +64,19 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DrawingCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:DrawingCollectionViewCell_Identify forIndexPath:indexPath];
-    cell.contentView.backgroundColor = [UIColor redColor];
+//    cell.contentView.backgroundColor = [UIColor redColor];
+    
+    if (indexPath.row == 0) {
+        cell.DrowingImageV.image = [UIImage imageNamed:@"budong"];
+    }else if (indexPath.row == 1)
+    {
+        cell.DrowingImageV.image = [UIImage imageNamed:@"dongtu"];
+    }else
+    {
+        cell.DrowingImageV.image = [UIImage imageNamed:@"wulian"];
+    }
+    
+    
     return cell;
 }
 

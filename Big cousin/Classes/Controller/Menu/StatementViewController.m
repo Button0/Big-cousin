@@ -19,9 +19,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"严正声明";
     UILabel *ViewLable = [[UILabel alloc]initWithFrame:self.view.bounds];
-    ViewLable.text = @"声明个毛线，随便转载随便用，就是这么大方";
+    ViewLable.text = @"随便转载随便用，就是这么大方";
     ViewLable.numberOfLines = 0;
-    ViewLable.font = [UIFont systemFontOfSize:80];
+    ViewLable.textAlignment = NSTextAlignmentCenter;
+    ViewLable.font = [UIFont systemFontOfSize:25];
     [self.view addSubview:ViewLable];
     
 }

@@ -2,7 +2,7 @@
 //  CompileViewController.m
 //  Big cousin
 //
-//  Created by HMS3g on 16/7/22.
+//  Created by HMS on 16/7/22.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
@@ -54,7 +54,7 @@
     UIButton *wordButton = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
 //    wordButton.frame = CGRectMake(self.view.bounds.size.width - 100, self.view.bounds.size.height - 150 , 50, 50);
     [wordButton setTitle:@"字" forState:(UIControlStateNormal)];
-    wordButton.layer.cornerRadius = 25;
+    wordButton.layer.cornerRadius = 21;
     [wordButton addTarget:self action:@selector(wordButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     wordButton.backgroundColor = [UIColor redColor];
     wordButton.titleLabel.font = [UIFont systemFontOfSize:24];
@@ -70,7 +70,7 @@
     //字体颜色
     _myLabel.textColor = [UIColor blackColor];
     //字体大小
-    _myLabel.font = [UIFont systemFontOfSize:24.0f];
+    _myLabel.font = [UIFont systemFontOfSize:20.0f];
     //自动换行
     _myLabel.numberOfLines = 0;
     //文本居中
@@ -153,8 +153,8 @@
         //    self.imageView.image = imageWithImageWatermark;
         
         NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
-        attrDict[NSForegroundColorAttributeName] = [UIColor redColor];
-        attrDict[NSFontAttributeName] = [UIFont systemFontOfSize:22.f];
+        attrDict[NSForegroundColorAttributeName] = kColorGreenSea;
+        attrDict[NSFontAttributeName] = [UIFont systemFontOfSize:15];
         
         NSAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:self.myLabel.text attributes:attrDict];
         UIImage *imageWithImageAndTextWatermark = [UIImage imageWithUIImage:imageWithImageWatermark watermarkOfText:attrString position:(ATWatermarkPositonBottom)];

@@ -39,4 +39,19 @@
     NSLog(@"dynamicModel.url ======= %@",[dynamicModel.URL replacingStringToURL]);
 }
 
+-(void)loadImage {
+    
+    [_drawingNewImageV sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:self.dynamicModel.URL] placeholderImage:nil options:SDWebImageProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+        CGFloat progress = 1.0 * receivedSize / expectedSize;
+        self.progressView.progressLabel.text = [NSString stringWithFormat:@"%.1f%%",progress*100];
+        [self.progressView setProgress:progress animated:YES];
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.progressView.hidden = YES;
+        
+    }];
+    
+}
+
+
 @end

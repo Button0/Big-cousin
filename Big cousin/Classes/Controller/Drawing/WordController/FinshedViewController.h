@@ -2,7 +2,7 @@
 //  FinshedViewController.h
 //  Big cousin
 //
-//  Created by HMS,CK,SS,LYB3g on 16/7/19.
+//  Created by HMS,CK,SS,LYB on 16/7/19.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 

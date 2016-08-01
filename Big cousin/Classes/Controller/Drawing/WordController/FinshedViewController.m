@@ -2,7 +2,7 @@
 //  FinshedViewController.m
 //  Big cousin
 //
-//  Created by HMS,CK,SS,LYB3g on 16/7/19.
+//  Created by HMS,CK,SS,LYB on 16/7/19.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
@@ -149,9 +149,12 @@
     
     NSData *data = UIImageJPEGRepresentation(self.imagesV.image, 1.0f);
     NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
-    NSURL *URL = [NSURL URLWithString:[encodedImageStr replacingStringToURL]];
-    NSLog(@"encodedImageStr ======== %@",encodedImageStr);
+//
+//    NSURL *URL = [NSURL URLWithString:[encodedImageStr replacingStringToURL]];
+//    NSLog(@"encodedImageStr ======== %@",encodedImageStr);
+    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([path count])>0?[path objectAtIndex:0]:nil;
+    NSURL *URL = [NSURL fileURLWithPath:[basePath stringByAppendingPathComponent:encodedImageStr]];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {

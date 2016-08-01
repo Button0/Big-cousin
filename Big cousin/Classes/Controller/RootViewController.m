@@ -21,6 +21,18 @@
 
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : KColorCartoonBlue } forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : KColorGlyodin } forState:UIControlStateSelected];
+    UITabBarItem *item = [UITabBarItem appearance];
+    // 普通状态下的文字属性
+    NSMutableDictionary *normalAttrs = [NSMutableDictionary dictionary];
+    normalAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
+    normalAttrs[NSForegroundColorAttributeName] = [UIColor grayColor];
+    [item setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
+    // 选中状态下的文字属性
+    NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
+    selectedAttrs[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
+    [item setTitleTextAttributes:normalAttrs forState:UIControlStateSelected];
+    self.tabBarItem.imageInsets = UIEdgeInsetsMake(0, -10, -6, -10);
+
     [self setTabBar];
 }
 
@@ -28,19 +40,26 @@
 - (void)setTabBar
 {
     ExpressionLibraryViewController *packVC = [[ExpressionLibraryViewController alloc] init];
-    [self addSystemTabBarItem:packVC title:@"表情库" imageName:@"" selectedImage:@""];
+    UIImage * exHomenormalImage = [[UIImage imageNamed:@"bqName@2x.png"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage * exHomeselectImage = [[UIImage imageNamed:@"bqNames@2x.png"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    packVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:exHomenormalImage selectedImage:exHomeselectImage];
+    
     UINavigationController *naPackVC = [[UINavigationController alloc] initWithRootViewController:packVC];
     naPackVC.tabBarItem = packVC.tabBarItem;
     
     DrawingViewController *drawVC = [[DrawingViewController alloc] init];
-    [self addSystemTabBarItem:drawVC title:@"大制作" imageName:@"" selectedImage:@""];
+    UIImage * drHomenormalImage = [[UIImage imageNamed:@"1names@2x.png"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage * drHomeselectImage = [[UIImage imageNamed:@"1name@2x.png"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    drawVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"大制作" image:drHomenormalImage selectedImage:drHomeselectImage];
     UINavigationController *naDrawVC = [[UINavigationController alloc] initWithRootViewController:drawVC];
     naDrawVC.tabBarItem = drawVC.tabBarItem;
     
-    XFEssenceViewController *bigVC = [[XFEssenceViewController alloc] init];
-    [self addSystemTabBarItem:bigVC title:@"大表姐" imageName:@"" selectedImage:@""];
-    UINavigationController *naBigVC = [[UINavigationController alloc] initWithRootViewController:bigVC];
-    naBigVC.tabBarItem = bigVC.tabBarItem;
+    XFEssenceViewController *xfeVC = [[XFEssenceViewController alloc] init];
+    UIImage * xfHomenormalImage = [[UIImage imageNamed:@"playerName@2x.png"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage * xfHomeselectImage = [[UIImage imageNamed:@"playerqName@2x.png"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    xfeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"不得姐" image:xfHomenormalImage selectedImage:xfHomeselectImage];
+    UINavigationController *naBigVC = [[UINavigationController alloc] initWithRootViewController:xfeVC];
+    naBigVC.tabBarItem = xfeVC.tabBarItem;
     
     self.viewControllers = @[naPackVC,naDrawVC,naBigVC];
 }

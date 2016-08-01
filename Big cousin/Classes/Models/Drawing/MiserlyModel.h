@@ -2,7 +2,7 @@
 //  MiserlyModel.h
 //  Big cousin
 //
-//  Created by HMS,CK,SS,LYB3g on 16/7/21.
+//  Created by HMS,CK,SS,LYB on 16/7/21.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 

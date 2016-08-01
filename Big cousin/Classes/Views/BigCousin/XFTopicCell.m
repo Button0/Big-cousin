@@ -131,7 +131,33 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObject:self.topicFrame forKey:@"topicFrame"];
     NSLog(@"tiao%@",dic);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"commentClick" object:nil userInfo:dic];
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"警报" message:@"宝宝要亲下载百思不得姐App才理你" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"好哒", nil];
+    [alertview show];
 
+
+}
+- (IBAction)praiseBtn:(UIButton *)sender {
+
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"警报" message:@"宝宝要亲下载百思不得姐App才理你" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"好哒", nil];
+    [alertview show];
+}
+- (IBAction)stepBtn:(UIButton *)sender {
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"警报" message:@"宝宝要亲下载百思不得姐App才理你" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"好哒", nil];
+    [alertview show];
+    
+    
+}
+- (IBAction)reprintedBtn:(UIButton *)sender {
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"警报" message:@"宝宝要亲下载百思不得姐App才理你" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"好哒", nil];
+    [alertview show];
+    
+    
+}
+- (IBAction)commentsBtn:(UIButton *)sender {
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"警报" message:@"宝宝要亲下载百思不得姐App才理你" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"好哒", nil];
+    [alertview show];
+    
+    
 }
 
 -(void)dealloc {
