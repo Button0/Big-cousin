@@ -34,6 +34,7 @@
     self.tabBarItem.imageInsets = UIEdgeInsetsMake(0, -10, -6, -10);
 
     [self setTabBar];
+    
 }
 
 //setTabBar

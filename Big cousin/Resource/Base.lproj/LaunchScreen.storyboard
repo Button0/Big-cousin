@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-F7-1u3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start.png" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-F7-1u3">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                             </imageView>
                         </subviews>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="strat.jpg" width="640" height="1136"/>
+        <image name="start.png" width="640" height="1136"/>
     </resources>
 </document>

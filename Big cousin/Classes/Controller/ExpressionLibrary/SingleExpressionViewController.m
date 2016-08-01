@@ -60,20 +60,16 @@
 {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"🏃🏻" style:(UIBarButtonItemStyleDone) target:self action:@selector(leftBarButtonItemClick)];
     
-    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testView];
     
     UIButton *collectionBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    collectionBtn.frame = CGRectMake(0, 0, 40, 40);
+    collectionBtn.frame = CGRectMake(0, 0, 25, 25);
     [testView addSubview:collectionBtn];
-    [collectionBtn setImage:[UIImage imageNamed:@"btn_shoucang_0"] forState:(UIControlStateNormal)];
+    BOOL isFavorite = [[DataBaseManager shareInstance] isFavoriteExpressionPackWithID:[NSString stringWithFormat:@"%@",_expressionModel.eId]];
+    NSString *favorImage = isFavorite ? @"btn_shoucang_1" : @"btn_shoucang_0";
+    [collectionBtn setImage:[UIImage imageNamed:favorImage] forState:(UIControlStateNormal)];
     [collectionBtn addTarget:self action:@selector(collectionBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
-//    [collectionBtn setImage:[UIImage imageNamed:@"btn_shoucang_1"] forState:(UIControlStateHighlighted)];
-
-
-//    UIImage *image = [[UIImage imageNamed:@"btn_shoucang_0"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:(UIBarButtonItemStylePlain) target:self action:@selector(collectionBtnClicked:)]; //btn_shoucang_1
-    
 }
 
 - (void)addSingleHeaderView
@@ -171,6 +167,12 @@
     [self share:UMShareToWechatTimeline];
 }
 
+- (void)head:(UIButton *)sender
+{
+//    [self share:UMShareToDouban];
+    NSLog(@"---");
+}
+
 - (void)share:(NSString *)platformTypes
 {
     [UMSocialData defaultData].extConfig.title = @"分享的title";
@@ -191,54 +193,28 @@
 
 - (void)collectionBtnClicked:(UIButton *)sender
 {
-    if (sender.selected != YES)
+    NSLog(@"sendNotification btn clicked");
+    //发送通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTheTable" object:nil];
+
+    BOOL isFavorite = [[DataBaseManager shareInstance] isFavoriteExpressionPackWithID:[NSString stringWithFormat:@"%@",_expressionModel.eId]];
+    if (isFavorite == NO)
     {
-        // 判断是否已经收藏
-        BOOL isFavorite = [[DataBaseManager shareInstance] isFavoriteExpressionPackWithID:[NSString stringWithFormat:@"%@",_expressionModel.eId]];
-        // 是否已经收藏
-        if (YES == isFavorite)
-        {
-            [SVProgressHUD setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
-            [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
-            [SVProgressHUD showSuccessWithStatus:@"藏过啦"];
-        }
-        else
-        {
-            //操作数据库，收藏活动
-            [[DataBaseManager shareInstance] insertNewExpressionPack:_expressionModel];
-            
-            // 收藏成功
-            [SVProgressHUD setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
-            [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
-            [SVProgressHUD showSuccessWithStatus:@"收藏成功"];
-            
-            [sender setImage:[UIImage imageNamed:@"btn_shoucang_1"] forState:(UIControlStateNormal)];
-            sender.selected = YES;
-        }
+        [[DataBaseManager shareInstance] insertNewExpressionPack:_expressionModel];
+        
+        // 收藏成功
+        [SVProgressHUD showSuccessWithStatus:@"收藏成功"];
+        [sender setImage:[UIImage imageNamed:@"btn_shoucang_1"] forState:(UIControlStateNormal)];
     }
     else
     {
         // 删
-        BOOL isRemovedSuccessful = [[DataBaseManager shareInstance] deleteExpressionPack:_expressionModel.eId];
-        if (isRemovedSuccessful)
-        {
-            // 删除成功
-            [SVProgressHUD setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
-            [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
-            [SVProgressHUD showSuccessWithStatus:@"已取消收藏"];
-            
-            [sender setImage:[UIImage imageNamed:@"btn_shoucang_0"] forState:(UIControlStateNormal)];
-            sender.selected = NO;
-        }
-        else
-        {
-            // 删除失败
-            [SVProgressHUD setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.7]];
-            [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
-            [SVProgressHUD showErrorWithStatus:@"取消收藏失败"];
-        }
+        [[DataBaseManager shareInstance] deleteExpressionPack:_expressionModel.eId];
+        [SVProgressHUD showSuccessWithStatus:@"已取消收藏"];
+        [sender setImage:[UIImage imageNamed:@"btn_shoucang_0"] forState:(UIControlStateNormal)];
     }
 }
+
 
 #pragma mark - 数据
 //下拉刷新

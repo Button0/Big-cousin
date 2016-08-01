@@ -10,8 +10,6 @@
 #import <sqlite3.h>
 #import "ExpressionLibraryModel.h"
 
-//归档
-#define KExpressionPack @"expressions"
 //文件名
 #define KDataBaseName @"Big_cousin.sqlite"
 
@@ -27,7 +25,6 @@ static DataBaseManager *handle = nil;
     }
     return  handle;
 }
-
 
 static sqlite3 *db = nil;
 
@@ -45,8 +42,7 @@ static sqlite3 *db = nil;
     int result = sqlite3_open([dbPath UTF8String], &db);
     if (result == SQLITE_OK)
     {
-        NSLog(@"打开数据库成功");
-        NSString *createSql = @"create table if not exists ExpressionPack(eId text NOT NULL, coverUrl text NOT NULL, eName text NOT NULL, data BLOB)";
+        NSString *createSql = @"create table if not exists ExpressionPack(eId text NOT NULL)";
         sqlite3_exec(db, [createSql UTF8String], NULL, NULL, NULL);
     }
 }
@@ -67,50 +63,51 @@ static sqlite3 *db = nil;
 {
     [self openDB];
     sqlite3_stmt *stmt = nil;
-    NSString *sql = @"insert into ExpressionPack (eId, coverUrl, eName, data) values (?, ?, ?, ?);";
+    NSString *sql = @"insert into ExpressionPack (eId) values (?);";
     
     int result = sqlite3_prepare_v2(db, [sql UTF8String], -1, &stmt, NULL);
     if (result == SQLITE_OK)
     {
         sqlite3_bind_text(stmt, 1, [pack.eId UTF8String], -1, NULL);
-        sqlite3_bind_text(stmt, 2, [pack.coverUrl UTF8String], -1, NULL);
-        sqlite3_bind_text(stmt, 3, pack.eName.UTF8String, -1, NULL);
         
-        NSString *archiverKey = [NSString stringWithFormat:@"%@%@",KExpressionPack, pack.eId];
-        NSData *data = [self dataOfArchiverObject:pack forKey:archiverKey];
-        
-        sqlite3_bind_blob(stmt, 4, [data bytes], (int)[data length], NULL);
-        
-        sqlite3_step(stmt);
-        NSLog(@"插入成功");
+        int ret = sqlite3_step(stmt);
+        if (ret == SQLITE_DONE)
+        {
+            NSLog(@"插入成功");
+        }
+        else
+        {
+            NSLog(@"%s", sqlite3_errmsg(db));
+        }
     }
     
     sqlite3_finalize(stmt);
 }
 
 //删除某表情包
-- (ExpressionLibraryModel *)deleteExpressionPack:(NSString *)ID
+- (void)deleteExpressionPack:(NSString *)ID
 {
     [self openDB];
     sqlite3_stmt *stmt = nil;
     NSString *sql = @"delete from ExpressionPack where eId = ?";
     
-    ExpressionLibraryModel *model = nil;
 
     if (sqlite3_prepare_v2(db, [sql UTF8String], -1, &stmt, NULL) == SQLITE_OK)
     {
-        NSLog(@"删除成功");
         sqlite3_bind_text(stmt, 1, [ID UTF8String], -1, NULL);
-        if (sqlite3_step(stmt) == SQLITE_ROW)
+        int result = sqlite3_step(stmt);
+
+        if (result == SQLITE_DONE)
         {
-            NSData *data = [NSData dataWithBytes:sqlite3_column_blob(stmt, 0) length:sqlite3_column_bytes(stmt, 0)];
-            NSString *archiverKey = [NSString stringWithFormat:@"%@%@",KExpressionPack,ID];
-            model = [self unarchiverObject:data forKey:archiverKey];
+            NSLog(@"删除ID成功");
         }
-        sqlite3_step(stmt);
+        else
+        {
+            NSLog(@"删除ID失败%s", sqlite3_errmsg(db));
+        }
     }
+
     sqlite3_finalize(stmt);
-    return model;
 }
 
 //获取某个表情对象
@@ -118,21 +115,27 @@ static sqlite3 *db = nil;
 {
     [self openDB];
     sqlite3_stmt * stmt = nil;
-    char *sql = "select data from ExpressionPack where eId = ?";
+    char *sql = "select * from ExpressionPack where eId = ?";
     
     ExpressionLibraryModel *model = nil;
     
     if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) == SQLITE_OK)
     {
         sqlite3_bind_text(stmt, 1, [ID UTF8String], -1, NULL);
-        if (sqlite3_step(stmt) == SQLITE_ROW)
+
+        int result = sqlite3_step(stmt);
+        
+        if (result == SQLITE_ROW)
         {
-            NSData *data = [NSData dataWithBytes:sqlite3_column_blob(stmt, 0) length:sqlite3_column_bytes(stmt, 0)];
-            NSString *archiverKey = [NSString stringWithFormat:@"%@%@",KExpressionPack,ID];
-            model = [self unarchiverObject:data forKey:archiverKey];
+            NSLog(@"查询id成功");
+            model = [[ExpressionLibraryModel alloc] init];
+            model.eId = ID;
+        }
+        else
+        {
+            NSLog(@"查询ID nil %s", sqlite3_errmsg(db));
         }
     }
-    
     sqlite3_finalize(stmt);
     return model;
 }
@@ -142,28 +145,20 @@ static sqlite3 *db = nil;
 {
     [self openDB];
     sqlite3_stmt *stmt = nil;
-    char *sql = "select * from ExpressionPack where eId = ? and data = ?;";
+    char *sql = "select * from ExpressionPack;";
     
     NSMutableArray *packArray = [NSMutableArray array];
     
     if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) == SQLITE_OK)
     {
-        ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
         while (sqlite3_step(stmt) == SQLITE_ROW)
         {
-            model.eId = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 0)];
-            model.coverUrl = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
-            model.eName = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 2)];
-            [packArray addObject:model];
+            ExpressionLibraryModel *model = [[ExpressionLibraryModel alloc] init];
             
-//            NSString * eId = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 0)];
-//
-//            NSData * data = [NSData dataWithBytes:sqlite3_column_blob(stmt, 1) length:sqlite3_column_bytes(stmt, 1)];
-//            
-//            NSString * archiverKey = [NSString stringWithFormat:@"%@%@",KExpressionPack,eId];
-//            
-//            ExpressionLibraryModel * act = [self unarchiverObject:data forKey:archiverKey];
-//            [packArray addObject:act];
+            NSString *tempeId = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 0)];
+            model.eId = tempeId;
+            
+            [packArray addObject:model];
         }
     }
     sqlite3_finalize(stmt);
@@ -174,16 +169,6 @@ static sqlite3 *db = nil;
 - (BOOL)isFavoriteExpressionPackWithID:(NSString *)ID;
 {
     ExpressionLibraryModel * act = [self selectExpressionPackWithID:ID];
-    if (act == nil)
-    {
-        return NO;
-    }
-    return YES;
-}
-
-- (BOOL)isDelectExpressionPackWithID:(NSString *)ID;
-{
-    ExpressionLibraryModel * act = [self deleteExpressionPack:ID];
     if (act == nil)
     {
         return NO;
@@ -202,31 +187,5 @@ static sqlite3 *db = nil;
     NSLog(@"sandbox－－ %@",[[self cachesPath] stringByAppendingPathComponent:dataBaseName]);
     return [[self cachesPath] stringByAppendingPathComponent:dataBaseName];
 }
-
-//将对象归档
-- (NSData *)dataOfArchiverObject:(id)object forKey:(NSString *)key
-{
-    NSMutableData * data = [NSMutableData data];
-    
-    NSKeyedArchiver * archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    
-    [archiver encodeObject:object forKey:key];
-    [archiver finishEncoding];
-    
-    return data;
-}
-
-//反归档
-- (id)unarchiverObject:(NSData *)data forKey:(NSString *)key
-{
-    NSKeyedUnarchiver * unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-    
-    id object = [unarchiver decodeObjectForKey:key];
-    
-    [unarchiver finishDecoding];
-    
-    return object;
-}
-
 
 @end

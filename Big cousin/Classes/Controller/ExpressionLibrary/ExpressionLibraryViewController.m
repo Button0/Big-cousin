@@ -15,7 +15,6 @@
 
 #import "HomeTitleModel.h"
 #import "LibraryRequest.h"
-#import "MJRefresh.h"
 #import "LGRefreshView.h"
 
 #import "LYB_ChouTiViewController.h"
@@ -27,7 +26,6 @@
 
 #define KHeightCollection 120
 #define KHeightCycleScrollView self.view.bounds.size.height*0.3f
-
 
 @interface ExpressionLibraryViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ClickBtnDelegate, ClickImageDelegate, MenuClickDelegate>
 
@@ -76,7 +74,15 @@
 - (void)lifeMenu
 {
     //抽屉相关
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"菜单.png"] style:UIBarButtonItemStylePlain target:self action:@selector(ClickShowMenu:)];
+    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testView];
+    
+    UIButton *collectionBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    collectionBtn.frame = CGRectMake(0, 0, 22, 22);
+    [testView addSubview:collectionBtn];
+    [collectionBtn setImage:[UIImage imageNamed:@"meun"] forState:(UIControlStateNormal)];
+    [collectionBtn addTarget:self action:@selector(ClickShowMenu:) forControlEvents:(UIControlEventTouchUpInside)];
+
     [LYB_ChouTiViewController getMenuViewController].menuClickDelegate = self;
 }
 

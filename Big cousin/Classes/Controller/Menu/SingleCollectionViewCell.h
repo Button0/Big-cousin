@@ -12,6 +12,6 @@
 
 @interface SingleCollectionViewCell : UICollectionViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *singleImage;
+@property (strong, nonatomic) NSString *eId;
 
 @end

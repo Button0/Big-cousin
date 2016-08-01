@@ -345,7 +345,8 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
         NSBundle *imageBundle = [NSBundle bundleWithURL:url];
         
         UIImage* infoImage = [UIImage imageWithContentsOfFile:[imageBundle pathForResource:@"info" ofType:@"png"]];
-        UIImage* successImage = [UIImage imageWithContentsOfFile:[imageBundle pathForResource:@"success" ofType:@"png"]];
+//        UIImage* successImage = [UIImage imageWithContentsOfFile:[imageBundle pathForResource:@"success" ofType:@"png"]];
+        UIImage *successImage = [UIImage imageNamed:@"success"];
         UIImage* errorImage = [UIImage imageWithContentsOfFile:[imageBundle pathForResource:@"error" ofType:@"png"]];
 
         if ([[UIImage class] instancesRespondToSelector:@selector(imageWithRenderingMode:)]) {

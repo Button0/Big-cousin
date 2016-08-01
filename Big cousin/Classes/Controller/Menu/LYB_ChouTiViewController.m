@@ -71,12 +71,12 @@ static LYB_ChouTiViewController *LYB_menuVC = nil;
     self.LFtableView.dataSource = self;
     // 代理
     self.LFtableView.delegate = self;
-    self.LFtableView.backgroundColor = [UIColor colorWithRed:37.0f/255.0 green:37.0f/255.0 blue:37.0f/255.0 alpha:0.95];
+    self.LFtableView.backgroundColor = [UIColor colorWithRed:37.0f/255.0 green:37.0f/255.0 blue:37.0f/255.0 alpha:0.8];
     self.LFtableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.setButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.setButton.frame = CGRectMake(50, vHight - 100, 30, 30);
-    [self.setButton setImage:[UIImage imageNamed:@"设置.png"] forState:UIControlStateNormal];
+    [self.setButton setImage:[UIImage imageNamed:@"设置"] forState:UIControlStateNormal];
     self.setButton.tag = 1000;
     [self.setButton addTarget:self action:@selector(ClickSetBut:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -136,8 +136,6 @@ static LYB_ChouTiViewController *LYB_menuVC = nil;
 
 }
 
-
-
 // menuArray的setter方法
 - (void)setMenuArray:(NSMutableArray *)menuArray {
     if (_menuArray != menuArray) {
@@ -167,7 +165,7 @@ static LYB_ChouTiViewController *LYB_menuVC = nil;
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kMenuLeftWidth, 200)];
     
-    UIImageView *headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(70, 70, 100, 100)];
+    UIImageView *headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(85, 70, 100, 100)];
 //    headerImgView.contentMode = UIViewContentModeScaleAspectFit;
     headerImgView.image = [UIImage imageNamed:@"3.jpg"];
     headerImgView.layer.masksToBounds = YES;
