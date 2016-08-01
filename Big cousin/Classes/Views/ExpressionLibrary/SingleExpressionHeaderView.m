@@ -65,7 +65,7 @@
     _wechatBtn = [self addButtonWithImage:@"wechat" action:@selector(wechatShare:)];
     _circle = [self addButtonWithImage:@"friendCircle" action:@selector(circleShare:)];
     _download = [self addButtonWithImage:@"downloads" action:@selector(download:)];
-    _head = [self addButtonWithImage:@"head" action:@selector(head:)];
+    _head = [self addButtonWithImage:@"douban" action:@selector(head:)];
     
     //layout
     [_singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -124,6 +124,11 @@
     [self.sharedelegate circleShare:sender];
 }
 
+- (void)head:(UIButton *)sender
+{
+//    [self.sharedelegate doubanShare:sender];
+}
+
 - (UIButton *)download:(UIButton *)sender
 {
     [[_download rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -153,14 +158,9 @@
     }
     else
     {
-        [SVProgressHUD setSuccessImage:[UIImage imageNamed:@"yellow_01"]];
+        [SVProgressHUD setSuccessImage:[UIImage imageNamed:@"sure"]];
         [SVProgressHUD showSuccessWithStatus:@"save success"];
     }
-}
-
-- (void)head:(UIButton *)sender
-{
-    
 }
 
 /** 圆角设置 */

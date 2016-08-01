@@ -22,6 +22,7 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : KColorCartoonBlue } forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : KColorGlyodin } forState:UIControlStateSelected];
     [self setTabBar];
+    
 }
 
 //setTabBar

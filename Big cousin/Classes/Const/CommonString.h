@@ -38,6 +38,8 @@
 #define KColorHighGray [UIColor colorWithRed:119/255.0 green:129/255.0 blue:149/255.0 alpha:1.0]
 //果绿
 #define KColorGlyodin [UIColor colorWithRed:72/255.0 green:208/255.0 blue:203/255.0 alpha:1.0]
+#define KColorGlyodin1 [UIColor colorWithRed:72/255.0 green:208/255.0 blue:203/255.0 alpha:0.1]
+
 // 绿松石
 #define kColorTurquoise [UIColor colorWithRed:26/255.0 green:188/255.0 blue:156/255.0 alpha:1.0]
 // 绿海

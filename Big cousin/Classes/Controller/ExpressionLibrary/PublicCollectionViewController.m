@@ -16,7 +16,7 @@
 
 #define KHeightCollection 135
 
-@interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationMenuDelegate>
+@interface PublicCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 /** 公用 */
 @property (nonatomic, strong) UICollectionView *pulicCollectionView;
@@ -52,20 +52,6 @@
     self.pulicCollectionView.dataSource = self;
     self.pulicCollectionView.delegate = self;
     self.pulicCollectionView.backgroundColor = [UIColor whiteColor];
-}
-
-//title引导栏
-- (void)titles
-{
-    if (self.navigationItem)
-    {
-        CGRect frame = CGRectMake(0.0, 0.0, 100.0, self.navigationController.navigationBar.bounds.size.height);
-        NavigationMenuView *menu = [[NavigationMenuView alloc] initWithFrame:frame title:@"Menu"];
-        [menu displayMenuInView:self.navigationController.view];
-        //        menu.items = @[@"原创表情",@"聊天场景",@"萌娃",@"金馆长系列",@"明星大咖",@"实力派网红",@"综艺影视",@"可爱形象",@"真人GIF"];
-        menu.delegate = self;
-        self.navigationItem.titleView = menu;
-    }
 }
 
 

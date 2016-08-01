@@ -14,6 +14,7 @@
 - (void)weiboShare:(UIButton *)sender;
 - (void)wechatShare:(UIButton *)sender;
 - (void)circleShare:(UIButton *)sender;
+- (void)doubanShare:(UIButton *)sender;
 @end
 
 @interface SingleExpressionHeaderView : UIView

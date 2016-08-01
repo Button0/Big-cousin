@@ -13,15 +13,10 @@
 
 + (DataBaseManager *)shareInstance;
 
-/** 打开数据库 */
-- (void)openDB;
-/** 关闭数据库 */
-- (void)closeDB;
-
 /** 收藏表情包 */
 - (void)insertNewExpressionPack:(ExpressionLibraryModel *)pack;
 
-- (ExpressionLibraryModel *)deleteExpressionPack:(NSString *)ID;
+- (void)deleteExpressionPack:(NSString *)ID;
 
 - (ExpressionLibraryModel *)selectExpressionPackWithID:(NSString *)ID;
 
@@ -29,6 +24,5 @@
 
 /** 判断是否被收藏 */
 - (BOOL)isFavoriteExpressionPackWithID:(NSString *)ID;
-- (BOOL)isDelectExpressionPackWithID:(NSString *)ID;
 
 @end
