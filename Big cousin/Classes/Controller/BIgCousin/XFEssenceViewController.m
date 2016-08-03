@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"不得姐";
+    self.title = @"大表姐";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = BackgroundColor;
     [self setNaviBar];
@@ -67,7 +67,7 @@
         [btn setTitle:titles[i] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:13];
-        [btn setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
+        [btn setTitleColor:KColorGlyodin forState:UIControlStateDisabled];
         CGFloat btnX = btnW * i;
         btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -156,7 +156,7 @@
 - (UIView *)btnIndicator{
     if (_btnIndicator == nil) {
         _btnIndicator = [[UIView alloc]init];
-        _btnIndicator.backgroundColor = [UIColor redColor];
+        _btnIndicator.backgroundColor = KColorGlyodin;
        
         _btnIndicator.height = 2;
         _btnIndicator.y = self.titleView.height - _btnIndicator.height;

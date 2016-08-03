@@ -10,6 +10,7 @@
 
 @interface SingleFooterCollectionReusableView ()
 @property (nonatomic, strong) UILabel *memoLabel;
+@property (nonatomic,assign) CGPoint startPoint;
 @end
 
 @implementation SingleFooterCollectionReusableView
@@ -43,5 +44,29 @@
         _memoLabel.text = [hint stringByAppendingString:memo1];
     }
 }
+
+//任意位置拖动
+/*
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    _startPoint = [touch locationInView:_myLabel];
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint destPoint = [touch locationInView:_myLabel];
+    
+    float x = destPoint.x - _startPoint.x;
+    float y = destPoint.y - _startPoint.y;
+    
+    CGPoint center = _myLabel.center;
+    center.x += x;
+    center.y += y;
+    
+    _myLabel.center = center;
+}
+//*/
 
 @end

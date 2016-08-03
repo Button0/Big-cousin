@@ -2,12 +2,13 @@
 //  DrawingHottestCollectionViewCell.h
 //  Big cousin
 //
-//  Created by HMS,CK,SS,LYB on 16/7/21.
+//  Created by HMS,CK,SS,LYB3g on 16/7/21.
 //  Copyright © 2016年 Twilight. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "DynamicHottestModel.h"
+#import "DALabeledCircularProgressView.h"
 #define DrawingHottestCollectionViewCell_Identify @"DrawingHottestCollectionViewCell_Identify"
 
 @interface DrawingHottestCollectionViewCell : UICollectionViewCell
@@ -15,5 +16,6 @@
 
 @property (strong, nonatomic) DynamicHottestModel *model;
 
+@property (nonatomic,strong) DALabeledCircularProgressView *progressView;
 
 @end

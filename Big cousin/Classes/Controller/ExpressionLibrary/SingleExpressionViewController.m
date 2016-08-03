@@ -10,6 +10,8 @@
 #import "DrawingNewCollectionViewCell.h"
 #import "SingleExpressionHeaderView.h"
 #import "SingleFooterCollectionReusableView.h"
+#import "DALabeledCircularProgressView.h"
+#import "UIImageView+WebCache.h"
 
 #import "ExpressionLibraryModel.h"
 #import "LibraryRequest.h"
@@ -25,9 +27,12 @@
 @property (nonatomic, strong) UICollectionView *singleCollectionView;
 @property (nonatomic, strong) SingleExpressionHeaderView *singleHeader;
 @property (nonatomic, strong) SingleFooterCollectionReusableView *singleFooter;
+@property (nonatomic,strong) DALabeledCircularProgressView *progressView;
+@property (strong, nonatomic) LGRefreshView *refreshView;
+@property (nonatomic, strong) NSString *urlString;
 /** 数据源 */
 @property (nonatomic, strong) NSMutableArray <ExpressionLibraryModel *>*singleExpressions;
-@property (strong, nonatomic) LGRefreshView *refreshView;
+
 
 @end
 
@@ -71,7 +76,6 @@
     [collectionBtn setImage:[UIImage imageNamed:favorImage] forState:(UIControlStateNormal)];
     [collectionBtn addTarget:self action:@selector(collectionBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
 }
-
 - (void)addSingleHeaderView
 {
     _singleHeader = [[SingleExpressionHeaderView alloc] init];
@@ -167,10 +171,9 @@
     [self share:UMShareToWechatTimeline];
 }
 
-- (void)head:(UIButton *)sender
+- (void)doubanShare:(UIButton *)sender
 {
-//    [self share:UMShareToDouban];
-    NSLog(@"---");
+    [self share:UMShareToDouban];
 }
 
 - (void)share:(NSString *)platformTypes
@@ -189,14 +192,21 @@
 - (void)leftBarButtonItemClick
 {
     [self.navigationController popViewControllerAnimated:YES];
+    
+    
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTheTable" object:nil];
+
 }
 
 - (void)collectionBtnClicked:(UIButton *)sender
 {
     NSLog(@"sendNotification btn clicked");
     //发送通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTheTable" object:nil];
-
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTheTable" object:nil];
+    
     BOOL isFavorite = [[DataBaseManager shareInstance] isFavoriteExpressionPackWithID:[NSString stringWithFormat:@"%@",_expressionModel.eId]];
     if (isFavorite == NO)
     {
@@ -214,7 +224,6 @@
         [sender setImage:[UIImage imageNamed:@"btn_shoucang_0"] forState:(UIControlStateNormal)];
     }
 }
-
 
 #pragma mark - 数据
 //下拉刷新
@@ -260,6 +269,8 @@
         NSMutableArray *tempArray = [ExpressionLibraryModel presentSingleWithArray:arr];
         weakSelf.singleExpressions = tempArray[0];
         [weakSelf.singleHeader.singleImageView setImageWithURL:[NSURL URLWithString:tempArray[1]]];
+//        weakSelf.urlString = tempArray[1];
+        [weakSelf loadImageWithUrl:tempArray[1]];
         [GiFHUD dismiss];
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -267,6 +278,17 @@
         });
     } failure:^(NSError *error) {
         NSLog(@"single error %@",error);
+    }];
+}
+
+- (void)loadImageWithUrl:(NSString *)urlString
+{
+    [_singleHeader.singleImageView sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:urlString] placeholderImage:nil options:SDWebImageProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        CGFloat progress = 1.0 * receivedSize / expectedSize;
+        self.progressView.progressLabel.text = [NSString stringWithFormat:@"%.1f%%",progress*100];
+        [self.progressView setProgress:progress animated:YES];
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.progressView.hidden = YES;
     }];
 }
 

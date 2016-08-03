@@ -56,7 +56,8 @@
     [wordButton setTitle:@"字" forState:(UIControlStateNormal)];
     wordButton.layer.cornerRadius = 21;
     [wordButton addTarget:self action:@selector(wordButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
-    wordButton.backgroundColor = [UIColor redColor];
+    wordButton.backgroundColor = KColorGlyodin;
+    wordButton.tintColor = [UIColor whiteColor];
     wordButton.titleLabel.font = [UIFont systemFontOfSize:24];
     [self.view addSubview:wordButton];
     [wordButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -107,9 +108,11 @@
 - (void)addRightItem
 {
     UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    button.frame = CGRectMake(10, 10, 40, 30);
+    button.frame = CGRectMake(0, 0, 35, 25);
+    button.titleLabel.font = [UIFont systemFontOfSize:12];
+//    button.frame = CGRectMake(10, 10, 40, 30);
     [button setTitle:@"完成" forState:(UIControlStateNormal)];
-    button.backgroundColor = kColorGreenSea;
+    button.backgroundColor = KColorGlyodin;
     button.layer.cornerRadius = 10;
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
@@ -140,7 +143,7 @@
     __block UITextField * tempFeild = [[UITextField alloc] init];
     __weak typeof(self)weakSelf = self;
     
-    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"编辑文字" message:@"输入内容" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"编辑文字" message:@"下框输入" preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         //赋值
         weakSelf.myLabel.text = tempFeild.text;
@@ -153,19 +156,18 @@
         //    self.imageView.image = imageWithImageWatermark;
         
         NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
-        attrDict[NSForegroundColorAttributeName] = kColorGreenSea;
+        attrDict[NSForegroundColorAttributeName] = KColorGlyodin;
         attrDict[NSFontAttributeName] = [UIFont systemFontOfSize:15];
         
         NSAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:self.myLabel.text attributes:attrDict];
         UIImage *imageWithImageAndTextWatermark = [UIImage imageWithUIImage:imageWithImageWatermark watermarkOfText:attrString position:(ATWatermarkPositonBottom)];
         self.imageV.image = imageWithImageAndTextWatermark;
-
         
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
     [alertC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         tempFeild = textField;
-        tempFeild.placeholder = @"请输入文字";
+        tempFeild.placeholder = @"不能是空还点确定喔~";
         
     }];
     [alertC addAction:action];

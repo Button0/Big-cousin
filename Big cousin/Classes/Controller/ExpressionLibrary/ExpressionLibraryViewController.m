@@ -23,6 +23,8 @@
 #import "goodsViewController.h"
 #import "setViewController.h"
 #import "CollectionPackViewController.h"
+#import "ChatViewController.h"
+#import "WeiboViewController.h"
 
 #define KHeightCollection 120
 #define KHeightCycleScrollView self.view.bounds.size.height*0.3f
@@ -188,17 +190,21 @@
     switch (Index) {
         case 0:
         {
-            smileViewController *smileVC = [[smileViewController alloc]init];
-            smileVC.title = title;
-            [self.navigationController pushViewController:smileVC animated:YES];
+            UIStoryboard *SB=[UIStoryboard storyboardWithName:@"Friends" bundle:[NSBundle mainBundle]];
+            ChatViewController *chatVC=[SB instantiateViewControllerWithIdentifier:@"ChatViewController"];
+            chatVC.title = title;
+            [self.navigationController pushViewController:chatVC animated:YES];
         }
             break;
             
         case 1:
         {
-            smileBagViewController *smileBagVC = [[smileBagViewController alloc]init];
-            smileBagVC.title = title;
-            [self.navigationController pushViewController:smileBagVC animated:YES];
+            WeiboViewController *weiboVC = [[WeiboViewController alloc]init];
+            weiboVC.title = title;
+
+            [self.navigationController pushViewController:weiboVC animated:YES];
+            
+            
         }
             break;
             

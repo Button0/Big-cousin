@@ -8,11 +8,13 @@
 
 #import "DrawingNewCollectionViewCell.h"
 #import "ExpressionLibraryModel.h"
+#import "UIImageView+WebCache.h"
 
 @implementation DrawingNewCollectionViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+//    [self loadImage];
 }
 
 - (void)setLibraryModel:(ExpressionLibraryModel *)libraryModel
@@ -20,28 +22,28 @@
     _libraryModel = libraryModel;
     if (libraryModel.Url != nil)
     {
-        [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[libraryModel.Url replacingStringToURL]]];
+        [_drawingNewImageV sd_setImageWithURL:[NSURL URLWithString:[libraryModel.Url replacingStringToURL]]];
     }
     else if (libraryModel.gifPath != nil)
     {
-    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:libraryModel.gifPath]];
+        [_drawingNewImageV sd_setImageWithURL:[NSURL URLWithString:libraryModel.gifPath]];
     }
 }
 
 - (void)setModel:(DrawingModel *)model
 {
-    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:model.url]];
+    [_drawingNewImageV sd_setImageWithURL:[NSURL URLWithString:model.url]];
 }
 
 - (void)setDynamicModel:(DynamicModel *)dynamicModel
 {
-    [_drawingNewImageV setImageWithURL:[NSURL URLWithString:[dynamicModel.URL replacingStringToURL]]];
-    NSLog(@"dynamicModel.url ======= %@",[dynamicModel.URL replacingStringToURL]);
+    [_drawingNewImageV sd_setImageWithURL:[NSURL URLWithString:[dynamicModel.URL replacingStringToURL]]];
+    //NSLog(@"dynamicModel.url ======= %@",[dynamicModel.URL replacingStringToURL]);
 }
 
 -(void)loadImage {
     
-    [_drawingNewImageV sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:self.dynamicModel.URL] placeholderImage:nil options:SDWebImageProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+    [_drawingNewImageV sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:self.libraryModel.Url] placeholderImage:nil options:SDWebImageProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
         CGFloat progress = 1.0 * receivedSize / expectedSize;
         self.progressView.progressLabel.text = [NSString stringWithFormat:@"%.1f%%",progress*100];
@@ -50,8 +52,6 @@
         self.progressView.hidden = YES;
         
     }];
-    
 }
-
 
 @end

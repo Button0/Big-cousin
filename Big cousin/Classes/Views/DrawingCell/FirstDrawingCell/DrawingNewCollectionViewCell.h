@@ -10,6 +10,7 @@
 #import "DrawingModel.h"
 #import "DynamicModel.h"
 #import "DALabeledCircularProgressView.h"
+
 #define DrawingNewCollectionViewCell_Identify @"DrawingNewCollectionViewCell_Identify"
 
 @class ExpressionLibraryModel;
@@ -24,5 +25,4 @@
 @property (strong, nonatomic) DynamicModel *dynamicModel;
 
 @property (nonatomic,strong) DALabeledCircularProgressView *progressView;
-
 @end

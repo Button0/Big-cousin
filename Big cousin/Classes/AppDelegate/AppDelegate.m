@@ -13,6 +13,11 @@
 #import <UMSocialSinaSSOHandler.h>
 #import <UMSocialQQHandler.h>
 #import "LYB_ChouTiViewController.h"
+//导入sharesdk头文件
+#import <ShareSDK/ShareSDK.h>
+#import "ShareSDKConnector/ShareSDKConnector.h"
+//导入新浪微博头文件
+#import "WeiboSDK.h"
 
 @interface AppDelegate ()
 
@@ -47,9 +52,41 @@
     //抽屉的使用
     [self.window makeKeyAndVisible];
     [LYB_ChouTiViewController leftViewController:nil centerViewController:self.window.rootViewController];
-    [LYB_ChouTiViewController getMenuViewController].menuArray = [@[@"表情 · SMILE",@"表情包 · SMILEBAG",@"作品 · GOODS"] mutableCopy];
+    [LYB_ChouTiViewController getMenuViewController].menuArray = [@[@"反馈 · FEEDBACK",@"我们 · OURS",@"作品 · GOODS"] mutableCopy];
+    
+    //注册初始化sharesdk
+    [ShareSDK registerApp:@"" activePlatforms:@[@(SSDKPlatformTypeSinaWeibo)] onImport:^(SSDKPlatformType platformType) {
+        switch (platformType) {
+            case SSDKPlatformTypeSinaWeibo:
+                [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                break;
+                
+            default:
+                break;
+        }
+    } onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+        switch (platformType) {
+            case SSDKPlatformTypeSinaWeibo:
+                [appInfo SSDKSetupSinaWeiboByAppKey:@"3063489429" appSecret:@"1fc1c73443770842f917e773c91b18de" redirectUri:@"http://sns.whalecloud.com/sina2/callback" authType:SSDKAuthTypeBoth];
+                break;
+                
+            default:
+                break;
+        }
+    }];
     
     
+    
+    //AppKey:注册的AppKey，详细见下面注释。
+    //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
+    EMOptions *options = [EMOptions optionsWithAppkey:@"eternitydao#slowlycartoon"];
+    
+    options.apnsCertName = @"030932Push";
+    
+    [[EMClient sharedClient] initializeSDKWithOptions:options];
+
+    
+
     
     return YES;
 }
@@ -70,12 +107,12 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+ [[EMClient sharedClient] applicationDidEnterBackground:application];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+
+    [[EMClient sharedClient] applicationWillEnterForeground:application];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

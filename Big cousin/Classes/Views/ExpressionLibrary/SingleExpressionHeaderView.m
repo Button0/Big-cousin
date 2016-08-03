@@ -65,7 +65,7 @@
     _wechatBtn = [self addButtonWithImage:@"wechat" action:@selector(wechatShare:)];
     _circle = [self addButtonWithImage:@"friendCircle" action:@selector(circleShare:)];
     _download = [self addButtonWithImage:@"downloads" action:@selector(download:)];
-    _head = [self addButtonWithImage:@"douban" action:@selector(head:)];
+    _head = [self addButtonWithImage:@"douban" action:@selector(doubanShare:)];
     
     //layout
     [_singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,7 +76,7 @@
     }];
 
     [_shareView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_singleImageView.mas_top);//.mas_offset(-8.f);
+        make.top.mas_equalTo(_singleImageView.mas_top);
         make.bottom.mas_equalTo(_singleImageView.mas_bottom);
         make.left.mas_equalTo(_singleImageView.mas_right).offset(22.f);
         make.right.mas_equalTo(self.mas_right).offset(-20.f);
@@ -90,7 +90,7 @@
     }];
     
     NSArray *shareVertical = @[label, _QQBtn, _wechatBtn];
-    [shareVertical mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedItemLength:25.f leadSpacing:20.f tailSpacing:20.f];
+    [shareVertical mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedItemLength:25.f leadSpacing:5.f tailSpacing:5.f];
     
     [_QQBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(25.f);
@@ -124,9 +124,9 @@
     [self.sharedelegate circleShare:sender];
 }
 
-- (void)head:(UIButton *)sender
+- (void)doubanShare:(UIButton *)sender
 {
-//    [self.sharedelegate doubanShare:sender];
+    [self.sharedelegate doubanShare:sender];
 }
 
 - (UIButton *)download:(UIButton *)sender

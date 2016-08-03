@@ -60,6 +60,11 @@
     _hottestCollection.backgroundColor = [UIColor whiteColor];
     //分页
     _segment = [[UISegmentedControl alloc]initWithItems:@[@"最新",@"最热"]];
+    _segment.tintColor = KColorGlyodin;
+    NSDictionary *selectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:14], NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [_segment setTitleTextAttributes:selectedTextAttributes forState:UIControlStateSelected];
+    NSDictionary *unselectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:14], NSForegroundColorAttributeName: KColorDrakStoneBlue};
+    [_segment setTitleTextAttributes:unselectedTextAttributes forState:UIControlStateNormal];
     
     self.navigationItem.titleView = self.segment;
     
@@ -69,7 +74,7 @@
     
     /** 创建scrollView */
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,0,WindowWidth, WindowHeight)];
-    _scrollView.backgroundColor = [UIColor magentaColor];
+//    _scrollView.backgroundColor = [UIColor magentaColor];
     [self.view addSubview:_scrollView];
     /** 设置scrollView的内容 */
     self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 2, 0);

@@ -46,6 +46,7 @@
 #import "UIView+Extension.h"
 #import "UIImage+XFCircle.h"
 #import "UIImageView+Header.h"
+#import "Contants.h"
 
 typedef NS_ENUM(NSUInteger, TopicType) {
     TopicTypeAll = 1, // 全部
@@ -58,6 +59,10 @@ typedef NS_ENUM(NSUInteger, TopicType) {
 #import "FinshedViewController.h"
 
 #import "UIImage+ATWatermark.h"
+
+//环信
+#import <HyphenateFullSDK/EMSDKFull.h>
+
 
 
 //#import "packageView.h"

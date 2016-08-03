@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start.png" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-F7-1u3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJG-aE-14g">
+                                <rect key="frame" x="105" y="408" width="110" height="52"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bh1-oH-OMZ">
+                                        <rect key="frame" x="0.0" y="6" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="4gN-GJ-Ca9"/>
+                                            <constraint firstAttribute="height" constant="40" id="GhR-ob-PIj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big cousin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syZ-zS-CTh">
+                                        <rect key="frame" x="35" y="8" width="75" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="3qQ-vl-S7P"/>
+                                            <constraint firstAttribute="height" constant="36" id="hh1-jw-rl0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="syZ-zS-CTh" firstAttribute="centerY" secondItem="Bh1-oH-OMZ" secondAttribute="centerY" id="EKh-OY-vUN"/>
+                                    <constraint firstAttribute="width" constant="110" id="FM6-le-vVB"/>
+                                    <constraint firstAttribute="trailing" secondItem="syZ-zS-CTh" secondAttribute="trailing" id="KYr-3q-0mN"/>
+                                    <constraint firstAttribute="height" constant="52" id="Klk-gP-PSk"/>
+                                    <constraint firstItem="Bh1-oH-OMZ" firstAttribute="leading" secondItem="yJG-aE-14g" secondAttribute="leading" id="MHi-J3-0mF"/>
+                                    <constraint firstAttribute="bottom" secondItem="syZ-zS-CTh" secondAttribute="bottom" constant="8" id="Ycb-iN-eo5"/>
+                                    <constraint firstItem="Bh1-oH-OMZ" firstAttribute="leading" secondItem="yJG-aE-14g" secondAttribute="leading" id="kn9-SI-B1x"/>
+                                    <constraint firstItem="Bh1-oH-OMZ" firstAttribute="centerY" secondItem="yJG-aE-14g" secondAttribute="centerY" id="uyV-66-nGT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" summaryElement="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="6nG-F7-1u3" secondAttribute="bottom" id="dsW-da-Kc1"/>
+                            <constraint firstItem="6nG-F7-1u3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gnG-Cj-gai"/>
+                            <constraint firstItem="yJG-aE-14g" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="j4a-lu-6ue"/>
+                            <constraint firstItem="6nG-F7-1u3" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="mod-Qj-6by"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="yJG-aE-14g" secondAttribute="bottom" constant="20" id="rQb-uN-dIE"/>
+                            <constraint firstAttribute="trailing" secondItem="6nG-F7-1u3" secondAttribute="trailing" id="v8V-9O-sDI"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-51" y="387"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="app.png" width="208" height="216"/>
+        <image name="start.png" width="640" height="1136"/>
+    </resources>
+</document>

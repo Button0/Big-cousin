@@ -45,7 +45,7 @@
     self.collectionView.delegate = self;
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"DrawingCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:DrawingCollectionViewCell_Identify];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         //设置view的大小

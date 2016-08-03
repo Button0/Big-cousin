@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - DACircularProgress (2.3.1)
+  - HyphenateFullSDK (3.1.3)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.9)
   - NJKWebViewProgress (0.2.3):
@@ -43,6 +44,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - DACircularProgress (~> 2.3.1)
+  - HyphenateFullSDK (~> 3.1.3)
   - MJExtension (~> 3.0.7)
   - MJRefresh (~> 3.1.9)
   - NJKWebViewProgress (~> 0.2.3)
@@ -54,6 +56,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  HyphenateFullSDK: 8b5b092055480308a47c9bb9b78baed7f45f7713
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
@@ -63,6 +66,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   UMengSocialCOM: 074c135ce349aa4c8848d3fb8458757bcb6ffb67
 
-PODFILE CHECKSUM: 824ebda55afe1390c83bef52ae441827a896a0de
+PODFILE CHECKSUM: c9e54357afe2946ceef8ce8c46c82110357de18c
 
 COCOAPODS: 1.0.1

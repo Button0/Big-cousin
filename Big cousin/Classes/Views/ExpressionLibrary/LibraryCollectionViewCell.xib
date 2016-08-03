@@ -213,7 +213,7 @@
                 <outlet property="towLabel" destination="rwm-Vy-y6P" id="HlM-dd-7iz"/>
                 <outlet property="twoImageView" destination="YfT-cy-7Ks" id="1Jd-sn-C7i"/>
             </connections>
-            <point key="canvasLocation" x="94" y="132"/>
+            <point key="canvasLocation" x="230" y="224"/>
         </collectionViewCell>
     </objects>
     <resources>

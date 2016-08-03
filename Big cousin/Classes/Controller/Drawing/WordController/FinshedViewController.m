@@ -7,6 +7,7 @@
 //
 
 #import "FinshedViewController.h"
+#import "SVProgressHUD.h"
 
 @interface FinshedViewController ()<UMSocialUIDelegate>
 
@@ -38,14 +39,15 @@
     //自定义navigationItem
     
     UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    button.frame = CGRectMake(0, 0, 40, 30);
+    button.frame = CGRectMake(0, 0, 35, 25);
     [button setTitle:@"分享" forState:(UIControlStateNormal)];
-    [button setTitleColor:[UIColor colorWithRed:38.0/255.0 green:38.0/255.0 blue:38.0/255.0 alpha:38.0/255.0] forState:1];
+    button.titleLabel.font = [UIFont systemFontOfSize:12];
+    [button setTitleColor:[UIColor whiteColor] forState:1];//[UIColor colorWithRed:38.0/255.0 green:38.0/255.0 blue:38.0/255.0 alpha:38.0/255.0] forState:1];
     
     [button addTarget:self action:@selector(rightBarItemClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     //设置圆角
     button.layer.cornerRadius = 10;
-    button.backgroundColor = [UIColor redColor];
+    button.backgroundColor = KColorGlyodin;
     UIBarButtonItem *finishItem = [[UIBarButtonItem alloc]initWithCustomView:button];
     self.navigationItem.rightBarButtonItems = @[finishItem];
     
@@ -70,17 +72,18 @@
     
     saceButton.layer.cornerRadius = 15;
     [saceButton addTarget:self action:@selector(saceButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
-    [saceButton setTitle:@"收藏" forState:(UIControlStateNormal)];
+    [saceButton setTitle:@"save" forState:(UIControlStateNormal)];
     
     saceButton.backgroundColor = [UIColor grayColor];
     [self.view addSubview:saceButton];
     [saceButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(80, 30));
         make.top.mas_equalTo(self.finshedView.mas_bottom).with.offset(10);
-        make.left.mas_equalTo(self.finshedView.mas_left).with.offset(0);
+        make.centerX.equalTo(self.finshedView.mas_centerX);
     }];
 
     //button上字体的大小
+    /*
     saceButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
     
     UIButton *downloadButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
@@ -96,8 +99,8 @@
 //        make.left.mas_equalTo(saceButton.mas_right).with.offset(50);
         make.right.mas_equalTo(self.finshedView.mas_right).with.offset(0);
     }];
-
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"⏮" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftClicked)];
+//*/
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftClicked)];
     
     
     _imagesV = [[UIImageView alloc]init];
@@ -112,9 +115,6 @@
     NSData *data = [[NSData alloc]initWithBase64Encoding:self.imageVString];
     UIImage *decodedImage = [UIImage imageWithData:data];
     self.imagesV.image = decodedImage;
-    
-    
-    
 }
 
 - (void)leftClicked
@@ -136,12 +136,35 @@
                                 shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
                                 delegate:self];
 }
+
 //保存
 - (void)saceButtonClicked:(UIButton *)sender
 {
-    
+    if(_imagesV.image != nil)
+    {
+        UIImageWriteToSavedPhotosAlbum(_imagesV.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }
+    else
+    {
+        [SVProgressHUD showErrorWithStatus:@"download failure..."];
+    }
 }
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (error)
+    {
+        [SVProgressHUD showErrorWithStatus:@"save failure"];
+    }
+    else
+    {
+        [SVProgressHUD setSuccessImage:[UIImage imageNamed:@"success"]];
+        [SVProgressHUD showSuccessWithStatus:@"save success"];
+    }
+}
+
 //下载
+/*
 - (void)downloadClicked:(UIButton *)sender
 {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -165,7 +188,7 @@
     }];
     [downloadTask resume];
 }
-
+//*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

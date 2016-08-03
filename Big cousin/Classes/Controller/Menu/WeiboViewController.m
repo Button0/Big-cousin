@@ -19,6 +19,7 @@
 
     UIWebView *webV = [[UIWebView alloc]initWithFrame:self.view.bounds];
     webV.backgroundColor = [UIColor whiteColor];
+    webV.scalesPageToFit = YES;
     [self.view addSubview:webV];
     [webV loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://weibo.com/5982507523/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1"]]];
 

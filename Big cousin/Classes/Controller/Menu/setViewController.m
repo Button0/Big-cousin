@@ -8,9 +8,14 @@
 
 #import "setViewController.h"
 #import "setTableViewCell.h"
-#import "OpinionViewController.h"
 #import "WeiboViewController.h"
 #import "StatementViewController.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+#import "AppStoreViewController.h"
+#import "ChatViewController.h"
+#import "smileViewController.h"
+
 
 #define mWidth self.view.bounds.size.width
 #define mHight self.view.bounds.size.height
@@ -22,6 +27,8 @@
 @property(nonatomic,strong)UIImageView *myImageView;
 
 @property(nonatomic,strong)UILabel *lable;
+
+@property(nonatomic,strong)UILabel *cacheLable;
 
 @end
 
@@ -85,7 +92,7 @@
     if (section == 0) {
         return 1;
     }
-    return 6;
+    return 5;
 
 }
 
@@ -108,7 +115,7 @@
 
     setTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (indexPath.section == 0) {
-        cell.myLable.text = @"意见反馈";
+        cell.myLable.text = @"关于";
         cell.myImageView.image = [UIImage imageNamed:@"yijian.png"];
          cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }else if (indexPath.section == 1)
@@ -139,15 +146,8 @@
             }
                 break;
                 
-            case 3:
-            {
-                cell.myLable.text = @"我们的微博";
-                cell.myImageView.image = [UIImage imageNamed:@"weibo.png"];
-         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            }
-                break;
                 
-            case 4:
+            case 3:
             {
                 cell.myLable.text = @"我们的微信~(主人可是美女哦)";
                 cell.myImageView.image = [UIImage imageNamed:@"weixin.png"];
@@ -164,15 +164,14 @@
             }
                 break;
                 
-            case 5:
+            case 4:
             {
                 cell.myLable.text = @"给你的手机洗洗澡吧";
                 cell.myImageView.image = [UIImage imageNamed:@"lajixiang.png"];
-                UILabel *cacheLable = [[UILabel alloc]initWithFrame:CGRectMake(345, 12, 50, 20)];
-                cacheLable.text = @"10.0M";
-                cacheLable.textColor = [UIColor blueColor];
-                [cell addSubview:cacheLable];
- 
+                self.cacheLable = [[UILabel alloc]initWithFrame:CGRectMake(330, 12, 65, 20)];
+                self.cacheLable.text = [NSString stringWithFormat:@"%.2fM",[self getFilePath]];                self.cacheLable.textColor = [UIColor blueColor];
+                [cell addSubview:self.cacheLable];
+               
             }
                 break;
                 
@@ -184,6 +183,53 @@
 
     return cell;
 }
+
+
+- (void)appearCache{
+    self.cacheLable.text = [NSString stringWithFormat:@"%.2fM",[self getFilePath]];
+    [self.myTableView reloadData];
+}
+
+
+//获取缓存大小
+-(float)getFilePath{
+    
+    //文件管理
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    //缓存路径
+    
+    NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask, YES);
+    
+    NSString *cacheDir = [cachePaths objectAtIndex:0];
+    
+    NSArray *cacheFileList;
+    
+    NSEnumerator *cacheEnumerator;
+    
+    NSString *cacheFilePath;
+    
+    unsigned long long cacheFolderSize = 0;
+    
+    cacheFileList = [fileManager subpathsOfDirectoryAtPath:cacheDir error:nil];
+    
+    cacheEnumerator = [cacheFileList objectEnumerator];
+    
+    while (cacheFilePath = [cacheEnumerator nextObject]) {
+        
+        NSDictionary * cacheFileAttributes = [fileManager attributesOfItemAtPath:[cacheDir stringByAppendingPathComponent:cacheFilePath] error:nil];
+        
+        cacheFolderSize += [cacheFileAttributes fileSize];
+        
+    }
+    
+    //单位MB
+    
+    return cacheFolderSize/1024/1024;
+    
+}
+
 
 -(void)copyBut:(UIButton *)sender
 {
@@ -213,19 +259,44 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        OpinionViewController *opinionVC = [[OpinionViewController alloc]init];
-        [self.navigationController pushViewController:opinionVC animated:YES];
+        smileViewController *smileVC = [[smileViewController alloc]init];
+        [self.navigationController pushViewController:smileVC animated:YES];
     }else if (indexPath.section == 1)
     {
         switch (indexPath.row) {
             case 0:
             {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/jie-zou-da-shi/id493901993?mt=8"]];
+        AppStoreViewController *appVC = [[AppStoreViewController alloc]init];
+        [self.navigationController pushViewController:appVC animated:YES];
+            
             }
                 break;
                 
             case 1:
             {
+              
+                //构造 分享内容
+                UIImage *image = [UIImage imageNamed:@"e.jpg"];
+                NSArray *imageArray = [NSArray arrayWithObject:image];
+                //参数字典
+                NSMutableDictionary *params = [NSMutableDictionary new];
+                [params SSDKSetupShareParamsByText:@"聊天用Big-cousin真是爽歪歪" images:imageArray url:[NSURL URLWithString:@"http://weibo.com/5982507523/profile?rightmod=1&wvr=6&mod=personnumber&is_all=1"] title:@"来自Big-cousin的分享" type:SSDKContentTypeAuto];
+                //展示分享视图
+                [ShareSDK showShareActionSheet:nil items:nil shareParams:params onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
+                    //分享结果
+                    switch (state) {
+                        case SSDKResponseStateSuccess:
+                            NSLog(@"分享成功");
+                            break;
+                        case SSDKResponseStateFail:
+                            NSLog(@"分享失败");
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                }];
+
                 
             }
                 break;
@@ -239,24 +310,18 @@
 
             case 3:
             {
-                WeiboViewController *weiboVC = [[WeiboViewController alloc]init];
-                [self.navigationController pushViewController:weiboVC animated:YES];
-                
-                
+    
             }
                 break;
 
             case 4:
             {
-    
-            }
-                break;
-
-            case 5:
-            {
-                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"您手机有10.0M垃圾，是否清空?" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"是否确定清空您的缓存?" preferredStyle:UIAlertControllerStyleAlert];
                 
                 UIAlertAction *actionOK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                     NSString* cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+                    [self clearCache:cacheDir];
                     
                 }];
                 
@@ -283,6 +348,23 @@
     }
 
 }
+
+
+//清理缓存方法
+- (void)clearCache:(NSString *)path{
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:path]) {
+        NSArray *childerFiles=[fileManager subpathsAtPath:path];
+        for (NSString *fileName in childerFiles) {
+            //如有需要，加入条件，过滤掉不想删除的文件
+            NSString *absolutePath=[path stringByAppendingPathComponent:fileName];
+            [fileManager removeItemAtPath:absolutePath error:nil];
+        }
+    }
+    [self appearCache];
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {
